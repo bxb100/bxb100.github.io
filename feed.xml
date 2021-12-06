@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="rss.xsl" type="text/xsl"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"
+
+>
+    <channel>
+        <title><![CDATA[bxb100's Blog]]></title>
+        <link>https://github.com/bxb100/blog</link>
+        <atom:link href="https://github.com/bxb100/blog/feed.xml" rel="self" type="application/rss+xml" />
+        <description><![CDATA[RSS feed of bxb100's blog]]></description>
+        <generator>IssueBlogAction</generator>
+        <webMaster>bxb100@outlook.com (@bxb100)</webMaster>
+        
+        
+        
+        <language>zh-cn</language>
+        
+        <itunes:image href="https://raw.githubusercontent.com/bxb100/blog/master/blog.png"/>
+        
+        
+        <lastBuildDate>Mon, 06 Dec 2021 12:28:03 GMT</lastBuildDate>
+        
+        
+        <item>
+            <title><![CDATA[Hello World]]></title>
+            <description><![CDATA[<p>The first article to say 'Hello world'</p>
+]]></description>
+            <pubDate>Mon, 06 Dec 2021 12:27:43 GMT</pubDate>
+            <guid isPermaLink="false">https://github.com/bxb100/blog/issues/1</guid>
+            <link>https://github.com/bxb100/blog/issues/1</link>
+            
+            
+            
+            <author><![CDATA[bxb100]]></author>
+            
+                
+                <category>Meaningless</category>
+                
+            
+        </item>
+        
+    </channel>
+</rss>
