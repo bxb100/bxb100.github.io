@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Generate README
-        uses: bxb100/issueblog@v1.0.2
+        uses: bxb100/issueblog@main
         with:
           md_header: "## GitLog\nMy personal blog using issues and GitHub Actions\n[RSS Feed](https://bxb100.github.io/blog/feed.xml)"
