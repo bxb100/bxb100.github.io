@@ -16,4 +16,5 @@ jobs:
       - name: Generate README
         uses: bxb100/issueblog@main
         with:
+          blog_author: "John Bi"
           md_header: "## GitLog\nMy personal blog using issues and GitHub Actions\n[RSS Feed](https://bxb100.github.io/blog/feed.xml)"
