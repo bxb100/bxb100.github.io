@@ -4,10 +4,10 @@
 
 >
     <channel>
-        <title><![CDATA[bxb100's Blog]]></title>
+        <title><![CDATA[John Bi's Blog]]></title>
         <link>https://github.com/bxb100/blog</link>
         <atom:link href="https://github.com/bxb100/blog/feed.xml" rel="self" type="application/rss+xml" />
-        <description><![CDATA[RSS feed of bxb100's blog]]></description>
+        <description><![CDATA[RSS feed of John Bi's blog]]></description>
         <generator>IssueBlogAction</generator>
         <webMaster>bxb100@outlook.com (@bxb100)</webMaster>
         
@@ -18,7 +18,7 @@
         <itunes:image href="https://raw.githubusercontent.com/bxb100/blog/master/blog.png"/>
         
         
-        <lastBuildDate>Mon, 06 Dec 2021 15:16:59 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Dec 2021 15:18:01 GMT</lastBuildDate>
         
         
         <item>
