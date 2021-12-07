@@ -15,17 +15,17 @@
         
         <language>zh-cn</language>
         
-        <itunes:image href="https://raw.githubusercontent.com/bxb100/blog/master/blog.png"/>
+        <itunes:image href="https://cdn.jsdelivr.net/gh/bxb100/blog/blog.png"/>
         
         
-        <lastBuildDate>Mon, 06 Dec 2021 15:18:01 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Dec 2021 14:14:49 GMT</lastBuildDate>
         
         
         <item>
             <title><![CDATA[Hello World]]></title>
-            <description><![CDATA[<p>The first article to say 'Hello world'</p>
+            <description><![CDATA[<p>Hello</p>
 ]]></description>
-            <pubDate>Mon, 06 Dec 2021 12:27:43 GMT</pubDate>
+            <pubDate>Tue, 07 Dec 2021 14:14:29 GMT</pubDate>
             <guid isPermaLink="false">https://github.com/bxb100/blog/issues/1</guid>
             <link>https://github.com/bxb100/blog/issues/1</link>
             
