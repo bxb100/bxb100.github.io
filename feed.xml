@@ -9,11 +9,8 @@
             <description><![CDATA[RSS feed of John Bi's blog]]></description>
         <generator>IssueBlogAction</generator>
         <webMaster>bxb100@outlook.com (@bxb100)</webMaster>
-
-
             <language>zh-cn</language>
-            <itunes:image href="https://cdn.jsdelivr.net/gh/bxb100/blog/blog.png" />
-        <lastBuildDate>Wed, 08 Dec 2021 16:16:40 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 Dec 2021 16:54:08 GMT</lastBuildDate>
 
             <item>
                 <title><![CDATA[Bloomberg Tame parents]]></title>
@@ -37,7 +34,6 @@
                     <pubDate>Wed, 08 Dec 2021 12:22:40 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/1</guid>
                 <link>https://github.com/bxb100/blog/issues/1</link>
-
                     <author><![CDATA[bxb100]]></author>
                         <category>读后感</category>
             </item>
