@@ -15,3 +15,9 @@
 > Chinese society can be surprisingly rigid. Schools informally classify chil- dren as “golden babies,” “silver babies,” and “copper babies”—usually based on where they’re born and their parents’ wealth. China has enough golden babies, or those who can make it to Tsinghua University and will develop world-class semiconductor chips one day. It has plenty of copper babies, who work in construction and factories making low-end exports such as clothes and toys. But it lacks silver babies, who can manufacture the high-value tech gear that golden babies design.
 
 国内不缺 '金铜' 孩子, 只缺 '银孩', 因为不上不下, 国内职业歧视导致父母都更愿意让孩子去补习班争取上大学, 而不是做高科技的制作业工人.
+
+---
+
+See in bilibili
+
+[![外刊精读94 / Bloomberg / 双减政策 （难度低）](https://i0.hdslb.com/bfs/archive/206c4af5ba531a3415c72f8bb3ad106aacaf32a2.jpg@406w_254h_1e_1c.webp)](https://www.bilibili.com/video/BV1x34y1X7Ji?share_source=copy_web)
