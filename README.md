@@ -4,6 +4,6 @@ My personal blog using issues and GitHub Actions
 ## Recent
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
-## Meaningless
+## 读后感
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
