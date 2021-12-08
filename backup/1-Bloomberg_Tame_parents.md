@@ -21,3 +21,7 @@
 See in bilibili
 
 [![外刊精读94 / Bloomberg / 双减政策 （难度低）](https://i0.hdslb.com/bfs/archive/206c4af5ba531a3415c72f8bb3ad106aacaf32a2.jpg@406w_254h_1e_1c.webp)](https://www.bilibili.com/video/BV1x34y1X7Ji?share_source=copy_web)
+
+---
+
+[Tame Tiger Parents.pdf](https://github.com/bxb100/blog/files/7675953/Tame.Tiger.Parents.pdf)
