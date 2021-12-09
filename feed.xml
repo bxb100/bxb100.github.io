@@ -10,8 +10,12 @@
         <generator>IssueBlogAction</generator>
         <webMaster>bxb100@outlook.com (@bxb100)</webMaster>
             <language>zh-cn</language>
-        <lastBuildDate>Wed, 08 Dec 2021 16:54:08 GMT</lastBuildDate>
-
+            <image>
+                <url>https://cdn.jsdelivr.net/gh/bxb100/blog/blog.png</url>
+                    <title><![CDATA[John Bi's Blog]]></title>
+                <link>https://github.com/bxb100/blog</link>
+            </image>
+        <lastBuildDate>Thu, 09 Dec 2021 16:45:11 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Bloomberg Tame parents]]></title>
                     <description><![CDATA[<blockquote>
