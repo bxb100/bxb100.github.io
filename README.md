@@ -5,6 +5,10 @@ My personal blog using issues and GitHub Actions
 - [Links](https://github.com/bxb100/blog/issues/2)---2021-12-11
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
+## links
+- [Links](https://github.com/bxb100/blog/issues/2)---2021-12-11
+
+
 ## 读后感
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
