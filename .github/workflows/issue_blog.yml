@@ -17,3 +17,6 @@ jobs:
         uses: bxb100/issueblog@v1
         with:
           blog_author: "John Bi"
+          md_header: |
+              ## GitLog 
+              My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/blog/feed.xml)
