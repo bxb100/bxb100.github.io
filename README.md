@@ -1,5 +1,5 @@
 ## GitLog 
-My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubusercontent.com/bxb100/blog/master/feed.xml)
+My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/blog/feed.xml)
 ## Links
 | Name | Link | Desc |
 | ---- | ---- | ---- |
