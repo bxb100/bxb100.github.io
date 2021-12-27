@@ -6,6 +6,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubus
 | Dan Abramov | https://overreacted.io/ | React |
 
 ## Recent
+- [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
 - [太多人活得不像自己](https://github.com/bxb100/blog/issues/3)---2021-12-13
 - [Links](https://github.com/bxb100/blog/issues/2)---2021-12-11
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
@@ -15,5 +16,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://raw.githubus
 
 
 ## 读后感
+- [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
