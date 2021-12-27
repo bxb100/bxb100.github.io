@@ -2,7 +2,7 @@ name: 'Generate Blog'
 on:
   workflow_dispatch:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, labeled, unlabeled]
   issue_comment:
     types: [created, edited]
 concurrency: 
