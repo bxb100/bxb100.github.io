@@ -15,7 +15,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 30 Dec 2021 11:35:34 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Dec 2021 11:36:47 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Java 程序死锁问题原理及解决方案]]></title>
                     <description><![CDATA[<blockquote>
@@ -169,10 +169,14 @@
 <p>死锁问题是多线程特有的问题，它可以被认为是线程间切换消耗系统性能的一种极端情况。在死锁时，线程间相互等待资源，而又不释放自身的资源，导致无穷无尽的等待，其结果是系统任务永远无法执行完成。死锁问题是在多线程开发中应该坚决避免和杜绝的问题。</p>
 <p>一般来说，要出现死锁问题需要满足以下条件：</p>
 <ol>
-<li>互斥条件：一个资源每次只能被一个线程使用。</li>
-<li>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
-<li>不剥夺条件：进程已获得的资源，在未使用完之前，不能强行剥夺。</li>
-<li>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</li>
+<li>
+<strong>互斥条件</strong>：一个资源每次只能被一个线程使用。</li>
+<li>
+<strong>请求与保持条件</strong>：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>
+<strong>不剥夺条件</strong>：进程已获得的资源，在未使用完之前，不能强行剥夺。</li>
+<li>
+<strong>循环等待条件</strong>：若干进程之间形成一种头尾相接的循环等待资源关系。</li>
 </ol>
 <p>只要破坏死锁 4 个必要条件之一中的任何一个，死锁问题就能被解决。</p>
 <p>我们先来看一个示例，前面说过，死锁是两个甚至多个线程被永久阻塞时的一种运行局面，这种局面的生成伴随着至少两个线程和两个或者多个资源。代码清单 2 所示的示例中，我们编写了一个简单的程序，它将会引起死锁发生，然后我们就会明白如何分析它。</p>
@@ -564,7 +568,7 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
 <p>这样第一条语句锁定了 KEY_TSKTASK_MONTIME2 的记录，等待主键索引，而第二条语句则锁定了主键索引记录，而等待 KEY_TSKTASK_MONTIME2 的记录，这样死锁就产生了。</p>
 <p>我们通过拆分第一条语句解决了死锁问题：即先查出符合条件的 <code>ID：select ID from TSK_TASK where STATUS_ID=1061 and MON_TIME &lt; date_sub(now(), INTERVAL 30 minute)；</code>然后再更新状态：<code>update TSK_TASK set STATUS_ID=1064 where ID in (….)</code>。</p>
 ]]></description>
-                    <pubDate>Thu, 30 Dec 2021 11:35:22 GMT</pubDate>
+                    <pubDate>Thu, 30 Dec 2021 11:36:33 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/6</guid>
                 <link>https://github.com/bxb100/blog/issues/6</link>
                     <author><![CDATA[bxb100]]></author>
