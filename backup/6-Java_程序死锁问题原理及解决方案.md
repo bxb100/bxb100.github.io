@@ -21,129 +21,134 @@ Java 语言通过 synchronized 关键字来保证原子性，这是因为每一�
 顾客可以分期贷款, 但贷款的总数不能超过最大需求量；
 当银行家现有的资金不能满足顾客尚需的贷款数额时，对顾客的贷款可推迟支付，但总能使顾客在有限的时间里得到贷款；
 当顾客得到所需的全部资金后，一定能在有限的时间里归还所有的资金。
-清单 1. 银行家算法实现
+### 清单 1. 银行家算法实现
 
 ```java
-/*一共有５个进程需要请求资源，有３类资源*/ 
-public class BankDemo { 
- // 每个进程所需要的最大资源数 
- public static int MAX[][] = { { 7, 5, 3 }, { 3, 2, 2 }, { 9, 0, 2 }, 
- { 2, 2, 2 }, { 4, 3, 3 } }; 
- // 系统拥有的初始资源数 
- public static int AVAILABLE[] = { 10, 5, 7 }; 
- // 系统已给每个进程分配的资源数 
- public static int ALLOCATION[][] = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, 
- { 0, 0, 0 }, { 0, 0, 0 } }; 
- // 每个进程还需要的资源数 
- public static int NEED[][] = { { 7, 5, 3 }, { 3, 2, 2 }, { 9, 0, 2 }, 
- { 2, 2, 2 }, { 4, 3, 3 } }; 
- // 每次申请的资源数 
- public static int Request[] = { 0, 0, 0 }; 
- // 进程数与资源数 
- public static int M = 5, N = 3; 
- int FALSE = 0; 
- int TRUE = 1; 
- public void showdata() { 
- int i, j; 
- System.out.print("系统可用的资源数为:/n"); 
- for (j = 0; j < N; j++) { 
- System.out.print("资源" + j + ":" + AVAILABLE[j] + " "); 
- } 
- System.out.println(); 
- System.out.println("各进程还需要的资源量:"); 
- for (i = 0; i < M; i++) { 
- System.out.print("进程" + i + ":"); 
- for (j = 0; j < N; j++) { 
- System.out.print("资源" + j + ":" + NEED[i][j] + " "); 
- } 
- System.out.print("/n"); 
- } 
- System.out.print("各进程已经得到的资源量: /n"); 
- for (i = 0; i < M; i++) { 
- System.out.print("进程"); 
- System.out.print(i); 
- for (j = 0; j < N; j++) { 
- System.out.print("资源" + j + ":" + ALLOCATION[i][j] + " "); 
- } 
- System.out.print("/n"); 
- } 
- } 
- // 分配资源，并重新更新各种状态 
- public void changdata(int k) { 
- int j; 
- for (j = 0; j < N; j++) { 
- AVAILABLE[j] = AVAILABLE[j] - Request[j]; 
- ALLOCATION[k][j] = ALLOCATION[k][j] + Request[j]; 
- NEED[k][j] = NEED[k][j] - Request[j]; 
- } 
- }; 
+/*一共有５个进程需要请求资源，有３类资源*/
+public class BankDemo {
+    // 每个进程所需要的最大资源数 
+    public static int[][] MAX = {{7, 5, 3}, {3, 2, 2}, {9, 0, 2},
+            {2, 2, 2}, {4, 3, 3}};
+    // 系统拥有的初始资源数 
+    public static int[] AVAILABLE = {10, 5, 7};
+    // 系统已给每个进程分配的资源数 
+    public static int[][] ALLOCATION = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0},
+            {0, 0, 0}, {0, 0, 0}};
+    // 每个进程还需要的资源数 
+    public static int[][] NEED = {{7, 5, 3}, {3, 2, 2}, {9, 0, 2},
+            {2, 2, 2}, {4, 3, 3}};
+    // 每次申请的资源数 
+    public static int[] Request = {0, 0, 0};
+    // 进程数与资源数 
+    public static int M = 5, N = 3;
+    int FALSE = 0;
+    int TRUE = 1;
+
+    public void showdata() {
+        int i, j;
+        System.out.print("系统可用的资源数为:/n");
+        for (j = 0; j < N; j++) {
+            System.out.print("资源" + j + ":" + AVAILABLE[j] + " ");
+        }
+        System.out.println();
+        System.out.println("各进程还需要的资源量:");
+        for (i = 0; i < M; i++) {
+            System.out.print("进程" + i + ":");
+            for (j = 0; j < N; j++) {
+                System.out.print("资源" + j + ":" + NEED[i][j] + " ");
+            }
+            System.out.print("/n");
+        }
+        System.out.print("各进程已经得到的资源量: /n");
+        for (i = 0; i < M; i++) {
+            System.out.print("进程");
+            System.out.print(i);
+            for (j = 0; j < N; j++) {
+                System.out.print("资源" + j + ":" + ALLOCATION[i][j] + " ");
+            }
+            System.out.print("/n");
+        }
+    }
+
+    // 分配资源，并重新更新各种状态 
+    public void changdata(int k) {
+        int j;
+        for (j = 0; j < N; j++) {
+            AVAILABLE[j] = AVAILABLE[j] - Request[j];
+            ALLOCATION[k][j] = ALLOCATION[k][j] + Request[j];
+            NEED[k][j] = NEED[k][j] - Request[j];
+        }
+    }
+
  // 回收资源，并重新更新各种状态 
- public void rstordata(int k) { 
- int j; 
- for (j = 0; j < N; j++) { 
- AVAILABLE[j] = AVAILABLE[j] + Request[j]; 
- ALLOCATION[k][j] = ALLOCATION[k][j] - Request[j]; 
- NEED[k][j] = NEED[k][j] + Request[j]; 
- } 
- }; 
+    public void rstordata(int k) {
+        int j;
+        for (j = 0; j < N; j++) {
+            AVAILABLE[j] = AVAILABLE[j] + Request[j];
+            ALLOCATION[k][j] = ALLOCATION[k][j] - Request[j];
+            NEED[k][j] = NEED[k][j] + Request[j];
+        }
+    }
+
  // 释放资源 
- public void free(int k) { 
- for (int j = 0; j < N; j++) { 
- AVAILABLE[j] = AVAILABLE[j] + ALLOCATION[k][j]; 
- System.out.print("释放" + k + "号进程的" + j + "资源!/n"); 
- } 
- } 
- public int check0(int k) { 
- int j, n = 0; 
- for (j = 0; j < N; j++) { 
- if (NEED[k][j] == 0) 
- n++; 
- } 
- if (n == 3) 
- return 1; 
- else 
- return 0; 
- } 
- 
- // 检查安全性函数 
- //所以银行家算法其核心是：保证银行家系统的资源数至少不小于一个客户的所需要的资源数。在安全性检查函数 chkerr() 上由这个方法来实现
- //这个循环来进行核心判断，从而完成了银行家算法的安全性检查工作。
- public int chkerr(int s) { 
- int WORK; 
- int FINISH[] = new int[M], temp[] = new int[M];// 保存临时的安全进程序列 
- int i, j, k = 0; 
- for (i = 0; i < M; i++) 
- FINISH[i] = FALSE; 
- for (j = 0; j < N; j++) { 
- WORK = AVAILABLE[j]; // 第 j 个资源可用数 
- i = s; 
- // 判断第 i 个进程是否满足条件 
- while (i < M) { 
- if (FINISH[i] == FALSE && NEED[i][j] <= WORK) { 
- WORK = WORK + ALLOCATION[i][j]; 
- FINISH[i] = TRUE; 
- temp[k] = i; 
- k++; 
- i = 0; 
- } else { 
- i++; 
- } 
- } 
- for (i = 0; i < M; i++) 
- if (FINISH[i] == FALSE) { 
- System.out.print("/n 系统不安全!!! 本次资源申请不成功!/n"); 
- return 1; 
- } 
- } 
- System.out.print("/n 经安全性检查，系统安全，本次分配成功。/n"); 
- System.out.print("本次安全序列："); 
- for (i = 0; i < M - 1; i++) { 
- System.out.print("进程" + temp[i] + "->"); 
- } 
- System.out.print("进程" + temp[M - 1]); 
- System.out.println("/n"); 
- return 0; 
- }
+    public void free(int k) {
+        for (int j = 0; j < N; j++) {
+            AVAILABLE[j] = AVAILABLE[j] + ALLOCATION[k][j];
+            System.out.print("释放" + k + "号进程的" + j + "资源!/n");
+        }
+    }
+
+    public int check0(int k) {
+        int j, n = 0;
+        for (j = 0; j < N; j++) {
+            if (NEED[k][j] == 0)
+                n++;
+        }
+        if (n == 3)
+            return 1;
+        else
+            return 0;
+    }
+
+    // 检查安全性函数 
+    //所以银行家算法其核心是：保证银行家系统的资源数至少不小于一个客户的所需要的资源数。在安全性检查函数 chkerr() 上由这个方法来实现
+    //这个循环来进行核心判断，从而完成了银行家算法的安全性检查工作。
+    public int chkerr(int s) {
+        int WORK;
+        int[] FINISH = new int[M], temp = new int[M];// 保存临时的安全进程序列 
+        int i, j, k = 0;
+        for (i = 0; i < M; i++)
+            FINISH[i] = FALSE;
+        for (j = 0; j < N; j++) {
+            WORK = AVAILABLE[j]; // 第 j 个资源可用数 
+            i = s;
+            // 判断第 i 个进程是否满足条件 
+            while (i < M) {
+                if (FINISH[i] == FALSE && NEED[i][j] <= WORK) {
+                    WORK = WORK + ALLOCATION[i][j];
+                    FINISH[i] = TRUE;
+                    temp[k] = i;
+                    k++;
+                    i = 0;
+                } else {
+                    i++;
+                }
+            }
+            for (i = 0; i < M; i++)
+                if (FINISH[i] == FALSE) {
+                    System.out.print("/n 系统不安全!!! 本次资源申请不成功!/n");
+                    return 1;
+                }
+        }
+        System.out.print("/n 经安全性检查，系统安全，本次分配成功。/n");
+        System.out.print("本次安全序列：");
+        for (i = 0; i < M - 1; i++) {
+            System.out.print("进程" + temp[i] + "->");
+        }
+        System.out.print("进程" + temp[M - 1]);
+        System.out.println("/n");
+        return 0;
+    }
 }
 ```
 
@@ -153,72 +158,71 @@ public class BankDemo {
 一般来说，要出现死锁问题需要满足以下条件：
 
 1. 互斥条件：一个资源每次只能被一个线程使用。
-
 2. 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。
-
 3. 不剥夺条件：进程已获得的资源，在未使用完之前，不能强行剥夺。
-
 4. 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。
 
 只要破坏死锁 4 个必要条件之一中的任何一个，死锁问题就能被解决。
 
 我们先来看一个示例，前面说过，死锁是两个甚至多个线程被永久阻塞时的一种运行局面，这种局面的生成伴随着至少两个线程和两个或者多个资源。代码清单 2 所示的示例中，我们编写了一个简单的程序，它将会引起死锁发生，然后我们就会明白如何分析它。
 
-清单 2. 死锁示例
+### 清单 2. 死锁示例
 ```java
 public class ThreadDeadlock {
 
- public static void main(String[] args) throws InterruptedException {
- Object obj1 = new Object();
- Object obj2 = new Object();
- Object obj3 = new Object();
+    public static void main(String[] args) throws InterruptedException {
+        Object obj1 = new Object();
+        Object obj2 = new Object();
+        Object obj3 = new Object();
 
- Thread t1 = new Thread(new SyncThread(obj1, obj2), "t1");
- Thread t2 = new Thread(new SyncThread(obj2, obj3), "t2");
- Thread t3 = new Thread(new SyncThread(obj3, obj1), "t3");
+        Thread t1 = new Thread(new SyncThread(obj1, obj2), "t1");
+        Thread t2 = new Thread(new SyncThread(obj2, obj3), "t2");
+        Thread t3 = new Thread(new SyncThread(obj3, obj1), "t3");
 
- t1.start();
- Thread.sleep(5000);
- t2.start();
- Thread.sleep(5000);
- t3.start();
+        t1.start();
+        Thread.sleep(5000);
+        t2.start();
+        Thread.sleep(5000);
+        t3.start();
 
- }
+    }
 
 }
 
-class SyncThread implements Runnable{
- private Object obj1;
- private Object obj2;
+class SyncThread implements Runnable {
+    private final Object obj1;
+    private final Object obj2;
 
- public SyncThread(Object o1, Object o2){
- this.obj1=o1;
- this.obj2=o2;
- }
- @Override
- public void run() {
- String name = Thread.currentThread().getName();
- System.out.println(name + " acquiring lock on "+obj1);
- synchronized (obj1) {
- System.out.println(name + " acquired lock on "+obj1);
- work();
- System.out.println(name + " acquiring lock on "+obj2);
- synchronized (obj2) {
- System.out.println(name + " acquired lock on "+obj2);
- work();
- }
- System.out.println(name + " released lock on "+obj2);
- }
- System.out.println(name + " released lock on "+obj1);
- System.out.println(name + " finished execution.");
- }
- private void work() {
- try {
- Thread.sleep(30000);
- } catch (InterruptedException e) {
- e.printStackTrace();
- }
- }
+    public SyncThread(Object o1, Object o2) {
+        this.obj1 = o1;
+        this.obj2 = o2;
+    }
+
+    @Override
+    public void run() {
+        String name = Thread.currentThread().getName();
+        System.out.println(name + " acquiring lock on " + obj1);
+        synchronized (obj1) {
+            System.out.println(name + " acquired lock on " + obj1);
+            work();
+            System.out.println(name + " acquiring lock on " + obj2);
+            synchronized (obj2) {
+                System.out.println(name + " acquired lock on " + obj2);
+                work();
+            }
+            System.out.println(name + " released lock on " + obj2);
+        }
+        System.out.println(name + " released lock on " + obj1);
+        System.out.println(name + " finished execution.");
+    }
+
+    private void work() {
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -241,85 +245,85 @@ t2 acquiring lock on java.lang.Object@1aa9f99
 # 死锁情况诊断
 JVM 提供了一些工具可以来帮助诊断死锁的发生，如下面程序清单 4 所示，我们实现了一个死锁，然后尝试通过 jstack 命令追踪、分析死锁发生。
 
-清单 4. 死锁代码
+### 清单 4. 死锁代码
 ```java
-import java.util.concurrent.locks.ReentrantLock;
+iimport java.util.concurrent.locks.ReentrantLock;
 
 //下面演示一个简单的死锁，两个线程分别占用 south 锁和 north 锁，并同时请求对方占用的锁，导致死锁
-public class DeadLock extends Thread{
- protected Object myDirect;
- static ReentrantLock south = new ReentrantLock();
- static ReentrantLock north = new ReentrantLock();
- 
- public DeadLock(Object obj){
- this.myDirect = obj;
- if(myDirect==south){
- this.setName("south");
- }else{
- this.setName("north");
- }
- }
- 
- @Override
- public void run(){
- if(myDirect==south){
- try{
- north.lockInterruptibly();//占用 north
- try{
- Thread.sleep(500);
- }catch(Exception ex){
- ex.printStackTrace();
- }
- south.lockInterruptibly();
- System.out.println("car to south has passed");
- }catch(InterruptedException ex){
- System.out.println("car to south is killed");
- ex.printStackTrace();
- }finally{
- if(north.isHeldByCurrentThread()){
- north.unlock();
- }
- if(south.isHeldByCurrentThread()){
- south.unlock();
- }
- }
- }
- if(myDirect==north){
- try{
- south.lockInterruptibly();//占用 south
- try{
- Thread.sleep(500);
- }catch(Exception ex){
- ex.printStackTrace();
- }
- north.lockInterruptibly();
- System.out.println("car to north has passed");
- }catch(InterruptedException ex){
- System.out.println("car to north is killed");
- ex.printStackTrace();
- }finally{
- if(north.isHeldByCurrentThread()){
- north.unlock();
- }
- if(south.isHeldByCurrentThread()){
- south.unlock();
- }
- }
- }
- 
- }
- public static void main(String[] args) throws InterruptedException{
- DeadLock car2south = new DeadLock(south);
- DeadLock car2north = new DeadLock(north);
- car2south.start();
- car2north.start();
- }
+public class DeadLock extends Thread {
+    static ReentrantLock south = new ReentrantLock();
+    static ReentrantLock north = new ReentrantLock();
+    protected Object myDirect;
+
+    public DeadLock(Object obj) {
+        this.myDirect = obj;
+        if (myDirect == south) {
+            this.setName("south");
+        } else {
+            this.setName("north");
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        DeadLock car2south = new DeadLock(south);
+        DeadLock car2north = new DeadLock(north);
+        car2south.start();
+        car2north.start();
+    }
+
+    @Override
+    public void run() {
+        if (myDirect == south) {
+            try {
+                north.lockInterruptibly();//占用 north
+                try {
+                    Thread.sleep(500);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                south.lockInterruptibly();
+                System.out.println("car to south has passed");
+            } catch (InterruptedException ex) {
+                System.out.println("car to south is killed");
+                ex.printStackTrace();
+            } finally {
+                if (north.isHeldByCurrentThread()) {
+                    north.unlock();
+                }
+                if (south.isHeldByCurrentThread()) {
+                    south.unlock();
+                }
+            }
+        }
+        if (myDirect == north) {
+            try {
+                south.lockInterruptibly();//占用 south
+                try {
+                    Thread.sleep(500);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                north.lockInterruptibly();
+                System.out.println("car to north has passed");
+            } catch (InterruptedException ex) {
+                System.out.println("car to north is killed");
+                ex.printStackTrace();
+            } finally {
+                if (north.isHeldByCurrentThread()) {
+                    north.unlock();
+                }
+                if (south.isHeldByCurrentThread()) {
+                    south.unlock();
+                }
+            }
+        }
+    }
 }
 ```
 
 jstack 可用于导出 Java 应用程序的线程堆栈，-l 选项用于打印锁的附加信息。我们运行 jstack 命令，输出入清单 5 和 6 所示，其中清单 5 里面可以看到线程处于运行状态，代码中调用了拥有锁投票、定时锁等候和可中断锁等候等特性的 ReentrantLock 锁机制。清单 6 直接打印出出现死锁情况，报告 north 和 sourth 两个线程互相等待资源，出现了死锁。
 
-清单 5. jstack 运行输出 1
+### 清单 5. jstack 运行输出 1
 ```
 [root@facenode4 ~]# jstack -l 31274
 2015-01-29 12:40:27
@@ -473,7 +477,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode):
 JNI global references: 886
 ```
 
-清单 6. jstack 运行输出片段 2
+### 清单 6. jstack 运行输出片段 2
 ```
 Found one Java-level deadlock:
 =============================
@@ -535,10 +539,10 @@ Found 1 deadlock.
 
 其实即便是商业产品，依然会有很多死锁情况的发生，例如 MySQL 数据库，它也经常容易出现死锁案例。
 
-MySQL 死锁情况解决方法
+## MySQL 死锁情况解决方法
 假设我们用 Show innodb status 检查引擎状态时发现了死锁情况，如清单 7 所示。
 
-清单 7. MySQL 死锁
+### 清单 7. MySQL 死锁
 ```
 WAITING FOR THIS LOCK TO BE GRANTED:
 RECORD LOCKS space id 0 page no 843102 n bits 600 index `KEY_TSKTASK_MONTIME2` of table
@@ -554,7 +558,7 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
 
 我们首先来看看 InnoDB 类型的数据表，只要能够解决索引问题，就可以解决死锁问题。MySQL 的 InnoDB 引擎是行级锁，需要注意的是，这不是对记录进行锁定，而是对索引进行锁定。在 UPDATE、DELETE 操作时，MySQL 不仅锁定 WHERE 条件扫描过的所有索引记录，而且会锁定相邻的键值，即所谓的 next-key locking；
 
-如语句 UPDATE TSK_TASK SET UPDATE_TIME = NOW() WHERE ID > 10000 会锁定所有主键大于等于 1000 的所有记录，在该语句完成之前，你就不能对主键等于 10000 的记录进行操作；当非簇索引 (non-cluster index) 记录被锁定时，相关的簇索引 (cluster index) 记录也需要被锁定才能完成相应的操作。
+如语句 `UPDATE TSK_TASK SET UPDATE_TIME = NOW() WHERE ID > 10000` 会锁定所有主键大于等于 1000 的所有记录，在该语句完成之前，你就不能对主键等于 10000 的记录进行操作；当非簇索引 (non-cluster index) 记录被锁定时，相关的簇索引 (cluster index) 记录也需要被锁定才能完成相应的操作。
 
 再分析一下发生问题的两条 SQL 语句：
 

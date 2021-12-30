@@ -15,7 +15,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 30 Dec 2021 11:27:34 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Dec 2021 11:35:34 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Java 程序死锁问题原理及解决方案]]></title>
                     <description><![CDATA[<blockquote>
@@ -35,203 +35,204 @@
 <p>当一个顾客对资金的最大需求量不超过银行家现有的资金时就可接纳该顾客；
 顾客可以分期贷款, 但贷款的总数不能超过最大需求量；
 当银行家现有的资金不能满足顾客尚需的贷款数额时，对顾客的贷款可推迟支付，但总能使顾客在有限的时间里得到贷款；
-当顾客得到所需的全部资金后，一定能在有限的时间里归还所有的资金。
-清单 1. 银行家算法实现</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-c"><span class="pl-c">/*</span>一共有５个进程需要请求资源，有３类资源<span class="pl-c">*/</span></span> 
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">BankDemo</span> { 
- <span class="pl-c"><span class="pl-c">//</span> 每个进程所需要的最大资源数 </span>
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> MAX[][] <span class="pl-k">=</span> { { <span class="pl-c1">7</span>, <span class="pl-c1">5</span>, <span class="pl-c1">3</span> }, { <span class="pl-c1">3</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span> }, { <span class="pl-c1">9</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span> }, 
- { <span class="pl-c1">2</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span> }, { <span class="pl-c1">4</span>, <span class="pl-c1">3</span>, <span class="pl-c1">3</span> } }; 
- <span class="pl-c"><span class="pl-c">//</span> 系统拥有的初始资源数 </span>
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> AVAILABLE[] <span class="pl-k">=</span> { <span class="pl-c1">10</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span> }; 
- <span class="pl-c"><span class="pl-c">//</span> 系统已给每个进程分配的资源数 </span>
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> ALLOCATION[][] <span class="pl-k">=</span> { { <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> }, { <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> }, { <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> }, 
- { <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> }, { <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> } }; 
- <span class="pl-c"><span class="pl-c">//</span> 每个进程还需要的资源数 </span>
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> NEED[][] <span class="pl-k">=</span> { { <span class="pl-c1">7</span>, <span class="pl-c1">5</span>, <span class="pl-c1">3</span> }, { <span class="pl-c1">3</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span> }, { <span class="pl-c1">9</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span> }, 
- { <span class="pl-c1">2</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span> }, { <span class="pl-c1">4</span>, <span class="pl-c1">3</span>, <span class="pl-c1">3</span> } }; 
- <span class="pl-c"><span class="pl-c">//</span> 每次申请的资源数 </span>
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> Request[] <span class="pl-k">=</span> { <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> }; 
- <span class="pl-c"><span class="pl-c">//</span> 进程数与资源数 </span>
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> <span class="pl-c1">M</span> <span class="pl-k">=</span> <span class="pl-c1">5</span>, <span class="pl-smi">N</span> <span class="pl-k">=</span> <span class="pl-c1">3</span>; 
- <span class="pl-k">int</span> <span class="pl-c1">FALSE</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>; 
- <span class="pl-k">int</span> <span class="pl-c1">TRUE</span> <span class="pl-k">=</span> <span class="pl-c1">1</span>; 
- <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">showdata</span>() { 
- <span class="pl-k">int</span> i, j; 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>系统可用的资源数为:/n<span class="pl-pds">"</span></span>); 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>资源<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>); 
- } 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(); 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>各进程还需要的资源量:<span class="pl-pds">"</span></span>); 
- <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span> <span class="pl-k">+</span> i <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span>); 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>资源<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">NEED</span>[i][j] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>); 
- } 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n<span class="pl-pds">"</span></span>); 
- } 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>各进程已经得到的资源量: /n<span class="pl-pds">"</span></span>); 
- <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span>); 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(i); 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>资源<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">ALLOCATION</span>[i][j] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>); 
- } 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n<span class="pl-pds">"</span></span>); 
- } 
- } 
- <span class="pl-c"><span class="pl-c">//</span> 分配资源，并重新更新各种状态 </span>
- <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">changdata</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) { 
- <span class="pl-k">int</span> j; 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">-</span> <span class="pl-k">Request</span>[j]; 
- <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">+</span> <span class="pl-k">Request</span>[j]; 
- <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">-</span> <span class="pl-k">Request</span>[j]; 
- } 
- }; 
+当顾客得到所需的全部资金后，一定能在有限的时间里归还所有的资金。</p>
+<h3>
+<a id="user-content-清单-1-银行家算法实现" class="anchor" href="#%E6%B8%85%E5%8D%95-1-%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 1. 银行家算法实现</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-c"><span class="pl-c">/*</span>一共有５个进程需要请求资源，有３类资源<span class="pl-c">*/</span></span>
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">BankDemo</span> {
+    <span class="pl-c"><span class="pl-c">//</span> 每个进程所需要的最大资源数 </span>
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span>[][] <span class="pl-c1">MAX</span> <span class="pl-k">=</span> {{<span class="pl-c1">7</span>, <span class="pl-c1">5</span>, <span class="pl-c1">3</span>}, {<span class="pl-c1">3</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span>}, {<span class="pl-c1">9</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span>},
+            {<span class="pl-c1">2</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span>}, {<span class="pl-c1">4</span>, <span class="pl-c1">3</span>, <span class="pl-c1">3</span>}};
+    <span class="pl-c"><span class="pl-c">//</span> 系统拥有的初始资源数 </span>
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span>[] <span class="pl-c1">AVAILABLE</span> <span class="pl-k">=</span> {<span class="pl-c1">10</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span>};
+    <span class="pl-c"><span class="pl-c">//</span> 系统已给每个进程分配的资源数 </span>
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span>[][] <span class="pl-c1">ALLOCATION</span> <span class="pl-k">=</span> {{<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>}, {<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>}, {<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>},
+            {<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>}, {<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>}};
+    <span class="pl-c"><span class="pl-c">//</span> 每个进程还需要的资源数 </span>
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span>[][] <span class="pl-c1">NEED</span> <span class="pl-k">=</span> {{<span class="pl-c1">7</span>, <span class="pl-c1">5</span>, <span class="pl-c1">3</span>}, {<span class="pl-c1">3</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span>}, {<span class="pl-c1">9</span>, <span class="pl-c1">0</span>, <span class="pl-c1">2</span>},
+            {<span class="pl-c1">2</span>, <span class="pl-c1">2</span>, <span class="pl-c1">2</span>}, {<span class="pl-c1">4</span>, <span class="pl-c1">3</span>, <span class="pl-c1">3</span>}};
+    <span class="pl-c"><span class="pl-c">//</span> 每次申请的资源数 </span>
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span>[] <span class="pl-smi">Request</span> <span class="pl-k">=</span> {<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>};
+    <span class="pl-c"><span class="pl-c">//</span> 进程数与资源数 </span>
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">int</span> <span class="pl-c1">M</span> <span class="pl-k">=</span> <span class="pl-c1">5</span>, <span class="pl-smi">N</span> <span class="pl-k">=</span> <span class="pl-c1">3</span>;
+    <span class="pl-k">int</span> <span class="pl-c1">FALSE</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+    <span class="pl-k">int</span> <span class="pl-c1">TRUE</span> <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">showdata</span>() {
+        <span class="pl-k">int</span> i, j;
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>系统可用的资源数为:/n<span class="pl-pds">"</span></span>);
+        <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>资源<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>);
+        }
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println();
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>各进程还需要的资源量:<span class="pl-pds">"</span></span>);
+        <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>) {
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span> <span class="pl-k">+</span> i <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span>);
+            <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>资源<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">NEED</span>[i][j] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>);
+            }
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n<span class="pl-pds">"</span></span>);
+        }
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>各进程已经得到的资源量: /n<span class="pl-pds">"</span></span>);
+        <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>) {
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span>);
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(i);
+            <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>资源<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>:<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">ALLOCATION</span>[i][j] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>);
+            }
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n<span class="pl-pds">"</span></span>);
+        }
+    }
+
+    <span class="pl-c"><span class="pl-c">//</span> 分配资源，并重新更新各种状态 </span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">changdata</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) {
+        <span class="pl-k">int</span> j;
+        <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+            <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">-</span> <span class="pl-k">Request</span>[j];
+            <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">+</span> <span class="pl-k">Request</span>[j];
+            <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">-</span> <span class="pl-k">Request</span>[j];
+        }
+    }
+
  <span class="pl-c"><span class="pl-c">//</span> 回收资源，并重新更新各种状态 </span>
- <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">rstordata</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) { 
- <span class="pl-k">int</span> j; 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">+</span> <span class="pl-k">Request</span>[j]; 
- <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">-</span> <span class="pl-k">Request</span>[j]; 
- <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">+</span> <span class="pl-k">Request</span>[j]; 
- } 
- }; 
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">rstordata</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) {
+        <span class="pl-k">int</span> j;
+        <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+            <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">+</span> <span class="pl-k">Request</span>[j];
+            <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">ALLOCATION</span>[k][j] <span class="pl-k">-</span> <span class="pl-k">Request</span>[j];
+            <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">=</span> <span class="pl-c1">NEED</span>[k][j] <span class="pl-k">+</span> <span class="pl-k">Request</span>[j];
+        }
+    }
+
  <span class="pl-c"><span class="pl-c">//</span> 释放资源 </span>
- <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">free</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) { 
- <span class="pl-k">for</span> (<span class="pl-k">int</span> j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">+</span> <span class="pl-c1">ALLOCATION</span>[k][j]; 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>释放<span class="pl-pds">"</span></span> <span class="pl-k">+</span> k <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>号进程的<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>资源!/n<span class="pl-pds">"</span></span>); 
- } 
- } 
- <span class="pl-k">public</span> <span class="pl-k">int</span> <span class="pl-en">check0</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) { 
- <span class="pl-k">int</span> j, n <span class="pl-k">=</span> <span class="pl-c1">0</span>; 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-k">if</span> (<span class="pl-c1">NEED</span>[k][j] <span class="pl-k">==</span> <span class="pl-c1">0</span>) 
- n<span class="pl-k">++</span>; 
- } 
- <span class="pl-k">if</span> (n <span class="pl-k">==</span> <span class="pl-c1">3</span>) 
- <span class="pl-k">return</span> <span class="pl-c1">1</span>; 
- <span class="pl-k">else</span> 
- <span class="pl-k">return</span> <span class="pl-c1">0</span>; 
- } 
- 
- <span class="pl-c"><span class="pl-c">//</span> 检查安全性函数 </span>
- <span class="pl-c"><span class="pl-c">//</span>所以银行家算法其核心是：保证银行家系统的资源数至少不小于一个客户的所需要的资源数。在安全性检查函数 chkerr() 上由这个方法来实现</span>
- <span class="pl-c"><span class="pl-c">//</span>这个循环来进行核心判断，从而完成了银行家算法的安全性检查工作。</span>
- <span class="pl-k">public</span> <span class="pl-k">int</span> <span class="pl-en">chkerr</span>(<span class="pl-k">int</span> <span class="pl-v">s</span>) { 
- <span class="pl-k">int</span> <span class="pl-c1">WORK</span>; 
- <span class="pl-k">int</span> <span class="pl-c1">FINISH</span>[] <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">int</span>[<span class="pl-smi">M</span>], temp[] <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">int</span>[<span class="pl-smi">M</span>];<span class="pl-c"><span class="pl-c">//</span> 保存临时的安全进程序列 </span>
- <span class="pl-k">int</span> i, j, k <span class="pl-k">=</span> <span class="pl-c1">0</span>; 
- <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>) 
- <span class="pl-c1">FINISH</span>[i] <span class="pl-k">=</span> <span class="pl-c1">FALSE</span>; 
- <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) { 
- <span class="pl-c1">WORK</span> <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j]; <span class="pl-c"><span class="pl-c">//</span> 第 j 个资源可用数 </span>
- i <span class="pl-k">=</span> s; 
- <span class="pl-c"><span class="pl-c">//</span> 判断第 i 个进程是否满足条件 </span>
- <span class="pl-k">while</span> (i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>) { 
- <span class="pl-k">if</span> (<span class="pl-c1">FINISH</span>[i] <span class="pl-k">==</span> <span class="pl-c1">FALSE</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-c1">NEED</span>[i][j] <span class="pl-k">&lt;=</span> <span class="pl-c1">WORK</span>) { 
- <span class="pl-c1">WORK</span> <span class="pl-k">=</span> <span class="pl-c1">WORK</span> <span class="pl-k">+</span> <span class="pl-c1">ALLOCATION</span>[i][j]; 
- <span class="pl-c1">FINISH</span>[i] <span class="pl-k">=</span> <span class="pl-c1">TRUE</span>; 
- temp[k] <span class="pl-k">=</span> i; 
- k<span class="pl-k">++</span>; 
- i <span class="pl-k">=</span> <span class="pl-c1">0</span>; 
- } <span class="pl-k">else</span> { 
- i<span class="pl-k">++</span>; 
- } 
- } 
- <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>) 
- <span class="pl-k">if</span> (<span class="pl-c1">FINISH</span>[i] <span class="pl-k">==</span> <span class="pl-c1">FALSE</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n 系统不安全!!! 本次资源申请不成功!/n<span class="pl-pds">"</span></span>); 
- <span class="pl-k">return</span> <span class="pl-c1">1</span>; 
- } 
- } 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n 经安全性检查，系统安全，本次分配成功。/n<span class="pl-pds">"</span></span>); 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>本次安全序列：<span class="pl-pds">"</span></span>); 
- <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span> <span class="pl-k">-</span> <span class="pl-c1">1</span>; i<span class="pl-k">++</span>) { 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span> <span class="pl-k">+</span> temp[i] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>-&gt;<span class="pl-pds">"</span></span>); 
- } 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span> <span class="pl-k">+</span> temp[<span class="pl-smi">M</span> <span class="pl-k">-</span> <span class="pl-c1">1</span>]); 
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>/n<span class="pl-pds">"</span></span>); 
- <span class="pl-k">return</span> <span class="pl-c1">0</span>; 
- }
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">free</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) {
+        <span class="pl-k">for</span> (<span class="pl-k">int</span> j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+            <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j] <span class="pl-k">+</span> <span class="pl-c1">ALLOCATION</span>[k][j];
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>释放<span class="pl-pds">"</span></span> <span class="pl-k">+</span> k <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>号进程的<span class="pl-pds">"</span></span> <span class="pl-k">+</span> j <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>资源!/n<span class="pl-pds">"</span></span>);
+        }
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">int</span> <span class="pl-en">check0</span>(<span class="pl-k">int</span> <span class="pl-v">k</span>) {
+        <span class="pl-k">int</span> j, n <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+        <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+            <span class="pl-k">if</span> (<span class="pl-c1">NEED</span>[k][j] <span class="pl-k">==</span> <span class="pl-c1">0</span>)
+                n<span class="pl-k">++</span>;
+        }
+        <span class="pl-k">if</span> (n <span class="pl-k">==</span> <span class="pl-c1">3</span>)
+            <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+        <span class="pl-k">else</span>
+            <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+    }
+
+    <span class="pl-c"><span class="pl-c">//</span> 检查安全性函数 </span>
+    <span class="pl-c"><span class="pl-c">//</span>所以银行家算法其核心是：保证银行家系统的资源数至少不小于一个客户的所需要的资源数。在安全性检查函数 chkerr() 上由这个方法来实现</span>
+    <span class="pl-c"><span class="pl-c">//</span>这个循环来进行核心判断，从而完成了银行家算法的安全性检查工作。</span>
+    <span class="pl-k">public</span> <span class="pl-k">int</span> <span class="pl-en">chkerr</span>(<span class="pl-k">int</span> <span class="pl-v">s</span>) {
+        <span class="pl-k">int</span> <span class="pl-c1">WORK</span>;
+        <span class="pl-k">int</span>[] <span class="pl-c1">FINISH</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">int</span>[<span class="pl-smi">M</span>], temp <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">int</span>[<span class="pl-smi">M</span>];<span class="pl-c"><span class="pl-c">//</span> 保存临时的安全进程序列 </span>
+        <span class="pl-k">int</span> i, j, k <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+        <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>)
+            <span class="pl-c1">FINISH</span>[i] <span class="pl-k">=</span> <span class="pl-c1">FALSE</span>;
+        <span class="pl-k">for</span> (j <span class="pl-k">=</span> <span class="pl-c1">0</span>; j <span class="pl-k">&lt;</span> <span class="pl-smi">N</span>; j<span class="pl-k">++</span>) {
+            <span class="pl-c1">WORK</span> <span class="pl-k">=</span> <span class="pl-c1">AVAILABLE</span>[j]; <span class="pl-c"><span class="pl-c">//</span> 第 j 个资源可用数 </span>
+            i <span class="pl-k">=</span> s;
+            <span class="pl-c"><span class="pl-c">//</span> 判断第 i 个进程是否满足条件 </span>
+            <span class="pl-k">while</span> (i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>) {
+                <span class="pl-k">if</span> (<span class="pl-c1">FINISH</span>[i] <span class="pl-k">==</span> <span class="pl-c1">FALSE</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-c1">NEED</span>[i][j] <span class="pl-k">&lt;=</span> <span class="pl-c1">WORK</span>) {
+                    <span class="pl-c1">WORK</span> <span class="pl-k">=</span> <span class="pl-c1">WORK</span> <span class="pl-k">+</span> <span class="pl-c1">ALLOCATION</span>[i][j];
+                    <span class="pl-c1">FINISH</span>[i] <span class="pl-k">=</span> <span class="pl-c1">TRUE</span>;
+                    temp[k] <span class="pl-k">=</span> i;
+                    k<span class="pl-k">++</span>;
+                    i <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+                } <span class="pl-k">else</span> {
+                    i<span class="pl-k">++</span>;
+                }
+            }
+            <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span>; i<span class="pl-k">++</span>)
+                <span class="pl-k">if</span> (<span class="pl-c1">FINISH</span>[i] <span class="pl-k">==</span> <span class="pl-c1">FALSE</span>) {
+                    <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n 系统不安全!!! 本次资源申请不成功!/n<span class="pl-pds">"</span></span>);
+                    <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+                }
+        }
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>/n 经安全性检查，系统安全，本次分配成功。/n<span class="pl-pds">"</span></span>);
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>本次安全序列：<span class="pl-pds">"</span></span>);
+        <span class="pl-k">for</span> (i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">M</span> <span class="pl-k">-</span> <span class="pl-c1">1</span>; i<span class="pl-k">++</span>) {
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span> <span class="pl-k">+</span> temp[i] <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>-&gt;<span class="pl-pds">"</span></span>);
+        }
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s"><span class="pl-pds">"</span>进程<span class="pl-pds">"</span></span> <span class="pl-k">+</span> temp[<span class="pl-smi">M</span> <span class="pl-k">-</span> <span class="pl-c1">1</span>]);
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>/n<span class="pl-pds">"</span></span>);
+        <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+    }
 }</pre></div>
 <h2>
 <a id="user-content-死锁示例" class="anchor" href="#%E6%AD%BB%E9%94%81%E7%A4%BA%E4%BE%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>死锁示例</h2>
 <p>死锁问题是多线程特有的问题，它可以被认为是线程间切换消耗系统性能的一种极端情况。在死锁时，线程间相互等待资源，而又不释放自身的资源，导致无穷无尽的等待，其结果是系统任务永远无法执行完成。死锁问题是在多线程开发中应该坚决避免和杜绝的问题。</p>
 <p>一般来说，要出现死锁问题需要满足以下条件：</p>
 <ol>
-<li>
-<p>互斥条件：一个资源每次只能被一个线程使用。</p>
-</li>
-<li>
-<p>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</p>
-</li>
-<li>
-<p>不剥夺条件：进程已获得的资源，在未使用完之前，不能强行剥夺。</p>
-</li>
-<li>
-<p>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</p>
-</li>
+<li>互斥条件：一个资源每次只能被一个线程使用。</li>
+<li>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>不剥夺条件：进程已获得的资源，在未使用完之前，不能强行剥夺。</li>
+<li>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</li>
 </ol>
 <p>只要破坏死锁 4 个必要条件之一中的任何一个，死锁问题就能被解决。</p>
 <p>我们先来看一个示例，前面说过，死锁是两个甚至多个线程被永久阻塞时的一种运行局面，这种局面的生成伴随着至少两个线程和两个或者多个资源。代码清单 2 所示的示例中，我们编写了一个简单的程序，它将会引起死锁发生，然后我们就会明白如何分析它。</p>
-<p>清单 2. 死锁示例</p>
+<h3>
+<a id="user-content-清单-2-死锁示例" class="anchor" href="#%E6%B8%85%E5%8D%95-2-%E6%AD%BB%E9%94%81%E7%A4%BA%E4%BE%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 2. 死锁示例</h3>
 <div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">ThreadDeadlock</span> {
 
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">InterruptedException</span> {
- <span class="pl-smi">Object</span> obj1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>();
- <span class="pl-smi">Object</span> obj2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>();
- <span class="pl-smi">Object</span> obj3 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>();
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">InterruptedException</span> {
+        <span class="pl-smi">Object</span> obj1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>();
+        <span class="pl-smi">Object</span> obj2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>();
+        <span class="pl-smi">Object</span> obj3 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>();
 
- <span class="pl-smi">Thread</span> t1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(obj1, obj2), <span class="pl-s"><span class="pl-pds">"</span>t1<span class="pl-pds">"</span></span>);
- <span class="pl-smi">Thread</span> t2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(obj2, obj3), <span class="pl-s"><span class="pl-pds">"</span>t2<span class="pl-pds">"</span></span>);
- <span class="pl-smi">Thread</span> t3 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(obj3, obj1), <span class="pl-s"><span class="pl-pds">"</span>t3<span class="pl-pds">"</span></span>);
+        <span class="pl-smi">Thread</span> t1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(obj1, obj2), <span class="pl-s"><span class="pl-pds">"</span>t1<span class="pl-pds">"</span></span>);
+        <span class="pl-smi">Thread</span> t2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(obj2, obj3), <span class="pl-s"><span class="pl-pds">"</span>t2<span class="pl-pds">"</span></span>);
+        <span class="pl-smi">Thread</span> t3 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(obj3, obj1), <span class="pl-s"><span class="pl-pds">"</span>t3<span class="pl-pds">"</span></span>);
 
- t1<span class="pl-k">.</span>start();
- <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">5000</span>);
- t2<span class="pl-k">.</span>start();
- <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">5000</span>);
- t3<span class="pl-k">.</span>start();
+        t1<span class="pl-k">.</span>start();
+        <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">5000</span>);
+        t2<span class="pl-k">.</span>start();
+        <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">5000</span>);
+        t3<span class="pl-k">.</span>start();
 
- }
+    }
 
 }
 
-<span class="pl-k">class</span> <span class="pl-en">SyncThread</span> <span class="pl-k">implements</span> <span class="pl-e">Runnable</span>{
- <span class="pl-k">private</span> <span class="pl-smi">Object</span> obj1;
- <span class="pl-k">private</span> <span class="pl-smi">Object</span> obj2;
+<span class="pl-k">class</span> <span class="pl-en">SyncThread</span> <span class="pl-k">implements</span> <span class="pl-e">Runnable</span> {
+    <span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-smi">Object</span> obj1;
+    <span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-smi">Object</span> obj2;
 
- <span class="pl-k">public</span> <span class="pl-en">SyncThread</span>(<span class="pl-smi">Object</span> <span class="pl-v">o1</span>, <span class="pl-smi">Object</span> <span class="pl-v">o2</span>){
- <span class="pl-c1">this</span><span class="pl-k">.</span>obj1<span class="pl-k">=</span>o1;
- <span class="pl-c1">this</span><span class="pl-k">.</span>obj2<span class="pl-k">=</span>o2;
- }
- <span class="pl-k">@Override</span>
- <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>() {
- <span class="pl-smi">String</span> name <span class="pl-k">=</span> <span class="pl-smi">Thread</span><span class="pl-k">.</span>currentThread()<span class="pl-k">.</span>getName();
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquiring lock on <span class="pl-pds">"</span></span><span class="pl-k">+</span>obj1);
- <span class="pl-k">synchronized</span> (obj1) {
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquired lock on <span class="pl-pds">"</span></span><span class="pl-k">+</span>obj1);
- work();
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquiring lock on <span class="pl-pds">"</span></span><span class="pl-k">+</span>obj2);
- <span class="pl-k">synchronized</span> (obj2) {
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquired lock on <span class="pl-pds">"</span></span><span class="pl-k">+</span>obj2);
- work();
- }
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> released lock on <span class="pl-pds">"</span></span><span class="pl-k">+</span>obj2);
- }
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> released lock on <span class="pl-pds">"</span></span><span class="pl-k">+</span>obj1);
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> finished execution.<span class="pl-pds">"</span></span>);
- }
- <span class="pl-k">private</span> <span class="pl-k">void</span> <span class="pl-en">work</span>() {
- <span class="pl-k">try</span> {
- <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">30000</span>);
- } <span class="pl-k">catch</span> (<span class="pl-smi">InterruptedException</span> e) {
- e<span class="pl-k">.</span>printStackTrace();
- }
- }
+    <span class="pl-k">public</span> <span class="pl-en">SyncThread</span>(<span class="pl-smi">Object</span> <span class="pl-v">o1</span>, <span class="pl-smi">Object</span> <span class="pl-v">o2</span>) {
+        <span class="pl-c1">this</span><span class="pl-k">.</span>obj1 <span class="pl-k">=</span> o1;
+        <span class="pl-c1">this</span><span class="pl-k">.</span>obj2 <span class="pl-k">=</span> o2;
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>() {
+        <span class="pl-smi">String</span> name <span class="pl-k">=</span> <span class="pl-smi">Thread</span><span class="pl-k">.</span>currentThread()<span class="pl-k">.</span>getName();
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquiring lock on <span class="pl-pds">"</span></span> <span class="pl-k">+</span> obj1);
+        <span class="pl-k">synchronized</span> (obj1) {
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquired lock on <span class="pl-pds">"</span></span> <span class="pl-k">+</span> obj1);
+            work();
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquiring lock on <span class="pl-pds">"</span></span> <span class="pl-k">+</span> obj2);
+            <span class="pl-k">synchronized</span> (obj2) {
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> acquired lock on <span class="pl-pds">"</span></span> <span class="pl-k">+</span> obj2);
+                work();
+            }
+            <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> released lock on <span class="pl-pds">"</span></span> <span class="pl-k">+</span> obj2);
+        }
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> released lock on <span class="pl-pds">"</span></span> <span class="pl-k">+</span> obj1);
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(name <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> finished execution.<span class="pl-pds">"</span></span>);
+    }
+
+    <span class="pl-k">private</span> <span class="pl-k">void</span> <span class="pl-en">work</span>() {
+        <span class="pl-k">try</span> {
+            <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">30000</span>);
+        } <span class="pl-k">catch</span> (<span class="pl-smi">InterruptedException</span> e) {
+            e<span class="pl-k">.</span>printStackTrace();
+        }
+    }
 }</pre></div>
 <p>在上面的程序中同步线程正完成 Runnable 的接口，它工作的是两个对象，这两个对象向对方寻求死锁而且都在使用同步阻塞。在主函数中，我使用了三个为同步线程运行的线程，而且在其中每个线程中都有一个可共享的资源。这些线程以向第一个对象获取封锁这种方式运行。但是当它试着向第二个对象获取封锁时，它就会进入等待状态，因为它已经被另一个线程封锁住了。这样，在线程引起死锁的过程中，就形成了一个依赖于资源的循环。当我执行上面的程序时，就产生了输出，但是程序却因为死锁无法停止。输出如清单 3 所示。</p>
 <p>清单 3. 清单 2 运行输出</p>
@@ -248,81 +249,83 @@ t2 acquiring lock on java.lang.Object@1aa9f99
 <h1>
 <a id="user-content-死锁情况诊断" class="anchor" href="#%E6%AD%BB%E9%94%81%E6%83%85%E5%86%B5%E8%AF%8A%E6%96%AD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>死锁情况诊断</h1>
 <p>JVM 提供了一些工具可以来帮助诊断死锁的发生，如下面程序清单 4 所示，我们实现了一个死锁，然后尝试通过 jstack 命令追踪、分析死锁发生。</p>
-<p>清单 4. 死锁代码</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">import</span> <span class="pl-smi">java.util.concurrent.locks.ReentrantLock</span>;
+<h3>
+<a id="user-content-清单-4-死锁代码" class="anchor" href="#%E6%B8%85%E5%8D%95-4-%E6%AD%BB%E9%94%81%E4%BB%A3%E7%A0%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 4. 死锁代码</h3>
+<div class="highlight highlight-source-java"><pre>i<span class="pl-k">import</span> <span class="pl-smi">java.util.concurrent.locks.ReentrantLock</span>;
 
 <span class="pl-c"><span class="pl-c">//</span>下面演示一个简单的死锁，两个线程分别占用 south 锁和 north 锁，并同时请求对方占用的锁，导致死锁</span>
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">DeadLock</span> <span class="pl-k">extends</span> <span class="pl-e">Thread</span>{
- <span class="pl-k">protected</span> <span class="pl-smi">Object</span> myDirect;
- <span class="pl-k">static</span> <span class="pl-smi">ReentrantLock</span> south <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ReentrantLock</span>();
- <span class="pl-k">static</span> <span class="pl-smi">ReentrantLock</span> north <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ReentrantLock</span>();
- 
- <span class="pl-k">public</span> <span class="pl-en">DeadLock</span>(<span class="pl-smi">Object</span> <span class="pl-v">obj</span>){
- <span class="pl-c1">this</span><span class="pl-k">.</span>myDirect <span class="pl-k">=</span> obj;
- <span class="pl-k">if</span>(myDirect<span class="pl-k">==</span>south){
- <span class="pl-c1">this</span><span class="pl-k">.</span>setName(<span class="pl-s"><span class="pl-pds">"</span>south<span class="pl-pds">"</span></span>);
- }<span class="pl-k">else</span>{
- <span class="pl-c1">this</span><span class="pl-k">.</span>setName(<span class="pl-s"><span class="pl-pds">"</span>north<span class="pl-pds">"</span></span>);
- }
- }
- 
- <span class="pl-k">@Override</span>
- <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>(){
- <span class="pl-k">if</span>(myDirect<span class="pl-k">==</span>south){
- <span class="pl-k">try</span>{
- north<span class="pl-k">.</span>lockInterruptibly();<span class="pl-c"><span class="pl-c">//</span>占用 north</span>
- <span class="pl-k">try</span>{
- <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">500</span>);
- }<span class="pl-k">catch</span>(<span class="pl-smi">Exception</span> ex){
- ex<span class="pl-k">.</span>printStackTrace();
- }
- south<span class="pl-k">.</span>lockInterruptibly();
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to south has passed<span class="pl-pds">"</span></span>);
- }<span class="pl-k">catch</span>(<span class="pl-smi">InterruptedException</span> ex){
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to south is killed<span class="pl-pds">"</span></span>);
- ex<span class="pl-k">.</span>printStackTrace();
- }<span class="pl-k">finally</span>{
- <span class="pl-k">if</span>(north<span class="pl-k">.</span>isHeldByCurrentThread()){
- north<span class="pl-k">.</span>unlock();
- }
- <span class="pl-k">if</span>(south<span class="pl-k">.</span>isHeldByCurrentThread()){
- south<span class="pl-k">.</span>unlock();
- }
- }
- }
- <span class="pl-k">if</span>(myDirect<span class="pl-k">==</span>north){
- <span class="pl-k">try</span>{
- south<span class="pl-k">.</span>lockInterruptibly();<span class="pl-c"><span class="pl-c">//</span>占用 south</span>
- <span class="pl-k">try</span>{
- <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">500</span>);
- }<span class="pl-k">catch</span>(<span class="pl-smi">Exception</span> ex){
- ex<span class="pl-k">.</span>printStackTrace();
- }
- north<span class="pl-k">.</span>lockInterruptibly();
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to north has passed<span class="pl-pds">"</span></span>);
- }<span class="pl-k">catch</span>(<span class="pl-smi">InterruptedException</span> ex){
- <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to north is killed<span class="pl-pds">"</span></span>);
- ex<span class="pl-k">.</span>printStackTrace();
- }<span class="pl-k">finally</span>{
- <span class="pl-k">if</span>(north<span class="pl-k">.</span>isHeldByCurrentThread()){
- north<span class="pl-k">.</span>unlock();
- }
- <span class="pl-k">if</span>(south<span class="pl-k">.</span>isHeldByCurrentThread()){
- south<span class="pl-k">.</span>unlock();
- }
- }
- }
- 
- }
- <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">InterruptedException</span>{
- <span class="pl-smi">DeadLock</span> car2south <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DeadLock</span>(south);
- <span class="pl-smi">DeadLock</span> car2north <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DeadLock</span>(north);
- car2south<span class="pl-k">.</span>start();
- car2north<span class="pl-k">.</span>start();
- }
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">DeadLock</span> <span class="pl-k">extends</span> <span class="pl-e">Thread</span> {
+    <span class="pl-k">static</span> <span class="pl-smi">ReentrantLock</span> south <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ReentrantLock</span>();
+    <span class="pl-k">static</span> <span class="pl-smi">ReentrantLock</span> north <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ReentrantLock</span>();
+    <span class="pl-k">protected</span> <span class="pl-smi">Object</span> myDirect;
+
+    <span class="pl-k">public</span> <span class="pl-en">DeadLock</span>(<span class="pl-smi">Object</span> <span class="pl-v">obj</span>) {
+        <span class="pl-c1">this</span><span class="pl-k">.</span>myDirect <span class="pl-k">=</span> obj;
+        <span class="pl-k">if</span> (myDirect <span class="pl-k">==</span> south) {
+            <span class="pl-c1">this</span><span class="pl-k">.</span>setName(<span class="pl-s"><span class="pl-pds">"</span>south<span class="pl-pds">"</span></span>);
+        } <span class="pl-k">else</span> {
+            <span class="pl-c1">this</span><span class="pl-k">.</span>setName(<span class="pl-s"><span class="pl-pds">"</span>north<span class="pl-pds">"</span></span>);
+        }
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">InterruptedException</span> {
+        <span class="pl-smi">DeadLock</span> car2south <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DeadLock</span>(south);
+        <span class="pl-smi">DeadLock</span> car2north <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DeadLock</span>(north);
+        car2south<span class="pl-k">.</span>start();
+        car2north<span class="pl-k">.</span>start();
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>() {
+        <span class="pl-k">if</span> (myDirect <span class="pl-k">==</span> south) {
+            <span class="pl-k">try</span> {
+                north<span class="pl-k">.</span>lockInterruptibly();<span class="pl-c"><span class="pl-c">//</span>占用 north</span>
+                <span class="pl-k">try</span> {
+                    <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">500</span>);
+                } <span class="pl-k">catch</span> (<span class="pl-smi">Exception</span> ex) {
+                    ex<span class="pl-k">.</span>printStackTrace();
+                }
+                south<span class="pl-k">.</span>lockInterruptibly();
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to south has passed<span class="pl-pds">"</span></span>);
+            } <span class="pl-k">catch</span> (<span class="pl-smi">InterruptedException</span> ex) {
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to south is killed<span class="pl-pds">"</span></span>);
+                ex<span class="pl-k">.</span>printStackTrace();
+            } <span class="pl-k">finally</span> {
+                <span class="pl-k">if</span> (north<span class="pl-k">.</span>isHeldByCurrentThread()) {
+                    north<span class="pl-k">.</span>unlock();
+                }
+                <span class="pl-k">if</span> (south<span class="pl-k">.</span>isHeldByCurrentThread()) {
+                    south<span class="pl-k">.</span>unlock();
+                }
+            }
+        }
+        <span class="pl-k">if</span> (myDirect <span class="pl-k">==</span> north) {
+            <span class="pl-k">try</span> {
+                south<span class="pl-k">.</span>lockInterruptibly();<span class="pl-c"><span class="pl-c">//</span>占用 south</span>
+                <span class="pl-k">try</span> {
+                    <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">500</span>);
+                } <span class="pl-k">catch</span> (<span class="pl-smi">Exception</span> ex) {
+                    ex<span class="pl-k">.</span>printStackTrace();
+                }
+                north<span class="pl-k">.</span>lockInterruptibly();
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to north has passed<span class="pl-pds">"</span></span>);
+            } <span class="pl-k">catch</span> (<span class="pl-smi">InterruptedException</span> ex) {
+                <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>car to north is killed<span class="pl-pds">"</span></span>);
+                ex<span class="pl-k">.</span>printStackTrace();
+            } <span class="pl-k">finally</span> {
+                <span class="pl-k">if</span> (north<span class="pl-k">.</span>isHeldByCurrentThread()) {
+                    north<span class="pl-k">.</span>unlock();
+                }
+                <span class="pl-k">if</span> (south<span class="pl-k">.</span>isHeldByCurrentThread()) {
+                    south<span class="pl-k">.</span>unlock();
+                }
+            }
+        }
+    }
 }</pre></div>
 <p>jstack 可用于导出 Java 应用程序的线程堆栈，-l 选项用于打印锁的附加信息。我们运行 jstack 命令，输出入清单 5 和 6 所示，其中清单 5 里面可以看到线程处于运行状态，代码中调用了拥有锁投票、定时锁等候和可中断锁等候等特性的 ReentrantLock 锁机制。清单 6 直接打印出出现死锁情况，报告 north 和 sourth 两个线程互相等待资源，出现了死锁。</p>
-<p>清单 5. jstack 运行输出 1</p>
+<h3>
+<a id="user-content-清单-5-jstack-运行输出-1" class="anchor" href="#%E6%B8%85%E5%8D%95-5-jstack-%E8%BF%90%E8%A1%8C%E8%BE%93%E5%87%BA-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 5. jstack 运行输出 1</h3>
 <pre><code>[root@facenode4 ~]# jstack -l 31274
 2015-01-29 12:40:27
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode):
@@ -474,7 +477,8 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode):
 
 JNI global references: 886
 </code></pre>
-<p>清单 6. jstack 运行输出片段 2</p>
+<h3>
+<a id="user-content-清单-6-jstack-运行输出片段-2" class="anchor" href="#%E6%B8%85%E5%8D%95-6-jstack-%E8%BF%90%E8%A1%8C%E8%BE%93%E5%87%BA%E7%89%87%E6%AE%B5-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 6. jstack 运行输出片段 2</h3>
 <pre><code>Found one Java-level deadlock:
 =============================
 "north":
@@ -537,9 +541,11 @@ Found 1 deadlock.
 </li>
 </ol>
 <p>其实即便是商业产品，依然会有很多死锁情况的发生，例如 MySQL 数据库，它也经常容易出现死锁案例。</p>
-<p>MySQL 死锁情况解决方法
-假设我们用 Show innodb status 检查引擎状态时发现了死锁情况，如清单 7 所示。</p>
-<p>清单 7. MySQL 死锁</p>
+<h2>
+<a id="user-content-mysql-死锁情况解决方法" class="anchor" href="#mysql-%E6%AD%BB%E9%94%81%E6%83%85%E5%86%B5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MySQL 死锁情况解决方法</h2>
+<p>假设我们用 Show innodb status 检查引擎状态时发现了死锁情况，如清单 7 所示。</p>
+<h3>
+<a id="user-content-清单-7-mysql-死锁" class="anchor" href="#%E6%B8%85%E5%8D%95-7-mysql-%E6%AD%BB%E9%94%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 7. MySQL 死锁</h3>
 <pre><code>WAITING FOR THIS LOCK TO BE GRANTED:
 RECORD LOCKS space id 0 page no 843102 n bits 600 index `KEY_TSKTASK_MONTIME2` of table
         `dcnet_db/TSK_TASK` trx id 0 677833454 lock_mode X locks rec but not gap waiting
@@ -551,17 +557,18 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
 </code></pre>
 <p>我们假设涉事的数据表上面有一个索引，这次的死锁就是由于两条记录同时访问到了相同的索引造成的。</p>
 <p>我们首先来看看 InnoDB 类型的数据表，只要能够解决索引问题，就可以解决死锁问题。MySQL 的 InnoDB 引擎是行级锁，需要注意的是，这不是对记录进行锁定，而是对索引进行锁定。在 UPDATE、DELETE 操作时，MySQL 不仅锁定 WHERE 条件扫描过的所有索引记录，而且会锁定相邻的键值，即所谓的 next-key locking；</p>
-<p>如语句 UPDATE TSK_TASK SET UPDATE_TIME = NOW() WHERE ID &gt; 10000 会锁定所有主键大于等于 1000 的所有记录，在该语句完成之前，你就不能对主键等于 10000 的记录进行操作；当非簇索引 (non-cluster index) 记录被锁定时，相关的簇索引 (cluster index) 记录也需要被锁定才能完成相应的操作。</p>
+<p>如语句 <code>UPDATE TSK_TASK SET UPDATE_TIME = NOW() WHERE ID &gt; 10000</code> 会锁定所有主键大于等于 1000 的所有记录，在该语句完成之前，你就不能对主键等于 10000 的记录进行操作；当非簇索引 (non-cluster index) 记录被锁定时，相关的簇索引 (cluster index) 记录也需要被锁定才能完成相应的操作。</p>
 <p>再分析一下发生问题的两条 SQL 语句：</p>
 <p>当“<code>update TSK_TASK set STATUS_ID=1064,UPDATE_TIME=now () where STATUS_ID=1061 and MON_TIME&lt;date_sub(now(), INTERVAL 30 minute)</code>”执行时，MySQL 会使用<code> KEY_TSKTASK_MONTIME2</code> 索引，因此首先锁定相关的索引记录，因为 KEY_TSKTASK_MONTIME2 是非簇索引，为执行该语句，MySQL 还会锁定簇索引（主键索引）。</p>
 <p>假设“<code>update TSK_TASK set STATUS_ID=1067,UPDATE_TIME=now () where ID in (9921180)</code>”几乎同时执行时，本语句首先锁定簇索引 (主键)，由于需要更新 STATUS_ID 的值，所以还需要锁定 KEY_TSKTASK_MONTIME2 的某些索引记录。</p>
 <p>这样第一条语句锁定了 KEY_TSKTASK_MONTIME2 的记录，等待主键索引，而第二条语句则锁定了主键索引记录，而等待 KEY_TSKTASK_MONTIME2 的记录，这样死锁就产生了。</p>
 <p>我们通过拆分第一条语句解决了死锁问题：即先查出符合条件的 <code>ID：select ID from TSK_TASK where STATUS_ID=1061 and MON_TIME &lt; date_sub(now(), INTERVAL 30 minute)；</code>然后再更新状态：<code>update TSK_TASK set STATUS_ID=1064 where ID in (….)</code>。</p>
 ]]></description>
-                    <pubDate>Thu, 30 Dec 2021 11:27:19 GMT</pubDate>
+                    <pubDate>Thu, 30 Dec 2021 11:35:22 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/6</guid>
                 <link>https://github.com/bxb100/blog/issues/6</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>archive</category>
             </item>
             <item>
                 <title><![CDATA[雄狮少年杂感]]></title>
