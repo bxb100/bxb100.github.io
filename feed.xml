@@ -15,7 +15,18 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 30 Dec 2021 11:36:47 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Dec 2021 10:41:27 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[github action 相关信息]]></title>
+                    <description><![CDATA[<ul>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log</a></li>
+</ul>
+]]></description>
+                    <pubDate>Fri, 31 Dec 2021 10:41:11 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
+                <link>https://github.com/bxb100/blog/issues/7</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[Java 程序死锁问题原理及解决方案]]></title>
                     <description><![CDATA[<blockquote>
@@ -568,11 +579,11 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
 <p>这样第一条语句锁定了 KEY_TSKTASK_MONTIME2 的记录，等待主键索引，而第二条语句则锁定了主键索引记录，而等待 KEY_TSKTASK_MONTIME2 的记录，这样死锁就产生了。</p>
 <p>我们通过拆分第一条语句解决了死锁问题：即先查出符合条件的 <code>ID：select ID from TSK_TASK where STATUS_ID=1061 and MON_TIME &lt; date_sub(now(), INTERVAL 30 minute)；</code>然后再更新状态：<code>update TSK_TASK set STATUS_ID=1064 where ID in (….)</code>。</p>
 ]]></description>
-                    <pubDate>Thu, 30 Dec 2021 11:36:33 GMT</pubDate>
+                    <pubDate>Thu, 30 Dec 2021 11:37:25 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/6</guid>
                 <link>https://github.com/bxb100/blog/issues/6</link>
                     <author><![CDATA[bxb100]]></author>
-                        <category>archive</category>
+                        <category>Archive</category>
             </item>
             <item>
                 <title><![CDATA[雄狮少年杂感]]></title>

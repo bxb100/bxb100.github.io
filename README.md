@@ -6,6 +6,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Dan Abramov | https://overreacted.io/ | React |
 
 ## Recent
+- [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
 - [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/blog/issues/6)---2021-12-30
 - [雄狮少年杂感](https://github.com/bxb100/blog/issues/5)---2021-12-27
 - [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
@@ -13,7 +14,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Links](https://github.com/bxb100/blog/issues/2)---2021-12-11
 - [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
-## archive
+## Archive
 - [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/blog/issues/6)---2021-12-30
 
 
