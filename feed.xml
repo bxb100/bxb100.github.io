@@ -15,14 +15,15 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 31 Dec 2021 10:43:43 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Dec 2021 11:24:29 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
 <li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
+<li><a href="https://github.community/t/set-output-truncates-multiline-strings/16852" rel="nofollow">输入参数多行</a></li>
 </ul>
 ]]></description>
-                    <pubDate>Fri, 31 Dec 2021 10:43:28 GMT</pubDate>
+                    <pubDate>Fri, 31 Dec 2021 11:24:17 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>
