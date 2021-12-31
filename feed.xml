@@ -15,7 +15,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 31 Dec 2021 11:24:29 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Dec 2021 11:24:47 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -23,10 +23,11 @@
 <li><a href="https://github.community/t/set-output-truncates-multiline-strings/16852" rel="nofollow">输入参数多行</a></li>
 </ul>
 ]]></description>
-                    <pubDate>Fri, 31 Dec 2021 11:24:17 GMT</pubDate>
+                    <pubDate>Fri, 31 Dec 2021 11:24:35 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>API</category>
             </item>
             <item>
                 <title><![CDATA[Java 程序死锁问题原理及解决方案]]></title>
