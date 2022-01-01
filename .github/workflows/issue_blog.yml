@@ -20,3 +20,4 @@ jobs:
           md_header: |
               ## GitLog 
               My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/blog/feed.xml)
+          blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
