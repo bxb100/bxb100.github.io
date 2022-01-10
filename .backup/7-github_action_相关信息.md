@@ -24,7 +24,7 @@ echo "::error title=err::$ERR_MSG"
 
 * Anyway to check the error message and retry?
 	1. 社区里面用 `||` 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略[^1]
-	2. 还有种思路就是利用 `2> file` 输出错误信息, 判断[^3], 然后利用 workflow 的 API 来重新调用, 调用代码如下[^2]
+	2. 还有种思路就是利用 `2> file` 输出错误信息, 判断[^3], 然后利用 workflow 的 API 来重新调用[^2], 调用代码如下
 		* 注意 `failure()` 标识 [此 job 中存在失败](https://docs.github.com/en/actions/learn-github-actions/expressions#failure)
 		* `${{ secrets.GH_PAT }}` 注意给 workflow 的权限
 		* `workflow_id` 目前好像只能通过 list workflows 的 API 来获取

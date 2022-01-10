@@ -18,7 +18,21 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 10 Jan 2022 05:46:15 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 09:50:43 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[github action 相关信息]]></title>
+                    <description><![CDATA[<ul>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
+<li><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
+<li><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555105">输入输出多行</a></li>
+</ul>
+]]></description>
+                    <pubDate>Mon, 10 Jan 2022 09:50:26 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
+                <link>https://github.com/bxb100/blog/issues/7</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>API</category>
+            </item>
             <item>
                 <title><![CDATA[安迪·威尔-挽救计划]]></title>
                     <description><![CDATA[<p>挽救计划是我近来看的最能人看下去的科幻小说, 非常刺激, 引人入胜.</p>
@@ -44,20 +58,6 @@
                 <link>https://github.com/bxb100/blog/issues/4</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>读后感</category>
-            </item>
-            <item>
-                <title><![CDATA[github action 相关信息]]></title>
-                    <description><![CDATA[<ul>
-<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
-<li><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
-<li><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555105">输入输出多行</a></li>
-</ul>
-]]></description>
-                    <pubDate>Mon, 10 Jan 2022 05:38:08 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
-                <link>https://github.com/bxb100/blog/issues/7</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>API</category>
             </item>
             <item>
                 <title><![CDATA[太多人活得不像自己]]></title>
