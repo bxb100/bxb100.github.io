@@ -27,23 +27,24 @@ echo "::error title=err::$ERR_MSG"
 	2. 还有种思路就是利用 `2> file` 输出错误信息, 判断[^3], 然后利用 workflow 的 API 来重新调用, 调用代码如下[^2]
 		* 注意 `failure()` 标识 [此 job 中存在失败](https://docs.github.com/en/actions/learn-github-actions/expressions#failure)
 		* `${{ secrets.GH_PAT }}` 注意给 workflow 的权限
+		* `workflow_id` 目前好像只能通过 list workflows 的 API 来获取
 		* **可能导致无限调用**
 ```yaml
-      - name: Failed
-        if: ${{ failure() }}
-        run: |
-          if grep -q 'errorMessage' err.log;
-          then curl --location --request POST 'https://api.github.com/repos/xxx/xxx/actions/workflows/xxxx/dispatches' \
-          --header 'Accept: application/vnd.github.v3+json' \
-          --header 'Authorization: token ${{ secrets.GH_PAT }}' \
-          --header 'Content-Type: application/json' \
-          --data-raw '{
-              "ref": "main",
-              "inputs": {
-                  "xxx": "${{github.event.inputs.xxx}}"
-              }
-          }'
-          fi
+- name: Failed
+if: ${{ failure() }}
+run: |
+  if grep -q 'errorMessage' err.log;
+  then curl --location --request POST 'https://api.github.com/repos/xxx/xxx/actions/workflows/xxxx/dispatches' \
+  --header 'Accept: application/vnd.github.v3+json' \
+  --header 'Authorization: token ${{ secrets.GH_PAT }}' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "ref": "main",
+      "inputs": {
+          "xxx": "${{github.event.inputs.xxx}}"
+      }
+  }'
+  fi
 ```
 
 
