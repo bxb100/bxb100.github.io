@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 10 Jan 2022 05:21:58 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 05:24:58 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[太多人活得不像自己]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Mon, 10 Jan 2022 05:24:45 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
+                <link>https://github.com/bxb100/blog/issues/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -844,16 +854,6 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
                 <link>https://github.com/bxb100/blog/issues/6</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Archive</category>
-            </item>
-            <item>
-                <title><![CDATA[太多人活得不像自己]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Tue, 28 Dec 2021 03:40:55 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
-                <link>https://github.com/bxb100/blog/issues/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[雄狮少年杂感]]></title>
