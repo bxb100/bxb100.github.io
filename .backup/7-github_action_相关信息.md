@@ -28,7 +28,7 @@ echo "::error title=err::$ERR_MSG"
 		* 注意 `failure()` 标识 [此 job 中存在失败](https://docs.github.com/en/actions/learn-github-actions/expressions#failure)
 		* `${{ secrets.GH_PAT }}` 注意给 workflow 的权限
 		* `workflow_id` 目前好像只能通过 list workflows 的 API 来获取
-		* **可能导致无限调用**
+		* **可能导致无限调用**, 但是可以将 retry 次数当做 input 传入, 然后判断大于多少次直接 `exit 1`
 ```yaml
 - name: Failed
 if: ${{ failure() }}
