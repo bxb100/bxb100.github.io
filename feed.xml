@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Sat, 08 Jan 2022 12:51:19 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 04:17:01 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -31,7 +31,7 @@
 <li>
 <p>Anyway to check the error message and retry?</p>
 <ol>
-<li>社区里面用 <code>||</code> 来 retry 命令, 但是我这个 shell 着实反锁又不想写个 sh 文件, 忽略<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
+<li>社区里面用 <code>||</code> 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
 </li>
 <li>还有种思路就是利用 <code>2&gt; file</code> 输出错误信息, 判断<sup><a href="#fn-3" id="user-content-fnref-3">2</a></sup>, 然后利用 workflow 的 API 来重新调用, 调用代码如下<sup><a href="#fn-2" id="user-content-fnref-2">3</a></sup>
 <ul>
@@ -73,7 +73,7 @@
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Sat, 08 Jan 2022 12:51:06 GMT</pubDate>
+                    <pubDate>Mon, 10 Jan 2022 04:16:42 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>
