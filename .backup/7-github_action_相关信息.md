@@ -2,16 +2,7 @@
 
 * [生成 release log automatically-generated-release-notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)
 
-* [输入参数多行](https://github.community/t/set-output-truncates-multiline-strings/16852)
-	* [echo multiline strings in github action](https://trstringer.com/github-actions-multiline-strings/)
-	* 同样的问题还出现在 setting error message 中(这里只讨论直接在 yaml 文件中输出的情况), 输出 `\n` 的文件只会输出第一行, 用如下方式解决: 
-```shell
-		  ERR_MSG=$(cat err.log)
-          ERR_MSG="${ERR_MSG//'%'/'%25'}"
-          ERR_MSG="${ERR_MSG//$'\n'/'%0A'}"
-          ERR_MSG="${ERR_MSG//$'\r'/'%0D'}"
-          echo "::error title=err::$ERR_MSG"
-```
+* [输入输出多行](https://github.com/bxb100/blog/issues/7#issuecomment-1008555105)
 
 * Anyway to check the error message and retry?
 	1. 社区里面用 `||` 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略[^1]
@@ -46,3 +37,16 @@
 [^1]: https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880
 [^2]: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event Create a workflow dispatch event
 [^3]: https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash
+
+---
+
+* [输入参数多行](https://github.community/t/set-output-truncates-multiline-strings/16852)
+* [echo multiline strings in github action](https://trstringer.com/github-actions-multiline-strings/)
+* 同样的问题还出现在 setting error message 中(这里只讨论直接在 yaml 文件中输出的情况), 输出 `\n` 的文件只会输出第一行, 用如下方式解决: 
+```shell
+		  ERR_MSG=$(cat err.log)
+          ERR_MSG="${ERR_MSG//'%'/'%25'}"
+          ERR_MSG="${ERR_MSG//$'\n'/'%0A'}"
+          ERR_MSG="${ERR_MSG//$'\r'/'%0D'}"
+          echo "::error title=err::$ERR_MSG"
+```
