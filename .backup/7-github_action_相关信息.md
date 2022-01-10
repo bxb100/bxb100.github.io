@@ -29,6 +29,7 @@ echo "::error title=err::$ERR_MSG"
 		* `${{ secrets.GH_PAT }}` 注意给 workflow 的权限
 		* `workflow_id` 目前好像只能通过 list workflows 的 API 来获取
 		* **可能导致无限调用**, 但是可以将 retry 次数当做 input 传入, 然后判断大于多少次直接 `exit 1`
+		* `continue-on-error: true`[^4] 会导致 `failure` 判断失效
 ```yaml
 - name: Failed
 if: ${{ failure() }}
@@ -47,12 +48,7 @@ run: |
   fi
 ```
 
-
-
-
-
-
-
 [^1]: https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880
 [^2]: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event Create a workflow dispatch event
 [^3]: https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash
+[^4]: https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context 
