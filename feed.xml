@@ -18,63 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 10 Jan 2022 05:28:46 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 05:29:38 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
-<li>
-<p><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></p>
-</li>
-<li>
-<p><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555105">输入输出多行</a></p>
-</li>
-<li>
-<p>Anyway to check the error message and retry?</p>
-<ol>
-<li>社区里面用 <code>||</code> 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
-</li>
-<li>还有种思路就是利用 <code>2&gt; file</code> 输出错误信息, 判断<sup><a href="#fn-3" id="user-content-fnref-3">2</a></sup>, 然后利用 workflow 的 API 来重新调用, 调用代码如下<sup><a href="#fn-2" id="user-content-fnref-2">3</a></sup>
-<ul>
-<li>注意 <code>failure()</code> 标识<a href="https://docs.github.com/en/actions/learn-github-actions/expressions#failure">此 job 中上一个 step 失败</a>
-</li>
-<li>
-<code>${{ secrets.GH_PAT }}</code> 注意给 workflow 的权限</li>
-<li><strong>可能导致无限调用</strong></li>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
+<li><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
+<li><a href="https://github.com/bxb100/blog/issues/7#issuecomment-1008555105">输入输出多行</a></li>
 </ul>
-</li>
-</ol>
-</li>
-</ul>
-<div class="highlight highlight-source-yaml"><pre>      - <span class="pl-ent">name</span>: <span class="pl-s">Failed</span>
-        <span class="pl-ent">if</span>: <span class="pl-s">${{ failure() }}</span>
-        <span class="pl-ent">run</span>: <span class="pl-s">|</span>
-<span class="pl-s">          if grep -q 'errorMessage' err.log;</span>
-<span class="pl-s">          then curl --location --request POST 'https://api.github.com/repos/xxx/xxx/actions/workflows/xxxx/dispatches' \</span>
-<span class="pl-s">          --header 'Accept: application/vnd.github.v3+json' \</span>
-<span class="pl-s">          --header 'Authorization: token ${{ secrets.GH_PAT }}' \</span>
-<span class="pl-s">          --header 'Content-Type: application/json' \</span>
-<span class="pl-s">          --data-raw '{</span>
-<span class="pl-s">              "ref": "main",</span>
-<span class="pl-s">              "inputs": {</span>
-<span class="pl-s">                  "xxx": "${{github.event.inputs.xxx}}"</span>
-<span class="pl-s">              }</span>
-<span class="pl-s">          }'</span>
-<span class="pl-s">          fi</span></pre></div>
-<section>
-<ol>
-<li id="user-content-fn-1">
-<p><a href="https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880" rel="nofollow">https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-<li id="user-content-fn-3">
-<p><a href="https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash" rel="nofollow">https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash</a> <a href="#fnref-3"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-<li id="user-content-fn-2">
-<p><a href="https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event">https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event</a> Create a workflow dispatch event <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-</ol>
-</section>
 ]]></description>
-                    <pubDate>Mon, 10 Jan 2022 05:28:33 GMT</pubDate>
+                    <pubDate>Mon, 10 Jan 2022 05:29:25 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>
