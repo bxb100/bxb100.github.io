@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 10 Jan 2022 04:17:01 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 04:39:40 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -27,6 +27,9 @@
 </li>
 <li>
 <p><a href="https://github.community/t/set-output-truncates-multiline-strings/16852" rel="nofollow">输入参数多行</a></p>
+<ul>
+<li><a href="https://trstringer.com/github-actions-multiline-strings/" rel="nofollow">echo multiline strings in github action</a></li>
+</ul>
 </li>
 <li>
 <p>Anyway to check the error message and retry?</p>
@@ -73,7 +76,7 @@
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Mon, 10 Jan 2022 04:16:42 GMT</pubDate>
+                    <pubDate>Mon, 10 Jan 2022 04:39:23 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>

@@ -3,6 +3,7 @@
 * [生成 release log automatically-generated-release-notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)
 
 * [输入参数多行](https://github.community/t/set-output-truncates-multiline-strings/16852)
+	* [echo multiline strings in github action](https://trstringer.com/github-actions-multiline-strings/)
 
 * Anyway to check the error message and retry?
 	1. 社区里面用 `||` 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略[^1]
@@ -26,6 +27,8 @@
           }'
           fi
 ```
+
+
 
 
 
