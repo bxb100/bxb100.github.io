@@ -18,6 +18,7 @@
 	2. 还有种思路就是利用 `2> file` 输出错误信息, 判断[^3], 然后利用 workflow 的 API 来重新调用, 调用代码如下[^2]
 		* 注意 `failure()` 标识[此 job 中上一个 step 失败](https://docs.github.com/en/actions/learn-github-actions/expressions#failure)
 		* `${{ secrets.GH_PAT }}` 注意给 workflow 的权限
+		* **可能导致无限调用**
 ```yaml
       - name: Failed
         if: ${{ failure() }}
