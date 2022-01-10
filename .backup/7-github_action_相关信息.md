@@ -12,11 +12,11 @@
 * [echo multiline strings in github action](https://trstringer.com/github-actions-multiline-strings/)
 * 同样的问题还出现在 setting error message 中(这里只讨论直接在 yaml 文件中输出的情况), 输出 `\n` 的文件只会输出第一行, 用如下方式解决: 
 ```shell
-		  ERR_MSG=$(cat err.log)
-          ERR_MSG="${ERR_MSG//'%'/'%25'}"
-          ERR_MSG="${ERR_MSG//$'\n'/'%0A'}"
-          ERR_MSG="${ERR_MSG//$'\r'/'%0D'}"
-          echo "::error title=err::$ERR_MSG"
+ERR_MSG=$(cat err.log)
+ERR_MSG="${ERR_MSG//'%'/'%25'}"
+ERR_MSG="${ERR_MSG//$'\n'/'%0A'}"
+ERR_MSG="${ERR_MSG//$'\r'/'%0D'}"
+echo "::error title=err::$ERR_MSG"
 ```
 
 
