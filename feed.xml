@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 10 Jan 2022 04:39:40 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 05:21:58 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -29,10 +29,17 @@
 <p><a href="https://github.community/t/set-output-truncates-multiline-strings/16852" rel="nofollow">输入参数多行</a></p>
 <ul>
 <li><a href="https://trstringer.com/github-actions-multiline-strings/" rel="nofollow">echo multiline strings in github action</a></li>
+<li>同样的问题还出现在 setting error message 中(这里只讨论直接在 yaml 文件中输出的情况), 输出 <code>\n</code> 的文件只会输出第一行, 用如下方式解决:</li>
 </ul>
 </li>
-<li>
-<p>Anyway to check the error message and retry?</p>
+</ul>
+<div class="highlight highlight-source-shell"><pre>		  ERR_MSG=<span class="pl-s"><span class="pl-pds">$(</span>cat err.log<span class="pl-pds">)</span></span>
+          ERR_MSG=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">${ERR_MSG<span class="pl-k">//</span><span class="pl-s"><span class="pl-pds">'</span>%<span class="pl-pds">'</span></span><span class="pl-k">/</span><span class="pl-s"><span class="pl-pds">'</span>%25<span class="pl-pds">'</span></span>}</span><span class="pl-pds">"</span></span>
+          ERR_MSG=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">${ERR_MSG<span class="pl-k">//</span><span class="pl-s"><span class="pl-pds">$'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span><span class="pl-k">/</span><span class="pl-s"><span class="pl-pds">'</span>%0A<span class="pl-pds">'</span></span>}</span><span class="pl-pds">"</span></span>
+          ERR_MSG=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">${ERR_MSG<span class="pl-k">//</span><span class="pl-s"><span class="pl-pds">$'</span><span class="pl-cce">\r</span><span class="pl-pds">'</span></span><span class="pl-k">/</span><span class="pl-s"><span class="pl-pds">'</span>%0D<span class="pl-pds">'</span></span>}</span><span class="pl-pds">"</span></span>
+          <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>::error title=err::<span class="pl-smi">$ERR_MSG</span><span class="pl-pds">"</span></span></pre></div>
+<ul>
+<li>Anyway to check the error message and retry?
 <ol>
 <li>社区里面用 <code>||</code> 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
 </li>
@@ -51,7 +58,7 @@
         <span class="pl-ent">if</span>: <span class="pl-s">${{ failure() }}</span>
         <span class="pl-ent">run</span>: <span class="pl-s">|</span>
 <span class="pl-s">          if grep -q 'errorMessage' err.log;</span>
-<span class="pl-s">          curl --location --request POST 'https://api.github.com/repos/xxx/xxx/actions/workflows/xxxx/dispatches' \</span>
+<span class="pl-s">          then curl --location --request POST 'https://api.github.com/repos/xxx/xxx/actions/workflows/xxxx/dispatches' \</span>
 <span class="pl-s">          --header 'Accept: application/vnd.github.v3+json' \</span>
 <span class="pl-s">          --header 'Authorization: token ${{ secrets.GH_PAT }}' \</span>
 <span class="pl-s">          --header 'Content-Type: application/json' \</span>
@@ -76,7 +83,7 @@
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Mon, 10 Jan 2022 04:39:23 GMT</pubDate>
+                    <pubDate>Mon, 10 Jan 2022 05:21:42 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>
