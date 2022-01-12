@@ -1,8 +1,8 @@
 [github action 相关信息](https://github.com/bxb100/blog/issues/7)
 
 * [生成 release log automatically-generated-release-notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)
-* [Anyway to check the error message and retry?](https://github.com/bxb100/blog/issues/7#issuecomment-1008555315)
-* [输入输出多行](https://github.com/bxb100/blog/issues/7#issuecomment-1008555105)
+* [Anyway to check the error message and retry?](#issuecomment-1008555315)
+* [输入输出多行](#issuecomment-1008555105)
 
 
 
