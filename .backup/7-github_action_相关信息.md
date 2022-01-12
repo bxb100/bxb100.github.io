@@ -48,6 +48,11 @@ run: |
   fi
 ```
 
+* 注意一点, `workflow_call` 不允许自己调用自己(错误信息如下), 所以可能只有上述方法可行
+```
+error parsing called workflow "bxb100/xxx/.github/workflows/download.yml@main": job "retry" calls workflow "bxb100/xxx/.github/workflows/download.yml@main", but doing so would exceed the limit on called workflow depth of 2
+```
+
 [^1]: https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880
 [^2]: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event Create a workflow dispatch event
 [^3]: https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash
