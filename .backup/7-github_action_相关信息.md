@@ -8,7 +8,8 @@
 
 ---
 
-<a href="#issuecomment-1008555105"></a>* [输入参数多行](https://github.community/t/set-output-truncates-multiline-strings/16852)
+<a href="#issuecomment-1008555105"></a>
+* [输入参数多行](https://github.community/t/set-output-truncates-multiline-strings/16852)
 * [echo multiline strings in github action](https://trstringer.com/github-actions-multiline-strings/)
 * 同样的问题还出现在 setting error message 中(这里只讨论直接在 yaml 文件中输出的情况), 输出 `\n` 的文件只会输出第一行, 用如下方式解决: 
 ```shell
@@ -22,7 +23,8 @@ echo "::error title=err::$ERR_MSG"
 
 ---
 
-<a href="#issuecomment-1008555315"></a>* Anyway to check the error message and retry?
+<a href="#issuecomment-1008555315"></a>
+* Anyway to check the error message and retry?
 	1. 社区里面用 `||` 来 retry 命令, 但是我这个 shell 着实繁琐又不想写个 sh 文件, 忽略[^1]
 	2. 还有种思路就是利用 `2> file` 输出错误信息, 判断[^3], 然后利用 workflow 的 API 来重新调用[^2], 调用代码如下
 		* 注意 `failure()` 标识 [此 job 中存在失败](https://docs.github.com/en/actions/learn-github-actions/expressions#failure)
