@@ -18,16 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 20 Jan 2022 12:03:50 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jan 2022 12:04:23 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[QNAP 一些问题的总结]]></title>
                     <description><![CDATA[<ol>
 <li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
 </li>
-<li>使用 Cloudflare Worker &amp; KV 来做 DDNS</li>
+<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
 </ol>
 ]]></description>
-                    <pubDate>Thu, 20 Jan 2022 12:03:35 GMT</pubDate>
+                    <pubDate>Thu, 20 Jan 2022 12:04:06 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/9</guid>
                 <link>https://github.com/bxb100/blog/issues/9</link>
                     <author><![CDATA[bxb100]]></author>
