@@ -53,7 +53,8 @@ async function handleRequest(request) {
 ![image](https://user-images.githubusercontent.com/20685961/150333993-0e10898d-5eba-4f66-a6a2-844031830a7a.png)
 
 QNAP 中自定义 DDNS 设置参数为： 
-![image](https://user-images.githubusercontent.com/20685961/150334211-6c4b06c4-1f34-4439-81dd-92f2ade19456.png)
+![image](https://user-images.githubusercontent.com/20685961/150336174-3e08d278-b912-4976-bc87-b3c396f7ad45.gif)
+
 *这里的 pass 注意和上面的 worker 中定义保持一致，其它参数随便填写*
 
 URL：`https://.workers.dev/?ip=%IP%&token=%PASS%&user=%USER%&host=%HOST%`
