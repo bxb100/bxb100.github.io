@@ -18,7 +18,18 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 20 Jan 2022 09:57:41 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jan 2022 10:00:07 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[QNAP 一些问题的总结]]></title>
+                    <description><![CDATA[<ol>
+<li>默认的 8080 端口无法在公网环境下访问，可以使用转发来设置</li>
+</ol>
+]]></description>
+                    <pubDate>Thu, 20 Jan 2022 09:59:51 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/9</guid>
+                <link>https://github.com/bxb100/blog/issues/9</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
                     <description><![CDATA[<ol>
