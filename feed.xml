@@ -18,19 +18,20 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 20 Jan 2022 12:10:11 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jan 2022 13:12:57 GMT</lastBuildDate>
             <item>
-                <title><![CDATA[QNAP 一些问题的总结]]></title>
+                <title><![CDATA[QNAP 技巧分享]]></title>
                     <description><![CDATA[<ol>
 <li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
 </li>
 <li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
 </ol>
 ]]></description>
-                    <pubDate>Thu, 20 Jan 2022 12:09:55 GMT</pubDate>
+                    <pubDate>Thu, 20 Jan 2022 12:56:02 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/9</guid>
                 <link>https://github.com/bxb100/blog/issues/9</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
@@ -863,15 +864,6 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
                     <author><![CDATA[bxb100]]></author>
                         <category>杂感</category>
                         <category>煎蛋</category>
-            </item>
-            <item>
-                <title><![CDATA[Links]]></title>
-                    <description><![CDATA[Links]]></description>
-                    <pubDate>Mon, 20 Dec 2021 03:29:39 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/2</guid>
-                <link>https://github.com/bxb100/blog/issues/2</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>links</category>
             </item>
             <item>
                 <title><![CDATA[Bloomberg Tame parents]]></title>
