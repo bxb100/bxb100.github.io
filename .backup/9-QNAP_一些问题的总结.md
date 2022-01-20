@@ -1,6 +1,7 @@
 [QNAP 一些问题的总结](https://github.com/bxb100/blog/issues/9)
 
 1. 默认的 8080 端口无法在公网环境下访问，可以使用[反向代理来设置](#issuecomment-1017306273)
+2. 使用 Cloudflare Worker & KV 来做 DDNS
 
 ---
 
