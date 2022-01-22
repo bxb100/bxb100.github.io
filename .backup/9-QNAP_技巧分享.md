@@ -67,4 +67,4 @@ URL：`https://.workers.dev/?ip=%IP%&token=%PASS%&user=%USER%&host=%HOST%`
 
 ----
 
-后续: 吐了，action 里面访问不了国内 IP，怀疑是国外访问国内直接阻断
+后续: 吐了，公网 IP 国外访问不了
