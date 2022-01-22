@@ -64,3 +64,5 @@ QNAP 中自定义 DDNS 设置参数为：
 URL：`https://.workers.dev/?ip=%IP%&token=%PASS%&user=%USER%&host=%HOST%`
 
 后面就可以在 github action 中使用 api 调用 kv 来做一些事情了
+----
+后续: 吐了，国外 IP 无法访问
