@@ -32,6 +32,9 @@ async function handleRequest(request) {
           status: 403,
         })
       }
+      if (await QNAP.get("ip") === params.get("ip")) {
+        return new Response("not changed")
+      }
       // save the ip in the KV
       await Promise.all([
       QNAP.put("url", request.url),
@@ -48,6 +51,7 @@ async function handleRequest(request) {
     }
 }
 ```
+> ⚠️ 免费版的 KV 是有读写请求限制的，最好先查再改
 
 注意 KV 要绑定到当前的 worker 中 https://developers.cloudflare.com/workers/runtime-apis/kv#kv-bindings
 ![image](https://user-images.githubusercontent.com/20685961/150333993-0e10898d-5eba-4f66-a6a2-844031830a7a.png)
