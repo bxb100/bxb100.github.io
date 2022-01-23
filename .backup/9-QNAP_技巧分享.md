@@ -69,3 +69,32 @@ URL：`https://.workers.dev/?ip=%IP%&token=%PASS%&user=%USER%&host=%HOST%`
 ----
 
 后续: 吐了，公网 IP 国外访问不了
+
+---
+
+<a id="issuecomment-1019415303"></a>
+书接上文，访问不了的时候，我突然想到 P2P 的 tailscale，一查发现 QNAP 社区提供了安装包 https://www.qnapclub.eu/en/qpkg/1162 
+（😞 不过官方目前只有群辉的包，这个包的安全性就仁者见仁智者见智了）
+
+SSH 连接到 NAS，然后 `tailscale up` 授权即可
+
+注意：使用 tailscale 的话，最好把 UPnP 端口转发的服务都关闭，最近好多 IP 端口扫描，有公网 IP 最好防一手
+
+![image](https://user-images.githubusercontent.com/20685961/150665679-c124d31c-af44-4eb0-a4b1-7484cca349ad.png)
+
+从此在 github action 中轻松使用 WebDAV
+
+```yaml
+      - name: Tailscale
+        uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+      - name: Publish
+        uses: bxb100/action-upload-webdav@v1
+        with:
+          webdav_address: "http://IP:PORT"
+          webdav_username: ${{secrets.username}}
+          webdav_password: ${{secrets.password}}
+          webdav_upload_path: "/Video/"
+          files: ./**\-**/**
+```
