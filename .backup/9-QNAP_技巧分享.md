@@ -2,6 +2,7 @@
 
 1. 默认的 8080 端口无法在公网环境下访问，可以使用[反向代理来设置](#issuecomment-1017306273)
 2. [使用 Cloudflare Worker & KV 来做 DDNS](#issuecomment-1017428570)
+3. 使用 [tailscale](https://tailscale.com/) 来连接 WebDAV
 
 ---
 
