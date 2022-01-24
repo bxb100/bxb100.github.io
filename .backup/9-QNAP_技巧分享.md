@@ -83,7 +83,7 @@ SSH 连接到 NAS，然后 `tailscale up` 授权即可
 
 ![image](https://user-images.githubusercontent.com/20685961/150665679-c124d31c-af44-4eb0-a4b1-7484cca349ad.png)
 
-从此在 github action 中轻松使用 WebDAV
+从此在 github action 中轻松使用 WebDAV， tailscale action 见 https://github.com/tailscale/github-action
 
 ```yaml
       - name: Tailscale
