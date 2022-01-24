@@ -8,6 +8,7 @@
 
 <a id="issuecomment-1017306273"></a>
 众所周知的原因，电信公网 IP 一般会封 80，443，8080 这几个端口
+其它方式访问
 ![image](https://user-images.githubusercontent.com/20685961/150316729-9aff6b84-c564-4994-85b0-4f24803bac1c.png)
 
 
