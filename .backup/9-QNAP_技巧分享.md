@@ -99,3 +99,6 @@ SSH 连接到 NAS，然后 `tailscale up` 授权即可
           webdav_upload_path: "/Video/"
           files: ./**\-**/**
 ```
+---
+
+PS: 不要开 IPv6, 开了之后我这里的情况就是 tailscale 最近的 DERP 是 San Francisco，而不是日本，淦 💩 
