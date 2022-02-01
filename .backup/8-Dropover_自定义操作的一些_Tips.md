@@ -10,3 +10,10 @@
 https://gist.github.com/bxb100/6734e7fdc5396bcfcaf34c809c8334f6
 
 使用 Google Lens 搜图
+
+---
+
+<a id="issuecomment-1026828776"></a>
+搜索 GIF 第一帧的时候发现 Lens 无法请求成功，所以弃用改成 google image search
+
+https://gist.github.com/bxb100/4cdfa1b52999ac491b21fd9e1803f58a
