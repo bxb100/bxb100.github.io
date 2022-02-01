@@ -18,16 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 01 Feb 2022 13:13:19 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 01 Feb 2022 13:15:47 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
                     <description><![CDATA[<ol>
 <li>放在 <code>Application Scripts</code> 文件夹时候注意给权限, 否则会报格式异常错误</li>
-<li>估计作者调用 unix script 的时候没有给其它 path 的执行环境, 导致只能用 <code>user/bin</code> 下面的命令, 类似 <code>execve</code> ?</li>
+<li>估计作者调用 unix script 的时候没有给其它 path 的执行环境, 导致只能用 <code>user/bin</code> 下面的命令, 类似 <code>execve</code> ? （不过这里可以用全路径先用着）</li>
 <li>如果没有输出有的时候就是 <code>2</code> 导致的原因</li>
 </ol>
 ]]></description>
-                    <pubDate>Tue, 01 Feb 2022 13:12:11 GMT</pubDate>
+                    <pubDate>Tue, 01 Feb 2022 13:14:46 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/8</guid>
                 <link>https://github.com/bxb100/blog/issues/8</link>
                     <author><![CDATA[bxb100]]></author>
