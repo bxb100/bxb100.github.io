@@ -11,13 +11,89 @@
 <br>
 
 ## 实验
-首先先 export charles 的 CA 和 私钥
+首先先导出 charles 的 CA 和 私钥
 
-<div>
-<img width="360" alt="image" align="left" src="https://user-images.githubusercontent.com/20685961/153458862-ab9f98f0-f76e-4551-a99f-0a492840d58c.png">
-<img width="450" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153458880-2e08351e-775a-498d-9067-07c15725431d.png">
-</div>
-<br>
+**Help** >  **SSL Proxying** >  **Export Charles Root Certificate and Private Key...**
 
-然后获得
+然后转成 `PEM`[^1] (_`charles-ssl-proxying.p12` `newfile.xx.pem` 按实际情况填写_）
 
+```sh
+openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.crt.pem -clcerts -nokeys
+openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.key.pem -nocerts -nodes 
+```
+然后参考
+* https://github.com/kingkool68/generate-ssl-certs-for-local-development
+* https://github.com/dakshshah96/local-cert-generator
+
+创建（这里假如使用的是 example.com 网站）
+1、server.csr.cnf
+```
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=US
+ST=RandomState
+L=RandomCity
+O=RandomOrganization
+OU=RandomOrganizationUnit
+emailAddress=hello@example.com
+CN = example.com
+```
+ 2、v3.ext
+```
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = example.com
+```
+
+执行
+```
+openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config server.csr.cnf
+
+openssl x509 -req -in server.csr -CA newfile.crt.pem -CAkey newfile.key.pem -CAcreateserial -out server.crt -days 825 -sha256 -extfile v3.ext
+```
+
+获得
+* server.key
+* server.crt
+
+使用 caddy 简单做一个反向代理
+
+```
+example.com {
+
+tls /Users/xiaobo/Desktop/newcerts/server.crt /Users/xiaobo/Desktop/newcerts/server.key
+
+reverse_proxy localhost:2022
+}
+
+:2022 {
+respond "<h1>Hello, world!</h1>"
+}
+```
+
+<img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png">
+
+然后在 charles 中配置 **Tools** > **DNS Spoofing** 将 `example.com`指向本地 caddy，这样就能直接请求了
+
+----
+
+PC:
+<img width="152" alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png">
+
+Android:
+<img width="252"  src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" >
+
+
+
+
+
+[^1]: https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl

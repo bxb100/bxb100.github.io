@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 10 Feb 2022 17:09:01 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Feb 2022 18:26:16 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
                     <description><![CDATA[<h2>
@@ -32,15 +32,80 @@
 <br></p>
 <h2>
 <a id="user-content-实验" class="anchor" href="#%E5%AE%9E%E9%AA%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实验</h2>
-<p>首先先 export charles 的 CA 和 私钥</p>
-<div>
-<a href="https://user-images.githubusercontent.com/20685961/153458862-ab9f98f0-f76e-4551-a99f-0a492840d58c.png" target="_blank" rel="nofollow"><img width="360" alt="image" align="left" src="https://user-images.githubusercontent.com/20685961/153458862-ab9f98f0-f76e-4551-a99f-0a492840d58c.png" style="max-width:100%;"></a>
-<a href="https://user-images.githubusercontent.com/20685961/153458880-2e08351e-775a-498d-9067-07c15725431d.png" target="_blank" rel="nofollow"><img width="450" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153458880-2e08351e-775a-498d-9067-07c15725431d.png" style="max-width:100%;"></a>
-</div>
-<br>
-<p>然后获得</p>
+<p>首先先导出 charles 的 CA 和 私钥</p>
+<p><strong>Help</strong> &gt;  <strong>SSL Proxying</strong> &gt;  <strong>Export Charles Root Certificate and Private Key...</strong></p>
+<p>然后转成 <code>PEM</code><sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup> (<em><code>charles-ssl-proxying.p12</code> <code>newfile.xx.pem</code> 按实际情况填写</em>）</p>
+<div class="highlight highlight-source-shell"><pre>openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.crt.pem -clcerts -nokeys
+openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.key.pem -nocerts -nodes </pre></div>
+<p>然后参考</p>
+<ul>
+<li><a href="https://github.com/kingkool68/generate-ssl-certs-for-local-development">https://github.com/kingkool68/generate-ssl-certs-for-local-development</a></li>
+<li><a href="https://github.com/dakshshah96/local-cert-generator">https://github.com/dakshshah96/local-cert-generator</a></li>
+</ul>
+<p>创建（这里假如使用的是 example.com 网站）
+1、server.csr.cnf</p>
+<pre><code>[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=US
+ST=RandomState
+L=RandomCity
+O=RandomOrganization
+OU=RandomOrganizationUnit
+emailAddress=hello@example.com
+CN = example.com
+</code></pre>
+<p>2、v3.ext</p>
+<pre><code>authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = example.com
+</code></pre>
+<p>执行</p>
+<pre><code>openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config server.csr.cnf
+
+openssl x509 -req -in server.csr -CA newfile.crt.pem -CAkey newfile.key.pem -CAcreateserial -out server.crt -days 825 -sha256 -extfile v3.ext
+</code></pre>
+<p>获得</p>
+<ul>
+<li>server.key</li>
+<li>server.crt</li>
+</ul>
+<p>使用 caddy 简单做一个反向代理</p>
+<pre><code>example.com {
+
+tls /Users/xiaobo/Desktop/newcerts/server.crt /Users/xiaobo/Desktop/newcerts/server.key
+
+reverse_proxy localhost:2022
+}
+
+:2022 {
+respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
+}
+</code></pre>
+<p><a href="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" target="_blank" rel="nofollow"><img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" style="max-width:100%;"></a></p>
+<p>然后在 charles 中配置 <strong>Tools</strong> &gt; <strong>DNS Spoofing</strong> 将 <code>example.com</code>指向本地 caddy，这样就能直接请求了</p>
+<hr>
+<p>PC:
+<a href="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" target="_blank" rel="nofollow"><img width="152" alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" style="max-width:100%;"></a></p>
+<p>Android:
+<a href="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" target="_blank" rel="nofollow"><img width="252" src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" style="max-width:100%;"></a></p>
+<section>
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
 ]]></description>
-                    <pubDate>Thu, 10 Feb 2022 17:07:58 GMT</pubDate>
+                    <pubDate>Thu, 10 Feb 2022 18:25:29 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
                 <link>https://github.com/bxb100/blog/issues/10</link>
                     <author><![CDATA[bxb100]]></author>
