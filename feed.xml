@@ -18,7 +18,33 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 10 Feb 2022 08:46:08 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Feb 2022 17:09:01 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
+                    <description><![CDATA[<h2>
+<a id="user-content-前情" class="anchor" href="#%E5%89%8D%E6%83%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>前情</h2>
+<p>某日我儿（前端 ios 使用 https 但是没有强制）问我如何利用 charles 来代理后端<strong>本地</strong> API 测试，我直接甩给他 <code>map remote</code> 大法 （from https to http），解决。</p>
+<h2>
+<a id="user-content-思考" class="anchor" href="#%E6%80%9D%E8%80%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>思考</h2>
+<p><a href="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" target="_blank" rel="nofollow"><img width="432" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" style="max-width:100%;"></a></p>
+<p>这时候我觉得 charles 类似 QuantumultX 直接重写响应 payload，但是看了 doc 之后发现仅仅只是转发。然后我问了下我儿，他说他客户端没做 ssl 校验，那么之后排期做了校验这种方式可能会有问题。
+这时我就想到能否利用 charles 的 rootCA 来自签，这样的话配合 DNS 和一些 web server 反向代理就能做到直接本地 https 线上域名访问了（当然 client 添加公钥这种问题就不在这里赘述了）。
+<br></p>
+<h2>
+<a id="user-content-实验" class="anchor" href="#%E5%AE%9E%E9%AA%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实验</h2>
+<p>首先先 export charles 的 CA 和 私钥</p>
+<div>
+<a href="https://user-images.githubusercontent.com/20685961/153458862-ab9f98f0-f76e-4551-a99f-0a492840d58c.png" target="_blank" rel="nofollow"><img width="360" alt="image" align="left" src="https://user-images.githubusercontent.com/20685961/153458862-ab9f98f0-f76e-4551-a99f-0a492840d58c.png" style="max-width:100%;"></a>
+<a href="https://user-images.githubusercontent.com/20685961/153458880-2e08351e-775a-498d-9067-07c15725431d.png" target="_blank" rel="nofollow"><img width="450" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153458880-2e08351e-775a-498d-9067-07c15725431d.png" style="max-width:100%;"></a>
+</div>
+<br>
+<p>然后获得</p>
+]]></description>
+                    <pubDate>Thu, 10 Feb 2022 17:07:58 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
+                <link>https://github.com/bxb100/blog/issues/10</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[太多人活得不像自己]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
