@@ -70,7 +70,7 @@ openssl x509 -req -in server.csr -CA newfile.crt.pem -CAkey newfile.key.pem -CAc
 ```
 example.com {
 
-tls /Users/xiaobo/Desktop/newcerts/server.crt /Users/xiaobo/Desktop/newcerts/server.key
+tls ~/server.crt ~/server.key
 
 reverse_proxy localhost:2022
 }
@@ -82,15 +82,30 @@ respond "<h1>Hello, world!</h1>"
 
 <img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png">
 
-然后在 charles 中配置 **Tools** > **DNS Spoofing** 将 `example.com`指向本地 caddy，这样就能直接请求了
+然后在 charles 中配置 
+
+**Tools** > **DNS Spoofing** 
+
+将 `example.com`指向本地 caddy，这样就能直接请求了
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ----
 
 PC:
-<img width="152" alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png">
+<img  alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png">
 
 Android:
-<img width="252"  src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" >
+<img   src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" >
 
 
 
