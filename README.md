@@ -26,6 +26,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Horizon
+- [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/blog/issues/10)---2022-02-10
 - [QNAP 技巧分享](https://github.com/bxb100/blog/issues/9)---2022-01-20
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/blog/issues/8)---2022-01-18
 

@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 10 Feb 2022 18:29:54 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 11 Feb 2022 09:56:52 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
                     <description><![CDATA[<h2>
@@ -117,10 +117,11 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Thu, 10 Feb 2022 18:29:09 GMT</pubDate>
+                    <pubDate>Fri, 11 Feb 2022 09:56:09 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
                 <link>https://github.com/bxb100/blog/issues/10</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[太多人活得不像自己]]></title>
