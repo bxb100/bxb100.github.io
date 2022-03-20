@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 14 Mar 2022 10:01:45 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Mar 2022 09:48:03 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[太多人活得不像自己]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Sun, 20 Mar 2022 09:47:19 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
+                <link>https://github.com/bxb100/blog/issues/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
                     <description><![CDATA[<h2>
@@ -122,16 +132,6 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
                 <link>https://github.com/bxb100/blog/issues/10</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[太多人活得不像自己]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Thu, 10 Feb 2022 08:45:23 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
-                <link>https://github.com/bxb100/blog/issues/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
