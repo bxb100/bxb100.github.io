@@ -23,13 +23,20 @@
 <a id="issuecomment-1075233948"></a>
 例子: 
 <p align="center">
-  <a href="#"><img src='https://render.githubusercontent.com/render/math?math=sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)#gh-light-mode-only'></a>
-   <a href="#"><img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'></a>
+  <a href="#gh-light-mode-only"><img src='https://render.githubusercontent.com/render/math?math=sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)#gh-light-mode-only'></a>
+   <a href="#gh-dark-mode-only"><img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'></a>
 </p>
 
 ```html
 <p align="center">
   <img src='https://render.githubusercontent.com/render/math?math=sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)#gh-light-mode-only'>
   <img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'>
+</p>
+```
+抑制点击
+```html
+<p align="center">
+  <a href="#gh-light-mode-only"><img src='https://render.githubusercontent.com/render/math?math=sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)#gh-light-mode-only'></a>
+  <a href="#gh-dark-mode-only"><img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'></a>
 </p>
 ```
