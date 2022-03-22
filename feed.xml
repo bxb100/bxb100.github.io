@@ -18,10 +18,10 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 22 Mar 2022 14:15:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Mar 2022 14:17:38 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[GitHub Markdown LaTeX to text technique]]></title>
-                    <description><![CDATA[<p>最近发现的若干将 LaTeX 转为 图片的方式</p>
+                    <description><![CDATA[<p>最近发现的若干将 github md math 转为 SVG 的方式</p>
 <ol>
 <li>github 自己的 render 服务<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
 </li>
@@ -57,7 +57,7 @@
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Tue, 22 Mar 2022 14:14:41 GMT</pubDate>
+                    <pubDate>Tue, 22 Mar 2022 14:16:51 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/12</guid>
                 <link>https://github.com/bxb100/blog/issues/12</link>
                     <author><![CDATA[bxb100]]></author>

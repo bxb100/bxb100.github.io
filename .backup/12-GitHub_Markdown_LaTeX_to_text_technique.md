@@ -1,6 +1,6 @@
 [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/blog/issues/12)
 
-最近发现的若干将 LaTeX 转为 图片的方式
+最近发现的若干将 github md math 转为 SVG 的方式
 1. github 自己的 render 服务[^1]
   * `<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">`
   * `![formula](https://render.githubusercontent.com/render/math?math=e^{i%20\pi}%20=%20-1)` 这个注意空格
