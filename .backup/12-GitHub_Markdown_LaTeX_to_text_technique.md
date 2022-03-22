@@ -17,3 +17,19 @@
 
 [^1]: https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b
 [^2]: http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings
+
+---
+
+<a id="issuecomment-1075233948"></a>
+例子: 
+<p align="center">
+  <img src='https://render.githubusercontent.com/render/math?math=sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)#gh-light-mode-only'>
+  <img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'>
+</p>
+
+```html
+<p align="center">
+  <img src='https://render.githubusercontent.com/render/math?math=sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)#gh-light-mode-only'>
+  <img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'>
+</p>
+```
