@@ -6,6 +6,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Dan Abramov | https://overreacted.io/ | React |
 
 ## Recent
+- [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/blog/issues/12)---2022-03-22
 - [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/blog/issues/10)---2022-02-10
 - [QNAP 技巧分享](https://github.com/bxb100/blog/issues/9)---2022-01-20
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/blog/issues/8)---2022-01-18
@@ -15,7 +16,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
 - [太多人活得不像自己](https://github.com/bxb100/blog/issues/3)---2021-12-13
 - [Links](https://github.com/bxb100/blog/issues/2)---2021-12-11
-- [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
