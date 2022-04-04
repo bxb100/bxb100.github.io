@@ -18,13 +18,13 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 04 Apr 2022 03:53:11 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 04 Apr 2022 03:54:48 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
                     <description><![CDATA[<p><a href="https://github.com/nilaoda/N_m3u8DL-CLI">N_m3u8DL-CLI</a> 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载</p>
 <p>写了个脚本直接 re 页面中 m3u8 后缀连接, 然后调用 CLI 下载, 可以直接放在 release 中或者传到 webdav 中, 感觉更安全了 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
 <p>当然, 如果是在 win 机上, 那么直接 execute ps1 更简单</p>
-<p><a href="https://github.com/bxb100/OSS-Config/blob/0eaa8a35a06935cff64f369edbdaa1aa0631e592/Win/execute.ps1"><g-emoji class="g-emoji" alias="point_right" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f449.png">👉</g-emoji> 脚本地址</a></p>
+<p><a href="https://github.com/bxb100/OSS-Config/blob/main/Win/execute.ps1"><g-emoji class="g-emoji" alias="point_right" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f449.png">👉</g-emoji> 脚本地址</a></p>
 <p>参数:</p>
 <ol>
 <li>
@@ -36,7 +36,7 @@
 <code>-Extra</code>: N_m3u8DL-CLI 其它参数, 形如 <code>'--saveName filename --timeOut 1000'</code> 注意单引号字符串传入</li>
 </ol>
 ]]></description>
-                    <pubDate>Mon, 04 Apr 2022 03:52:27 GMT</pubDate>
+                    <pubDate>Mon, 04 Apr 2022 03:54:05 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/13</guid>
                 <link>https://github.com/bxb100/blog/issues/13</link>
                     <author><![CDATA[bxb100]]></author>

@@ -6,7 +6,7 @@
 
 当然, 如果是在 win 机上, 那么直接 execute ps1 更简单
 
-[👉 脚本地址](https://github.com/bxb100/OSS-Config/blob/0eaa8a35a06935cff64f369edbdaa1aa0631e592/Win/execute.ps1)
+[👉 脚本地址](https://github.com/bxb100/OSS-Config/blob/main/Win/execute.ps1)
 
 参数:
 
