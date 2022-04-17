@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Sun, 17 Apr 2022 04:44:54 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 17 Apr 2022 07:56:18 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[How to use FluentBit multiline]]></title>
                     <description><![CDATA[<p>One day, my friend asked a question about how to use <a href="https://fluentbit.io/" rel="nofollow">fluentBit </a> (It's popular in k8s <sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.</p>
@@ -87,18 +87,22 @@ java.lang.RuntimeException: cs
 <p>gist: <a href="https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14">https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14</a></p>
 <h2>
 <a id="user-content-other-thing" class="anchor" href="#other-thing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other thing</h2>
-<ul>
-<li>Using docker needs packing by yourself <sup><a href="#fn-4" id="user-content-fnref-4">4</a></sup>, don't forget it should with ES under some network <sup><a href="#fn-5" id="user-content-fnref-5">5</a></sup>
-</li>
-</ul>
+<p>Using docker needs packing by yourself <sup><a href="#fn-4" id="user-content-fnref-4">4</a></sup>, don't forget it should with ES under same network <sup><a href="#fn-5" id="user-content-fnref-5">5</a></sup></p>
+<ol>
+<li>build an image</li>
+</ol>
 <div class="highlight highlight-source-dockerfile"><pre><span class="pl-k">FROM</span> fluent/fluent-bit:1.9.0
 <span class="pl-k">ADD</span> parsers_multiline.conf /fluent-bit/etc/
 <span class="pl-k">ADD</span> fluent-bit.conf /fluent-bit/etc/</pre></div>
 <p><code>docker build -t fluentbit-cs:sim .</code></p>
 <p><code>docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log --network 8x_default fluentbit-cs:sim</code></p>
-<ul>
-<li>If you are missing <code>cont2</code> rule, the ES log will trigger exception like single document, it's not combined with log message</li>
-</ul>
+<ol start="2">
+<li>mount config to <code>/fluent-bit/etc</code>
+</li>
+</ol>
+<p><code>docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log -v /e/docker/fluentBit/config:/fluent-bit/etc --network 8x_default fluent/fluent-bit:1.9.0</code></p>
+<hr>
+<p>If you are missing <code>cont2</code> rule, the ES log will trigger exception like single document, it's not combined with log message</p>
 <p><a href="https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png" alt="image" style="max-width:100%;"></a></p>
 <section>
 <ol>
@@ -120,7 +124,7 @@ java.lang.RuntimeException: cs
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Sun, 17 Apr 2022 04:44:09 GMT</pubDate>
+                    <pubDate>Sun, 17 Apr 2022 07:55:30 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/15</guid>
                 <link>https://github.com/bxb100/blog/issues/15</link>
                     <author><![CDATA[bxb100]]></author>

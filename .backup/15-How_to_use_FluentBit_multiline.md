@@ -63,7 +63,10 @@ gist: https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14
 
 
 ## Other thing
-* Using docker needs packing by yourself [^4], don't forget it should with ES under some network [^5]
+Using docker needs packing by yourself [^4], don't forget it should with ES under same network [^5]
+
+1. build an image
+
 ```Dockerfile
 FROM fluent/fluent-bit:1.9.0
 ADD parsers_multiline.conf /fluent-bit/etc/
@@ -74,7 +77,13 @@ ADD fluent-bit.conf /fluent-bit/etc/
 
 `docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log --network 8x_default fluentbit-cs:sim`
 
-* If you are missing `cont2` rule, the ES log will trigger exception like single document, it's not combined with log message
+2. mount config to `/fluent-bit/etc`
+
+`docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log -v /e/docker/fluentBit/config:/fluent-bit/etc --network 8x_default fluent/fluent-bit:1.9.0`
+
+---
+
+If you are missing `cont2` rule, the ES log will trigger exception like single document, it's not combined with log message
 
 ![image](https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png)
 
