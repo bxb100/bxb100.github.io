@@ -18,7 +18,21 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Sun, 17 Apr 2022 08:02:19 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 17 Apr 2022 08:05:19 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
+                    <description><![CDATA[<ol>
+<li>放在 <code>Application Scripts</code> 文件夹时候注意给<strong>权限,</strong> 否则会报格式异常错误</li>
+<li>估计作者调用 unix script 的时候没有给其它 path 的执行环境, 导致只能用 <code>user/bin</code> 下面的命令, 类似 <code>execve</code> ? （不过这里可以用全路径先用着）</li>
+<li>如果没有输出有的时候就是 <code>2</code> 导致的原因</li>
+</ol>
+]]></description>
+                    <pubDate>Sun, 17 Apr 2022 08:04:35 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/8</guid>
+                <link>https://github.com/bxb100/blog/issues/8</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
             <item>
                 <title><![CDATA[How to use FluentBit multiline]]></title>
                     <description><![CDATA[<p>One day, my friend asked a question about how to use <a href="https://fluentbit.io/" rel="nofollow">fluentBit </a> (It's popular in k8s <sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.</p>
@@ -328,20 +342,6 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
                     <pubDate>Fri, 11 Feb 2022 09:56:09 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
                 <link>https://github.com/bxb100/blog/issues/10</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
-                    <description><![CDATA[<ol>
-<li>放在 <code>Application Scripts</code> 文件夹时候注意给权限, 否则会报格式异常错误</li>
-<li>估计作者调用 unix script 的时候没有给其它 path 的执行环境, 导致只能用 <code>user/bin</code> 下面的命令, 类似 <code>execve</code> ? （不过这里可以用全路径先用着）</li>
-<li>如果没有输出有的时候就是 <code>2</code> 导致的原因</li>
-</ol>
-]]></description>
-                    <pubDate>Tue, 01 Feb 2022 13:14:46 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/8</guid>
-                <link>https://github.com/bxb100/blog/issues/8</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
             </item>
