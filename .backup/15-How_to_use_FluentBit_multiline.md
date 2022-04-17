@@ -3,7 +3,7 @@
 One day, my friend asked a question about how to use [fluentBit ](https://fluentbit.io/) (It's popular in k8s [^1]) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.
 
 ![Flow](https://user-images.githubusercontent.com/20685961/163699255-57467f29-4d24-4948-aa27-62aa8d3e9b75.png)
-*The config visualizes*
+<p align="center"><em>The config visualizes</em></p>
 
 Usually, the log file pattern seems unified, it looks like 
 
@@ -20,7 +20,9 @@ rule         "cont"          "/^\s+at.*/"                      "cont"
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/20685961/163700092-d1875099-1775-4c9a-8926-6fa7b6d0b9d0.png">
+<p align="center"><em>Each line pipeline</em></p>
 </p>
+
 
 ```log
 2022-04-17 03:10:43.578 ERROR 28420 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
@@ -86,6 +88,7 @@ ADD fluent-bit.conf /fluent-bit/etc/
 If you are missing `cont2` rule, the ES log will trigger exception like single document, it's not combined with log message
 
 ![image](https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png)
+<p align="center"><em>Obviously It's not my wanted type</em></p>
 
 
 
