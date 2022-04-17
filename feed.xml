@@ -18,7 +18,114 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 06 Apr 2022 16:58:45 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 17 Apr 2022 04:44:54 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[How to use FluentBit multiline]]></title>
+                    <description><![CDATA[<p>One day, my friend asked a question about how to use <a href="https://fluentbit.io/" rel="nofollow">fluentBit </a> (It's popular in k8s <sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.</p>
+<p><a href="https://user-images.githubusercontent.com/20685961/163699255-57467f29-4d24-4948-aa27-62aa8d3e9b75.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/163699255-57467f29-4d24-4948-aa27-62aa8d3e9b75.png" alt="Flow" style="max-width:100%;"></a>
+<em>The config visualizes</em></p>
+<p>Usually, the log file pattern seems unified, it looks like</p>
+<p><code>2022-04-17 03:10:42.381  INFO 28420 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...</code></p>
+<p>You can easily use regex to collect each line into a structure. But when the app throws exceptions, you need to use multiline parser <sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup><sup><a href="#fn-3" id="user-content-fnref-3">3</a></sup>. Briefly, it's caught raw text read line by line, so each line needs to match <a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing#rules-definition" rel="nofollow">rule</a>, like this:</p>
+<pre lang="conf"><code># rules   |   state name   | regex pattern                   | next state
+# --------|----------------|---------------------------------------------
+rule         "start_state"   "/(Dec \d+ \d+\:\d+\:\d+)(.*)/"   "cont"
+rule         "cont"          "/^\s+at.*/"                      "cont"
+</code></pre>
+<p align="center">
+<a href="https://user-images.githubusercontent.com/20685961/163700092-d1875099-1775-4c9a-8926-6fa7b6d0b9d0.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/163700092-d1875099-1775-4c9a-8926-6fa7b6d0b9d0.png" style="max-width:100%;"></a>
+</p>
+<pre lang="log"><code>2022-04-17 03:10:43.578 ERROR 28420 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+java.lang.RuntimeException: cs
+	at guru.sfg.brewery.config.TaskConfig.throwError(TaskConfig.java:25) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2022-04-17 03:10:43.591  INFO 28420 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-17 03:10:43.593  INFO 28420 --- [restartedMain] g.sfg.brewery.SfgBreweryUiApplication    : Started SfgBreweryUiApplication in 2.717 seconds (JVM running for 3.998)
+2022-04-17 03:10:43.596  INFO 28420 --- [scheduling-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+</code></pre>
+<p>But how to? The official Doc is good, but in this case, in the default spring logging pattern, log message with break-line, and, in Windows, it's <code>\r\n</code>, Me using windows, so be an attention</p>
+<p>So, collusion below (remember when the up satisfied that one can be execute):</p>
+<ol>
+<li>The start line is simple <code>(\d{4}-\d{2}-\d{2}\s\d+\:\d+\:\d+.\d+)(.*)</code> , <a href="https://rubular.com/r/48Q24T9wXBsle9" rel="nofollow">see</a>
+</li>
+<li>next is tricky, <a href="https://rubular.com/r/YNoxsscZcVtlbY" rel="nofollow">see</a>
+</li>
+</ol>
+<ul>
+<li><code>\r\n</code></li>
+<li>
+<code>\s</code> + <code>name: default</code>
+</li>
+</ul>
+<ol start="3">
+<li>and the next, loop <code>3</code>, <a href="https://rubular.com/r/NXxvOGLOyThUzm" rel="nofollow">see</a>
+</li>
+</ol>
+<ul>
+<li>
+<code>\s</code> + <code>...]</code>
+</li>
+<li><code>xxx.xxx.xxException</code></li>
+<li>
+<code>\s</code> + <code>at XXXX</code>
+</li>
+</ul>
+<p>In the end, the exception snippet will produce a single line, you can use filter to exclude this.</p>
+<p>gist: <a href="https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14">https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14</a></p>
+<h2>
+<a id="user-content-other-thing" class="anchor" href="#other-thing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other thing</h2>
+<ul>
+<li>Using docker needs packing by yourself <sup><a href="#fn-4" id="user-content-fnref-4">4</a></sup>, don't forget it should with ES under some network <sup><a href="#fn-5" id="user-content-fnref-5">5</a></sup>
+</li>
+</ul>
+<div class="highlight highlight-source-dockerfile"><pre><span class="pl-k">FROM</span> fluent/fluent-bit:1.9.0
+<span class="pl-k">ADD</span> parsers_multiline.conf /fluent-bit/etc/
+<span class="pl-k">ADD</span> fluent-bit.conf /fluent-bit/etc/</pre></div>
+<p><code>docker build -t fluentbit-cs:sim .</code></p>
+<p><code>docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log --network 8x_default fluentbit-cs:sim</code></p>
+<ul>
+<li>If you are missing <code>cont2</code> rule, the ES log will trigger exception like single document, it's not combined with log message</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png" alt="image" style="max-width:100%;"></a></p>
+<section>
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7">https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7</a> fluent-filebeat-comparison <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-3">
+<p><a href="https://docs.fluentbit.io/manual/pipeline/inputs/tail" rel="nofollow">https://docs.fluentbit.io/manual/pipeline/inputs/tail</a> Tail input <a href="#fnref-3"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-4">
+<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-5">
+<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Sun, 17 Apr 2022 04:44:09 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/15</guid>
+                <link>https://github.com/bxb100/blog/issues/15</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[实现 TDD 的一些捷径]]></title>
                     <description><![CDATA[<h2>
