@@ -74,12 +74,15 @@ URL：`https://.workers.dev/?ip=%IP%&token=%PASS%&user=%USER%&host=%HOST%`
 ---
 
 <a id="issuecomment-1019415303"></a>
-书接上文，访问不了的时候，我突然想到 P2P 的 tailscale，一查发现 QNAP 社区提供了安装包 https://www.qnapclub.eu/en/qpkg/1162 
-（😞 不过官方目前只有群辉的包，这个包的安全性就仁者见仁智者见智了）
+书接上文，访问不了的时候，我突然想到 P2P 的 tailscale，~~一查发现 QNAP 社区提供了安装包https://www.qnapclub.eu/en/qpkg/1162
+（😞 不过官方目前只有群辉的包，这个包的安全性就仁者见仁智者见智了）~~
+
+建议使用 https://github.com/ivokub/tailscale-qpkg
 
 SSH 连接到 NAS，然后 `tailscale up` 授权即可
 
 注意：使用 tailscale 的话，最好把 UPnP 端口转发的服务都关闭，最近好多 IP 端口扫描，有公网 IP 最好防一手
+*直接用 tailscale 分配的局域网 ip 连接*
 
 ![image](https://user-images.githubusercontent.com/20685961/150665679-c124d31c-af44-4eb0-a4b1-7484cca349ad.png)
 
@@ -101,4 +104,5 @@ SSH 连接到 NAS，然后 `tailscale up` 授权即可
 ```
 ---
 
-PS: 不要开 IPv6, 开了之后我这里的情况就是 tailscale 最近的 DERP 是 San Francisco，而不是日本，淦 💩 
+~~PS: 不要开 IPv6, 开了之后我这里的情况就是 tailscale 最近的 DERP 是 San Francisco，而不是日本，淦 💩~~
+淦，不是这个原因，看起来 tailscale 是从链接方找延迟低的 DERP 服务器中转，后面看有没有能指定的命令参数
