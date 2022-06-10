@@ -40,3 +40,10 @@
   <a href="#gh-dark-mode-only"><img src='https://render.githubusercontent.com/render/math?math={\color{white}sharks%20=%20\text{%CF%83}_{family%20=%20\text{%22}sharks\text{%22}}(animals)}#gh-dark-mode-only'></a>
 </p>
 ```
+
+---
+
+<a id="issuecomment-1152091363"></a>
+GitHub 已经原生支持了 [2022-05-19-math-support-in-markdown](https://github.blog/2022-05-19-math-support-in-markdown/)
+
+$e^{i \pi} = -1$

@@ -18,7 +18,50 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 10 Jun 2022 08:04:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Jun 2022 08:07:52 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[GitHub Markdown LaTeX to text technique]]></title>
+                    <description><![CDATA[<p>最近发现的若干将 github md math 转为 SVG 的方式</p>
+<ol>
+<li>github 自己的 render 服务<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
+</li>
+</ol>
+<ul>
+<li><code>&lt;img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1"&gt;</code></li>
+<li>
+<code>![formula](https://render.githubusercontent.com/render/math?math=e^{i%20\pi}%20=%20-1)</code> 这个注意空格</li>
+<li>在 github 上还可以切换 dark/light 模式
+<ul>
+<li>light: <code>&lt;img src="https://render.githubusercontent.com/render/math?math={e^{i \pi} = -1}#gh-light-mode-only"&gt;</code>
+</li>
+<li>dark: <code>&lt;img src="https://render.githubusercontent.com/render/math?math={\color{white}e^{i \pi} = -1}#gh-dark-mode-only"&gt;</code>
+</li>
+<li>展示: <a href="https://render.githubusercontent.com/render/math?math=%7Be%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-light-mode-only" target="_blank" rel="nofollow"><img src="https://render.githubusercontent.com/render/math?math=%7Be%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-light-mode-only" style="max-width:100%;"></a><a href="https://render.githubusercontent.com/render/math?math=%7B%5Ccolor%7Bwhite%7De%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-dark-mode-only" target="_blank" rel="nofollow"><img src="https://render.githubusercontent.com/render/math?math=%7B%5Ccolor%7Bwhite%7De%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-dark-mode-only" style="max-width:100%;"></a>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>使用基于 latex 的 <a href="https://github.com/leegao/readme2tex">readme2tex</a>, 可惜好像没更新了</li>
+<li>使用 mathjax-node, 需要注意需要使用 double backslash <sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup>
+</li>
+</ol>
+<section>
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b">https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings" rel="nofollow">http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Fri, 10 Jun 2022 08:07:05 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/12</guid>
+                <link>https://github.com/bxb100/blog/issues/12</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[Synergy 连接卡顿]]></title>
                     <description><![CDATA[<p>问题：</p>
@@ -218,49 +261,6 @@ java.lang.RuntimeException: cs
                     <pubDate>Mon, 04 Apr 2022 03:54:05 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/13</guid>
                 <link>https://github.com/bxb100/blog/issues/13</link>
-                    <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[GitHub Markdown LaTeX to text technique]]></title>
-                    <description><![CDATA[<p>最近发现的若干将 github md math 转为 SVG 的方式</p>
-<ol>
-<li>github 自己的 render 服务<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
-</li>
-</ol>
-<ul>
-<li><code>&lt;img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1"&gt;</code></li>
-<li>
-<code>![formula](https://render.githubusercontent.com/render/math?math=e^{i%20\pi}%20=%20-1)</code> 这个注意空格</li>
-<li>在 github 上还可以切换 dark/light 模式
-<ul>
-<li>light: <code>&lt;img src="https://render.githubusercontent.com/render/math?math={e^{i \pi} = -1}#gh-light-mode-only"&gt;</code>
-</li>
-<li>dark: <code>&lt;img src="https://render.githubusercontent.com/render/math?math={\color{white}e^{i \pi} = -1}#gh-dark-mode-only"&gt;</code>
-</li>
-<li>展示: <a href="https://render.githubusercontent.com/render/math?math=%7Be%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-light-mode-only" target="_blank" rel="nofollow"><img src="https://render.githubusercontent.com/render/math?math=%7Be%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-light-mode-only" style="max-width:100%;"></a><a href="https://render.githubusercontent.com/render/math?math=%7B%5Ccolor%7Bwhite%7De%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-dark-mode-only" target="_blank" rel="nofollow"><img src="https://render.githubusercontent.com/render/math?math=%7B%5Ccolor%7Bwhite%7De%5E%7Bi%20%5Cpi%7D%20=%20-1%7D#gh-dark-mode-only" style="max-width:100%;"></a>
-</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li>使用基于 latex 的 <a href="https://github.com/leegao/readme2tex">readme2tex</a>, 可惜好像没更新了</li>
-<li>使用 mathjax-node, 需要注意需要使用 double backslash <sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup>
-</li>
-</ol>
-<section>
-<ol>
-<li id="user-content-fn-1">
-<p><a href="https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b">https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-<li id="user-content-fn-2">
-<p><a href="http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings" rel="nofollow">http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-</ol>
-</section>
-]]></description>
-                    <pubDate>Tue, 22 Mar 2022 14:16:51 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/12</guid>
-                <link>https://github.com/bxb100/blog/issues/12</link>
                     <author><![CDATA[bxb100]]></author>
             </item>
             <item>
