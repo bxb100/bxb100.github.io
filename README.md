@@ -6,6 +6,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Dan Abramov | https://overreacted.io/ | React |
 
 ## Recent
+- [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
 - [How to use FluentBit multiline](https://github.com/bxb100/blog/issues/15)---2022-04-17
 - [实现 TDD 的一些捷径](https://github.com/bxb100/blog/issues/14)---2022-04-06
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/blog/issues/13)---2022-04-04
@@ -15,7 +16,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/blog/issues/8)---2022-01-18
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
 - [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/blog/issues/6)---2021-12-30
-- [雄狮少年杂感](https://github.com/bxb100/blog/issues/5)---2021-12-27
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
