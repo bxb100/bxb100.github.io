@@ -36,6 +36,10 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/blog/issues/8)---2022-01-18
 
 
+## 就是玩
+- [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
+
+
 ## 摘录
 - [太多人活得不像自己](https://github.com/bxb100/blog/issues/3)---2021-12-13
 
