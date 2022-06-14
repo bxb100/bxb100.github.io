@@ -18,7 +18,130 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 10 Jun 2022 08:07:52 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 14 Jun 2022 17:15:06 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Amazon SP program signature problem]]></title>
+                    <description><![CDATA[<h2>
+<a id="user-content-case" class="anchor" href="#case" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Case</h2>
+<p>When us project execute <a href="https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-reference#getlistingsitem" rel="nofollow">getListingsItem</a>, using SKU name 'FBA XXX XX 300g', but Amazon returns 403 error. At first, we don't get message body like below, we just know it's not successful.</p>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ent">"errors"</span>: [
+    {
+      <span class="pl-ent">"message"</span>: <span class="pl-ii">"The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.</span>
+
+<span class="pl-ii">...</span></pre></div>
+<h2>
+<a id="user-content-using-charles-to-debug" class="anchor" href="#using-charles-to-debug" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Charles to debug</h2>
+<p>I suppose the HTTP protocol sends the right query param and uses the right path, but I don't know yet, so I choose using Charles to get information. First disable the SSL certificate verifier, and then add Charles proxy.</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">OkHttpClient</span> <span class="pl-s1">getUnsafeOkHttpClient</span>() {
+        <span class="pl-k">try</span> {
+            <span class="pl-c">// Create a trust manager that does not validate certificate chains</span>
+            <span class="pl-k">final</span> <span class="pl-smi">TrustManager</span>[] <span class="pl-s1">trustAllCerts</span> = <span class="pl-k">new</span> <span class="pl-smi">TrustManager</span>[]{
+                <span class="pl-k">new</span> <span class="pl-smi">X509TrustManager</span>() {
+                    <span class="pl-c1">@</span><span class="pl-c1">Override</span>
+                    <span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">checkClientTrusted</span>(<span class="pl-smi">java</span>.<span class="pl-smi">security</span>.<span class="pl-smi">cert</span>.<span class="pl-smi">X509Certificate</span>[] <span class="pl-s1">chain</span>, <span class="pl-smi">String</span> <span class="pl-s1">authType</span>) <span class="pl-k">throws</span> <span class="pl-smi">CertificateException</span> {
+                    }
+
+                    <span class="pl-c1">@</span><span class="pl-c1">Override</span>
+                    <span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">checkServerTrusted</span>(<span class="pl-smi">java</span>.<span class="pl-smi">security</span>.<span class="pl-smi">cert</span>.<span class="pl-smi">X509Certificate</span>[] <span class="pl-s1">chain</span>, <span class="pl-smi">String</span> <span class="pl-s1">authType</span>) <span class="pl-k">throws</span> <span class="pl-smi">CertificateException</span> {
+                    }
+
+                    <span class="pl-c1">@</span><span class="pl-c1">Override</span>
+                    <span class="pl-k">public</span> <span class="pl-smi">java</span>.<span class="pl-smi">security</span>.<span class="pl-smi">cert</span>.<span class="pl-smi">X509Certificate</span>[] <span class="pl-en">getAcceptedIssuers</span>() {
+                        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">java</span>.<span class="pl-smi">security</span>.<span class="pl-smi">cert</span>.<span class="pl-smi">X509Certificate</span>[]{};
+                    }
+                }
+            };
+
+            <span class="pl-c">// Install the all-trusting trust manager</span>
+            <span class="pl-k">final</span> <span class="pl-smi">SSLContext</span> <span class="pl-s1">sslContext</span> = <span class="pl-c1">SSLContext</span>.<span class="pl-en">getInstance</span>(<span class="pl-s">"SSL"</span>);
+            <span class="pl-s1">sslContext</span>.<span class="pl-en">init</span>(<span class="pl-c1">null</span>, <span class="pl-s1">trustAllCerts</span>, <span class="pl-k">new</span> <span class="pl-smi">java</span>.<span class="pl-smi">security</span>.<span class="pl-smi">SecureRandom</span>());
+            <span class="pl-c">// Create an ssl socket factory with our all-trusting manager</span>
+            <span class="pl-k">final</span> <span class="pl-smi">SSLSocketFactory</span> <span class="pl-s1">sslSocketFactory</span> = <span class="pl-s1">sslContext</span>.<span class="pl-en">getSocketFactory</span>();
+
+            <span class="pl-smi">OkHttpClient</span> <span class="pl-s1">client</span> = <span class="pl-k">new</span> <span class="pl-smi">OkHttpClient</span>();
+            <span class="pl-s1">client</span>.<span class="pl-en">setSslSocketFactory</span>(<span class="pl-s1">sslSocketFactory</span>);
+            <span class="pl-s1">client</span>.<span class="pl-en">setHostnameVerifier</span>(<span class="pl-k">new</span> <span class="pl-smi">HostnameVerifier</span>() {
+                <span class="pl-c1">@</span><span class="pl-c1">Override</span>
+                <span class="pl-k">public</span> <span class="pl-smi">boolean</span> <span class="pl-en">verify</span>(<span class="pl-smi">String</span> <span class="pl-s1">hostname</span>, <span class="pl-smi">SSLSession</span> <span class="pl-s1">session</span>) {
+                    <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+                }
+            });
+            <span class="pl-s1">client</span>.<span class="pl-en">setProxy</span>(<span class="pl-k">new</span> <span class="pl-smi">Proxy</span>(<span class="pl-smi">Proxy</span>.<span class="pl-s1">Type</span>.<span class="pl-c1">HTTP</span>, <span class="pl-k">new</span> <span class="pl-smi">InetSocketAddress</span>(<span class="pl-s">"127.0.0.1"</span>, <span class="pl-c1">9090</span>)));
+            <span class="pl-k">return</span> <span class="pl-s1">client</span>;
+        } <span class="pl-k">catch</span> (<span class="pl-smi">Exception</span> <span class="pl-s1">e</span>) {
+            <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-smi">RuntimeException</span>(<span class="pl-s1">e</span>);
+        }
+    }</pre></div>
+<p>and then to execute method get error like this</p>
+<p><a href="https://user-images.githubusercontent.com/20685961/173632004-2312ee7a-5cb0-4d43-b2c0-8b533b19b17f.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/173632004-2312ee7a-5cb0-4d43-b2c0-8b533b19b17f.png" alt="image" style="max-width:100%;"></a></p>
+<p>It's easy to know the problem occupy in the AWS signer, but why? The path is encoded (compared with postman data), and the signer is double encoding the path variable <sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup> (<code>urlEncode</code> default is <code>true</code>)</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">protected</span> <span class="pl-smi">String</span> <span class="pl-s1">getCanonicalizedResourcePath</span>(<span class="pl-smi">String</span> <span class="pl-s1">resourcePath</span>, <span class="pl-smi">boolean</span> <span class="pl-s1">urlEncode</span>) {
+        <span class="pl-smi">String</span> <span class="pl-s1">value</span> = <span class="pl-s1">resourcePath</span>;
+        <span class="pl-k">if</span> (<span class="pl-s1">urlEncode</span>) {
+            <span class="pl-s1">value</span> = <span class="pl-c1">SdkHttpUtils</span>.<span class="pl-en">urlEncode</span>(<span class="pl-s1">resourcePath</span>, <span class="pl-c1">true</span>);
+
+            <span class="pl-smi">URI</span> <span class="pl-s1">normalize</span> = <span class="pl-c1">URI</span>.<span class="pl-en">create</span>(<span class="pl-s1">value</span>).<span class="pl-en">normalize</span>();
+            <span class="pl-s1">value</span> = <span class="pl-s1">normalize</span>.<span class="pl-en">getRawPath</span>();
+
+            <span class="pl-c">// Normalization can leave a trailing slash at the end of the resource path,</span>
+            <span class="pl-c">// even if the input path doesn't end with one. Example input: /foo/bar/.</span>
+            <span class="pl-c">// Remove the trailing slash if the input path doesn't end with one.</span>
+            <span class="pl-k">if</span> (!<span class="pl-s1">resourcePath</span>.<span class="pl-en">endsWith</span>(<span class="pl-s">"/"</span>) &amp;&amp; <span class="pl-s1">value</span>.<span class="pl-en">endsWith</span>(<span class="pl-s">"/"</span>)) {
+                <span class="pl-s1">value</span> = <span class="pl-s1">value</span>.<span class="pl-en">substring</span>(<span class="pl-c1">0</span>, <span class="pl-s1">value</span>.<span class="pl-en">length</span>() - <span class="pl-c1">1</span>);
+            }
+        }
+        <span class="pl-k">if</span> (!<span class="pl-s1">value</span>.<span class="pl-en">startsWith</span>(<span class="pl-s">"/"</span>)) {
+            <span class="pl-s1">value</span> = <span class="pl-s">"/"</span> + <span class="pl-s1">value</span>;
+        }
+        <span class="pl-k">return</span> <span class="pl-s1">value</span>;
+    }</pre></div>
+<p>Obviously, the code is right, it must be some places give the wrong parameter.</p>
+<h2>
+<a id="user-content-debug" class="anchor" href="#debug" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debug</h2>
+<p>The best way to pinpoint the breakpoints is the line where the nearest the wrong way.
+So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take a deep look. few methods passed, suddenly I found the <code>path</code> in <code>createCanonicalRequest</code> not right, it's just a plain text of the test sets.</p>
+<p>Why?</p>
+<p>You know the <code>createCanonicalRequest</code> is the first step, they need encode twice, if you passed a path without encode, then the <code>aws-sdk</code> maximum encode once.</p>
+<p><a href="https://user-images.githubusercontent.com/20685961/173635120-5dffa3d0-5046-4bce-b6e4-9df1fd6092c3.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/173635120-5dffa3d0-5046-4bce-b6e4-9df1fd6092c3.png" alt="image" style="max-width:100%;"></a></p>
+<p>Now, you can clearly find the problem is <code>request.getResourcePath()</code></p>
+<div class="highlight highlight-source-java"><pre>  <span class="pl-c1">@</span><span class="pl-c1">Override</span>
+  <span class="pl-k">public</span> <span class="pl-smi">String</span> <span class="pl-s1">getResourcePath</span>() {
+    <span class="pl-k">try</span> {
+      <span class="pl-k">return</span> <span class="pl-s1">originalRequest</span>.<span class="pl-en">url</span>().<span class="pl-en">toURI</span>().<span class="pl-en">getPath</span>();
+    } <span class="pl-k">catch</span> (<span class="pl-smi">URISyntaxException</span> <span class="pl-s1">e</span>) {
+      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-smi">RuntimeException</span>(<span class="pl-s1">e</span>);
+    }
+  }</pre></div>
+<p>and</p>
+<div class="highlight highlight-source-java"><pre>    <span class="pl-c">/**</span>
+<span class="pl-c">     * Returns the decoded path component of this URI.</span>
+<span class="pl-c">     *</span>
+<span class="pl-c">     * &lt;p&gt; The string returned by this method is equal to that returned by the</span>
+<span class="pl-c">     * {@link #getRawPath() getRawPath} method except that all sequences of</span>
+<span class="pl-c">     * escaped octets are &lt;a href="#decode"&gt;decoded&lt;/a&gt;.  &lt;/p&gt;</span>
+<span class="pl-c">     *</span>
+<span class="pl-c">     * @return  The decoded path component of this URI,</span>
+<span class="pl-c">     *          or {@code null} if the path is undefined</span>
+<span class="pl-c">     */</span>
+    <span class="pl-k">public</span> <span class="pl-smi">String</span> <span class="pl-s1">getPath</span>() {
+        #...
+    }</pre></div>
+<p>it's so simple, but costed me batch time to solve this, feel sad <g-emoji class="g-emoji" alias="cry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png">😢</g-emoji></p>
+<p>Have a long way to go, good luck for me <g-emoji class="g-emoji" alias="crossed_fingers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png">🤞</g-emoji></p>
+<section>
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Tue, 14 Jun 2022 17:14:16 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/17</guid>
+                <link>https://github.com/bxb100/blog/issues/17</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[GitHub Markdown LaTeX to text technique]]></title>
                     <description><![CDATA[<p>最近发现的若干将 github md math 转为 SVG 的方式</p>
