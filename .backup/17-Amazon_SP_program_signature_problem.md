@@ -132,9 +132,9 @@ and
     }
 ```
 
-it's so simple, but costed me batch time to solve this, feel sad 😢 
+it's so simple, but costed me a bunch of time to solve, feel sad 😢 
 
-Have a long way to go, good luck for me 🤞 
+bless me to be better 🤞 
 
 
 [^1]: https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice

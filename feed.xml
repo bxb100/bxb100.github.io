@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 14 Jun 2022 17:16:46 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 14 Jun 2022 17:20:12 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Amazon SP program signature problem]]></title>
                     <description><![CDATA[<h2>
@@ -127,8 +127,8 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
     <span class="pl-k">public</span> <span class="pl-smi">String</span> <span class="pl-s1">getPath</span>() {
         #...
     }</pre></div>
-<p>it's so simple, but costed me batch time to solve this, feel sad <g-emoji class="g-emoji" alias="cry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png">😢</g-emoji></p>
-<p>Have a long way to go, good luck for me <g-emoji class="g-emoji" alias="crossed_fingers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png">🤞</g-emoji></p>
+<p>it's so simple, but costed me a bunch of time to solve, feel sad <g-emoji class="g-emoji" alias="cry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png">😢</g-emoji></p>
+<p>bless me to be better <g-emoji class="g-emoji" alias="crossed_fingers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png">🤞</g-emoji></p>
 <section>
 <ol>
 <li id="user-content-fn-1">
@@ -137,10 +137,11 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Tue, 14 Jun 2022 17:15:59 GMT</pubDate>
+                    <pubDate>Tue, 14 Jun 2022 17:19:04 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/17</guid>
                 <link>https://github.com/bxb100/blog/issues/17</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
             </item>
             <item>
                 <title><![CDATA[GitHub Markdown LaTeX to text technique]]></title>
