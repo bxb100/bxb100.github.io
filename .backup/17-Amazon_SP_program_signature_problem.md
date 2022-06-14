@@ -92,7 +92,7 @@ Obviously, the code is right, it must be some places give the wrong parameter.
 
 ## Debug
 
-The best way to pinpoint the breakpoints is the line where the nearest the wrong way.
+The best way to pinpoint the breakpoints is the line where the nearest the mistake.
 So, give the `AWSSigV4Signer#sign` one, and start debug session, take a deep look. few methods passed, suddenly I found the `path` in `createCanonicalRequest` not right, it's just a plain text of the test sets.
 
 Why?
