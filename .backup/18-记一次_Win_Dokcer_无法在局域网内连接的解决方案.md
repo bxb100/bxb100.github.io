@@ -2,6 +2,10 @@
 
 我出现的问题是 docker firewall UAC 弹窗的时候只允许了 public 连接，然后网络变成 private 导致无法连接
 
+```shell
+Get-NetFirewallRule | where { $_.Name -like "*docker*" } | ft
+```
+
 进入 `Control Panel\System and Security\Windows Defender Firewall\Allowed apps` 添加 private 权限即可
 
 相关文章参考
