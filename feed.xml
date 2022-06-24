@@ -18,7 +18,21 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 23 Jun 2022 14:21:06 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Jun 2022 10:39:15 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[记一次 Win Dokcer 无法在局域网内连接的解决方案]]></title>
+                    <description><![CDATA[<p>我出现的问题是 docker firewall UAC 弹窗的时候只允许了 public 连接，然后网络变成 private 导致无法连接</p>
+<p>进入 <code>Control Panel\System and Security\Windows Defender Firewall\Allowed apps</code> 添加 private 权限即可</p>
+<p>相关文章参考
+<a href="https://blog.miniasp.com/post/2021/06/14/Docker-Desktop-for-Windows-Windows-Firewall-Issues" rel="nofollow">https://blog.miniasp.com/post/2021/06/14/Docker-Desktop-for-Windows-Windows-Firewall-Issues</a></p>
+]]></description>
+                    <pubDate>Fri, 24 Jun 2022 10:38:24 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/18</guid>
+                <link>https://github.com/bxb100/blog/issues/18</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+                        <category>就是玩</category>
+            </item>
             <item>
                 <title><![CDATA[太多人活得不像自己]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
