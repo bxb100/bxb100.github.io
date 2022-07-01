@@ -17,3 +17,11 @@ https://gist.github.com/bxb100/6734e7fdc5396bcfcaf34c809c8334f6
 搜索 GIF 第一帧的时候发现 Lens 无法请求成功，所以弃用 Lens 改成 google image search
 
 https://gist.github.com/bxb100/4cdfa1b52999ac491b21fd9e1803f58a
+
+---
+
+<a id="issuecomment-1172560293"></a>
+设置第一张图片为壁纸
+```shell
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$1\" as POSIX file" 
+```
