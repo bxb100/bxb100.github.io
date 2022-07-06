@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 01 Jul 2022 17:19:52 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 06 Jul 2022 14:00:59 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[太多人活得不像自己]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Wed, 06 Jul 2022 14:00:03 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
+                <link>https://github.com/bxb100/blog/issues/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[Dropover 自定义操作的一些 Tips]]></title>
                     <description><![CDATA[<ol>
@@ -47,16 +57,6 @@
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
                         <category>就是玩</category>
-            </item>
-            <item>
-                <title><![CDATA[太多人活得不像自己]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Thu, 23 Jun 2022 14:20:15 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
-                <link>https://github.com/bxb100/blog/issues/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[Amazon SP program signature problem]]></title>
