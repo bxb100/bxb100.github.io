@@ -18,7 +18,22 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 13 Jul 2022 01:29:47 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 20 Jul 2022 04:05:37 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Amazon SP API 获取 listing item 的正确方式]]></title>
+                    <description><![CDATA[<ul>
+<li>download <code>GET_MERCHANT_LISTINGS_ALL_DATA</code> report (fr region does not contain <code>ASIN</code>)</li>
+<li>download <code>GET_FLAT_FILE_OPEN_LISTINGS_DATA</code> report (get missing <code>ASIN</code>)</li>
+<li>Get the main picture and variations ASIN with the CatalogItems API</li>
+</ul>
+<p>source: <a href="https://medium.com/@nassuf/how-to-get-a-sellers-listings-using-amazon-sp-api-475771d3754c" rel="nofollow">https://medium.com/@nassuf/how-to-get-a-sellers-listings-using-amazon-sp-api-475771d3754c</a></p>
+]]></description>
+                    <pubDate>Wed, 20 Jul 2022 04:04:53 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/19</guid>
+                <link>https://github.com/bxb100/blog/issues/19</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[太多人活得不像自己]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
@@ -330,9 +345,10 @@ java.lang.RuntimeException: cs
 <ol>
 <li>build an image</li>
 </ol>
-<div class="highlight highlight-source-dockerfile"><pre><span class="pl-k">FROM</span> fluent/fluent-bit:1.9.0
-<span class="pl-k">ADD</span> parsers_multiline.conf /fluent-bit/etc/
-<span class="pl-k">ADD</span> fluent-bit.conf /fluent-bit/etc/</pre></div>
+<pre lang="Dockerfile"><code>FROM fluent/fluent-bit:1.9.0
+ADD parsers_multiline.conf /fluent-bit/etc/
+ADD fluent-bit.conf /fluent-bit/etc/
+</code></pre>
 <p><code>docker build -t fluentbit-cs:sim .</code></p>
 <p><code>docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log --network 8x_default fluentbit-cs:sim</code></p>
 <ol start="2">
