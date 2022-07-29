@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 29 Jul 2022 16:35:46 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 Jul 2022 16:41:24 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Java generics with overloading]]></title>
                     <description><![CDATA[<p>The scenario:</p>
@@ -45,15 +45,17 @@
 <p>I think the runtime compiler design to obey this:</p>
 <ol>
 <li>
-<code>List</code> is same to <code>List&lt;Object&gt;</code>
+<code>List</code> same as <code>List&lt;Object&gt;</code>
 </li>
 <li>
-<code>List&lt;Type&gt; list1</code> with Generics will Erasure, that means is any type</li>
+<code>List&lt;Type&gt; list1</code> with generics can accept any type</li>
 <li>
-<code>List&lt;Object&gt;</code> means check the input need always <code>List&lt;Object&gt;</code>
+<code>List&lt;Object&gt;</code> means just accept <code>List&lt;Object&gt;</code> or <code>List</code>
 </li>
 <li>
 <code>List&lt;T&gt; list1</code> calling varargs method equals <code>new Object[]{ list1 }</code>
+</li>
+<li>Using <code>test1(Collections.singletonList(x))</code> equals <code>test1(new ArrayList&lt;Object&gt;())</code>
 </li>
 </ol>
 <hr>
@@ -69,7 +71,7 @@
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Fri, 29 Jul 2022 16:34:58 GMT</pubDate>
+                    <pubDate>Fri, 29 Jul 2022 16:40:37 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/20</guid>
                 <link>https://github.com/bxb100/blog/issues/20</link>
                     <author><![CDATA[bxb100]]></author>

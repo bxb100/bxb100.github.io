@@ -32,10 +32,11 @@ Some document identified
 Sure, it's not the same question, but I think some conception can go to the same destination
 
 I think the runtime compiler design to obey this:
-  1. `List` is same to `List<Object>`
-  2. `List<Type> list1` with Generics will Erasure, that means is any type
-  3. `List<Object>` means check the input need always `List<Object>`
+  1. `List` same as `List<Object>`
+  2. `List<Type> list1` with generics can accept any type
+  3. `List<Object>` means just accept `List<Object>` or `List`
   4. `List<T> list1` calling varargs method equals `new Object[]{ list1 }`
+  5. Using `test1(Collections.singletonList(x))` equals `test1(new ArrayList<Object>())`
 
 ---
 
