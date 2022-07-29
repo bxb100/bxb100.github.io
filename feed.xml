@@ -18,7 +18,64 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 20 Jul 2022 04:05:37 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 Jul 2022 16:35:46 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Java generics with overloading]]></title>
+                    <description><![CDATA[<p>The scenario:</p>
+<div class="highlight highlight-source-java"><pre>    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-s1">test1</span>(<span class="pl-smi">Object</span>... <span class="pl-s1">args</span>) {
+
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-s1">test1</span>(<span class="pl-smi">List</span>&lt;<span class="pl-smi">Object</span>&gt; <span class="pl-s1">args</span>) {
+
+    }</pre></div>
+<p>there are two overloading method, but when you're using</p>
+<div class="highlight highlight-source-java"><pre> <span class="pl-smi">List</span>&lt;<span class="pl-smi">Long</span>&gt; <span class="pl-s1">list1</span> = <span class="pl-k">new</span> <span class="pl-smi">ArrayList</span>&lt;&gt; <span class="pl-s1">test1</span>(<span class="pl-s1">objects</span>);
+ <span class="pl-en">test1</span>(<span class="pl-s1">list1</span>);</pre></div>
+<p>It's always using the first method <code>test1(Object... args)</code>, but when using <code>List&lt;Object&gt; list2</code> the executor is different, It's too wired</p>
+<hr>
+<p>Some document identified</p>
+<blockquote>
+<p>The example above shows why generics and arrays don't mix well together. <strong>An array is what is called reifiable type -- a type where full type information is available during run-time.</strong> It is because Java array is reifiable that the Java run-time can check what we store into the array matches the type of the array and throw an <code>ArrayStoreException </code> at us if there is a mismatch. <strong>Java generics, however, is not reifiable due to type erasure</strong>. Java designers have decided not to mix the two.<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup></p>
+</blockquote>
+<blockquote>
+<p>the <code>List&lt;?&gt;</code> means you can assign any type of List to it and <code>List&lt;Object&gt;</code> means you can store any type of object into it.<sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup></p>
+</blockquote>
+<p>Sure, it's not the same question, but I think some conception can go to the same destination</p>
+<p>I think the runtime compiler design to obey this:</p>
+<ol>
+<li>
+<code>List</code> is same to <code>List&lt;Object&gt;</code>
+</li>
+<li>
+<code>List&lt;Type&gt; list1</code> with Generics will Erasure, that means is any type</li>
+<li>
+<code>List&lt;Object&gt;</code> means check the input need always <code>List&lt;Object&gt;</code>
+</li>
+<li>
+<code>List&lt;T&gt; list1</code> calling varargs method equals <code>new Object[]{ list1 }</code>
+</li>
+</ol>
+<hr>
+<p>So this is the check trick problem</p>
+<section>
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://nus-cs2030s.github.io/2021-s2/21-erasure.html" rel="nofollow">https://nus-cs2030s.github.io/2021-s2/21-erasure.html</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://www.java67.com/2021/08/real-difference-between-list-and-list.html" rel="nofollow">https://www.java67.com/2021/08/real-difference-between-list-and-list.html</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Fri, 29 Jul 2022 16:34:58 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/20</guid>
+                <link>https://github.com/bxb100/blog/issues/20</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Archive</category>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[Amazon SP API 获取 listing item 的正确方式]]></title>
                     <description><![CDATA[<ul>
@@ -345,10 +402,9 @@ java.lang.RuntimeException: cs
 <ol>
 <li>build an image</li>
 </ol>
-<pre lang="Dockerfile"><code>FROM fluent/fluent-bit:1.9.0
-ADD parsers_multiline.conf /fluent-bit/etc/
-ADD fluent-bit.conf /fluent-bit/etc/
-</code></pre>
+<div class="highlight highlight-source-dockerfile"><pre><span class="pl-k">FROM</span> fluent/fluent-bit:1.9.0
+<span class="pl-k">ADD</span> parsers_multiline.conf /fluent-bit/etc/
+<span class="pl-k">ADD</span> fluent-bit.conf /fluent-bit/etc/</pre></div>
 <p><code>docker build -t fluentbit-cs:sim .</code></p>
 <p><code>docker run -id --name fluent -v /e/docker/fluentBit/log:/var/log --network 8x_default fluentbit-cs:sim</code></p>
 <ol start="2">
