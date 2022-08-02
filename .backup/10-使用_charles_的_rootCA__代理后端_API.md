@@ -112,3 +112,10 @@ Android:
 
 
 [^1]: https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl
+
+---
+
+<a id="issuecomment-1203009674"></a>
+其它文章
+- https://medium.com/@devahmedshendy/traditional-setup-run-local-development-over-https-using-caddy-964884e75232
+- https://docs.proxyman.io/advanced-features/custom-certificates

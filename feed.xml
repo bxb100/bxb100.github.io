@@ -18,7 +18,111 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 29 Jul 2022 16:41:24 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Aug 2022 17:21:03 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
+                    <description><![CDATA[<h2>
+<a id="user-content-前情" class="anchor" href="#%E5%89%8D%E6%83%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>前情</h2>
+<p>某日我儿（前端 ios 使用 https 但是没有强制）问我如何利用 charles 来代理后端<strong>本地</strong> API 测试，我直接甩给他 <code>map remote</code> 大法 （from https to http），解决。</p>
+<h2>
+<a id="user-content-思考" class="anchor" href="#%E6%80%9D%E8%80%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>思考</h2>
+<p><a href="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" target="_blank" rel="nofollow"><img width="432" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" style="max-width:100%;"></a></p>
+<p>这时候我觉得 charles 类似 QuantumultX 直接重写响应 payload，但是看了 doc 之后发现仅仅只是转发。然后我问了下我儿，他说他客户端没做 ssl 校验，那么之后排期做了校验这种方式可能会有问题。
+这时我就想到能否利用 charles 的 rootCA 来自签，这样的话配合 DNS 和一些 web server 反向代理就能做到直接本地 https 线上域名访问了（当然 client 添加公钥这种问题就不在这里赘述了）。
+<br></p>
+<h2>
+<a id="user-content-实验" class="anchor" href="#%E5%AE%9E%E9%AA%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实验</h2>
+<p>首先先导出 charles 的 CA 和 私钥</p>
+<p><strong>Help</strong> &gt;  <strong>SSL Proxying</strong> &gt;  <strong>Export Charles Root Certificate and Private Key...</strong></p>
+<p>然后转成 <code>PEM</code><sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup> (<em><code>charles-ssl-proxying.p12</code> <code>newfile.xx.pem</code> 按实际情况填写</em>）</p>
+<div class="highlight highlight-source-shell"><pre>openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.crt.pem -clcerts -nokeys
+openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.key.pem -nocerts -nodes </pre></div>
+<p>然后参考</p>
+<ul>
+<li><a href="https://github.com/kingkool68/generate-ssl-certs-for-local-development">https://github.com/kingkool68/generate-ssl-certs-for-local-development</a></li>
+<li><a href="https://github.com/dakshshah96/local-cert-generator">https://github.com/dakshshah96/local-cert-generator</a></li>
+</ul>
+<p>创建（这里假如使用的是 example.com 网站）
+1、server.csr.cnf</p>
+<pre><code>[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=US
+ST=RandomState
+L=RandomCity
+O=RandomOrganization
+OU=RandomOrganizationUnit
+emailAddress=hello@example.com
+CN = example.com
+</code></pre>
+<p>2、v3.ext</p>
+<pre><code>authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = example.com
+</code></pre>
+<p>执行</p>
+<pre><code>openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config server.csr.cnf
+
+openssl x509 -req -in server.csr -CA newfile.crt.pem -CAkey newfile.key.pem -CAcreateserial -out server.crt -days 825 -sha256 -extfile v3.ext
+</code></pre>
+<p>获得</p>
+<ul>
+<li>server.key</li>
+<li>server.crt</li>
+</ul>
+<p>使用 caddy 简单做一个反向代理</p>
+<pre><code>example.com {
+
+tls ~/server.crt ~/server.key
+
+reverse_proxy localhost:2022
+}
+
+:2022 {
+respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
+}
+</code></pre>
+<p><a href="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" target="_blank" rel="nofollow"><img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" style="max-width:100%;"></a></p>
+<p>然后在 charles 中配置</p>
+<p><strong>Tools</strong> &gt; <strong>DNS Spoofing</strong></p>
+<p>将 <code>example.com</code>指向本地 caddy，这样就能直接请求了</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<p>PC:
+<a href="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" target="_blank" rel="nofollow"><img alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" style="max-width:100%;"></a></p>
+<p>Android:
+<a href="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" style="max-width:100%;"></a></p>
+<section>
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Tue, 02 Aug 2022 17:20:15 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
+                <link>https://github.com/bxb100/blog/issues/10</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
             <item>
                 <title><![CDATA[Java generics with overloading]]></title>
                     <description><![CDATA[<p>The scenario:</p>
@@ -485,110 +589,6 @@ java.lang.RuntimeException: cs
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/13</guid>
                 <link>https://github.com/bxb100/blog/issues/13</link>
                     <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
-                    <description><![CDATA[<h2>
-<a id="user-content-前情" class="anchor" href="#%E5%89%8D%E6%83%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>前情</h2>
-<p>某日我儿（前端 ios 使用 https 但是没有强制）问我如何利用 charles 来代理后端<strong>本地</strong> API 测试，我直接甩给他 <code>map remote</code> 大法 （from https to http），解决。</p>
-<h2>
-<a id="user-content-思考" class="anchor" href="#%E6%80%9D%E8%80%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>思考</h2>
-<p><a href="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" target="_blank" rel="nofollow"><img width="432" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" style="max-width:100%;"></a></p>
-<p>这时候我觉得 charles 类似 QuantumultX 直接重写响应 payload，但是看了 doc 之后发现仅仅只是转发。然后我问了下我儿，他说他客户端没做 ssl 校验，那么之后排期做了校验这种方式可能会有问题。
-这时我就想到能否利用 charles 的 rootCA 来自签，这样的话配合 DNS 和一些 web server 反向代理就能做到直接本地 https 线上域名访问了（当然 client 添加公钥这种问题就不在这里赘述了）。
-<br></p>
-<h2>
-<a id="user-content-实验" class="anchor" href="#%E5%AE%9E%E9%AA%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实验</h2>
-<p>首先先导出 charles 的 CA 和 私钥</p>
-<p><strong>Help</strong> &gt;  <strong>SSL Proxying</strong> &gt;  <strong>Export Charles Root Certificate and Private Key...</strong></p>
-<p>然后转成 <code>PEM</code><sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup> (<em><code>charles-ssl-proxying.p12</code> <code>newfile.xx.pem</code> 按实际情况填写</em>）</p>
-<div class="highlight highlight-source-shell"><pre>openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.crt.pem -clcerts -nokeys
-openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.key.pem -nocerts -nodes </pre></div>
-<p>然后参考</p>
-<ul>
-<li><a href="https://github.com/kingkool68/generate-ssl-certs-for-local-development">https://github.com/kingkool68/generate-ssl-certs-for-local-development</a></li>
-<li><a href="https://github.com/dakshshah96/local-cert-generator">https://github.com/dakshshah96/local-cert-generator</a></li>
-</ul>
-<p>创建（这里假如使用的是 example.com 网站）
-1、server.csr.cnf</p>
-<pre><code>[req]
-default_bits = 2048
-prompt = no
-default_md = sha256
-distinguished_name = dn
-
-[dn]
-C=US
-ST=RandomState
-L=RandomCity
-O=RandomOrganization
-OU=RandomOrganizationUnit
-emailAddress=hello@example.com
-CN = example.com
-</code></pre>
-<p>2、v3.ext</p>
-<pre><code>authorityKeyIdentifier=keyid,issuer
-basicConstraints=CA:FALSE
-keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-subjectAltName = @alt_names
-
-[alt_names]
-DNS.1 = example.com
-</code></pre>
-<p>执行</p>
-<pre><code>openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config server.csr.cnf
-
-openssl x509 -req -in server.csr -CA newfile.crt.pem -CAkey newfile.key.pem -CAcreateserial -out server.crt -days 825 -sha256 -extfile v3.ext
-</code></pre>
-<p>获得</p>
-<ul>
-<li>server.key</li>
-<li>server.crt</li>
-</ul>
-<p>使用 caddy 简单做一个反向代理</p>
-<pre><code>example.com {
-
-tls ~/server.crt ~/server.key
-
-reverse_proxy localhost:2022
-}
-
-:2022 {
-respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
-}
-</code></pre>
-<p><a href="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" target="_blank" rel="nofollow"><img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" style="max-width:100%;"></a></p>
-<p>然后在 charles 中配置</p>
-<p><strong>Tools</strong> &gt; <strong>DNS Spoofing</strong></p>
-<p>将 <code>example.com</code>指向本地 caddy，这样就能直接请求了</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<hr>
-<p>PC:
-<a href="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" target="_blank" rel="nofollow"><img alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" style="max-width:100%;"></a></p>
-<p>Android:
-<a href="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" style="max-width:100%;"></a></p>
-<section>
-<ol>
-<li id="user-content-fn-1">
-<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-</ol>
-</section>
-]]></description>
-                    <pubDate>Fri, 11 Feb 2022 09:56:09 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
-                <link>https://github.com/bxb100/blog/issues/10</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
