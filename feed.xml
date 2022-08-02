@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 02 Aug 2022 17:21:03 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Aug 2022 17:34:21 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
                     <description><![CDATA[<h2>
@@ -93,7 +93,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <p><a href="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" target="_blank" rel="nofollow"><img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" style="max-width:100%;"></a></p>
 <p>然后在 charles 中配置</p>
 <p><strong>Tools</strong> &gt; <strong>DNS Spoofing</strong></p>
-<p>将 <code>example.com</code>指向本地 caddy，这样就能直接请求了</p>
+<p>将 <code>example.com</code>指向本地 caddy，这样就能直接请求了 (当然直接改 host 也是可以的)</p>
 <br>
 <br>
 <br>
@@ -117,7 +117,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Tue, 02 Aug 2022 17:20:15 GMT</pubDate>
+                    <pubDate>Tue, 02 Aug 2022 17:33:35 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/10</guid>
                 <link>https://github.com/bxb100/blog/issues/10</link>
                     <author><![CDATA[bxb100]]></author>

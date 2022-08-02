@@ -86,7 +86,7 @@ respond "<h1>Hello, world!</h1>"
 
 **Tools** > **DNS Spoofing** 
 
-将 `example.com`指向本地 caddy，这样就能直接请求了
+将 `example.com`指向本地 caddy，这样就能直接请求了 (当然直接改 host 也是可以的)
 
 <br>
 <br>
