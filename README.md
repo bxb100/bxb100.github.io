@@ -54,7 +54,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## 摘录
-- [I LOVE U](https://github.com/bxb100/blog/issues/3)---2021-12-13
+- [Remember, Although life ignore you, I still love you](https://github.com/bxb100/blog/issues/3)---2021-12-13
 
 
 ## 杂感
