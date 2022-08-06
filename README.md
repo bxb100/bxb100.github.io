@@ -4,6 +4,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Name | Link | Desc |
 | ---- | ---- | ---- |
 | Dan Abramov | https://overreacted.io | React |
+| Aleksey Shipilëv | https://shipilev.net | ☕ Java |
 
 ## Recent
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
