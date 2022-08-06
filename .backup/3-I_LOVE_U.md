@@ -1,4 +1,4 @@
-[太多人活得不像自己](https://github.com/bxb100/blog/issues/3)
+[I LOVE U](https://github.com/bxb100/blog/issues/3)
 
 思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德
 

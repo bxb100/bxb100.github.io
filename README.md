@@ -54,7 +54,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## 摘录
-- [太多人活得不像自己](https://github.com/bxb100/blog/issues/3)---2021-12-13
+- [I LOVE U](https://github.com/bxb100/blog/issues/3)---2021-12-13
 
 
 ## 杂感
@@ -67,5 +67,4 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## 读后感
 - [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
-- [Bloomberg Tame parents](https://github.com/bxb100/blog/issues/1)---2021-12-06
 
