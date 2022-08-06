@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Sat, 06 Aug 2022 17:32:18 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Aug 2022 17:34:35 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[How to add auth for the Cloudflare Page]]></title>
                     <description><![CDATA[<ol>
@@ -32,10 +32,13 @@
 <p><a href="https://user-images.githubusercontent.com/20685961/183259552-ba299eea-5e72-43dd-b43a-3496918f8111.png" target="_blank" rel="nofollow"><img width="1070" alt="image" src="https://user-images.githubusercontent.com/20685961/183259552-ba299eea-5e72-43dd-b43a-3496918f8111.png" style="max-width:100%;"></a></p>
   * Same for your domain
 ]]></description>
-                    <pubDate>Sat, 06 Aug 2022 17:31:36 GMT</pubDate>
+                    <pubDate>Sat, 06 Aug 2022 17:33:46 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/21</guid>
                 <link>https://github.com/bxb100/blog/issues/21</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+                        <category>DEV</category>
+                        <category>就是玩</category>
             </item>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
