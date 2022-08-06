@@ -3,7 +3,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 ## Links
 | Name | Link | Desc |
 | ---- | ---- | ---- |
-| Dan Abramov | https://overreacted.io/ | React |
+| Dan Abramov | https://overreacted.io | React |
 
 ## Recent
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
