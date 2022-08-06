@@ -6,7 +6,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Dan Abramov | https://overreacted.io/ | React |
 
 ## Recent
-- [How to add auth for the Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
@@ -27,7 +27,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## DEV
-- [How to add auth for the Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
 - [Amazon SP program signature problem](https://github.com/bxb100/blog/issues/17)---2022-06-14
@@ -39,7 +39,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Horizon
-- [How to add auth for the Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
 - [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/blog/issues/10)---2022-02-10
 - [QNAP 技巧分享](https://github.com/bxb100/blog/issues/9)---2022-01-20
@@ -47,7 +47,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## 就是玩
-- [How to add auth for the Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
 - [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
 

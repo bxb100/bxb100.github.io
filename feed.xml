@@ -18,9 +18,9 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Sat, 06 Aug 2022 17:35:31 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Aug 2022 17:37:14 GMT</lastBuildDate>
             <item>
-                <title><![CDATA[How to add auth for the Cloudflare Page]]></title>
+                <title><![CDATA[How to add auth for Cloudflare Page]]></title>
                     <description><![CDATA[<ol>
 <li>Add routes for domain, see the <a href="https://403.ie/how-to-use-cloudflare-to-enable-basic-auth-on-a-subdirectory" rel="nofollow">link</a>
 </li>
@@ -37,7 +37,7 @@
 <li>Same for your domain</li>
 </ul>
 ]]></description>
-                    <pubDate>Sat, 06 Aug 2022 17:34:45 GMT</pubDate>
+                    <pubDate>Sat, 06 Aug 2022 17:36:33 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/21</guid>
                 <link>https://github.com/bxb100/blog/issues/21</link>
                     <author><![CDATA[bxb100]]></author>

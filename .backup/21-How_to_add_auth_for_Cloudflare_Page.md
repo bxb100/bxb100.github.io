@@ -1,4 +1,4 @@
-[How to add auth for the Cloudflare Page](https://github.com/bxb100/blog/issues/21)
+[How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)
 
 1. Add routes for domain, see the [link](https://403.ie/how-to-use-cloudflare-to-enable-basic-auth-on-a-subdirectory)
 <img width="1418" alt="image" src="https://user-images.githubusercontent.com/20685961/183259715-0e2f24d5-4b45-4a36-8f34-631b87e6e564.png">
