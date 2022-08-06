@@ -18,7 +18,25 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 02 Aug 2022 17:34:21 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Aug 2022 17:32:18 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[How to add auth for the Cloudflare Page]]></title>
+                    <description><![CDATA[<ol>
+<li>Add routes for domain, see the <a href="https://403.ie/how-to-use-cloudflare-to-enable-basic-auth-on-a-subdirectory" rel="nofollow">link</a>
+</li>
+<li>Using Zero Trust</li>
+</ol>
+<ul>
+<li>Set subdomain empty to protect all pages.dev, there are no other way to disable this link</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/20685961/183259552-ba299eea-5e72-43dd-b43a-3496918f8111.png" target="_blank" rel="nofollow"><img width="1070" alt="image" src="https://user-images.githubusercontent.com/20685961/183259552-ba299eea-5e72-43dd-b43a-3496918f8111.png" style="max-width:100%;"></a></p>
+  * Same for your domain
+]]></description>
+                    <pubDate>Sat, 06 Aug 2022 17:31:36 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/21</guid>
+                <link>https://github.com/bxb100/blog/issues/21</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
                     <description><![CDATA[<h2>
@@ -34,7 +52,7 @@
 <a id="user-content-实验" class="anchor" href="#%E5%AE%9E%E9%AA%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实验</h2>
 <p>首先先导出 charles 的 CA 和 私钥</p>
 <p><strong>Help</strong> &gt;  <strong>SSL Proxying</strong> &gt;  <strong>Export Charles Root Certificate and Private Key...</strong></p>
-<p>然后转成 <code>PEM</code><sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup> (<em><code>charles-ssl-proxying.p12</code> <code>newfile.xx.pem</code> 按实际情况填写</em>）</p>
+<p>然后转成 <code>PEM</code><sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref>1</a></sup> (<em><code>charles-ssl-proxying.p12</code> <code>newfile.xx.pem</code> 按实际情况填写</em>）</p>
 <div class="highlight highlight-source-shell"><pre>openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.crt.pem -clcerts -nokeys
 openssl pkcs12 -in charles-ssl-proxying.p12 -out newfile.key.pem -nocerts -nodes </pre></div>
 <p>然后参考</p>
@@ -109,10 +127,10 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <a href="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" target="_blank" rel="nofollow"><img alt="image" src="https://user-images.githubusercontent.com/20685961/153471370-988fe1a9-0291-46dd-8df4-88792c54011f.png" style="max-width:100%;"></a></p>
 <p>Android:
 <a href="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" style="max-width:100%;"></a></p>
-<section>
+<section data-footnotes>
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -140,10 +158,10 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <hr>
 <p>Some document identified</p>
 <blockquote>
-<p>The example above shows why generics and arrays don't mix well together. <strong>An array is what is called reifiable type -- a type where full type information is available during run-time.</strong> It is because Java array is reifiable that the Java run-time can check what we store into the array matches the type of the array and throw an <code>ArrayStoreException </code> at us if there is a mismatch. <strong>Java generics, however, is not reifiable due to type erasure</strong>. Java designers have decided not to mix the two.<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup></p>
+<p>The example above shows why generics and arrays don't mix well together. <strong>An array is what is called reifiable type -- a type where full type information is available during run-time.</strong> It is because Java array is reifiable that the Java run-time can check what we store into the array matches the type of the array and throw an <code>ArrayStoreException </code> at us if there is a mismatch. <strong>Java generics, however, is not reifiable due to type erasure</strong>. Java designers have decided not to mix the two.<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref>1</a></sup></p>
 </blockquote>
 <blockquote>
-<p>the <code>List&lt;?&gt;</code> means you can assign any type of List to it and <code>List&lt;Object&gt;</code> means you can store any type of object into it.<sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup></p>
+<p>the <code>List&lt;?&gt;</code> means you can assign any type of List to it and <code>List&lt;Object&gt;</code> means you can store any type of object into it.<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref>2</a></sup></p>
 </blockquote>
 <p>Sure, it's not the same question, but I think some conception can go to the same destination</p>
 <p>I think the runtime compiler design to obey this:</p>
@@ -164,13 +182,13 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 </ol>
 <hr>
 <p>So this is the check trick problem</p>
-<section>
+<section data-footnotes>
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://nus-cs2030s.github.io/2021-s2/21-erasure.html" rel="nofollow">https://nus-cs2030s.github.io/2021-s2/21-erasure.html</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://nus-cs2030s.github.io/2021-s2/21-erasure.html" rel="nofollow">https://nus-cs2030s.github.io/2021-s2/21-erasure.html</a> <a href="#fnref-1" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://www.java67.com/2021/08/real-difference-between-list-and-list.html" rel="nofollow">https://www.java67.com/2021/08/real-difference-between-list-and-list.html</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://www.java67.com/2021/08/real-difference-between-list-and-list.html" rel="nofollow">https://www.java67.com/2021/08/real-difference-between-list-and-list.html</a> <a href="#fnref-2" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -292,7 +310,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
     }</pre></div>
 <p>and then to execute method get error like this</p>
 <p><a href="https://user-images.githubusercontent.com/20685961/173632004-2312ee7a-5cb0-4d43-b2c0-8b533b19b17f.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/173632004-2312ee7a-5cb0-4d43-b2c0-8b533b19b17f.png" alt="image" style="max-width:100%;"></a></p>
-<p>It's easy to know the problem occupy in the AWS signer, but why? The path is encoded (compared with postman data), and the signer is double encoding the path variable <sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup> (<code>urlEncode</code> default is <code>true</code>)</p>
+<p>It's easy to know the problem occupy in the AWS signer, but why? The path is encoded (compared with postman data), and the signer is double encoding the path variable <sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref>1</a></sup> (<code>urlEncode</code> default is <code>true</code>)</p>
 <div class="highlight highlight-source-java"><pre><span class="pl-k">protected</span> <span class="pl-smi">String</span> <span class="pl-s1">getCanonicalizedResourcePath</span>(<span class="pl-smi">String</span> <span class="pl-s1">resourcePath</span>, <span class="pl-smi">boolean</span> <span class="pl-s1">urlEncode</span>) {
         <span class="pl-smi">String</span> <span class="pl-s1">value</span> = <span class="pl-s1">resourcePath</span>;
         <span class="pl-k">if</span> (<span class="pl-s1">urlEncode</span>) {
@@ -346,10 +364,10 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
     }</pre></div>
 <p>it's so simple, but costed me a bunch of time to solve, feel sad <g-emoji class="g-emoji" alias="cry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png">😢</g-emoji></p>
 <p>bless me to be better <g-emoji class="g-emoji" alias="crossed_fingers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png">🤞</g-emoji></p>
-<section>
+<section data-footnotes>
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -364,7 +382,7 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
                 <title><![CDATA[GitHub Markdown LaTeX to text technique]]></title>
                     <description><![CDATA[<p>最近发现的若干将 github md math 转为 SVG 的方式</p>
 <ol>
-<li>github 自己的 render 服务<sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>
+<li>github 自己的 render 服务<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref>1</a></sup>
 </li>
 </ol>
 <ul>
@@ -384,16 +402,16 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
 </ul>
 <ol start="2">
 <li>使用基于 latex 的 <a href="https://github.com/leegao/readme2tex">readme2tex</a>, 可惜好像没更新了</li>
-<li>使用 mathjax-node, 需要注意需要使用 double backslash <sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup>
+<li>使用 mathjax-node, 需要注意需要使用 double backslash <sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref>2</a></sup>
 </li>
 </ol>
-<section>
+<section data-footnotes>
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b">https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b</a> <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b">https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b</a> <a href="#fnref-1" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings" rel="nofollow">http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings" rel="nofollow">http://docs.mathjax.org/en/latest/basic/mathematics.html#putting-math-in-javascript-strings</a> <a href="#fnref-2" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -437,12 +455,12 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
             </item>
             <item>
                 <title><![CDATA[How to use FluentBit multiline]]></title>
-                    <description><![CDATA[<p>One day, my friend asked a question about how to use <a href="https://fluentbit.io/" rel="nofollow">fluentBit </a> (It's popular in k8s <sup><a href="#fn-1" id="user-content-fnref-1">1</a></sup>) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.</p>
+                    <description><![CDATA[<p>One day, my friend asked a question about how to use <a href="https://fluentbit.io/" rel="nofollow">fluentBit </a> (It's popular in k8s <sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref>1</a></sup>) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.</p>
 <p><a href="https://user-images.githubusercontent.com/20685961/163699255-57467f29-4d24-4948-aa27-62aa8d3e9b75.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/163699255-57467f29-4d24-4948-aa27-62aa8d3e9b75.png" alt="Flow" style="max-width:100%;"></a></p>
 <p align="center"><em>The config visualizes</em></p>
 <p>Usually, the log file pattern seems unified, it looks like</p>
 <p><code>2022-04-17 03:10:42.381  INFO 28420 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...</code></p>
-<p>You can easily use regex to collect each line into a structure. But when the app throws exceptions, you need to use multiline parser <sup><a href="#fn-2" id="user-content-fnref-2">2</a></sup><sup><a href="#fn-3" id="user-content-fnref-3">3</a></sup>. Briefly, it's caught raw text read line by line, so each line needs to match <a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing#rules-definition" rel="nofollow">rule</a>, like this:</p>
+<p>You can easily use regex to collect each line into a structure. But when the app throws exceptions, you need to use multiline parser <sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref>2</a></sup><sup><a href="#fn-3" id="user-content-fnref-3" data-footnote-ref>3</a></sup>. Briefly, it's caught raw text read line by line, so each line needs to match <a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing#rules-definition" rel="nofollow">rule</a>, like this:</p>
 <pre lang="conf"><code># rules   |   state name   | regex pattern                   | next state
 # --------|----------------|---------------------------------------------
 rule         "start_state"   "/(Dec \d+ \d+\:\d+\:\d+)(.*)/"   "cont"
@@ -504,7 +522,7 @@ java.lang.RuntimeException: cs
 <p>gist: <a href="https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14">https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14</a></p>
 <h2>
 <a id="user-content-other-thing" class="anchor" href="#other-thing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other thing</h2>
-<p>Using docker needs packing by yourself <sup><a href="#fn-4" id="user-content-fnref-4">4</a></sup>, don't forget it should with ES under same network <sup><a href="#fn-5" id="user-content-fnref-5">5</a></sup></p>
+<p>Using docker needs packing by yourself <sup><a href="#fn-4" id="user-content-fnref-4" data-footnote-ref>4</a></sup>, don't forget it should with ES under same network <sup><a href="#fn-5" id="user-content-fnref-5" data-footnote-ref>5</a></sup></p>
 <ol>
 <li>build an image</li>
 </ol>
@@ -522,22 +540,22 @@ java.lang.RuntimeException: cs
 <p>If you are missing <code>cont2</code> rule, the ES log will trigger exception like single document, it's not combined with log message</p>
 <p><a href="https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png" target="_blank" rel="nofollow"><img src="https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png" alt="image" style="max-width:100%;"></a></p>
 <p align="center"><em>Obviously It's not my wanted type</em></p>
-<section>
+<section data-footnotes>
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7">https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7</a> fluent-filebeat-comparison <a href="#fnref-1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7">https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7</a> fluent-filebeat-comparison <a href="#fnref-1" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-3">
-<p><a href="https://docs.fluentbit.io/manual/pipeline/inputs/tail" rel="nofollow">https://docs.fluentbit.io/manual/pipeline/inputs/tail</a> Tail input <a href="#fnref-3"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.fluentbit.io/manual/pipeline/inputs/tail" rel="nofollow">https://docs.fluentbit.io/manual/pipeline/inputs/tail</a> Tail input <a href="#fnref-3" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-4">
-<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-5">
-<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5" data-footnote-backref aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
