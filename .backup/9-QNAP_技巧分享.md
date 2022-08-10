@@ -106,3 +106,15 @@ SSH 连接到 NAS，然后 `tailscale up` 授权即可
 
 ~~PS: 不要开 IPv6, 开了之后我这里的情况就是 tailscale 最近的 DERP 是 San Francisco，而不是日本，淦 💩~~
 淦，不是这个原因，看起来 tailscale 是从链接方找延迟低的 DERP 服务器中转，后面看有没有能指定的命令参数
+
+---
+
+<a id="issuecomment-1210272537"></a>
+注意设置 firewall 允许 `100.64.0.0/10`[^1]
+
+<img width="924" alt="image" src="https://user-images.githubusercontent.com/20685961/183841118-e9061ca2-c28a-497b-9ace-61f09135e297.png">
+
+
+
+
+[^1]:https://tailscale.com/kb/1015/100.x-addresses/

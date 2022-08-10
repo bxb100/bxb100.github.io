@@ -18,7 +18,22 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 09 Aug 2022 04:06:23 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 10 Aug 2022 07:29:27 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[QNAP 技巧分享]]></title>
+                    <description><![CDATA[<ol>
+<li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
+</li>
+<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
+<li>使用 <a href="https://tailscale.com/" rel="nofollow">tailscale</a> 来连接 WebDAV</li>
+</ol>
+]]></description>
+                    <pubDate>Wed, 10 Aug 2022 07:28:43 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/9</guid>
+                <link>https://github.com/bxb100/blog/issues/9</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
@@ -454,21 +469,6 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
                 <link>https://github.com/bxb100/blog/issues/16</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
-            </item>
-            <item>
-                <title><![CDATA[QNAP 技巧分享]]></title>
-                    <description><![CDATA[<ol>
-<li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
-</li>
-<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
-<li>使用 <a href="https://tailscale.com/" rel="nofollow">tailscale</a> 来连接 WebDAV</li>
-</ol>
-]]></description>
-                    <pubDate>Sat, 23 Apr 2022 04:53:35 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/9</guid>
-                <link>https://github.com/bxb100/blog/issues/9</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[How to use FluentBit multiline]]></title>
