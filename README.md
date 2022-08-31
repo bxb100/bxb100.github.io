@@ -7,6 +7,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Aleksey Shipilëv | https://shipilev.net | ☕ Java |
 
 ## Recent
+- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
 - [Quastor 翻译计划](https://github.com/bxb100/blog/issues/22)---2022-08-06
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
@@ -16,7 +17,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
 - [How to use FluentBit multiline](https://github.com/bxb100/blog/issues/15)---2022-04-17
 - [实现 TDD 的一些捷径](https://github.com/bxb100/blog/issues/14)---2022-04-06
-- [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/blog/issues/13)---2022-04-04
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
