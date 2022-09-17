@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 31 Aug 2022 16:17:10 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 17 Sep 2022 02:18:00 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Sat, 17 Sep 2022 02:17:15 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
+                <link>https://github.com/bxb100/blog/issues/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[OAuth 2.0 客户端认证的几种方式]]></title>
                     <description><![CDATA[<p>全文摘抄 <a href="https://darutk.medium.com/oauth-2-0-client-authentication-4b5f929305d4" rel="nofollow">https://darutk.medium.com/oauth-2-0-client-authentication-4b5f929305d4</a></p>
@@ -76,16 +86,6 @@
                 <link>https://github.com/bxb100/blog/issues/9</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Tue, 09 Aug 2022 04:05:39 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
-                <link>https://github.com/bxb100/blog/issues/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[Quastor 翻译计划]]></title>
