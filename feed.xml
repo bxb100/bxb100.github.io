@@ -18,7 +18,39 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Sat, 17 Sep 2022 02:18:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Sep 2022 09:55:49 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[使用 MutationObserver 写法来获取页面元素]]></title>
+                    <description><![CDATA[<p>之前一直使用 <code>DOMContentLoaded</code> 来捕捉 DOM 树的变化, 写的渣代码需要判断, 然后还要 <code>Promise setTimeout</code> 这种形式来 <code>sleep</code> (不能直接用 <code>setTimeout</code> 是 js 运行的 eventLoop 会在最后才执行)</p>
+<p>但是当使用 <a href="https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists" rel="nofollow">https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists</a> 所述的代码</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">waitForElm</span><span class="pl-kos">(</span><span class="pl-s1">selector</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span><span class="pl-kos">(</span><span class="pl-s1">resolve</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s1">selector</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+            <span class="pl-k">return</span> <span class="pl-en">resolve</span><span class="pl-kos">(</span><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s1">selector</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+
+        <span class="pl-k">const</span> <span class="pl-s1">observer</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">MutationObserver</span><span class="pl-kos">(</span><span class="pl-s1">mutations</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+            <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s1">selector</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+                <span class="pl-en">resolve</span><span class="pl-kos">(</span><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s1">selector</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+                <span class="pl-s1">observer</span><span class="pl-kos">.</span><span class="pl-en">disconnect</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-kos">}</span>
+        <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+        <span class="pl-s1">observer</span><span class="pl-kos">.</span><span class="pl-en">observe</span><span class="pl-kos">(</span><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">,</span> <span class="pl-kos">{</span>
+            <span class="pl-c1">childList</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>
+            <span class="pl-c1">subtree</span>: <span class="pl-c1">true</span>
+        <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span></pre></div>
+<p>直接将 <code>MutationObserver</code> 和 <code>Promise</code> 结合起来, 这样可以直接用 <code>Promise.then</code> 来链式调用, 并且也可以复用 js 中 <code>Promise</code> 相关优秀的特性, 比如 <code>race</code> , <code>any</code> 等</p>
+<p>当然有点需要注意, 构造方法中的 callback 返回的是所有更新的 <code>MutationRecord</code> 数组, 所以没法简单的使用 <code>mutations.addedNodes.find(node =&gt; node.matches("..."))</code>, 原回答的解法目前看来最简单且优雅</p>
+]]></description>
+                    <pubDate>Fri, 23 Sep 2022 09:55:03 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/24</guid>
+                <link>https://github.com/bxb100/blog/issues/24</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>

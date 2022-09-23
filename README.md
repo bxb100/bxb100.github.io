@@ -7,6 +7,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Aleksey Shipilëv | https://shipilev.net | ☕ Java |
 
 ## Recent
+- [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
 - [Quastor 翻译计划](https://github.com/bxb100/blog/issues/22)---2022-08-06
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
@@ -16,7 +17,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Amazon SP program signature problem](https://github.com/bxb100/blog/issues/17)---2022-06-14
 - [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
 - [How to use FluentBit multiline](https://github.com/bxb100/blog/issues/15)---2022-04-17
-- [实现 TDD 的一些捷径](https://github.com/bxb100/blog/issues/14)---2022-04-06
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
@@ -28,13 +28,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## DEV
+- [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
 - [Amazon SP program signature problem](https://github.com/bxb100/blog/issues/17)---2022-06-14
-- [How to use FluentBit multiline](https://github.com/bxb100/blog/issues/15)---2022-04-17
 <details><summary>MORE</summary>
 
+- [How to use FluentBit multiline](https://github.com/bxb100/blog/issues/15)---2022-04-17
 - [实现 TDD 的一些捷径](https://github.com/bxb100/blog/issues/14)---2022-04-06
 </details>
 
