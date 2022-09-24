@@ -18,7 +18,26 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 23 Sep 2022 09:55:49 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 24 Sep 2022 22:53:58 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[奇怪的社会]]></title>
+                    <description><![CDATA[<p>碎碎念</p>
+<ul>
+<li>干涉某事之前, 最好需要有对应的权利</li>
+<li>公权力其实就是个笑话, 但在对付你的这件事上, 是个认真的事情</li>
+<li>无名小卒是可以牺牲的消耗品</li>
+<li>在谈到主要矛盾之前, 总是会铺垫一些杂七杂八的困难</li>
+<li>没有什么权利是在自己利益受到侵犯时是不可以放弃的</li>
+<li>越不得罪人, 越不能解决问题</li>
+<li>为众人抱薪, 不得好死</li>
+<li>为什么不愿意去参与公共事务, 因为你参与不了, 那么只能聊钱</li>
+</ul>
+]]></description>
+                    <pubDate>Sat, 24 Sep 2022 22:53:16 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/25</guid>
+                <link>https://github.com/bxb100/blog/issues/25</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[使用 MutationObserver 写法来获取页面元素]]></title>
                     <description><![CDATA[<p>之前一直使用 <code>DOMContentLoaded</code> 来捕捉 DOM 树的变化, 写的渣代码需要判断, 然后还要 <code>Promise setTimeout</code> 这种形式来 <code>sleep</code> (不能直接用 <code>setTimeout</code> 是 js 运行的 eventLoop 会在最后才执行)</p>
