@@ -7,7 +7,7 @@ It work looks like this:
 
 NIO 这是个线程模型, 通常用于 socket 连接, 减少线程数量
 
-Reactor 是个业务模型, 通常基于 NIO 来做 Event 通知
+Reactor 库的设计目的就是在构建异步管道时避免**回调地狱**和**深层嵌套代码**, 属于 NIO 的拓展
 
 对于 Loom 出来后, 这些都是可以忽略的
 

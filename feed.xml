@@ -18,19 +18,19 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 28 Sep 2022 09:39:31 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Sep 2022 09:58:59 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[NIO 和 Reactor 理解(待补充)]]></title>
                     <description><![CDATA[<p>NIO: NIO stands for non-blocking I/O</p>
 <p>It work looks like this:
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/192730676-ea8e3234-4b51-4b16-8dcd-27a70c669a45.png"><img src="https://user-images.githubusercontent.com/20685961/192730676-ea8e3234-4b51-4b16-8dcd-27a70c669a45.png" alt="image" style="max-width: 100%;"></a></p>
 <p>NIO 这是个线程模型, 通常用于 socket 连接, 减少线程数量</p>
-<p>Reactor 是个业务模型, 通常基于 NIO 来做 Event 通知</p>
+<p>Reactor 库的设计目的就是在构建异步管道时避免<strong>回调地狱</strong>和<strong>深层嵌套代码</strong>, 属于 NIO 的拓展</p>
 <p>对于 Loom 出来后, 这些都是可以忽略的</p>
 <p><a href="https://www.baeldung.com/spring-webflux-concurrency" rel="nofollow">https://www.baeldung.com/spring-webflux-concurrency</a></p>
 <p><a href="https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call" rel="nofollow">https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call</a></p>
 ]]></description>
-                    <pubDate>Wed, 28 Sep 2022 09:38:44 GMT</pubDate>
+                    <pubDate>Wed, 28 Sep 2022 09:58:14 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/26</guid>
                 <link>https://github.com/bxb100/blog/issues/26</link>
                     <author><![CDATA[bxb100]]></author>
