@@ -11,9 +11,11 @@ Reactor 库的设计目的就是在构建异步管道时避免**回调地狱**�
 
 对于 Loom 出来后, 这些都是可以忽略的
 
-https://www.baeldung.com/spring-webflux-concurrency
+### Reference
 
-https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call
+* https://www.baeldung.com/spring-webflux-concurrency
 
-https://www.infoq.com/articles/java-virtual-threads/
+* https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call
+
+* https://www.infoq.com/articles/java-virtual-threads/ 虚拟线程更适合 IO 密集型的任务
 
