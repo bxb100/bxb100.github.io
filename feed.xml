@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 28 Sep 2022 09:58:59 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Sep 2022 12:25:08 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[NIO 和 Reactor 理解(待补充)]]></title>
                     <description><![CDATA[<p>NIO: NIO stands for non-blocking I/O</p>
@@ -29,8 +29,9 @@
 <p>对于 Loom 出来后, 这些都是可以忽略的</p>
 <p><a href="https://www.baeldung.com/spring-webflux-concurrency" rel="nofollow">https://www.baeldung.com/spring-webflux-concurrency</a></p>
 <p><a href="https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call" rel="nofollow">https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call</a></p>
+<p><a href="https://www.infoq.com/articles/java-virtual-threads/" rel="nofollow">https://www.infoq.com/articles/java-virtual-threads/</a></p>
 ]]></description>
-                    <pubDate>Wed, 28 Sep 2022 09:58:14 GMT</pubDate>
+                    <pubDate>Fri, 30 Sep 2022 12:24:24 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/26</guid>
                 <link>https://github.com/bxb100/blog/issues/26</link>
                     <author><![CDATA[bxb100]]></author>

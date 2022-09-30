@@ -15,3 +15,5 @@ https://www.baeldung.com/spring-webflux-concurrency
 
 https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call
 
+https://www.infoq.com/articles/java-virtual-threads/
+
