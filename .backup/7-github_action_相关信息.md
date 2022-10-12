@@ -3,6 +3,7 @@
 * [生成 release log automatically-generated-release-notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)
 * [Anyway to check the error message and retry?](#issuecomment-1008555315)
 * [输入输出多行](#issuecomment-1008555105)
+* [如何上传可执行文件到 release 中 (draft)](#issuecomment-1275587834)
 
 
 
@@ -59,3 +60,33 @@ error parsing called workflow "bxb100/xxx/.github/workflows/download.yml@main": 
 [^2]: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event Create a workflow dispatch event
 [^3]: https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash
 [^4]: https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context 
+
+---
+
+<a id="issuecomment-1275587834"></a>
+## 如何上传可执行文件到 release 中 (draft)
+
+1. 首先需要先创建一个 git ref tag 对应的 draft release, 注意此时的 tag 如果没有的话 GitHub 也不会主动给你绑定
+<img width="1115" alt="image" src="https://user-images.githubusercontent.com/20685961/195251932-4b084fde-8bf3-4913-b1ea-b315661f8f8d.png">
+
+see https://gist.github.com/bxb100/d2fedcb3cdc897062ee03920d6ae83be
+
+2. upload the artifact
+3. download artifacts, and compress them
+4. using `gh` upload to the release
+```yaml
+     - name: Upload
+        run: |
+          until gh release upload --clobber --repo ${{ github.repository }} ${{ github.event.inputs.tag }} *.zip *.tar.gz; do
+            echo "Attempt $((++attempts)) to upload release artifacts failed. Will retry in 20s"
+            sleep 20
+          done
+        timeout-minutes: 10
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+## Examples
+-  https://github.com/temporalio/sdk-java/actions/runs/3132010440/workflow
+
+

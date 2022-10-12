@@ -18,7 +18,22 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Tue, 11 Oct 2022 09:09:45 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Oct 2022 04:58:15 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[github action 相关信息]]></title>
+                    <description><![CDATA[<ul>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
+<li><a href="#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
+<li><a href="#issuecomment-1008555105">输入输出多行</a></li>
+<li><a href="#issuecomment-1275587834">如何上传可执行文件到 release 中 (draft)</a></li>
+</ul>
+]]></description>
+                    <pubDate>Wed, 12 Oct 2022 04:57:16 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
+                <link>https://github.com/bxb100/blog/issues/7</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>API</category>
+            </item>
             <item>
                 <title><![CDATA[奇怪的社会]]></title>
                     <description><![CDATA[<p>碎碎念</p>
@@ -736,20 +751,6 @@ java.lang.RuntimeException: cs
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/13</guid>
                 <link>https://github.com/bxb100/blog/issues/13</link>
                     <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[github action 相关信息]]></title>
-                    <description><![CDATA[<ul>
-<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
-<li><a href="#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
-<li><a href="#issuecomment-1008555105">输入输出多行</a></li>
-</ul>
-]]></description>
-                    <pubDate>Wed, 12 Jan 2022 12:14:32 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/7</guid>
-                <link>https://github.com/bxb100/blog/issues/7</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>API</category>
             </item>
             <item>
                 <title><![CDATA[安迪·威尔-挽救计划]]></title>
