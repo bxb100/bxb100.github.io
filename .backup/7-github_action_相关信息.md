@@ -4,7 +4,11 @@
 * [Anyway to check the error message and retry?](#issuecomment-1008555315)
 * [输入输出多行](#issuecomment-1008555105)
 * [如何上传可执行文件到 release 中 (draft)](#issuecomment-1275587834)
+* action 不再允许 if 中使用 secrets 参数进行判断[^1][^2]
 
+
+[^1]: https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job.
+[^2]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets
 
 
 ---
