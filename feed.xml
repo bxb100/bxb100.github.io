@@ -18,7 +18,29 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 12 Oct 2022 05:06:34 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Oct 2022 11:11:13 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
+                    <description><![CDATA[<p><a href="https://github.com/nilaoda/N_m3u8DL-CLI">N_m3u8DL-CLI</a> 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载</p>
+<p>写了个脚本直接 re 页面中 m3u8 后缀连接, 然后调用 CLI 下载, 可以直接放在 release 中或者传到 webdav 中, 感觉更安全了 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
+<p>当然, 如果是在 win 机上, 那么直接 execute ps1 更简单</p>
+<p><a href="https://github.com/bxb100/OSS-Config/blob/main/Win/execute.ps1"><g-emoji class="g-emoji" alias="point_right" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f449.png">👉</g-emoji> 脚本地址</a></p>
+<p>参数:</p>
+<ol>
+<li>
+<code>-URI</code>: 参数唯一, 默认为 URI, 如果参数为空, 默认从 env 环境变量中取值, 所以塞值的时候需要 <code>$env:xxx</code>
+</li>
+<li>
+<code>-Proxy</code>: 代理地址</li>
+<li>
+<code>-Extra</code>: N_m3u8DL-CLI 其它参数, 形如 <code>'--saveName filename --timeOut 1000'</code> 注意单引号字符串传入</li>
+</ol>
+]]></description>
+                    <pubDate>Thu, 13 Oct 2022 11:10:23 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/13</guid>
+                <link>https://github.com/bxb100/blog/issues/13</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -45,25 +67,6 @@
                 <link>https://github.com/bxb100/blog/issues/7</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>API</category>
-            </item>
-            <item>
-                <title><![CDATA[奇怪的社会]]></title>
-                    <description><![CDATA[<p>碎碎念</p>
-<ul>
-<li>干涉某事之前, 最好需要有对应的权利</li>
-<li>公权力其实就是个笑话, 但在对付你的这件事上, 是个认真的事情</li>
-<li>无名小卒是可以牺牲的消耗品</li>
-<li>在谈到主要矛盾之前, 总是会铺垫一些杂七杂八的困难</li>
-<li>没有什么权利是在自己利益受到侵犯时是不可以放弃的</li>
-<li>越不得罪人, 越不能解决问题</li>
-<li>为众人抱薪, 不得好死</li>
-<li>为什么不愿意去参与公共事务, 因为你参与不了, 那么只能聊钱</li>
-</ul>
-]]></description>
-                    <pubDate>Tue, 11 Oct 2022 09:08:59 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/25</guid>
-                <link>https://github.com/bxb100/blog/issues/25</link>
-                    <author><![CDATA[bxb100]]></author>
             </item>
             <item>
                 <title><![CDATA[NIO 和 Reactor 理解(待补充)]]></title>
@@ -741,28 +744,6 @@ java.lang.RuntimeException: cs
                 <link>https://github.com/bxb100/blog/issues/14</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
-            </item>
-            <item>
-                <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
-                    <description><![CDATA[<p><a href="https://github.com/nilaoda/N_m3u8DL-CLI">N_m3u8DL-CLI</a> 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载</p>
-<p>写了个脚本直接 re 页面中 m3u8 后缀连接, 然后调用 CLI 下载, 可以直接放在 release 中或者传到 webdav 中, 感觉更安全了 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
-<p>当然, 如果是在 win 机上, 那么直接 execute ps1 更简单</p>
-<p><a href="https://github.com/bxb100/OSS-Config/blob/main/Win/execute.ps1"><g-emoji class="g-emoji" alias="point_right" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f449.png">👉</g-emoji> 脚本地址</a></p>
-<p>参数:</p>
-<ol>
-<li>
-<code>-URI</code>: 参数唯一, 默认为 URI, 如果参数为空, 默认从 env 环境变量中取值, 所以塞值的时候需要 <code>$env:xxx</code>
-</li>
-<li>
-<code>-Proxy</code>: 代理地址</li>
-<li>
-<code>-Extra</code>: N_m3u8DL-CLI 其它参数, 形如 <code>'--saveName filename --timeOut 1000'</code> 注意单引号字符串传入</li>
-</ol>
-]]></description>
-                    <pubDate>Mon, 04 Apr 2022 03:54:05 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/13</guid>
-                <link>https://github.com/bxb100/blog/issues/13</link>
-                    <author><![CDATA[bxb100]]></author>
             </item>
             <item>
                 <title><![CDATA[安迪·威尔-挽救计划]]></title>

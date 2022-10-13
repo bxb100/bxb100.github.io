@@ -8,7 +8,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 - [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/blog/issues/26)---2022-09-28
-- [奇怪的社会](https://github.com/bxb100/blog/issues/25)---2022-09-24
 - [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
 - [Quastor 翻译计划](https://github.com/bxb100/blog/issues/22)---2022-08-06
@@ -17,6 +16,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
 - [Amazon SP program signature problem](https://github.com/bxb100/blog/issues/17)---2022-06-14
+- [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31

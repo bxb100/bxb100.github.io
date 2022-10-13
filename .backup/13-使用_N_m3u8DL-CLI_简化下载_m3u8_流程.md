@@ -13,3 +13,36 @@
 1. `-URI`: 参数唯一, 默认为 URI, 如果参数为空, 默认从 env 环境变量中取值, 所以塞值的时候需要 `$env:xxx`
 2. `-Proxy`: 代理地址
 3. `-Extra`: N_m3u8DL-CLI 其它参数, 形如 `'--saveName filename --timeOut 1000'` 注意单引号字符串传入
+
+---
+
+<a id="issuecomment-1277438921"></a>
+好消息, 作者新的跨平台 [N_m3u8DL-RE](https://github.com/nilaoda/N_m3u8DL-RE) 已经可以实装了, 新的 Github action 使用脚本如下
+
+```yaml
+name: '下载'
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'm3u8 网站'
+        required: false
+      filename:
+        description: 文件名
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check input
+        if: ${{ github.event.inputs.url == '' }}
+        run: |
+          echo '::error title=⛔️ ERROR::请输入参数'
+          exit 1
+      - uses: FedericoCarboni/setup-ffmpeg@v1
+        id: setup-ffmpeg
+      - name: Download N_m3u8DL-RE
+        run: >
+          wget https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v0.0.3-beta/N_m3u8DL-RE_Beta_linux-x64_20221012.tar.gz -O cs.tar.gz && tar -zxf cs.tar.gz;
+          cd N_m3u8DL-RE_Beta_linux-x64 && sudo chmod u+x N_m3u8DL-RE && ./N_m3u8DL-RE ${{ github.event.inputs.url }} --save-name ${{ github.event.inputs.filename }};
+          ls -lah;
+```
