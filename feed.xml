@@ -18,7 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Thu, 13 Oct 2022 11:11:13 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 21 Nov 2022 15:59:50 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[一句]]></title>
+                    <description><![CDATA[<p><g-emoji class="g-emoji" alias="dodo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a4.png">🦤</g-emoji></p>
+]]></description>
+                    <pubDate>Mon, 21 Nov 2022 15:59:02 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/22</guid>
+                <link>https://github.com/bxb100/blog/issues/22</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
                     <description><![CDATA[<p><a href="https://github.com/nilaoda/N_m3u8DL-CLI">N_m3u8DL-CLI</a> 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载</p>
@@ -194,15 +203,6 @@
                 <link>https://github.com/bxb100/blog/issues/9</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[Quastor 翻译计划]]></title>
-                    <description><![CDATA[<p><g-emoji class="g-emoji" alias="dodo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a4.png">🦤</g-emoji></p>
-]]></description>
-                    <pubDate>Sat, 06 Aug 2022 17:46:47 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/22</guid>
-                <link>https://github.com/bxb100/blog/issues/22</link>
-                    <author><![CDATA[bxb100]]></author>
             </item>
             <item>
                 <title><![CDATA[How to add auth for Cloudflare Page]]></title>

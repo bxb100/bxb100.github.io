@@ -10,7 +10,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/blog/issues/26)---2022-09-28
 - [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
-- [Quastor 翻译计划](https://github.com/bxb100/blog/issues/22)---2022-08-06
+- [一句](https://github.com/bxb100/blog/issues/22)---2022-08-06
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
 - [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
@@ -47,6 +47,13 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/blog/issues/10)---2022-02-10
 - [QNAP 技巧分享](https://github.com/bxb100/blog/issues/9)---2022-01-20
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/blog/issues/8)---2022-01-18
+
+
+## Reverie
+- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
+- [一句](https://github.com/bxb100/blog/issues/22)---2022-08-06
+- [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/blog/issues/13)---2022-04-04
+- [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/blog/issues/12)---2022-03-22
 
 
 ## 就是玩
