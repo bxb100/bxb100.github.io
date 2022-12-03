@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Fri, 25 Nov 2022 13:54:24 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 03 Dec 2022 12:09:57 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Sat, 03 Dec 2022 12:09:22 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
+                <link>https://github.com/bxb100/blog/issues/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[一句]]></title>
                     <description><![CDATA[<p>才不足则多谋，识不足则多虑，
@@ -141,16 +151,6 @@
                         <category>DEV</category>
             </item>
             <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Sat, 17 Sep 2022 02:17:15 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
-                <link>https://github.com/bxb100/blog/issues/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
-            </item>
-            <item>
                 <title><![CDATA[OAuth 2.0 客户端认证的几种方式]]></title>
                     <description><![CDATA[<p>全文摘抄 <a href="https://darutk.medium.com/oauth-2-0-client-authentication-4b5f929305d4" rel="nofollow">https://darutk.medium.com/oauth-2-0-client-authentication-4b5f929305d4</a></p>
 <blockquote>
@@ -214,14 +214,14 @@
 <li>Add routes for domain, see the <a href="https://403.ie/how-to-use-cloudflare-to-enable-basic-auth-on-a-subdirectory" rel="nofollow">link</a>
 </li>
 </ol>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/20685961/183259715-0e2f24d5-4b45-4a36-8f34-631b87e6e564.png"><img width="1418" alt="image" src="https://user-images.githubusercontent.com/20685961/183259715-0e2f24d5-4b45-4a36-8f34-631b87e6e564.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/183259715-0e2f24d5-4b45-4a36-8f34-631b87e6e564.png"><img width="1418" alt="image" src="https://user-images.githubusercontent.com/20685961/183259715-0e2f24d5-4b45-4a36-8f34-631b87e6e564.png" style="max-width: 100%;"></a></p>
 <ol start="2">
 <li>Using Zero Trust</li>
 </ol>
 <ul>
 <li>Set subdomain empty to protect all pages.dev, there are no other way to disable this link</li>
 </ul>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/20685961/183259760-1b0a2197-682b-4a33-ad68-f460cbb18171.png"><img width="1083" alt="image" src="https://user-images.githubusercontent.com/20685961/183259760-1b0a2197-682b-4a33-ad68-f460cbb18171.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/183259760-1b0a2197-682b-4a33-ad68-f460cbb18171.png"><img width="1083" alt="image" src="https://user-images.githubusercontent.com/20685961/183259760-1b0a2197-682b-4a33-ad68-f460cbb18171.png" style="max-width: 100%;"></a></p>
 <ul>
 <li>Same for your domain</li>
 </ul>
@@ -239,7 +239,7 @@
                     <description><![CDATA[<h2><a id="user-content-前情" class="anchor" aria-hidden="true" href="#前情"><span aria-hidden="true" class="octicon octicon-link"></span></a>前情</h2>
 <p>某日我儿（前端 ios 使用 https 但是没有强制）问我如何利用 charles 来代理后端<strong>本地</strong> API 测试，我直接甩给他 <code>map remote</code> 大法 （from https to http），解决。</p>
 <h2><a id="user-content-思考" class="anchor" aria-hidden="true" href="#思考"><span aria-hidden="true" class="octicon octicon-link"></span></a>思考</h2>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png"><img width="432" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png"><img width="432" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" style="max-width: 100%;"></a></p>
 <p>这时候我觉得 charles 类似 QuantumultX 直接重写响应 payload，但是看了 doc 之后发现仅仅只是转发。然后我问了下我儿，他说他客户端没做 ssl 校验，那么之后排期做了校验这种方式可能会有问题。
 这时我就想到能否利用 charles 的 rootCA 来自签，这样的话配合 DNS 和一些 web server 反向代理就能做到直接本地 https 线上域名访问了（当然 client 添加公钥这种问题就不在这里赘述了）。
 <br></p>
@@ -302,7 +302,7 @@ reverse_proxy localhost:2022
 respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 }
 </code></pre>
-<p><a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png"><img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png"><img width="540" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153470943-e0fbf171-01a9-440a-9a08-baa22c43a9a5.png" style="max-width: 100%;"></a></p>
 <p>然后在 charles 中配置</p>
 <p><strong>Tools</strong> &gt; <strong>DNS Spoofing</strong></p>
 <p>将 <code>example.com</code>指向本地 caddy，这样就能直接请求了 (当然直接改 host 也是可以的)</p>
