@@ -7,6 +7,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Aleksey Shipilëv | https://shipilev.net | ☕ Java |
 
 ## Recent
+- [算法回顾](https://github.com/bxb100/blog/issues/28)---2022-12-12
 - [麦当劳的事件驱动架构](https://github.com/bxb100/blog/issues/27)---2022-12-08
 - [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/blog/issues/26)---2022-09-28
 - [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
@@ -16,7 +17,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
-- [Amazon SP program signature problem](https://github.com/bxb100/blog/issues/17)---2022-06-14
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
@@ -80,4 +80,25 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## 读后感
 - [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
+
+## TODO
+TODO list from [算法回顾](https://github.com/bxb100/blog/issues/28)--14 jobs to do--1 jobs done
+- [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/) 这道只需要不需要用哈希表来复杂化解决
+- [ ] [844. 比较含退格的字符串](https://leetcode.cn/problems/backspace-string-compare/) 这道题用栈做了, 实际上没考虑到 # 是从后向前启作用的
+- [ ] [394. 字符串解码](https://leetcode.cn/problems/decode-string/description/) 想到了使用栈, 但是没有写出来, 这道题应该直接从左到右考虑问题, 使用双栈存储
+- [ ] [1046. 最后一块石头的重](https://leetcode.cn/problems/last-stone-weight/description)
+- [ ] [2487. 从链表中移除节点](https://leetcode.cn/problems/remove-nodes-from-linked-list/)
+- [ ] [1758. 生成交替二进制字符串的最少操作数](https://leetcode.cn/problems/minimum-changes-to-make-alternating-binary-string/description/) 这道题就 2 种情况, 并且相互互斥, 期望是 N, 那么只要算出一种可能, 然后拿 N 减去就可以了, 不要想复杂了
+- [ ] [1769. 移动所有球到每个盒子所需的最小操作数](https://leetcode.cn/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/description/) 没有弄清楚 `i` 和 `i+1` 之间的关联关系, 虽然一开始是看懂题目了, 但是没想到左边是 +1, 右边是 -1 这个简单的逻辑关系
+- [ ] [1774. 最接近目标价格的甜点成本](https://leetcode.cn/problems/closest-dessert-cost/description/) 想到暴力求解, 但是没写出来 DFS; 动态规划解释[见此](./doc/Q1774解释.md)
+- [ ] 🧩[1687. 从仓库到码头运输箱子](https://leetcode.cn/problems/delivering-boxes-from-storage-to-ports/description/)
+- [ ] [1805. 字符串中不同整数的数目](https://leetcode.cn/problems/number-of-different-integers-in-a-string/description/) 指针的边界条件没想到 `r - l > 1` 来判断
+- [ ] [1775. 通过最少操作次数使数组的和相等](https://leetcode.cn/problems/equal-sum-arrays-with-minimum-number-of-operations/description/) 没想到简化问题, 这题目的重点是尽量减小大的, 增加小的
+- [ ]  🧩[1691. 堆叠长方体的最大高度](https://leetcode.cn/problems/maximum-height-by-stacking-cuboids/description/?orderBy=most_votes)
+- [ ] [6258. 数组中最长的方波](https://leetcode.cn/problems/longest-square-streak-in-an-array/description/)
+- [ ] [1781. 所有子字符串美丽值之和](https://leetcode.cn/problems/sum-of-beauty-of-all-substrings/description/?orderBy=most_votes)
+<details><summary>MORE</summary>
+
+- [x] [1796. 字符串中第二大的数字](https://leetcode.cn/problems/second-largest-digit-in-a-string/description/) 第二大, 不是第二个最大的
+</details>
 
