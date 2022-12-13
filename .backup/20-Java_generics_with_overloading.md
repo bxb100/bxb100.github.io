@@ -48,3 +48,8 @@ So this is the check trick problem
 
 [^1]: https://nus-cs2030s.github.io/2021-s2/21-erasure.html
 [^2]: https://www.java67.com/2021/08/real-difference-between-list-and-list.html
+
+---
+
+<a id="issuecomment-1347703171"></a>
+generics safety term like `PECS`
