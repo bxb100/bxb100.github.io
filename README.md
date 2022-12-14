@@ -82,7 +82,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
 
 ## TODO
-TODO list from [算法回顾](https://github.com/bxb100/blog/issues/28)--14 jobs to do--1 jobs done
+TODO list from [算法回顾](https://github.com/bxb100/blog/issues/28)--15 jobs to do--2 jobs done
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/)
 - [ ] [844. 比较含退格的字符串](https://leetcode.cn/problems/backspace-string-compare/)
 - [ ] [394. 字符串解码](https://leetcode.cn/problems/decode-string/description/)
@@ -94,11 +94,13 @@ TODO list from [算法回顾](https://github.com/bxb100/blog/issues/28)--14 jobs
 - [ ] 🧩[1687. 从仓库到码头运输箱子](https://leetcode.cn/problems/delivering-boxes-from-storage-to-ports/description/)
 - [ ] [1805. 字符串中不同整数的数目](https://leetcode.cn/problems/number-of-different-integers-in-a-string/description/)
 - [ ] [1775. 通过最少操作次数使数组的和相等](https://leetcode.cn/problems/equal-sum-arrays-with-minimum-number-of-operations/description/)
-- [ ]  🧩[1691. 堆叠长方体的最大高度](https://leetcode.cn/problems/maximum-height-by-stacking-cuboids/description/?orderBy=most_votes)
+- [ ] 🧩[1691. 堆叠长方体的最大高度](https://leetcode.cn/problems/maximum-height-by-stacking-cuboids/description/?orderBy=most_votes)
 - [ ] [6258. 数组中最长的方波](https://leetcode.cn/problems/longest-square-streak-in-an-array/description/)
 - [ ] [1781. 所有子字符串美丽值之和](https://leetcode.cn/problems/sum-of-beauty-of-all-substrings/description/?orderBy=most_votes)
+- [ ] 🧩[1697. 检查边长度限制的路径是否存在](https://leetcode.cn/problems/checking-existence-of-edge-length-limited-paths/description/)
 <details><summary>MORE</summary>
 
 - [x] [1796. 字符串中第二大的数字](https://leetcode.cn/problems/second-largest-digit-in-a-string/description/)
+- [x] [1832. 判断句子是否为全字母句](https://leetcode.cn/problems/check-if-the-sentence-is-pangram/description/)
 </details>
 
