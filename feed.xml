@@ -18,11 +18,11 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Mon, 02 Jan 2023 04:02:47 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Jan 2023 04:03:58 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[系统设计]]></title>
                     <description><![CDATA[系统设计]]></description>
-                    <pubDate>Mon, 02 Jan 2023 04:02:05 GMT</pubDate>
+                    <pubDate>Mon, 02 Jan 2023 04:03:08 GMT</pubDate>
                         <guid isPermaLink="false">https://github.com/bxb100/blog/issues/29</guid>
                 <link>https://github.com/bxb100/blog/issues/29</link>
                     <author><![CDATA[bxb100]]></author>
@@ -85,16 +85,19 @@
             <item>
                 <title><![CDATA[Java generics with overloading]]></title>
                     <description><![CDATA[<p>The scenario:</p>
-<div class="highlight highlight-source-java"><pre>    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-s1">test1</span>(<span class="pl-smi">Object</span>... <span class="pl-s1">args</span>) {
+<pre lang="java"><code>    public static void test1(Object... args) {
 
     }
 
-    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-s1">test1</span>(<span class="pl-smi">List</span>&lt;<span class="pl-smi">Object</span>&gt; <span class="pl-s1">args</span>) {
+    public static void test1(List&lt;Object&gt; args) {
 
-    }</pre></div>
+    }
+
+</code></pre>
 <p>there are two overloading method, but when you're using</p>
-<div class="highlight highlight-source-java"><pre> <span class="pl-smi">List</span>&lt;<span class="pl-smi">Long</span>&gt; <span class="pl-s1">list1</span> = <span class="pl-k">new</span> <span class="pl-smi">ArrayList</span>&lt;&gt; <span class="pl-s1">test1</span>(<span class="pl-s1">objects</span>);
- <span class="pl-en">test1</span>(<span class="pl-s1">list1</span>);</pre></div>
+<pre lang="java"><code> List&lt;Long&gt; list1 = new ArrayList&lt;&gt; test1(objects);
+ test1(list1);
+</code></pre>
 <p>It's always using the first method <code>test1(Object... args)</code>, but when using <code>List&lt;Object&gt; list2</code> the executor is different, It's too wired</p>
 <hr>
 <p>Some document identified</p>
