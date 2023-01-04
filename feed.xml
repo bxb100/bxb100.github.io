@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 04 Jan 2023 10:29:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Jan 2023 10:36:44 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Wed, 04 Jan 2023 10:36:01 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
+                <link>https://github.com/bxb100/blog/issues/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[一句]]></title>
                     <description><![CDATA[<p>才不足则多谋，识不足则多虑，
@@ -154,16 +164,6 @@
                     <author><![CDATA[bxb100]]></author>
                         <category>Archive</category>
                         <category>DEV</category>
-            </item>
-            <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Sat, 03 Dec 2022 12:09:22 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/3</guid>
-                <link>https://github.com/bxb100/blog/issues/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
