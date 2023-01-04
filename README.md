@@ -59,7 +59,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
-- [一句](https://github.com/bxb100/blog/issues/22)---2022-08-06
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/blog/issues/13)---2022-04-04
 - [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/blog/issues/12)---2022-03-22
 
@@ -71,6 +70,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## 摘录
+- [一句](https://github.com/bxb100/blog/issues/22)---2022-08-06
 - [Remember, Although life ignore you, I still love you](https://github.com/bxb100/blog/issues/3)---2021-12-13
 
 
