@@ -18,7 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://github.com/bxb100/blog</link>
             </image>
-        <lastBuildDate>Wed, 04 Jan 2023 10:36:44 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 05 Jan 2023 03:43:29 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[系统设计]]></title>
+                    <description><![CDATA[系统设计]]></description>
+                    <pubDate>Thu, 05 Jan 2023 03:42:30 GMT</pubDate>
+                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/29</guid>
+                <link>https://github.com/bxb100/blog/issues/29</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
@@ -42,15 +51,6 @@
                 <link>https://github.com/bxb100/blog/issues/22</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>摘录</category>
-            </item>
-            <item>
-                <title><![CDATA[系统设计]]></title>
-                    <description><![CDATA[系统设计]]></description>
-                    <pubDate>Mon, 02 Jan 2023 13:39:35 GMT</pubDate>
-                        <guid isPermaLink="false">https://github.com/bxb100/blog/issues/29</guid>
-                <link>https://github.com/bxb100/blog/issues/29</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[麦当劳的事件驱动架构]]></title>
