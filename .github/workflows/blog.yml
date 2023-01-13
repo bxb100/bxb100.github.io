@@ -5,6 +5,9 @@ on:
     types: [opened, edited, labeled, unlabeled]
   issue_comment:
     types: [created, edited]
+  push:
+    branches:
+      - master
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
