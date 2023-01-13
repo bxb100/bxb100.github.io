@@ -4,8 +4,8 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
     <channel>
             <title><![CDATA[John Bi's Blog]]></title>
-            <link>https://github.com/bxb100/bxb100.github.io</link>
-        <atom:link href="https://github.com/bxb100/bxb100.github.io/feed.xml" rel="self" type="application/rss+xml" />
+            <link>https://bxb100.github.io</link>
+        <atom:link href="https://bxb100.github.io/feed.xml" rel="self" type="application/rss+xml" />
             <description><![CDATA[RSS feed of John Bi's bxb100.github.io]]></description>
         <generator>IssueBlogAction</generator>
         <webMaster>bxb100@outlook.com (@bxb100)</webMaster>
@@ -16,9 +16,9 @@
             <image>
                 <url>https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png</url>
                     <title><![CDATA[John Bi's Blog]]></title>
-                <link>https://github.com/bxb100/bxb100.github.io</link>
+                <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 13 Jan 2023 11:32:19 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Jan 2023 11:36:20 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
