@@ -1,4 +1,4 @@
-## GitLog 
+## GitLog
 My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/blog/feed.xml)
 ## Links
 | Name | Link | Desc |
