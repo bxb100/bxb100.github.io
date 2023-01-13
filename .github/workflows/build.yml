@@ -50,4 +50,4 @@ jobs:
         run: echo "Ready to deploy :rocket" >> $GITHUB_STEP_SUMMARY
   deploy:
     needs: build
-    uses: ./.github/workflows/static.yml
+    uses: ./.github/workflows/deploy.yml
