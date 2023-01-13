@@ -16,7 +16,7 @@ jobs:
         run: sleep 30s
       - uses: actions/checkout@v2
       - name: Generate README
-        uses: bxb100/issueblog@main
+        uses: bxb100/issueblog@hexo
         with:
           blog_author: "John Bi"
           md_header: |
