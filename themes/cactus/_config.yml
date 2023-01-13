@@ -16,7 +16,7 @@ direction: ltr
 nav:
   home: /
   articles: /archives/
-  projects: https://github.com/bxb100
+  projects: https://github.com/bxb100/bxb100.github.io
   RSS: /feed.xml
 
 
