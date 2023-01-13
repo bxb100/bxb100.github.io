@@ -60,7 +60,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 ## Reverie
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
-- [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/bxb100.github.io/issues/12)---2022-03-22
 
 
 ## 就是玩
