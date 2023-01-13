@@ -5,6 +5,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | ---- | ---- | ---- |
 | Dan Abramov | https://overreacted.io | React |
 | Aleksey Shipilëv | https://shipilev.net | ☕ Java |
+| plantegg | https://plantegg.github.io/ | 工程师，网络、性能、CPU等领域 [twitter](https://twitter.com/plantegg) |
 
 ## Recent
 - [系统设计](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
