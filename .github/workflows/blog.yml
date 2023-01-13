@@ -29,8 +29,4 @@ jobs:
           blog_url: https://bxb100.github.io
   deploy:
     needs: build
-    uses: bxb100/
-    steps:
-      - name: Deploy
-        uses: ./.github/workflows/static.yml
-
+    uses: ./.github/workflows/static.yml
