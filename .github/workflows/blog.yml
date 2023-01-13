@@ -24,6 +24,13 @@ jobs:
           blog_author: "John Bi"
           md_header: |
               ## GitLog
-              My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/blog/feed.xml)
+              My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/feed.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
           blog_url: https://bxb100.github.io
+  deploy:
+    needs: build
+    uses: bxb100/
+    steps:
+      - name: Deploy
+        uses: ./.github/workflows/static.yml
+
