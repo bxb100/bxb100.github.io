@@ -18,45 +18,11 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 13 Jan 2023 13:57:54 GMT</lastBuildDate>
-            <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Mon, 09 Jan 2023 11:00:41 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/3</guid>
-                <link>/2021/12/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
-            </item>
-            <item>
-                <title><![CDATA[系统设计]]></title>
-                    <description><![CDATA[系统设计]]></description>
-                    <pubDate>Sat, 07 Jan 2023 16:51:39 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/29</guid>
-                <link>/2023/01/29</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[一句]]></title>
-                    <description><![CDATA[<p>才不足则多谋，识不足则多虑，
-威不足则多怒，信不足则多言，
-勇不足则多劳，明不足则多察，
-理不足则多辩，情不足则多仪。</p>
-<p align="right">- 陈宏谋《养正遗规》 </p>
-]]></description>
-                    <pubDate>Wed, 04 Jan 2023 10:28:41 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/08/22</guid>
-                <link>/2022/08/22</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
-            </item>
+        <lastBuildDate>Fri, 13 Jan 2023 14:01:49 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[麦当劳的事件驱动架构]]></title>
-                    <description><![CDATA[<h1><a id="user-content-事件驱动架构在麦当劳" class="anchor" aria-hidden="true" href="#事件驱动架构在麦当劳"><span aria-hidden="true" class="octicon octicon-link"></span></a>事件驱动架构在麦当劳</h1>
-<blockquote>
-<p><a href="https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures" rel="nofollow">https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures</a></p>
+                    <description><![CDATA[<blockquote>
+<p>译 <a href="https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures" rel="nofollow">https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures</a></p>
 </blockquote>
 <p>过去几年, 麦当劳一直大力投资构建和推广他们的 APP; 顾客可以通过它来下单, 获取优惠券, 查看营养信息等.</p>
 <p>因此, 麦当劳 2021 年有超过 2400 万次下载量, 成为美国下载量最多的餐厅类 app. 星巴克紧随其后, 去年下载量为 1200 万次.</p>
@@ -100,11 +66,44 @@
 <p>为了应对读/写负载的增加, 事件平台团队添加了逻辑来监视 MSK 的 CPU 指标, 并触发自动缩放功能以在负载过高时向集群添加额外的 broker 机器. 为了增加磁盘空间，MSK 具有自动缩放存储的<a href="https://docs.aws.amazon.com/msk/latest/developerguide/msk-autoexpand.html" rel="nofollow">内置功能</a>.</p>
 <p>查看更多信息, 你可以阅读完整的文章: <a href="https://medium.com/mcdonalds-technical-blog/behind-the-scenes-mcdonalds-event-driven-architecture-51a6542c0d86" rel="nofollow">这里</a> 和 <a href="https://medium.com/mcdonalds-technical-blog/mcdonalds-event-driven-architecture-the-data-journey-and-how-it-works-4591d108821f" rel="nofollow">这里</a></p>
 ]]></description>
-                    <pubDate>Sat, 17 Dec 2022 02:03:58 GMT</pubDate>
+                    <pubDate>Fri, 13 Jan 2023 14:01:31 GMT</pubDate>
                         <guid isPermaLink="false">/2022/12/27</guid>
                 <link>/2022/12/27</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>quastor</category>
+            </item>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Mon, 09 Jan 2023 11:00:41 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/3</guid>
+                <link>/2021/12/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
+            <item>
+                <title><![CDATA[系统设计]]></title>
+                    <description><![CDATA[系统设计]]></description>
+                    <pubDate>Sat, 07 Jan 2023 16:51:39 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/29</guid>
+                <link>/2023/01/29</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
+            <item>
+                <title><![CDATA[一句]]></title>
+                    <description><![CDATA[<p>才不足则多谋，识不足则多虑，
+威不足则多怒，信不足则多言，
+勇不足则多劳，明不足则多察，
+理不足则多辩，情不足则多仪。</p>
+<p align="right">- 陈宏谋《养正遗规》 </p>
+]]></description>
+                    <pubDate>Wed, 04 Jan 2023 10:28:41 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/08/22</guid>
+                <link>/2022/08/22</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[Java generics with overloading]]></title>
