@@ -5,7 +5,7 @@
 # Link to a page that gives an overview of all your projects.
 # This can be an external link (e.g., to you GitHub profile) or to another
 # page within your website.
-projects_url: http://github.com/bxb100
+projects_url: https://github.com/bxb100
 
 # Set the page direction to RTL or LTR. default is LTR. (if you set it 'rtl', the 'vazir' font will be loaded.)
 direction: ltr
@@ -15,9 +15,9 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-
   articles: /archives/
-  projects: http://github.com/bxb100
+  projects: https://github.com/bxb100
+  RSS: /feed.xml
 
 
 # Links to your social media accounts.
@@ -25,7 +25,7 @@ nav:
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
 # only 'mail' is an exception.
 social_links:
-  github: http://github.com/bxb100
+  github: https://github.com/bxb100
   mail: mailto:bxb100@outlook.com
 
 # Customize the overview with displaying a tagcloud on the index page.
@@ -39,8 +39,8 @@ tags_overview: false
 #   - sort_updated: sort posts by last modification date instead of creation date.
 posts_overview:
   show_all_posts: false
-  post_count: 5
-  sort_updated: false
+  post_count: 10
+  sort_updated: true
 
 # Customize the archive view.
 # Options:
@@ -54,7 +54,7 @@ archive:
 # Options:
 #   - show_updated: show the last modification date.
 post:
-  show_updated: false
+  show_updated: true
 
 # Customize the copyright years
 # Note: if start_year/end_year not provided, will use current year.
