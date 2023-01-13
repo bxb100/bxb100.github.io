@@ -7,86 +7,86 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Aleksey Shipilëv | https://shipilev.net | ☕ Java |
 
 ## Recent
-- [系统设计](https://github.com/bxb100/blog/issues/29)---2023-01-02
-- [算法回顾](https://github.com/bxb100/blog/issues/28)---2022-12-12
-- [麦当劳的事件驱动架构](https://github.com/bxb100/blog/issues/27)---2022-12-08
-- [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/blog/issues/26)---2022-09-28
-- [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
-- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
-- [一句](https://github.com/bxb100/blog/issues/22)---2022-08-06
-- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
-- [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
-- [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
+- [系统设计](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
+- [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)---2022-12-12
+- [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
+- [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/bxb100.github.io/issues/26)---2022-09-28
+- [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/bxb100.github.io/issues/24)---2022-09-23
+- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
+- [一句](https://github.com/bxb100/bxb100.github.io/issues/22)---2022-08-06
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
+- [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
+- [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/bxb100.github.io/issues/19)---2022-07-20
 
 ## API
-- [github action 相关信息](https://github.com/bxb100/blog/issues/7)---2021-12-31
+- [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
 
 
 ## Archive
-- [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
-- [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/blog/issues/6)---2021-12-30
+- [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
+- [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/bxb100.github.io/issues/6)---2021-12-30
 
 
 ## DEV
-- [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/blog/issues/26)---2022-09-28
-- [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/blog/issues/24)---2022-09-23
-- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
-- [Java generics with overloading](https://github.com/bxb100/blog/issues/20)---2022-07-29
-- [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/blog/issues/19)---2022-07-20
+- [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/bxb100.github.io/issues/26)---2022-09-28
+- [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/bxb100.github.io/issues/24)---2022-09-23
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
+- [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
+- [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/bxb100.github.io/issues/19)---2022-07-20
 <details><summary>MORE</summary>
 
-- [Amazon SP program signature problem](https://github.com/bxb100/blog/issues/17)---2022-06-14
-- [How to use FluentBit multiline](https://github.com/bxb100/blog/issues/15)---2022-04-17
-- [实现 TDD 的一些捷径](https://github.com/bxb100/blog/issues/14)---2022-04-06
+- [Amazon SP program signature problem](https://github.com/bxb100/bxb100.github.io/issues/17)---2022-06-14
+- [How to use FluentBit multiline](https://github.com/bxb100/bxb100.github.io/issues/15)---2022-04-17
+- [实现 TDD 的一些捷径](https://github.com/bxb100/bxb100.github.io/issues/14)---2022-04-06
 </details>
 
 
 ## Horizon
-- [系统设计](https://github.com/bxb100/blog/issues/29)---2023-01-02
-- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
-- [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
-- [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/blog/issues/10)---2022-02-10
-- [QNAP 技巧分享](https://github.com/bxb100/blog/issues/9)---2022-01-20
+- [系统设计](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
+- [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
+- [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/bxb100.github.io/issues/10)---2022-02-10
+- [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 <details><summary>MORE</summary>
 
-- [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/blog/issues/8)---2022-01-18
+- [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/bxb100.github.io/issues/8)---2022-01-18
 </details>
 
 
 ## quastor
-- [麦当劳的事件驱动架构](https://github.com/bxb100/blog/issues/27)---2022-12-08
+- [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
 
 
 ## Reverie
-- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/blog/issues/23)---2022-08-31
-- [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/blog/issues/13)---2022-04-04
-- [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/blog/issues/12)---2022-03-22
+- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
+- [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
+- [GitHub Markdown LaTeX to text technique](https://github.com/bxb100/bxb100.github.io/issues/12)---2022-03-22
 
 
 ## 就是玩
-- [How to add auth for Cloudflare Page](https://github.com/bxb100/blog/issues/21)---2022-08-06
-- [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/blog/issues/18)---2022-06-24
-- [Synergy 连接卡顿](https://github.com/bxb100/blog/issues/16)---2022-06-10
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
+- [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
+- [Synergy 连接卡顿](https://github.com/bxb100/bxb100.github.io/issues/16)---2022-06-10
 
 
 ## 摘录
-- [一句](https://github.com/bxb100/blog/issues/22)---2022-08-06
-- [Remember, Although life ignore you, I still love you](https://github.com/bxb100/blog/issues/3)---2021-12-13
+- [一句](https://github.com/bxb100/bxb100.github.io/issues/22)---2022-08-06
+- [Remember, Although life ignore you, I still love you](https://github.com/bxb100/bxb100.github.io/issues/3)---2021-12-13
 
 
 ## 杂感
-- [雄狮少年杂感](https://github.com/bxb100/blog/issues/5)---2021-12-27
+- [雄狮少年杂感](https://github.com/bxb100/bxb100.github.io/issues/5)---2021-12-27
 
 
 ## 煎蛋
-- [雄狮少年杂感](https://github.com/bxb100/blog/issues/5)---2021-12-27
+- [雄狮少年杂感](https://github.com/bxb100/bxb100.github.io/issues/5)---2021-12-27
 
 
 ## 读后感
-- [安迪·威尔-挽救计划](https://github.com/bxb100/blog/issues/4)---2021-12-27
+- [安迪·威尔-挽救计划](https://github.com/bxb100/bxb100.github.io/issues/4)---2021-12-27
 
 ## TODO
-TODO list from [算法回顾](https://github.com/bxb100/blog/issues/28)--15 jobs to do--2 jobs done
+TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)--15 jobs to do--2 jobs done
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/)
 - [ ] [844. 比较含退格的字符串](https://leetcode.cn/problems/backspace-string-compare/)
 - [ ] [394. 字符串解码](https://leetcode.cn/problems/decode-string/description/)
