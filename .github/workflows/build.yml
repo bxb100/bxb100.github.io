@@ -1,4 +1,4 @@
-name: 'Generate Blog'
+name: build
 on:
   workflow_dispatch:
   issues:
@@ -25,6 +25,29 @@ jobs:
               My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/feed.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
           blog_url: https://bxb100.github.io
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './public'
+      - name: Summary
+        run: echo "Ready to deploy :rocket" >> $GITHUB_STEP_SUMMARY
   deploy:
     needs: build
     uses: ./.github/workflows/static.yml
