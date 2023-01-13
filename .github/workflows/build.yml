@@ -47,7 +47,7 @@ jobs:
         with:
           path: './public'
       - name: Summary
-        run: echo "Ready to deploy :rocket" >> $GITHUB_STEP_SUMMARY
+        run: echo "Ready to deploy :rocket:" >> $GITHUB_STEP_SUMMARY
   deploy:
     needs: build
     uses: ./.github/workflows/deploy.yml
