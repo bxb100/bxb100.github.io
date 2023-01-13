@@ -5,7 +5,7 @@ on:
     types: [opened, edited, labeled, unlabeled]
   issue_comment:
     types: [created, edited]
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
@@ -20,6 +20,7 @@ jobs:
         with:
           blog_author: "John Bi"
           md_header: |
-              ## GitLog 
+              ## GitLog
               My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/blog/feed.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
+          blog_url: https://bxb100.github.io
