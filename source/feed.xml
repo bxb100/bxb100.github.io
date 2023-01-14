@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sat, 14 Jan 2023 07:14:23 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 14 Jan 2023 07:22:42 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Java Fluent API 设计速成]]></title>
                     <description><![CDATA[<blockquote>
@@ -171,7 +171,7 @@
 <h2><a id="user-content-总结" class="anchor" aria-hidden="true" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
 <p>在过去的 7 年里，Fluent API 一直是一种炒作。 Martin Fowler 已经成为一个被大量引用的人并获得了大部分的荣誉，即使以前有 fluent APIs。在 <code>java.lang.StringBuffer</code> 中可以看到 Java 最古老的 fluent API 之一，它允许将任意对象附加到字符串。但是 fluent API 的最大好处是它能够轻松地将 <strong>external DSL</strong> 映射到 Java 并将它们实现为任意复杂度的 <strong>internal DSL</strong> 。</p>
 ]]></description>
-                    <pubDate>Sat, 14 Jan 2023 07:14:02 GMT</pubDate>
+                    <pubDate>Sat, 14 Jan 2023 07:22:28 GMT</pubDate>
                         <guid isPermaLink="false">/2023/01/30</guid>
                 <link>/2023/01/30</link>
                     <author><![CDATA[bxb100]]></author>
