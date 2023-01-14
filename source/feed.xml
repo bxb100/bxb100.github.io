@@ -18,7 +18,164 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 13 Jan 2023 14:01:49 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 14 Jan 2023 07:05:21 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Java Fluent API 设计速成]]></title>
+                    <description><![CDATA[<blockquote>
+<p>译 <a href="https://blog.jooq.org/the-java-fluent-api-designer-crash-course/" rel="nofollow">https://blog.jooq.org/the-java-fluent-api-designer-crash-course/</a></p>
+</blockquote>
+<p>自从 <a href="http://martinfowler.com/bliki/FluentInterface.html" rel="nofollow">Martin Fowler 谈论流畅的接口</a>以来，人们开始到处<a href="https://stackoverflow.com/questions/1103985/method-chaining-why-is-it-a-good-practice-or-not/8745227" rel="nofollow">链接方法</a>，为每个可能的用例创建流畅的 API（或 <a href="https://en.wikipedia.org/wiki/Domain-specific_language" rel="nofollow">DSLs</a>）。原则上，几乎所有类型的 DSL 都可以映射到 Java。让我们看看如何做到这一点</p>
+<h2><a id="user-content-dsl-规则" class="anchor" aria-hidden="true" href="#dsl-规则"><span aria-hidden="true" class="octicon octicon-link"></span></a>DSL 规则</h2>
+<p>DSL（领域特定语言）通常是根据大致如下的规则构建的</p>
+<pre><code>1. SINGLE-WORD
+2. PARAMETERISED-WORD parameter
+3. WORD1 [ OPTIONAL-WORD ]
+4. WORD2 { WORD-CHOICE-A | WORD-CHOICE-B }
+5. WORD3 [ , WORD3 ... ]
+</code></pre>
+<p>或者，你也可以像这样声明语法（由 <a href="http://www.bottlecaps.de/rr/ui" rel="nofollow">Railroad Diagrams 站点</a> 支持）</p>
+<pre><code>Grammar ::= ( 
+  'SINGLE-WORD' | 
+  'PARAMETERISED-WORD' '('[A-Z]+')' |
+  'WORD1' 'OPTIONAL-WORD'? | 
+  'WORD2' ( 'WORD-CHOICE-A' | 'WORD-CHOICE-B' ) | 
+  'WORD3'+ 
+)
+</code></pre>
+<p>换句话说，你有一个开始条件或状态，在达到结束条件或状态之前，你可以从中选择一些你的语言的单词。它就像一个状态机，因此可以画成这样的图：</p>
+
+  <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/212459554-d1b333ef-6d35-4bdb-bcae-bfefa24b296e.png"><img src="https://user-images.githubusercontent.com/20685961/212459554-d1b333ef-6d35-4bdb-bcae-bfefa24b296e.png" alt="image" style="max-width: 100%;"></a></p>
+  用 <a href="http://www.bottlecaps.de/rr/ui" rel="nofollow">http://www.bottlecaps.de/rr/ui</a> 创建
+
+<h2><a id="user-content-java-实现这些规则" class="anchor" aria-hidden="true" href="#java-实现这些规则"><span aria-hidden="true" class="octicon octicon-link"></span></a>Java 实现这些规则</h2>
+<p>使用 Java 接口，对上述 DSL 进行建模非常简单。本质上，你必须遵循以下转换规则：</p>
+<ul>
+<li>每个 DSL <strong>keyword</strong> 都变成了一个 Java method</li>
+<li>每个 DSL <strong>connection</strong> 都变成了一个接口</li>
+<li>当你有一个 <strong>mandatory</strong> 选择时（你不能跳过下一个关键字），那个选择的每个关键字都是当前接口中的一个方法。如果只有一个关键字可能，那么就只有一种方法</li>
+<li>当你有一个 <strong>optional</strong> 关键字时，当前接口扩展下一个接口（及其所有 keyword/methods）</li>
+<li>当你有一个 <strong>repetition</strong> 的关键字时，表示可重复关键字的方法返回接口本身，而不是下一个接口</li>
+<li>每个 DSL 子定义都成为一个参数。这将允许递归</li>
+</ul>
+<p>请注意，也可以使用类而不是接口对上述 DSL 进行建模。但是一旦你想重用相似的关键字，方法的多重继承可能会派上用场，你可能最好使用接口。</p>
+<p>设置好这些规则后，您可以随意重复它们以创建任意复杂度的 DSL，例如 <a href="https://www.jooq.org/" rel="nofollow">jOOQ</a>。当然，您必须以某种方式实现所有接口，但那是另一回事了。</p>
+<p>以下是将上述规则转换为 Java 的方式：</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// 初始接口，DSL 的入口点</span>
+<span class="pl-c">// 根据DSL的性质，这也可以是一个带有静态方法的类</span>
+<span class="pl-c">// 这样可以让你的 DSL 更加扁平(fluent)</span>
+<span class="pl-k">interface</span> <span class="pl-smi">Start</span> {
+	<span class="pl-smi">End</span> <span class="pl-en">singleWord</span>();
+	<span class="pl-smi">End</span> <span class="pl-en">parameterisedWord</span>(<span class="pl-smi">String</span> <span class="pl-s1">parameter</span>);
+	<span class="pl-smi">Intermediate1</span> <span class="pl-en">word1</span>();
+	<span class="pl-smi">Intermediate2</span> <span class="pl-en">word2</span>();
+	<span class="pl-smi">Intermediate3</span> <span class="pl-en">word3</span>();
+}
+
+<span class="pl-c">// 终止接口，也可以包含方法 execute();</span>
+<span class="pl-k">interface</span> <span class="pl-smi">End</span> {
+	<span class="pl-smi">void</span> <span class="pl-en">end</span>();
+}
+<span class="pl-c">// 拓展中间 DSL "step" 可以由方法 optionalWord() 返回</span>
+<span class="pl-c">// 让这个方法 "optional"</span>
+<span class="pl-k">interface</span> <span class="pl-smi">Intermediate1</span> <span class="pl-k">extends</span> <span class="pl-smi">End</span> {
+	<span class="pl-smi">End</span> <span class="pl-en">optionalWord</span>();
+}
+
+<span class="pl-c">// 中间 DSL "step" 提供了几个选择(类似于 Start)</span>
+<span class="pl-k">interface</span> <span class="pl-smi">Intermediate2</span> {
+	<span class="pl-smi">End</span> <span class="pl-en">wordChoiceA</span>();
+	<span class="pl-smi">End</span> <span class="pl-en">wordChoiceB</span>();
+}
+
+<span class="pl-c">// 中间接口由 word3() 返回自己, 以允许重复调用.</span>
+<span class="pl-c">// 重复调用可以在任意时间结束, 因为它继承自 End</span>
+<span class="pl-k">interface</span> <span class="pl-smi">Intermediate3</span> <span class="pl-k">extends</span> <span class="pl-smi">End</span> {
+	<span class="pl-smi">Intermediate3</span> <span class="pl-en">word3</span>();
+}</pre></div>
+<p>定义了上述语法后，我们现在可以直接在 Java 中使用此 DSL。以下是所有可能的结构：</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Start</span> <span class="pl-s1">start</span> = <span class="pl-k">new</span> <span class="pl-smi">StartImpl</span>();<span class="pl-c">// ...</span>
+
+<span class="pl-s1">start</span>.<span class="pl-en">singleWord</span>().<span class="pl-en">end</span>();
+<span class="pl-s1">start</span>.<span class="pl-en">parameterisedWord</span>(<span class="pl-s">"abc"</span>).<span class="pl-en">end</span>();
+
+<span class="pl-s1">start</span>.<span class="pl-en">word1</span>().<span class="pl-en">end</span>();
+<span class="pl-s1">start</span>.<span class="pl-en">word1</span>().<span class="pl-en">optionalWord</span>().<span class="pl-en">end</span>();
+
+<span class="pl-s1">start</span>.<span class="pl-en">word2</span>().<span class="pl-en">wordChoiceA</span>().<span class="pl-en">end</span>();
+<span class="pl-s1">start</span>.<span class="pl-en">word2</span>().<span class="pl-en">wordChoiceB</span>().<span class="pl-en">end</span>();
+
+<span class="pl-s1">start</span>.<span class="pl-en">word3</span>().<span class="pl-en">end</span>();
+<span class="pl-s1">start</span>.<span class="pl-en">word3</span>().<span class="pl-en">word3</span>().<span class="pl-en">end</span>();
+<span class="pl-s1">start</span>.<span class="pl-en">word3</span>().<span class="pl-en">word3</span>().<span class="pl-en">word3</span>().<span class="pl-en">end</span>();</pre></div>
+<p>最棒的是，您的 DSL 直接用 Java 编译！你得到一个免费的解析器。您还可以在 Scala（或 Groovy）中使用相同的表示法或在 Scala 中使用略有不同的表示法（省略点 <code>.</code> 和括号 <code>()</code>）重新使用此 DSL：</p>
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-smi">start</span> <span class="pl-k">=</span> <span class="pl-c"><span class="pl-c">//</span> ... </span>
+
+(start singleWord) end;
+(start parameterisedWord <span class="pl-s"><span class="pl-pds">"</span>abc<span class="pl-pds">"</span></span>) end; 
+
+(start word1) end;
+((start word1) optionalWord) end; 
+
+((start word2) wordChoiceA) end;
+((start word2) wordChoiceB) end;
+
+(start word3) end;
+((start word3) word3) end;
+(((start word3) word3) word3) end;</pre></div>
+<h2><a id="user-content-实例" class="anchor" aria-hidden="true" href="#实例"><span aria-hidden="true" class="octicon octicon-link"></span></a>实例</h2>
+<p>在 jOOQ 文档和代码库中可以看到一些真实世界的例子。这是从<a href="https://blog.jooq.org/jooq-meta-a-hard-core-sql-proof-of-concept/" rel="nofollow">以前的一篇文章</a>中摘录的使用 jOOQ 创建的相当复杂的 SQL 查询：</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-en">create</span>().<span class="pl-en">select</span>(
+		<span class="pl-s1">r1</span>.<span class="pl-c1">ROUTINE_NAME</span>,
+		<span class="pl-s1">r1</span>.<span class="pl-c1">SPECIFIC_NAME</span>,
+		<span class="pl-en">decode</span>()
+				.<span class="pl-en">when</span>(<span class="pl-en">exists</span>(<span class="pl-en">create</span>()
+								.<span class="pl-en">selectOne</span>()
+								.<span class="pl-en">from</span>(<span class="pl-c1">PARAMETERS</span>)
+								.<span class="pl-en">where</span>(<span class="pl-smi">PARAMETERS</span>.<span class="pl-c1">SPECIFIC_SCHEMA</span>.<span class="pl-en">equal</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">SPECIFIC_SCHEMA</span>))
+								.<span class="pl-en">and</span>(<span class="pl-smi">PARAMETERS</span>.<span class="pl-c1">SPECIFIC_NAME</span>.<span class="pl-en">equal</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">SPECIFIC_NAME</span>))
+								.<span class="pl-en">and</span>(<span class="pl-en">upper</span>(<span class="pl-smi">PARAMETERS</span>.<span class="pl-c1">PARAMETER_MODE</span>).<span class="pl-en">notEqual</span>(<span class="pl-s">"IN"</span>))),
+						<span class="pl-en">val</span>(<span class="pl-s">"void"</span>))
+				.<span class="pl-en">otherwise</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">DATA_TYPE</span>).<span class="pl-en">as</span>(<span class="pl-s">"data_type"</span>),
+		<span class="pl-s1">r1</span>.<span class="pl-c1">NUMERIC_PRECISION</span>,
+		<span class="pl-s1">r1</span>.<span class="pl-c1">NUMERIC_SCALE</span>,
+		<span class="pl-s1">r1</span>.<span class="pl-c1">TYPE_UDT_NAME</span>,
+		<span class="pl-en">decode</span>().<span class="pl-en">when</span>(
+						<span class="pl-en">exists</span>(
+								<span class="pl-en">create</span>().<span class="pl-en">selectOne</span>()
+										.<span class="pl-en">from</span>(<span class="pl-s1">r2</span>)
+										.<span class="pl-en">where</span>(<span class="pl-s1">r2</span>.<span class="pl-c1">ROUTINE_SCHEMA</span>.<span class="pl-en">equal</span>(<span class="pl-en">getSchemaName</span>()))
+										.<span class="pl-en">and</span>(<span class="pl-s1">r2</span>.<span class="pl-c1">ROUTINE_NAME</span>.<span class="pl-en">equal</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">ROUTINE_NAME</span>))
+										.<span class="pl-en">and</span>(<span class="pl-s1">r2</span>.<span class="pl-c1">SPECIFIC_NAME</span>.<span class="pl-en">notEqual</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">SPECIFIC_NAME</span>))),
+						<span class="pl-en">create</span>().<span class="pl-en">select</span>(<span class="pl-en">count</span>())
+								.<span class="pl-en">from</span>(<span class="pl-s1">r2</span>)
+								.<span class="pl-en">where</span>(<span class="pl-s1">r2</span>.<span class="pl-c1">ROUTINE_SCHEMA</span>.<span class="pl-en">equal</span>(<span class="pl-en">getSchemaName</span>()))
+								.<span class="pl-en">and</span>(<span class="pl-s1">r2</span>.<span class="pl-c1">ROUTINE_NAME</span>.<span class="pl-en">equal</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">ROUTINE_NAME</span>))
+								.<span class="pl-en">and</span>(<span class="pl-s1">r2</span>.<span class="pl-c1">SPECIFIC_NAME</span>.<span class="pl-en">lessOrEqual</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">SPECIFIC_NAME</span>)).<span class="pl-en">asField</span>())
+				.<span class="pl-en">as</span>(<span class="pl-s">"overload"</span>))
+.<span class="pl-en">from</span>(<span class="pl-s1">r1</span>)
+.<span class="pl-en">where</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">ROUTINE_SCHEMA</span>.<span class="pl-en">equal</span>(<span class="pl-en">getSchemaName</span>()))
+.<span class="pl-en">orderBy</span>(<span class="pl-s1">r1</span>.<span class="pl-c1">ROUTINE_NAME</span>.<span class="pl-en">asc</span>())
+.<span class="pl-en">fetch</span>()</pre></div>
+<p>这有另一个例子，看起来对我很有吸引力。它称为 jRTF，用于以 fluent 的风格在 Java 中创建 RTF 文档：</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-en">rtf</span>()
+		.<span class="pl-en">header</span>(
+				<span class="pl-en">color</span>( <span class="pl-c1">0xff</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span> ).<span class="pl-en">at</span>( <span class="pl-c1">0</span> ),
+				<span class="pl-en">color</span>( <span class="pl-c1">0</span>, <span class="pl-c1">0xff</span>, <span class="pl-c1">0</span> ).<span class="pl-en">at</span>( <span class="pl-c1">1</span> ),
+				<span class="pl-en">color</span>( <span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0xff</span> ).<span class="pl-en">at</span>( <span class="pl-c1">2</span> ),
+				<span class="pl-en">font</span>( <span class="pl-s">"Calibri"</span> ).<span class="pl-en">at</span>( <span class="pl-c1">0</span> ) )
+		.<span class="pl-en">section</span>(
+				<span class="pl-en">p</span>( <span class="pl-en">font</span>( <span class="pl-c1">1</span>, <span class="pl-s">"Second paragraph"</span> ) ),
+				<span class="pl-en">p</span>( <span class="pl-en">color</span>( <span class="pl-c1">1</span>, <span class="pl-s">"green"</span> ) )
+		)
+).<span class="pl-s1">out</span>( <span class="pl-s1">out</span> );</pre></div>
+<h2><a id="user-content-总结" class="anchor" aria-hidden="true" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
+<p>在过去的 7 年里，Fluent API 一直是一种炒作。 Martin Fowler 已经成为一个被大量引用的人并获得了大部分的荣誉，即使以前有 fluent APIs。在 <code>java.lang.StringBuffer</code> 中可以看到 Java 最古老的 fluent API 之一，它允许将任意对象附加到字符串。但是 fluent API 的最大好处是它能够轻松地将 <strong>external DSL</strong> 映射到 Java 并将它们实现为任意复杂度的 <strong>internal DSL</strong> 。</p>
+]]></description>
+                    <pubDate>Sat, 14 Jan 2023 07:05:06 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/30</guid>
+                <link>/2023/01/30</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[麦当劳的事件驱动架构]]></title>
                     <description><![CDATA[<blockquote>

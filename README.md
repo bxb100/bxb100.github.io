@@ -8,6 +8,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | plantegg | https://plantegg.github.io/ | 工程师，网络、性能、CPU等领域 [twitter](https://twitter.com/plantegg) |
 
 ## Recent
+- [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
 - [系统设计](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 - [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)---2022-12-12
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
@@ -17,7 +18,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [一句](https://github.com/bxb100/bxb100.github.io/issues/22)---2022-08-06
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
-- [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/bxb100.github.io/issues/19)---2022-07-20
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -59,6 +59,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Reverie
+- [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
 
