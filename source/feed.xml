@@ -18,7 +18,37 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 17 Jan 2023 07:31:47 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 Jan 2023 08:21:15 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[ANTLR 速记]]></title>
+                    <description><![CDATA[<h2><a id="user-content-结合性和左右递归" class="anchor" aria-hidden="true" href="#结合性和左右递归"><span aria-hidden="true" class="octicon octicon-link"></span></a>结合性和左、右递归</h2>
+<div class="highlight highlight-source-antlr"><pre><span class="pl-en">grammar</span> Expr;
+
+<span class="pl-en">expr</span>: expr <span class="pl-s"><span class="pl-pds">'</span>^<span class="pl-pds">'</span></span> expr
+| <span class="pl-c1">INT</span>
+;
+
+<span class="pl-en">INT</span>: [0-9]+;
+<span class="pl-en">WS</span>: [ \t\r\n]+ -&gt; skip;</pre></div>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/212845172-a01a0d63-a53f-4c0b-976c-586ca5d887cc.png"><img src="https://user-images.githubusercontent.com/20685961/212845172-a01a0d63-a53f-4c0b-976c-586ca5d887cc.png" alt="antlr4_parse_tree" style="max-width: 100%;"></a></p>
+<p>使用 <code>assoc</code></p>
+<div class="highlight highlight-source-antlr"><pre><span class="pl-en">grammar</span> Expr;
+
+<span class="pl-en">expr</span>: &lt;assoc=right&gt; expr <span class="pl-s"><span class="pl-pds">'</span>^<span class="pl-pds">'</span></span> expr
+| <span class="pl-c1">INT</span>
+;
+
+<span class="pl-en">INT</span>: [0-9]+;
+<span class="pl-en">WS</span>: [ \t\r\n]+ -&gt; skip;
+</pre></div>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/212845323-607c9ef4-9e74-4d4f-a52b-852fccd11648.png"><img src="https://user-images.githubusercontent.com/20685961/212845323-607c9ef4-9e74-4d4f-a52b-852fccd11648.png" alt="antlr4_parse_tree_1" style="max-width: 100%;"></a></p>
+]]></description>
+                    <pubDate>Tue, 17 Jan 2023 08:20:54 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/31</guid>
+                <link>/2023/01/31</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[Java generics with overloading]]></title>
                     <description><![CDATA[<p>The scenario:</p>
