@@ -18,12 +18,12 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 01 Feb 2023 14:42:40 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 02 Feb 2023 05:05:22 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Benchmark 的一些记录]]></title>
                     <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
 ]]></description>
-                    <pubDate>Wed, 01 Feb 2023 14:42:24 GMT</pubDate>
+                    <pubDate>Thu, 02 Feb 2023 05:05:03 GMT</pubDate>
                         <guid isPermaLink="false">/2023/01/32</guid>
                 <link>/2023/01/32</link>
                     <author><![CDATA[bxb100]]></author>
@@ -112,10 +112,10 @@
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://nus-cs2030s.github.io/2021-s2/21-erasure.html" rel="nofollow">https://nus-cs2030s.github.io/2021-s2/21-erasure.html</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://nus-cs2030s.github.io/2021-s2/21-erasure.html" rel="nofollow">https://nus-cs2030s.github.io/2021-s2/21-erasure.html</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://www.java67.com/2021/08/real-difference-between-list-and-list.html" rel="nofollow">https://www.java67.com/2021/08/real-difference-between-list-and-list.html</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://www.java67.com/2021/08/real-difference-between-list-and-list.html" rel="nofollow">https://www.java67.com/2021/08/real-difference-between-list-and-list.html</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -397,10 +397,10 @@
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job">https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job</a>. <a href="#fnref-1" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job">https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job</a>. <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -644,7 +644,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl" rel="nofollow">https://stackoverflow.com/questions/15144046/converting-pkcs12-certificate-into-pem-using-openssl</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -809,7 +809,7 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -926,19 +926,19 @@ java.lang.RuntimeException: cs
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7">https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7</a> fluent-filebeat-comparison <a href="#fnref-1" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7">https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7</a> fluent-filebeat-comparison <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-3">
-<p><a href="https://docs.fluentbit.io/manual/pipeline/inputs/tail" rel="nofollow">https://docs.fluentbit.io/manual/pipeline/inputs/tail</a> Tail input <a href="#fnref-3" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://docs.fluentbit.io/manual/pipeline/inputs/tail" rel="nofollow">https://docs.fluentbit.io/manual/pipeline/inputs/tail</a> Tail input <a href="#fnref-3" data-footnote-backref="" aria-label="Back to reference 3"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-4">
-<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4" data-footnote-backref="" aria-label="Back to reference 4"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-5">
-<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5" data-footnote-backref="" aria-label="Back to content"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5" data-footnote-backref="" aria-label="Back to reference 5"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
