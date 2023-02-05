@@ -18,7 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 02 Feb 2023 05:05:22 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Feb 2023 05:10:23 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[系统设计]]></title>
+                    <description><![CDATA[系统设计]]></description>
+                    <pubDate>Sun, 05 Feb 2023 05:10:04 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/29</guid>
+                <link>/2023/01/29</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
             <item>
                 <title><![CDATA[Benchmark 的一些记录]]></title>
                     <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
@@ -338,15 +347,6 @@
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
                         <category>quastor</category>
-            </item>
-            <item>
-                <title><![CDATA[系统设计]]></title>
-                    <description><![CDATA[系统设计]]></description>
-                    <pubDate>Sat, 07 Jan 2023 16:51:39 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/29</guid>
-                <link>/2023/01/29</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[一句]]></title>
