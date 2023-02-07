@@ -18,7 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 07 Feb 2023 09:46:54 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Feb 2023 09:47:45 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[比较 NICE 的项目]]></title>
+                    <description><![CDATA[比较 NICE 的项目]]></description>
+                    <pubDate>Tue, 07 Feb 2023 09:47:30 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/02/33</guid>
+                <link>/2023/02/33</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>就是玩</category>
+            </item>
             <item>
                 <title><![CDATA[系统设计 memo]]></title>
                     <description><![CDATA[系统设计 memo]]></description>
