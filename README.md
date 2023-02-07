@@ -12,7 +12,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
 - [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
-- [系统设计](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
+- [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 - [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)---2022-12-12
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
 - [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/bxb100.github.io/issues/26)---2022-09-28
@@ -48,7 +48,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Horizon
-- [系统设计](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
+- [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 - [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/bxb100.github.io/issues/10)---2022-02-10
