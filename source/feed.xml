@@ -18,17 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 08 Feb 2023 15:00:37 GMT</lastBuildDate>
-            <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Wed, 08 Feb 2023 15:00:14 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/3</guid>
-                <link>/2021/12/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
-            </item>
+        <lastBuildDate>Thu, 09 Feb 2023 10:10:45 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
                     <description><![CDATA[<ol>
@@ -60,11 +50,21 @@
 <a href="https://github.com/hashicorp/vault">Vault</a> 现代化下的加密信息管理工具</li>
 </ol>
 ]]></description>
-                    <pubDate>Tue, 07 Feb 2023 13:47:03 GMT</pubDate>
+                    <pubDate>Thu, 09 Feb 2023 10:10:27 GMT</pubDate>
                         <guid isPermaLink="false">/2023/02/33</guid>
                 <link>/2023/02/33</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
+            </item>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Wed, 08 Feb 2023 15:00:14 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/3</guid>
+                <link>/2021/12/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[系统设计 memo]]></title>
