@@ -18,10 +18,10 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 09 Feb 2023 10:10:45 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Feb 2023 10:13:12 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
-                    <description><![CDATA[<ol>
+                    <description><![CDATA[<ul>
 <li>
 <a href="https://github.com/apache/beam">Apache Beam</a> Google 出品对于流式数据处理的框架, 用来数据分析</li>
 <li>
@@ -35,7 +35,7 @@
 <li>
 <a href="https://github.com/google/copybara">copybara</a> 在不同仓库之间移动代码, 也许能够使用 workflow 来解决</li>
 <li>
-<a href="https://debezium.io/" rel="nofollow">Debezium</a> CDC, 实现了 NetFlix 的 <a href="https://netflixtechblog.com/dblog-a-generic-change-data-capture-framework-69351fb9099b?gi=eae74ca0ba3b" rel="nofollow">DBLog</a> 算法</li>
+<a href="https://debezium.io/" rel="nofollow">Debezium</a> CDC, 实现了 NetFlix 的 <a href="https://netflixtechblog.com/dblog-a-generic-change-data-capture-framework-69351fb9099b?gi=eae74ca0ba3b" rel="nofollow">DBLog</a> 算法 (目前 NetFlix 还未开源)</li>
 <li>
 <a href="https://github.com/fluent/fluent-bit">FluentBit</a> 端到端的日志处理管道, 比 Logstash 要轻, 并且和 K8s 融合的要好</li>
 <li>
@@ -48,9 +48,9 @@
 <a href="https://pulsar.apache.org/" rel="nofollow">Pulsar</a> 分布式的 消息/流 中间件</li>
 <li>
 <a href="https://github.com/hashicorp/vault">Vault</a> 现代化下的加密信息管理工具</li>
-</ol>
+</ul>
 ]]></description>
-                    <pubDate>Thu, 09 Feb 2023 10:10:27 GMT</pubDate>
+                    <pubDate>Thu, 09 Feb 2023 10:12:57 GMT</pubDate>
                         <guid isPermaLink="false">/2023/02/33</guid>
                 <link>/2023/02/33</link>
                     <author><![CDATA[bxb100]]></author>
