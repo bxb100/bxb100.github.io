@@ -18,7 +18,20 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 09 Feb 2023 10:13:12 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Feb 2023 18:37:51 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Benchmark 的一些记录]]></title>
+                    <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
+<blockquote>
+<p><a href="https://github.com/brianfrankcooper/YCSB">YCSB</a> A common use of the tool is to benchmark multiple systems and compare them.</p>
+</blockquote>
+]]></description>
+                    <pubDate>Fri, 10 Feb 2023 18:37:27 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/32</guid>
+                <link>/2023/01/32</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
                     <description><![CDATA[<ul>
@@ -74,16 +87,6 @@
                 <link>/2023/01/29</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[Benchmark 的一些记录]]></title>
-                    <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
-]]></description>
-                    <pubDate>Thu, 02 Feb 2023 05:05:03 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/32</guid>
-                <link>/2023/01/32</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>DEV</category>
             </item>
             <item>
                 <title><![CDATA[ANTLR 速记]]></title>
