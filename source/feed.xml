@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 10 Feb 2023 18:37:51 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Feb 2023 12:47:52 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Sat, 11 Feb 2023 12:47:36 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/3</guid>
+                <link>/2021/12/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[Benchmark 的一些记录]]></title>
                     <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
@@ -68,16 +78,6 @@
                 <link>/2023/02/33</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
-            </item>
-            <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Wed, 08 Feb 2023 15:00:14 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/3</guid>
-                <link>/2021/12/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[系统设计 memo]]></title>
