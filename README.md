@@ -43,7 +43,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/bxb100.github.io/issues/19)---2022-07-20
 - [Amazon SP program signature problem](https://github.com/bxb100/bxb100.github.io/issues/17)---2022-06-14
 - [How to use FluentBit multiline](https://github.com/bxb100/bxb100.github.io/issues/15)---2022-04-17
-- [实现 TDD 的一些捷径](https://github.com/bxb100/bxb100.github.io/issues/14)---2022-04-06
+- [实现 TDD 的一些方法](https://github.com/bxb100/bxb100.github.io/issues/14)---2022-04-06
 </details>
 
 

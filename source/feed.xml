@@ -18,7 +18,25 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 16 Feb 2023 10:05:58 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Feb 2023 10:07:57 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[实现 TDD 的一些方法]]></title>
+                    <description><![CDATA[<h2><a id="user-content-tools" class="anchor" aria-hidden="true" href="#tools"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tools</h2>
+<h3><a id="user-content-idea" class="anchor" aria-hidden="true" href="#idea"><span aria-hidden="true" class="octicon octicon-link"></span></a>idea</h3>
+<ul>
+<li>打开 toggle auto-test <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/162027045-d3259d53-70d2-4e48-8e0c-f3a992e180e5.png"><img src="https://user-images.githubusercontent.com/20685961/162027045-d3259d53-70d2-4e48-8e0c-f3a992e180e5.png" width="20" height="20" style="max-width: 100%;"></a>, 然后由于是编译的时候触发操作, 所以可以取消 save all <code>ctrl + s</code>  快捷键(依赖自动保存), 然后将其设置到 build project 中.</li>
+<li>也可以打开 auto compile 但是实测有延迟, 而且会加重心智负担</li>
+</ul>
+<p align="center">
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/162026667-654a24f6-8065-430e-aeaa-0b26fc59ab4b.png"><img src="https://user-images.githubusercontent.com/20685961/162026667-654a24f6-8065-430e-aeaa-0b26fc59ab4b.png" style="max-width: 100%;"></a>
+</p>
+]]></description>
+                    <pubDate>Thu, 16 Feb 2023 10:07:43 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/04/14</guid>
+                <link>/2022/04/14</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[Why Changing nearest power of two in HashMap?]]></title>
                     <description><![CDATA[<h2><a id="user-content-jdk-7" class="anchor" aria-hidden="true" href="#jdk-7"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 7</h2>
@@ -1091,24 +1109,6 @@ java.lang.RuntimeException: cs
                     <pubDate>Sun, 17 Apr 2022 08:01:33 GMT</pubDate>
                         <guid isPermaLink="false">/2022/04/15</guid>
                 <link>/2022/04/15</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>DEV</category>
-            </item>
-            <item>
-                <title><![CDATA[实现 TDD 的一些捷径]]></title>
-                    <description><![CDATA[<h2><a id="user-content-tools" class="anchor" aria-hidden="true" href="#tools"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tools</h2>
-<h3><a id="user-content-idea" class="anchor" aria-hidden="true" href="#idea"><span aria-hidden="true" class="octicon octicon-link"></span></a>idea</h3>
-<ul>
-<li>打开 toggle auto-test <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/162027045-d3259d53-70d2-4e48-8e0c-f3a992e180e5.png"><img src="https://user-images.githubusercontent.com/20685961/162027045-d3259d53-70d2-4e48-8e0c-f3a992e180e5.png" width="20" height="20" style="max-width: 100%;"></a>, 然后由于是编译的时候触发操作, 所以可以取消 save all <code>ctrl + s</code>  快捷键(依赖自动保存), 然后将其设置到 build project 中.</li>
-<li>也可以打开 auto compile 但是实测有延迟, 而且会加重心智负担</li>
-</ul>
-<p align="center">
-<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/162026667-654a24f6-8065-430e-aeaa-0b26fc59ab4b.png"><img src="https://user-images.githubusercontent.com/20685961/162026667-654a24f6-8065-430e-aeaa-0b26fc59ab4b.png" style="max-width: 100%;"></a>
-</p>
-]]></description>
-                    <pubDate>Wed, 06 Apr 2022 16:57:40 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/04/14</guid>
-                <link>/2022/04/14</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
