@@ -18,7 +18,112 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Mon, 13 Feb 2023 08:39:24 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Feb 2023 10:05:58 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Why Changing nearest power of two in HashMap?]]></title>
+                    <description><![CDATA[<h2><a id="user-content-jdk-7" class="anchor" aria-hidden="true" href="#jdk-7"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 7</h2>
+<div class="highlight highlight-source-java"><pre>   <span class="pl-k">static</span> <span class="pl-smi">int</span> <span class="pl-s1">roundUpToPowerOf2</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
+        <span class="pl-k">return</span> <span class="pl-s1">cap</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>
+                ? <span class="pl-c1">MAXIMUM_CAPACITY</span>
+                : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-s1">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
+    }</pre></div>
+<h2><a id="user-content-jdk-8" class="anchor" aria-hidden="true" href="#jdk-8"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 8</h2>
+<blockquote>
+<p><a href="http://hg.openjdk.java.net/jdk8/jdk8/jdk/rev/d62c911aebbb?revcount=80" rel="nofollow">http://hg.openjdk.java.net/jdk8/jdk8/jdk/rev/d62c911aebbb?revcount=80</a></p>
+</blockquote>
+<div class="highlight highlight-source-java"><pre>    <span class="pl-k">static</span> <span class="pl-smi">int</span> <span class="pl-s1">tableSizeFor</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
+        <span class="pl-smi">int</span> <span class="pl-s1">n</span> = <span class="pl-s1">cap</span> - <span class="pl-c1">1</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">1</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">2</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">4</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">8</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">16</span>;
+        <span class="pl-k">return</span> (<span class="pl-s1">n</span> &lt; <span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : (<span class="pl-s1">n</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>) ? <span class="pl-c1">MAXIMUM_CAPACITY</span> : <span class="pl-s1">n</span> + <span class="pl-c1">1</span>;
+    }</pre></div>
+<h2><a id="user-content-jdk-11" class="anchor" aria-hidden="true" href="#jdk-11"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 11</h2>
+<blockquote>
+<p><a href="https://bugs.openjdk.java.net/browse/JDK-8203279" rel="nofollow">https://bugs.openjdk.java.net/browse/JDK-8203279</a></p>
+</blockquote>
+<pre><code>static int tableSizeFor(int cap) {
+   int n = -1 &gt;&gt;&gt; Integer.numberOfLeadingZeros(cap - 1);
+   return (n &lt; 0) ? 1 : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+}
+</code></pre>
+<h2><a id="user-content-jmh" class="anchor" aria-hidden="true" href="#jmh"><span aria-hidden="true" class="octicon octicon-link"></span></a>JMH</h2>
+<div class="highlight highlight-source-java"><pre><span class="pl-c1">@</span><span class="pl-c1">BenchmarkMode</span>(<span class="pl-smi">Mode</span>.<span class="pl-s1">AverageTime</span>)
+<span class="pl-c1">@</span><span class="pl-c1">OutputTimeUnit</span>(<span class="pl-smi">TimeUnit</span>.<span class="pl-c1">NANOSECONDS</span>)
+<span class="pl-c1">@</span><span class="pl-c1">Warmup</span>(<span class="pl-s1">iterations</span> = <span class="pl-c1">2</span>, <span class="pl-s1">time</span> = <span class="pl-c1">1</span>, <span class="pl-s1">timeUnit</span> = <span class="pl-smi">TimeUnit</span>.<span class="pl-c1">SECONDS</span>)
+<span class="pl-c1">@</span><span class="pl-c1">Measurement</span>(<span class="pl-s1">iterations</span> = <span class="pl-c1">5</span>, <span class="pl-s1">time</span> = <span class="pl-c1">1</span>, <span class="pl-s1">timeUnit</span> = <span class="pl-smi">TimeUnit</span>.<span class="pl-c1">SECONDS</span>)
+<span class="pl-c1">@</span><span class="pl-c1">Fork</span>(<span class="pl-c1">1</span>)
+<span class="pl-c1">@</span><span class="pl-c1">State</span>(<span class="pl-smi">Scope</span>.<span class="pl-s1">Thread</span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">TableSizeForTest</span> {
+
+    <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-smi">int</span> <span class="pl-c1">MAXIMUM_CAPACITY</span> = <span class="pl-c1">1</span> &lt;&lt; <span class="pl-c1">30</span>;
+
+    <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-smi">int</span> <span class="pl-s1">roundSize</span> = <span class="pl-c1">100_000_000</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-en">main</span>(<span class="pl-smi">String</span>[] <span class="pl-s1">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">RunnerException</span> {
+        <span class="pl-smi">Options</span> <span class="pl-s1">opt</span> = <span class="pl-k">new</span> <span class="pl-smi">OptionsBuilder</span>()
+                .<span class="pl-en">include</span>(<span class="pl-smi">TableSizeForTest</span>.<span class="pl-s1">class</span>.<span class="pl-en">getSimpleName</span>())
+                .<span class="pl-en">build</span>();
+        <span class="pl-k">new</span> <span class="pl-smi">Runner</span>(<span class="pl-s1">opt</span>).<span class="pl-en">run</span>();
+    }
+
+    <span class="pl-c1">@</span><span class="pl-c1">Benchmark</span>
+    <span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">jdk8</span>(<span class="pl-smi">Blackhole</span> <span class="pl-s1">bh</span>) {
+        <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> = <span class="pl-c1">1</span>; <span class="pl-s1">i</span> &lt;= <span class="pl-s1">roundSize</span>; <span class="pl-s1">i</span>++) {
+            <span class="pl-s1">bh</span>.<span class="pl-en">consume</span>(<span class="pl-en">tableSizeFor</span>(<span class="pl-s1">i</span>));
+        }
+    }
+
+    <span class="pl-k">private</span> <span class="pl-smi">int</span> <span class="pl-en">tableSizeFor</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
+        <span class="pl-smi">int</span> <span class="pl-s1">n</span> = <span class="pl-s1">cap</span> - <span class="pl-c1">1</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">1</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">2</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">4</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">8</span>;
+        <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">16</span>;
+        <span class="pl-k">return</span> (<span class="pl-s1">n</span> &lt; <span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : (<span class="pl-s1">n</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>) ? <span class="pl-c1">MAXIMUM_CAPACITY</span> : <span class="pl-s1">n</span> + <span class="pl-c1">1</span>;
+    }
+
+    <span class="pl-c1">@</span><span class="pl-c1">Benchmark</span>
+    <span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">jdk7</span>(<span class="pl-smi">Blackhole</span> <span class="pl-s1">bh</span>) {
+        <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> = <span class="pl-c1">1</span>; <span class="pl-s1">i</span> &lt;= <span class="pl-s1">roundSize</span>; <span class="pl-s1">i</span>++) {
+           <span class="pl-s1">bh</span>.<span class="pl-en">consume</span>(<span class="pl-en">roundUpToPowerOf2</span>(<span class="pl-s1">i</span>));
+        }
+    }
+
+    <span class="pl-k">private</span> <span class="pl-smi">int</span> <span class="pl-en">roundUpToPowerOf2</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
+        <span class="pl-k">return</span> <span class="pl-s1">cap</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>
+                ? <span class="pl-c1">MAXIMUM_CAPACITY</span>
+                : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-s1">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
+    }
+
+    <span class="pl-c1">@</span><span class="pl-c1">Benchmark</span>
+    <span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">jdk11</span>(<span class="pl-smi">Blackhole</span> <span class="pl-s1">bh</span>) {
+        <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> = <span class="pl-c1">1</span>; <span class="pl-s1">i</span> &lt;= <span class="pl-s1">roundSize</span>; <span class="pl-s1">i</span>++) {
+            <span class="pl-s1">bh</span>.<span class="pl-en">consume</span>(   <span class="pl-en">tableSizeFor_JDK11</span>(<span class="pl-s1">i</span>));
+        }
+    }
+
+    <span class="pl-k">private</span> <span class="pl-smi">int</span> <span class="pl-en">tableSizeFor_JDK11</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
+        <span class="pl-smi">int</span> <span class="pl-s1">n</span> = -<span class="pl-c1">1</span> &gt;&gt;&gt; <span class="pl-s1">Integer</span>.<span class="pl-en">numberOfLeadingZeros</span>(<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>);
+        <span class="pl-k">return</span> (<span class="pl-s1">n</span> &lt; <span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : (<span class="pl-s1">n</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>) ? <span class="pl-c1">MAXIMUM_CAPACITY</span> : <span class="pl-s1">n</span> + <span class="pl-c1">1</span>;
+    }
+}</pre></div>
+<pre><code>Benchmark               Mode  Cnt          Score          Error  Units
+TableSizeForTest.jdk11  avgt    5  360240163.800 ± 11650107.231  ns/op
+TableSizeForTest.jdk7   avgt    5  131499421.850 ±  2815742.686  ns/op
+TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
+</code></pre>
+<p>It's look like 7 &gt; 11 &gt; 8, Why not using JDK 7 verison?</p>
+]]></description>
+                    <pubDate>Thu, 16 Feb 2023 10:05:37 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/02/34</guid>
+                <link>/2023/02/34</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>question</category>
+            </item>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>

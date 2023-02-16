@@ -9,6 +9,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | 构建我的被动收入 | https://www.bmpi.dev/dev/ | 技术布道 |
 
 ## Recent
+- [Why Changing nearest power of two in HashMap?](https://github.com/bxb100/bxb100.github.io/issues/34)---2023-02-16
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
@@ -18,7 +19,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
 - [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/bxb100.github.io/issues/26)---2022-09-28
 - [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/bxb100.github.io/issues/24)---2022-09-23
-- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -61,6 +61,10 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## quastor
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
+
+
+## question
+- [Why Changing nearest power of two in HashMap?](https://github.com/bxb100/bxb100.github.io/issues/34)---2023-02-16
 
 
 ## Reverie
