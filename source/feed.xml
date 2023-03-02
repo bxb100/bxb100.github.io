@@ -18,7 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 02 Mar 2023 09:16:59 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 02 Mar 2023 09:31:30 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[系统设计 memo]]></title>
+                    <description><![CDATA[系统设计 memo]]></description>
+                    <pubDate>Thu, 02 Mar 2023 09:31:09 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/29</guid>
+                <link>/2023/01/29</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+            </item>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
                     <description><![CDATA[<ul>
@@ -201,15 +210,6 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
                 <link>/2023/01/32</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
-            </item>
-            <item>
-                <title><![CDATA[系统设计 memo]]></title>
-                    <description><![CDATA[系统设计 memo]]></description>
-                    <pubDate>Tue, 07 Feb 2023 09:46:34 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/29</guid>
-                <link>/2023/01/29</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[ANTLR 速记]]></title>
