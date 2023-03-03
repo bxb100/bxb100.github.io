@@ -9,7 +9,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | 构建我的被动收入 | https://www.bmpi.dev/dev/ | 技术布道 |
 
 ## Recent
-- [JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
+- [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [Why Changing nearest power of two in HashMap?](https://github.com/bxb100/bxb100.github.io/issues/34)---2023-02-16
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
@@ -68,7 +68,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Reverie
-- [JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
+- [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
 
