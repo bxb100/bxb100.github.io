@@ -18,7 +18,47 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 03 Mar 2023 12:48:56 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Mar 2023 19:20:12 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[ForkJoinPool 来运行斐波那契递归]]></title>
+                    <description><![CDATA[<div class="highlight highlight-source-java"><pre>	<span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-smi">ComputeFibonacciTask</span> <span class="pl-k">extends</span> <span class="pl-smi">RecursiveTask</span>&lt;<span class="pl-smi">Long</span>&gt; {
+
+		<span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-smi">long</span> <span class="pl-s1">n</span>;
+
+		<span class="pl-k">public</span> <span class="pl-smi">ComputeFibonacciTask</span>(<span class="pl-smi">long</span> <span class="pl-s1">n</span>) {
+			<span class="pl-smi">this</span>.<span class="pl-s1">n</span> = <span class="pl-s1">n</span>;
+		}
+
+		<span class="pl-k">protected</span> <span class="pl-smi">Long</span> <span class="pl-en">compute</span>() {
+			<span class="pl-k">if</span> (<span class="pl-s1">n</span> &lt;= <span class="pl-c1">1</span>) {
+				<span class="pl-k">return</span> <span class="pl-s1">n</span>;
+			} <span class="pl-k">else</span> {
+				<span class="pl-smi">RecursiveTask</span>&lt;<span class="pl-smi">Long</span>&gt; <span class="pl-s1">otherTask</span> = <span class="pl-k">new</span> <span class="pl-smi">ComputeFibonacciTask</span>(<span class="pl-s1">n</span> - <span class="pl-c1">1</span>);
+				<span class="pl-s1">otherTask</span>.<span class="pl-en">fork</span>();
+				<span class="pl-smi">Long</span> <span class="pl-s1">right</span> = <span class="pl-k">new</span> <span class="pl-smi">ComputeFibonacciTask</span>(<span class="pl-s1">n</span> - <span class="pl-c1">2</span>).<span class="pl-en">compute</span>();
+				<span class="pl-k">return</span> <span class="pl-s1">right</span> + <span class="pl-s1">otherTask</span>.<span class="pl-en">join</span>();
+			}
+		}
+	}</pre></div>
+<p>直接 <code>1000</code> 使用默认的 <code>ForkJoinPool</code> 构造方法, 可以看到由于错误的理解, 分治导致出现 2^1000 - 2 个实例</p>
+<p>直接爆炸 <g-emoji class="g-emoji" alias="boom" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png">💥</g-emoji></p>
+<p>某一刻的 profile
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png"><img width="1200" alt="image" src="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png" style="max-width: 100%;"></a></p>
+<p>解决方法:</p>
+<p><strong>不要用 forkJoinPool 来解决非分治问题</strong><sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup></p>
+<section data-footnotes="">
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7" rel="nofollow">https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Sat, 11 Mar 2023 19:19:54 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/03/36</guid>
+                <link>/2023/03/36</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[Lombok: JSR 269]]></title>
                     <description><![CDATA[<p>Lombok 背后使用的技术是 <a href="https://jcp.org/en/jsr/detail?id=269" rel="nofollow">JSR 269: Pluggable Annotation Processing API</a> <sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup></p>

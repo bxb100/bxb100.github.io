@@ -9,6 +9,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | 构建我的被动收入 | https://www.bmpi.dev/dev/ | 技术布道 |
 
 ## Recent
+- [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [Why Changing nearest power of two in HashMap?](https://github.com/bxb100/bxb100.github.io/issues/34)---2023-02-16
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
@@ -18,7 +19,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 - [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)---2022-12-12
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
-- [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/bxb100.github.io/issues/26)---2022-09-28
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -68,6 +68,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Reverie
+- [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
