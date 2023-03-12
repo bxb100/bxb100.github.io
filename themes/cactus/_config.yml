@@ -40,7 +40,7 @@ tags_overview: false
 posts_overview:
   show_all_posts: false
   post_count: 10
-  sort_updated: true
+  sort_updated: false
 
 # Customize the archive view.
 # Options:
