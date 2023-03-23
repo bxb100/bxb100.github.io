@@ -18,7 +18,23 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Mon, 13 Mar 2023 04:26:02 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Mar 2023 19:29:07 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Rust: 记录一下 tauri 的 bug 追踪]]></title>
+                    <description><![CDATA[<p>bug 见: <a href="https://github.com/tauri-apps/wry/issues/911">https://github.com/tauri-apps/wry/issues/911</a></p>
+<ol>
+<li>把可能出问题的地方打上日志</li>
+<li>debug 能给出问题的流向, 但是真正出现的地方是隐藏的</li>
+<li>看 FFI 的时候不要纠结于外部实现, 90% 不会是调用地方出现问题</li>
+</ol>
+<hr>
+<p><code>objc</code> 是一个好的学习 bindings 的渠道</p>
+]]></description>
+                    <pubDate>Thu, 23 Mar 2023 19:28:50 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/03/37</guid>
+                <link>/2023/03/37</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[ForkJoinPool 来运行斐波那契递归]]></title>
                     <description><![CDATA[<div class="highlight highlight-source-java"><pre>	<span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-smi">ComputeFibonacciTask</span> <span class="pl-k">extends</span> <span class="pl-smi">RecursiveTask</span>&lt;<span class="pl-smi">Long</span>&gt; {
@@ -459,7 +475,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <span class="pl-s1">start</span>.<span class="pl-en">word3</span>().<span class="pl-en">word3</span>().<span class="pl-en">end</span>();
 <span class="pl-s1">start</span>.<span class="pl-en">word3</span>().<span class="pl-en">word3</span>().<span class="pl-en">word3</span>().<span class="pl-en">end</span>();</pre></div>
 <p>最棒的是，您的 DSL 直接用 Java 编译！你得到一个免费的解析器。您还可以在 Scala（或 Groovy）中使用相同的表示法或在 Scala 中使用略有不同的表示法（省略点 <code>.</code> 和括号 <code>()</code>）重新使用此 DSL：</p>
-<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-smi">start</span> <span class="pl-k">=</span> <span class="pl-c"><span class="pl-c">//</span> ... </span>
+<div class="highlight highlight-source-scala"><pre><span class="pl-k">val</span> <span class="pl-v">start</span> <span class="pl-k">=</span> <span class="pl-c"><span class="pl-c">//</span> ... </span>
 
 (start singleWord) end;
 (start parameterisedWord <span class="pl-s"><span class="pl-pds">"</span>abc<span class="pl-pds">"</span></span>) end; 
