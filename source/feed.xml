@@ -18,9 +18,9 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 23 Mar 2023 19:29:07 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Mar 2023 09:19:47 GMT</lastBuildDate>
             <item>
-                <title><![CDATA[Rust: 记录一下 tauri 的 bug 追踪]]></title>
+                <title><![CDATA[Rust: 记录一下 debug]]></title>
                     <description><![CDATA[<p>bug 见: <a href="https://github.com/tauri-apps/wry/issues/911">https://github.com/tauri-apps/wry/issues/911</a></p>
 <ol>
 <li>把可能出问题的地方打上日志</li>
@@ -30,7 +30,7 @@
 <hr>
 <p><code>objc</code> 是一个好的学习 bindings 的渠道</p>
 ]]></description>
-                    <pubDate>Thu, 23 Mar 2023 19:28:50 GMT</pubDate>
+                    <pubDate>Fri, 24 Mar 2023 09:19:26 GMT</pubDate>
                         <guid isPermaLink="false">/2023/03/37</guid>
                 <link>/2023/03/37</link>
                     <author><![CDATA[bxb100]]></author>
