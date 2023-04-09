@@ -99,8 +99,10 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [安迪·威尔-挽救计划](https://github.com/bxb100/bxb100.github.io/issues/4)---2021-12-27
 
 ## TODO
-TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)--1 jobs to do--0 jobs done
+TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)--3 jobs to do--0 jobs done
 - [ ] 实现 CDC https://readpaper.com/paper/3014193728
+- [ ] 实现 CDC rust 版本的接入
+- [ ] 完成 PDF 文本的解析, 参考[^1][^2]
 
 TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)--15 jobs to do--2 jobs done
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/)
