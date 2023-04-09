@@ -9,6 +9,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | 构建我的被动收入 | https://www.bmpi.dev/dev/ | 技术布道 |
 
 ## Recent
+- [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)---2023-04-09
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
@@ -18,7 +19,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
 - [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
 - [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
-- [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)---2022-12-12
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -99,6 +99,9 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [安迪·威尔-挽救计划](https://github.com/bxb100/bxb100.github.io/issues/4)---2021-12-27
 
 ## TODO
+TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)--1 jobs to do--0 jobs done
+- [ ] 实现 CDC https://readpaper.com/paper/3014193728
+
 TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)--15 jobs to do--2 jobs done
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/)
 - [ ] [844. 比较含退格的字符串](https://leetcode.cn/problems/backspace-string-compare/)
