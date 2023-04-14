@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 14 Apr 2023 12:30:05 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Apr 2023 12:44:10 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Fri, 14 Apr 2023 12:43:54 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/3</guid>
+                <link>/2021/12/3</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
                     <description><![CDATA[<ul>
@@ -220,16 +230,6 @@
                 <link>/2023/01/29</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
-            </item>
-            <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Mon, 20 Feb 2023 02:36:01 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/3</guid>
-                <link>/2021/12/3</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[实现 TDD 的一些方法]]></title>
