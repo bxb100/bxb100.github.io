@@ -18,7 +18,61 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 14 Apr 2023 12:24:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Apr 2023 12:25:25 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[麦当劳的事件驱动架构]]></title>
+                    <description><![CDATA[<blockquote>
+<p>译 <a href="https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures" rel="nofollow">https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures</a></p>
+</blockquote>
+<p>过去几年, 麦当劳一直大力投资构建和推广他们的 APP; 顾客可以通过它来下单, 获取优惠券, 查看营养信息等.</p>
+<p>因此, 麦当劳 2021 年有超过 2400 万次下载量, 成为美国下载量最多的餐厅类 app. 星巴克紧随其后, 去年下载量为 1200 万次.</p>
+<p>麦当劳依赖事件驱动架构 (EDAs) 来支持他们后端的众多服务. 比如说, 发送营销信息 (交易或促销) 或者提供手机订单的处理进度.</p>
+<p>麦当劳过去遇到的一个问题是缺乏创建 EDA 的标准方法(最佳实践). 他们看到了不同团队使用的各种技术和模式, 导致不一致和不必要的复杂性.</p>
+<p>为了解决这个问题, 工程师创建了统一事件平台 (unified eventing platform), 公司内的不同组织能够在此之上构建自己的事件系统. 这降低了启动和维护这些服务的实施和操作复杂性, 同时还确保了一致性.</p>
+<p>Vamshi Krishna Komuravalli 是麦当劳的首席架构师, 他写了一篇关于麦当劳统一事件平台架构的精彩博文</p>
+<h2><a id="user-content-总结" class="anchor" aria-hidden="true" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
+<p>麦当劳想要构建统一的事件平台来管理公司内不同生产者和消费者之间的通信.</p>
+<p>他们希望这个平台是可升缩的, 高可用, 性能好, 安全和可靠的. 他们还希望在如何完成错误处理、监控和恢复等事情上保持一致.</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67"><img src="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67" alt="f1" data-canonical-src="https://media.beehiiv.com/cdn-cgi/image/format=auto,onerror=redirect/uploads/asset/file/dc55925e-ba21-478b-961a-fa4e11d36b88/1_rnlk56DN7of_aY7uPfZjcQ.png" style="max-width: 100%;"></a></p>
+<p>这是他们为了处理这些构建的统一事件平台的架构图:</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c6c04fc0fc40388ae060698ac32416d8fb935b4751669539ff287e5498c6905f/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270"><img src="https://camo.githubusercontent.com/c6c04fc0fc40388ae060698ac32416d8fb935b4751669539ff287e5498c6905f/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270" alt="f2" data-canonical-src="https://miro.medium.com/max/1400/1*gCOnmHq4jXNjSX8Jp0NgOA.webp" style="max-width: 100%;"></a></p>
+<ul>
+<li>
+<strong>Event Broker</strong>: 它是平台的核心, 负责管理生产者和消费者之间的通信. 麦当劳使用 AWS, 因此他们使用 AWS Managed Streaming for Kafka (MSK) 作为事件代理.</li>
+<li>
+<strong>Schema Registry</strong>: 工程师希望为事件实施统一的架构, 以确保下游消费者的数据质量. Schema Registry 包含所有事件模式, 生产者和消费者将在发布/消费时检查注册表以验证事件.</li>
+<li>
+<strong>Standby Event Store</strong>: 如果 kafka 无法使用, 生产者将会发送他们的事件到备用事件存储库中(DynamoDB). 一个 AWS 的 Lambda function 将会从中尝试重新发送或发布到 kafka.</li>
+<li>
+<strong>Custom SDKs</strong>: 想要使用 Eventing Platform 的工程师可以使用 SDK. 事件平台团队为生产者和消费者构建了特定语言的库来编写和读取事件. 执行模式验证、重试和错误处理是通过 SDK 抽象出来的.</li>
+</ul>
+<p>在事件平台中事件活动的工作流程</p>
+<ol>
+<li>工程师定义事件的模式并将其注册到模式注册表中</li>
+<li>需要生产事件的应用使用生产者SDK发布事件</li>
+<li>SDK 执行架构验证以确保事件遵循架构</li>
+<li>如果验证通过, SDK 会将事件发布到主要 topic 中</li>
+<li>如果 SDK 在发布到主要 topic 时遇到错误, 则会将事件路由到该生产者的 <a href="https://en.wikipedia.org/wiki/Dead_letter_queue" rel="nofollow">dead-letter topic</a>. 一个管理程序允许工程师修复这些事件的任何错误(<code>如何修复?</code>).</li>
+<li>如果 SDK 遇到 Kafka 错误, 则事件将写入 DynamoDB 数据库中. Lambda 函数稍后将重试将这些事件发送到 Kafka.</li>
+<li>消费者消费来自 Kafka 的事件</li>
+</ol>
+<h2><a id="user-content-schema-registry" class="anchor" aria-hidden="true" href="#schema-registry"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schema Registry</h2>
+<p>为了确保数据完整性, 麦当劳依靠模式注册表对事件平台发布和消费的所有事件强制执行数据契约.</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270"><img src="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270" alt="f3" data-canonical-src="https://miro.medium.com/max/1400/1*LvV2J6pcNdSjRf0gSA4yAw.webp" style="max-width: 100%;"></a></p>
+<p>当生产者发布消息, 消息在开头包含版本的字符信息.</p>
+<p>之后, 当消息被消费时, 消费者可以通过字符来决定什么版本的模式应当被遵循.</p>
+<h2><a id="user-content-基于域的分片和自动缩放" class="anchor" aria-hidden="true" href="#基于域的分片和自动缩放"><span aria-hidden="true" class="octicon octicon-link"></span></a>基于域的分片和自动缩放</h2>
+<p>事件根据其域被分片到不同的 MSK 集群中. 这使得自动缩放更容易, 因为你可以为负载较重的域缩增加集群.</p>
+<p>为了应对读/写负载的增加, 事件平台团队添加了逻辑来监视 MSK 的 CPU 指标, 并触发自动缩放功能以在负载过高时向集群添加额外的 broker 机器. 为了增加磁盘空间，MSK 具有自动缩放存储的<a href="https://docs.aws.amazon.com/msk/latest/developerguide/msk-autoexpand.html" rel="nofollow">内置功能</a>.</p>
+<p>查看更多信息, 你可以阅读完整的文章: <a href="https://medium.com/mcdonalds-technical-blog/behind-the-scenes-mcdonalds-event-driven-architecture-51a6542c0d86" rel="nofollow">这里</a> 和 <a href="https://medium.com/mcdonalds-technical-blog/mcdonalds-event-driven-architecture-the-data-journey-and-how-it-works-4591d108821f" rel="nofollow">这里</a></p>
+]]></description>
+                    <pubDate>Fri, 14 Apr 2023 12:25:11 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/12/27</guid>
+                <link>/2022/12/27</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+                        <category>quastor</category>
+            </item>
             <item>
                 <title><![CDATA[一句]]></title>
                     <description><![CDATA[<p>才不足则多谋，识不足则多虑，
@@ -558,60 +612,6 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
                 <link>/2023/01/30</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
-            </item>
-            <item>
-                <title><![CDATA[麦当劳的事件驱动架构]]></title>
-                    <description><![CDATA[<blockquote>
-<p>译 <a href="https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures" rel="nofollow">https://blog.quastor.org/p/mcdonalds-uses-event-driven-architectures</a></p>
-</blockquote>
-<p>过去几年, 麦当劳一直大力投资构建和推广他们的 APP; 顾客可以通过它来下单, 获取优惠券, 查看营养信息等.</p>
-<p>因此, 麦当劳 2021 年有超过 2400 万次下载量, 成为美国下载量最多的餐厅类 app. 星巴克紧随其后, 去年下载量为 1200 万次.</p>
-<p>麦当劳依赖事件驱动架构 (EDAs) 来支持他们后端的众多服务. 比如说, 发送营销信息 (交易或促销) 或者提供手机订单的处理进度.</p>
-<p>麦当劳过去遇到的一个问题是缺乏创建 EDA 的标准方法(最佳实践). 他们看到了不同团队使用的各种技术和模式, 导致不一致和不必要的复杂性.</p>
-<p>为了解决这个问题, 工程师创建了统一事件平台 (unified eventing platform), 公司内的不同组织能够在此之上构建自己的事件系统. 这降低了启动和维护这些服务的实施和操作复杂性, 同时还确保了一致性.</p>
-<p>Vamshi Krishna Komuravalli 是麦当劳的首席架构师, 他写了一篇关于麦当劳统一事件平台架构的精彩博文</p>
-<h2><a id="user-content-总结" class="anchor" aria-hidden="true" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
-<p>麦当劳想要构建统一的事件平台来管理公司内不同生产者和消费者之间的通信.</p>
-<p>他们希望这个平台是可升缩的, 高可用, 性能好, 安全和可靠的. 他们还希望在如何完成错误处理、监控和恢复等事情上保持一致.</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67"><img src="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67" alt="f1" data-canonical-src="https://media.beehiiv.com/cdn-cgi/image/format=auto,onerror=redirect/uploads/asset/file/dc55925e-ba21-478b-961a-fa4e11d36b88/1_rnlk56DN7of_aY7uPfZjcQ.png" style="max-width: 100%;"></a></p>
-<p>这是他们为了处理这些构建的统一事件平台的架构图:</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c6c04fc0fc40388ae060698ac32416d8fb935b4751669539ff287e5498c6905f/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270"><img src="https://camo.githubusercontent.com/c6c04fc0fc40388ae060698ac32416d8fb935b4751669539ff287e5498c6905f/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270" alt="f2" data-canonical-src="https://miro.medium.com/max/1400/1*gCOnmHq4jXNjSX8Jp0NgOA.webp" style="max-width: 100%;"></a></p>
-<ul>
-<li>
-<strong>Event Broker</strong>: 它是平台的核心, 负责管理生产者和消费者之间的通信. 麦当劳使用 AWS, 因此他们使用 AWS Managed Streaming for Kafka (MSK) 作为事件代理.</li>
-<li>
-<strong>Schema Registry</strong>: 工程师希望为事件实施统一的架构, 以确保下游消费者的数据质量. Schema Registry 包含所有事件模式, 生产者和消费者将在发布/消费时检查注册表以验证事件.</li>
-<li>
-<strong>Standby Event Store</strong>: 如果 kafka 无法使用, 生产者将会发送他们的事件到备用事件存储库中(DynamoDB). 一个 AWS 的 Lambda function 将会从中尝试重新发送或发布到 kafka.</li>
-<li>
-<strong>Custom SDKs</strong>: 想要使用 Eventing Platform 的工程师可以使用 SDK. 事件平台团队为生产者和消费者构建了特定语言的库来编写和读取事件. 执行模式验证、重试和错误处理是通过 SDK 抽象出来的.</li>
-</ul>
-<p>在事件平台中事件活动的工作流程</p>
-<ol>
-<li>工程师定义事件的模式并将其注册到模式注册表中</li>
-<li>需要生产事件的应用使用生产者SDK发布事件</li>
-<li>SDK 执行架构验证以确保事件遵循架构</li>
-<li>如果验证通过, SDK 会将事件发布到主要 topic 中</li>
-<li>如果 SDK 在发布到主要 topic 时遇到错误, 则会将事件路由到该生产者的 <a href="https://en.wikipedia.org/wiki/Dead_letter_queue" rel="nofollow">dead-letter topic</a>. 一个管理程序允许工程师修复这些事件的任何错误(<code>如何修复?</code>).</li>
-<li>如果 SDK 遇到 Kafka 错误, 则事件将写入 DynamoDB 数据库中. Lambda 函数稍后将重试将这些事件发送到 Kafka.</li>
-<li>消费者消费来自 Kafka 的事件</li>
-</ol>
-<h2><a id="user-content-schema-registry" class="anchor" aria-hidden="true" href="#schema-registry"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schema Registry</h2>
-<p>为了确保数据完整性, 麦当劳依靠模式注册表对事件平台发布和消费的所有事件强制执行数据契约.</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270"><img src="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270" alt="f3" data-canonical-src="https://miro.medium.com/max/1400/1*LvV2J6pcNdSjRf0gSA4yAw.webp" style="max-width: 100%;"></a></p>
-<p>当生产者发布消息, 消息在开头包含版本的字符信息.</p>
-<p>之后, 当消息被消费时, 消费者可以通过字符来决定什么版本的模式应当被遵循.</p>
-<h2><a id="user-content-基于域的分片和自动缩放" class="anchor" aria-hidden="true" href="#基于域的分片和自动缩放"><span aria-hidden="true" class="octicon octicon-link"></span></a>基于域的分片和自动缩放</h2>
-<p>事件根据其域被分片到不同的 MSK 集群中. 这使得自动缩放更容易, 因为你可以为负载较重的域缩增加集群.</p>
-<p>为了应对读/写负载的增加, 事件平台团队添加了逻辑来监视 MSK 的 CPU 指标, 并触发自动缩放功能以在负载过高时向集群添加额外的 broker 机器. 为了增加磁盘空间，MSK 具有自动缩放存储的<a href="https://docs.aws.amazon.com/msk/latest/developerguide/msk-autoexpand.html" rel="nofollow">内置功能</a>.</p>
-<p>查看更多信息, 你可以阅读完整的文章: <a href="https://medium.com/mcdonalds-technical-blog/behind-the-scenes-mcdonalds-event-driven-architecture-51a6542c0d86" rel="nofollow">这里</a> 和 <a href="https://medium.com/mcdonalds-technical-blog/mcdonalds-event-driven-architecture-the-data-journey-and-how-it-works-4591d108821f" rel="nofollow">这里</a></p>
-]]></description>
-                    <pubDate>Sat, 14 Jan 2023 07:12:19 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/12/27</guid>
-                <link>/2022/12/27</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>DEV</category>
-                        <category>quastor</category>
             </item>
             <item>
                 <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
