@@ -18,7 +18,21 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sun, 09 Apr 2023 16:01:01 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Apr 2023 12:24:00 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[一句]]></title>
+                    <description><![CDATA[<p>才不足则多谋，识不足则多虑，
+威不足则多怒，信不足则多言，
+勇不足则多劳，明不足则多察，
+理不足则多辩，情不足则多仪。</p>
+<p align="right">- 陈宏谋《养正遗规》 </p>
+]]></description>
+                    <pubDate>Fri, 14 Apr 2023 12:23:43 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/08/22</guid>
+                <link>/2022/08/22</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[Rust: 记录一下 debug]]></title>
                     <description><![CDATA[<p>wry bug 见: <a href="https://github.com/tauri-apps/wry/issues/911">https://github.com/tauri-apps/wry/issues/911</a></p>
@@ -598,20 +612,6 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
                         <category>quastor</category>
-            </item>
-            <item>
-                <title><![CDATA[一句]]></title>
-                    <description><![CDATA[<p>才不足则多谋，识不足则多虑，
-威不足则多怒，信不足则多言，
-勇不足则多劳，明不足则多察，
-理不足则多辩，情不足则多仪。</p>
-<p align="right">- 陈宏谋《养正遗规》 </p>
-]]></description>
-                    <pubDate>Wed, 04 Jan 2023 10:28:41 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/08/22</guid>
-                <link>/2022/08/22</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[使用 N_m3u8DL-CLI 简化下载 m3u8 流程]]></title>
