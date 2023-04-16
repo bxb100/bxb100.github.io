@@ -18,7 +18,16 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sun, 16 Apr 2023 00:37:57 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 16 Apr 2023 11:17:45 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[翻译: Lock-free Programming: Dekker's Algorithm]]></title>
+                    <description><![CDATA[<p>原文: <a href="https://series1.github.io/blog/dekkers-algorithm/" rel="nofollow">https://series1.github.io/blog/dekkers-algorithm/</a></p>
+]]></description>
+                    <pubDate>Sun, 16 Apr 2023 11:17:28 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/04/39</guid>
+                <link>/2023/04/39</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[一句]]></title>
                     <description><![CDATA[<p>才不足则多谋，识不足则多虑，
