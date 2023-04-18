@@ -7,6 +7,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | Aleksey Shipilëv | https://shipilev.net | ☕ Java |
 | plantegg | https://plantegg.github.io/ | 工程师，网络、性能、CPU等领域 [twitter](https://twitter.com/plantegg) |
 | 构建我的被动收入 | https://www.bmpi.dev/dev/ | 技术布道 |
+| Load Balancing Post | https://samwho.dev/load-balancing/ | A visualized guide to load balancers |
 
 ## Recent
 - [翻译: Lock-free Programming: Dekker's Algorithm](https://github.com/bxb100/bxb100.github.io/issues/39)---2023-04-16
