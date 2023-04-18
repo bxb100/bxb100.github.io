@@ -10,7 +10,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 - [翻译: Lock-free Programming: Dekker's Algorithm](https://github.com/bxb100/bxb100.github.io/issues/39)---2023-04-16
-- [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)---2023-04-09
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
@@ -19,6 +18,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
 - [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
+- [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -103,7 +103,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)--3 jobs to do--0 jobs done
 - [ ] 实现 CDC https://readpaper.com/paper/3014193728
 - [ ] 实现 CDC rust 版本的接入
-- [ ] 完成 PDF 文本的解析, 参考[^1][^2]
+- [ ] 完成 PDF 文本的解析, 参考
 
 TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)--17 jobs to do--4 jobs done
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/) 这道只需要不需要用哈希表来复杂化解决
