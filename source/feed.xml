@@ -18,11 +18,11 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 19 Apr 2023 10:12:26 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Apr 2023 10:51:43 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
-                    <description><![CDATA[<h2><a id="user-content-zld-的配置" class="anchor" aria-hidden="true" href="#zld-的配置"><span aria-hidden="true" class="octicon octicon-link"></span></a>ZLD 的配置</h2>
-<p>Rust 编译大部分耗时在 <a href="https://en.wikipedia.org/wiki/Linker_(computing)" rel="nofollow">linker 阶段</a>, 所以文中给与 ZLD 配置, 但是注意后面的配置路径有点问题, homebrew Apple silicon 默认的安装位置在 <code>/opt/homebrew/bin/</code></p>
+                    <description><![CDATA[<p><del>## ZLD 的配置</del></p>
+<p><del>Rust 编译大部分耗时在 <a href="https://en.wikipedia.org/wiki/Linker_(computing)" rel="nofollow">linker 阶段</a>, 所以文中给与 ZLD 配置, 但是注意后面的配置路径有点问题, homebrew Apple silicon 默认的安装位置在<code>/opt/homebrew/bin/</code></del></p>
 <div class="highlight highlight-source-diff"><pre><span class="pl-c"><span class="pl-c">#</span> .cargo/config.toml</span>
 <span class="pl-c"><span class="pl-c">#</span> On Windows</span>
 <span class="pl-c"><span class="pl-c">#</span> ```</span>
@@ -45,8 +45,20 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <span class="pl-md"><span class="pl-md">-</span> rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]</span>
 <span class="pl-mi1"><span class="pl-mi1">+</span> rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]</span></pre></div>
 <p>提到了新出来的 <a href="https://github.com/rui314/mold">mold</a> 会更加好一点, 有机会再试试</p>
+<hr>
+<p>update: zld 不再维护的了, 使用 lld 替代<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>, 但是和 reddit 上有用户评论一样, 速度并没有提示很高<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup></p>
+<section data-footnotes="">
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://eisel.me/lld" rel="nofollow">https://eisel.me/lld</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/" rel="nofollow">https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
 ]]></description>
-                    <pubDate>Wed, 19 Apr 2023 10:12:12 GMT</pubDate>
+                    <pubDate>Wed, 19 Apr 2023 10:51:26 GMT</pubDate>
                         <guid isPermaLink="false">/2023/04/40</guid>
                 <link>/2023/04/40</link>
                     <author><![CDATA[bxb100]]></author>
