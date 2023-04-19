@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 19 Apr 2023 10:51:43 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Apr 2023 10:56:28 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -46,7 +46,12 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <span class="pl-mi1"><span class="pl-mi1">+</span> rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]</span></pre></div>
 <p>提到了新出来的 <a href="https://github.com/rui314/mold">mold</a> 会更加好一点, 有机会再试试</p>
 <hr>
-<p>update: zld 不再维护的了, 使用 lld 替代<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>, 但是和 reddit 上有用户评论一样, 速度并没有提示很高<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup></p>
+<p>update:</p>
+<ul>
+<li>zld 不再维护的了, 使用 lld 替代<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>, 但是和 reddit 上有用户评论一样, 速度并没有提示很高<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
+</li>
+<li>mold 的 MacOS 版本 sold 是商业版需要购买 licence , 放弃</li>
+</ul>
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
@@ -58,7 +63,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Wed, 19 Apr 2023 10:51:26 GMT</pubDate>
+                    <pubDate>Wed, 19 Apr 2023 10:56:08 GMT</pubDate>
                         <guid isPermaLink="false">/2023/04/40</guid>
                 <link>/2023/04/40</link>
                     <author><![CDATA[bxb100]]></author>
