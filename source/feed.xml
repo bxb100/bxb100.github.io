@@ -18,7 +18,23 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 19 Apr 2023 06:12:50 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Apr 2023 10:04:33 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[QNAP 技巧分享]]></title>
+                    <description><![CDATA[<ol>
+<li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
+</li>
+<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
+<li>使用 <a href="https://tailscale.com/" rel="nofollow">tailscale</a> 来连接 WebDAV</li>
+</ol>
+]]></description>
+                    <pubDate>Wed, 19 Apr 2023 10:04:16 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/01/9</guid>
+                <link>/2022/01/9</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+                        <category>就是玩</category>
+            </item>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
                     <description><![CDATA[<ul>
@@ -772,21 +788,6 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
                         <guid isPermaLink="false">/2022/08/23</guid>
                 <link>/2022/08/23</link>
                     <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[QNAP 技巧分享]]></title>
-                    <description><![CDATA[<ol>
-<li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
-</li>
-<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
-<li>使用 <a href="https://tailscale.com/" rel="nofollow">tailscale</a> 来连接 WebDAV</li>
-</ol>
-]]></description>
-                    <pubDate>Wed, 10 Aug 2022 07:29:32 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/01/9</guid>
-                <link>/2022/01/9</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
             </item>
             <item>
                 <title><![CDATA[How to add auth for Cloudflare Page]]></title>

@@ -82,6 +82,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 - [Synergy 连接卡顿](https://github.com/bxb100/bxb100.github.io/issues/16)---2022-06-10
+- [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 
 
 ## 摘录
