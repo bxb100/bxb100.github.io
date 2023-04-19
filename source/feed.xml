@@ -18,7 +18,38 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 19 Apr 2023 10:04:33 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Apr 2023 10:10:24 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
+                    <description><![CDATA[<h2><a id="user-content-zld-的配置" class="anchor" aria-hidden="true" href="#zld-的配置"><span aria-hidden="true" class="octicon octicon-link"></span></a>ZLD 的配置</h2>
+<p>Rust 编译大部分耗时在 <a href="https://en.wikipedia.org/wiki/Linker_(computing)" rel="nofollow">linker 阶段</a>, 所以文中给与 ZLD 配置, 但是注意后面的配置路径有点问题, homebrew Apple silicon 默认的安装位置在 <code>/opt/homebrew/bin/</code></p>
+<div class="highlight highlight-source-diff"><pre><span class="pl-c"><span class="pl-c">#</span> .cargo/config.toml</span>
+<span class="pl-c"><span class="pl-c">#</span> On Windows</span>
+<span class="pl-c"><span class="pl-c">#</span> ```</span>
+<span class="pl-c"><span class="pl-c">#</span> cargo install -f cargo-binutils</span>
+<span class="pl-c"><span class="pl-c">#</span> rustup component add llvm-tools-preview</span>
+<span class="pl-c"><span class="pl-c">#</span> ```</span>
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+<span class="pl-c"><span class="pl-c">#</span> On Linux:</span>
+<span class="pl-c"><span class="pl-c">#</span> - Ubuntu, `sudo apt-get install lld clang`</span>
+<span class="pl-c"><span class="pl-c">#</span> - Arch, `sudo pacman -S lld clang`</span>
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+<span class="pl-c"><span class="pl-c">#</span> On MacOS, `brew install michaeleisel/zld/zld`</span>
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
+[target.aarch64-apple-darwin]
+<span class="pl-md"><span class="pl-md">-</span> rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]</span>
+<span class="pl-mi1"><span class="pl-mi1">+</span> rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]</span></pre></div>
+]]></description>
+                    <pubDate>Wed, 19 Apr 2023 10:10:12 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/04/40</guid>
+                <link>/2023/04/40</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[QNAP 技巧分享]]></title>
                     <description><![CDATA[<ol>
