@@ -18,25 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 19 Apr 2023 10:11:19 GMT</lastBuildDate>
-            <item>
-                <title><![CDATA[Rust: 记录一下 debug]]></title>
-                    <description><![CDATA[<p>wry bug 见: <a href="https://github.com/tauri-apps/wry/issues/911">https://github.com/tauri-apps/wry/issues/911</a></p>
-<ol>
-<li>把可能出问题的地方打上日志</li>
-<li>debug 能给出问题的流向, 但是真正出现的地方是隐藏的</li>
-<li>看 FFI 的时候不要纠结于外部实现, 90% 不会是调用地方出现问题</li>
-</ol>
-<hr>
-<p><code>objc</code> 是一个好的学习 bindings 的渠道</p>
-]]></description>
-                    <pubDate>Wed, 19 Apr 2023 10:11:01 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/03/37</guid>
-                <link>/2023/03/37</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>DEV</category>
-                        <category>Rust</category>
-            </item>
+        <lastBuildDate>Wed, 19 Apr 2023 10:12:26 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<h2><a id="user-content-zld-的配置" class="anchor" aria-hidden="true" href="#zld-的配置"><span aria-hidden="true" class="octicon octicon-link"></span></a>ZLD 的配置</h2>
@@ -62,11 +44,30 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 [target.aarch64-apple-darwin]
 <span class="pl-md"><span class="pl-md">-</span> rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]</span>
 <span class="pl-mi1"><span class="pl-mi1">+</span> rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]</span></pre></div>
+<p>提到了新出来的 <a href="https://github.com/rui314/mold">mold</a> 会更加好一点, 有机会再试试</p>
 ]]></description>
-                    <pubDate>Wed, 19 Apr 2023 10:10:37 GMT</pubDate>
+                    <pubDate>Wed, 19 Apr 2023 10:12:12 GMT</pubDate>
                         <guid isPermaLink="false">/2023/04/40</guid>
                 <link>/2023/04/40</link>
                     <author><![CDATA[bxb100]]></author>
+                        <category>Rust</category>
+            </item>
+            <item>
+                <title><![CDATA[Rust: 记录一下 debug]]></title>
+                    <description><![CDATA[<p>wry bug 见: <a href="https://github.com/tauri-apps/wry/issues/911">https://github.com/tauri-apps/wry/issues/911</a></p>
+<ol>
+<li>把可能出问题的地方打上日志</li>
+<li>debug 能给出问题的流向, 但是真正出现的地方是隐藏的</li>
+<li>看 FFI 的时候不要纠结于外部实现, 90% 不会是调用地方出现问题</li>
+</ol>
+<hr>
+<p><code>objc</code> 是一个好的学习 bindings 的渠道</p>
+]]></description>
+                    <pubDate>Wed, 19 Apr 2023 10:11:01 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/03/37</guid>
+                <link>/2023/03/37</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
                         <category>Rust</category>
             </item>
             <item>
