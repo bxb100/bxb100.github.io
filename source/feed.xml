@@ -18,7 +18,18 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 21 Apr 2023 03:15:21 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Apr 2023 03:18:07 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[雄狮少年杂感]]></title>
+                    <description><![CDATA[<p><a href="http://jandan.net/t/5118460" rel="nofollow">煎蛋</a>这图片道尽了我所有的想法 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg"><img src="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg" alt="88520f6bly1gxshpjo4j1j20c81br0vp" style="max-width: 100%;"></a></p>
+]]></description>
+                    <pubDate>Fri, 21 Apr 2023 03:17:54 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/5</guid>
+                <link>/2021/12/5</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>杂感</category>
+            </item>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -2031,18 +2042,6 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
                 <link>/2021/12/6</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Archive</category>
-            </item>
-            <item>
-                <title><![CDATA[雄狮少年杂感]]></title>
-                    <description><![CDATA[<p><a href="http://jandan.net/t/5118460" rel="nofollow">煎蛋</a>这图片道尽了我所有的想法 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg"><img src="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg" alt="88520f6bly1gxshpjo4j1j20c81br0vp" style="max-width: 100%;"></a></p>
-]]></description>
-                    <pubDate>Mon, 27 Dec 2021 16:06:21 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/5</guid>
-                <link>/2021/12/5</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>杂感</category>
-                        <category>煎蛋</category>
             </item>
     </channel>
 </rss>
