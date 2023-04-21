@@ -18,7 +18,21 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 21 Apr 2023 03:18:07 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Apr 2023 14:22:06 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[一句]]></title>
+                    <description><![CDATA[<p>才不足则多谋，识不足则多虑，
+威不足则多怒，信不足则多言，
+勇不足则多劳，明不足则多察，
+理不足则多辩，情不足则多仪。</p>
+<p align="right">- 陈宏谋《养正遗规》 </p>
+]]></description>
+                    <pubDate>Fri, 21 Apr 2023 14:21:52 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/08/22</guid>
+                <link>/2022/08/22</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[雄狮少年杂感]]></title>
                     <description><![CDATA[<p><a href="http://jandan.net/t/5118460" rel="nofollow">煎蛋</a>这图片道尽了我所有的想法 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
@@ -187,20 +201,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                         <guid isPermaLink="false">/2023/04/39</guid>
                 <link>/2023/04/39</link>
                     <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[一句]]></title>
-                    <description><![CDATA[<p>才不足则多谋，识不足则多虑，
-威不足则多怒，信不足则多言，
-勇不足则多劳，明不足则多察，
-理不足则多辩，情不足则多仪。</p>
-<p align="right">- 陈宏谋《养正遗规》 </p>
-]]></description>
-                    <pubDate>Sun, 16 Apr 2023 00:37:41 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/08/22</guid>
-                <link>/2022/08/22</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
             </item>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
