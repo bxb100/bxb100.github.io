@@ -18,7 +18,44 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 21 Apr 2023 14:22:06 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Apr 2023 15:40:12 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[比较有趣的项目]]></title>
+                    <description><![CDATA[<ul>
+<li>
+<a href="https://github.com/apache/beam">Apache Beam</a> Google 出品对于流式数据处理的框架, 用来数据分析</li>
+<li>
+<a href="https://github.com/apache/camel">Camel</a> Apache Camel is an open-source integration framework that empowers you to quickly and easily integrate various systems consuming or producing data.</li>
+<li>
+<a href="https://github.com/Netflix/conductor">Conductor</a> NetFlix 开发的 workflow</li>
+<li>
+<a href="https://nifi.apache.org/index.html" rel="nofollow">nifi</a> 图形化 workflow</li>
+<li>
+<a href="https://temporal.io/" rel="nofollow">Temporal</a> 适合开发使用 workflow</li>
+<li>
+<a href="https://github.com/google/copybara">copybara</a> 在不同仓库之间移动代码, 也许能够使用 workflow 来解决</li>
+<li>
+<a href="https://debezium.io/" rel="nofollow">Debezium</a> CDC, 实现了 NetFlix 的 <a href="https://netflixtechblog.com/dblog-a-generic-change-data-capture-framework-69351fb9099b?gi=eae74ca0ba3b" rel="nofollow">DBLog</a> 算法 (目前 NetFlix 还未开源)</li>
+<li>
+<a href="https://github.com/fluent/fluent-bit">FluentBit</a> 端到端的日志处理管道, 比 Logstash 要轻, 并且和 K8s 融合的要好</li>
+<li>
+<a href="https://grafana.com/" rel="nofollow">Grafana</a> 开源监控工具</li>
+<li>
+<a href="https://lenis.studiofreight.com/" rel="nofollow">lenis</a> 前端网页滑动框架</li>
+<li>
+<a href="https://github.com/plausible/analytics">plausible</a> 网页埋点, Google Analysis 开源替代</li>
+<li>
+<a href="https://pulsar.apache.org/" rel="nofollow">Pulsar</a> 分布式的 消息/流 中间件</li>
+<li>
+<a href="https://github.com/hashicorp/vault">Vault</a> 现代化下的加密信息管理工具</li>
+</ul>
+]]></description>
+                    <pubDate>Sun, 23 Apr 2023 15:39:49 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/02/33</guid>
+                <link>/2023/02/33</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>就是玩</category>
+            </item>
             <item>
                 <title><![CDATA[一句]]></title>
                     <description><![CDATA[<p>才不足则多谋，识不足则多虑，
@@ -127,43 +164,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                 <link>/2022/01/9</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
-                        <category>就是玩</category>
-            </item>
-            <item>
-                <title><![CDATA[比较有趣的项目]]></title>
-                    <description><![CDATA[<ul>
-<li>
-<a href="https://github.com/apache/beam">Apache Beam</a> Google 出品对于流式数据处理的框架, 用来数据分析</li>
-<li>
-<a href="https://github.com/apache/camel">Camel</a> Apache Camel is an open-source integration framework that empowers you to quickly and easily integrate various systems consuming or producing data.</li>
-<li>
-<a href="https://github.com/Netflix/conductor">Conductor</a> NetFlix 开发的 workflow</li>
-<li>
-<a href="https://nifi.apache.org/index.html" rel="nofollow">nifi</a> 图形化 workflow</li>
-<li>
-<a href="https://temporal.io/" rel="nofollow">Temporal</a> 适合开发使用 workflow</li>
-<li>
-<a href="https://github.com/google/copybara">copybara</a> 在不同仓库之间移动代码, 也许能够使用 workflow 来解决</li>
-<li>
-<a href="https://debezium.io/" rel="nofollow">Debezium</a> CDC, 实现了 NetFlix 的 <a href="https://netflixtechblog.com/dblog-a-generic-change-data-capture-framework-69351fb9099b?gi=eae74ca0ba3b" rel="nofollow">DBLog</a> 算法 (目前 NetFlix 还未开源)</li>
-<li>
-<a href="https://github.com/fluent/fluent-bit">FluentBit</a> 端到端的日志处理管道, 比 Logstash 要轻, 并且和 K8s 融合的要好</li>
-<li>
-<a href="https://grafana.com/" rel="nofollow">Grafana</a> 开源监控工具</li>
-<li>
-<a href="https://lenis.studiofreight.com/" rel="nofollow">lenis</a> 前端网页滑动框架</li>
-<li>
-<a href="https://github.com/plausible/analytics">plausible</a> 网页埋点, Google Analysis 开源替代</li>
-<li>
-<a href="https://pulsar.apache.org/" rel="nofollow">Pulsar</a> 分布式的 消息/流 中间件</li>
-<li>
-<a href="https://github.com/hashicorp/vault">Vault</a> 现代化下的加密信息管理工具</li>
-</ul>
-]]></description>
-                    <pubDate>Tue, 18 Apr 2023 15:31:12 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/02/33</guid>
-                <link>/2023/02/33</link>
-                    <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
             </item>
             <item>
