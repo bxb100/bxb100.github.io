@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 25 Apr 2023 02:32:36 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Apr 2023 02:33:30 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -29,7 +29,7 @@
 <li>action 不再允许 if 中使用 secrets 参数进行判断[^1][^2]</li>
 </ul>
 ]]></description>
-                    <pubDate>Tue, 25 Apr 2023 02:32:22 GMT</pubDate>
+                    <pubDate>Tue, 25 Apr 2023 02:33:11 GMT</pubDate>
                         <guid isPermaLink="false">/2021/12/7</guid>
                 <link>/2021/12/7</link>
                     <author><![CDATA[bxb100]]></author>
