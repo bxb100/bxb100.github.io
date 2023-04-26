@@ -18,7 +18,23 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 25 Apr 2023 02:37:04 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Apr 2023 07:57:12 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Benchmark 的一些记录]]></title>
+                    <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
+<blockquote>
+<p><a href="https://github.com/brianfrankcooper/YCSB">YCSB</a> A common use of the tool is to benchmark multiple systems and compare them.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/masonr/yet-another-bench-script">yet-another-bench-script</a> YABS - a simple bash script to estimate Linux server performance using fio, iperf3, &amp; Geekbench</p>
+</blockquote>
+]]></description>
+                    <pubDate>Wed, 26 Apr 2023 07:56:57 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/32</guid>
+                <link>/2023/01/32</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -26,11 +42,22 @@
 <li><a href="#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
 <li><a href="#issuecomment-1008555105">输入输出多行</a></li>
 <li><a href="#issuecomment-1275587834">如何上传可执行文件到 release 中 (draft)</a></li>
-<li>action 不再允许 if 中使用 secrets 参数进行判断[^1][^2]</li>
+<li>action 不再允许 if 中使用 secrets 参数进行判断<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup><sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
+</li>
 <li><a href="#issuecomment-1510413884">Action Cache</a></li>
 <li><a href="#issuecomment-1512457398">Auto upload to Marketplace</a></li>
 <li><a href="#issuecomment-1521073861">Reusable Workflow</a></li>
 </ul>
+<section data-footnotes="">
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job">https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job</a>. <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
 ]]></description>
                     <pubDate>Tue, 25 Apr 2023 02:36:47 GMT</pubDate>
                         <guid isPermaLink="false">/2021/12/7</guid>
@@ -460,19 +487,6 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
                 <link>/2023/02/34</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>question</category>
-            </item>
-            <item>
-                <title><![CDATA[Benchmark 的一些记录]]></title>
-                    <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
-<blockquote>
-<p><a href="https://github.com/brianfrankcooper/YCSB">YCSB</a> A common use of the tool is to benchmark multiple systems and compare them.</p>
-</blockquote>
-]]></description>
-                    <pubDate>Fri, 10 Feb 2023 18:37:27 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/32</guid>
-                <link>/2023/01/32</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>DEV</category>
             </item>
             <item>
                 <title><![CDATA[ANTLR 速记]]></title>
