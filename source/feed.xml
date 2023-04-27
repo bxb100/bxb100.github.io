@@ -18,18 +18,33 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Wed, 26 Apr 2023 07:57:12 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Apr 2023 03:02:46 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[翻译: Lock-free Programming: Dekker's Algorithm]]></title>
+                    <description><![CDATA[<p>原文: <a href="https://series1.github.io/blog/dekkers-algorithm/" rel="nofollow">https://series1.github.io/blog/dekkers-algorithm/</a></p>
+<ul>
+<li>【并发控制：基础 (Peterson 算法、模型检验、原子操作) [南京大学2023操作系统-P6] (蒋炎岩)】 <a href="https://www.bilibili.com/video/BV1CN411c7Bs/?share_source=copy_web&amp;vd_source=75f28928f8e1001e7e53f0612a1d113d" rel="nofollow">https://www.bilibili.com/video/BV1CN411c7Bs/?share_source=copy_web&amp;vd_source=75f28928f8e1001e7e53f0612a1d113d</a>
+</li>
+</ul>
+]]></description>
+                    <pubDate>Thu, 27 Apr 2023 03:02:24 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/04/39</guid>
+                <link>/2023/04/39</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[Benchmark 的一些记录]]></title>
                     <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
-<blockquote>
+<ul>
+<li>
 <p><a href="https://github.com/brianfrankcooper/YCSB">YCSB</a> A common use of the tool is to benchmark multiple systems and compare them.</p>
-</blockquote>
-<blockquote>
+</li>
+<li>
 <p><a href="https://github.com/masonr/yet-another-bench-script">yet-another-bench-script</a> YABS - a simple bash script to estimate Linux server performance using fio, iperf3, &amp; Geekbench</p>
-</blockquote>
+</li>
+</ul>
 ]]></description>
-                    <pubDate>Wed, 26 Apr 2023 07:56:57 GMT</pubDate>
+                    <pubDate>Wed, 26 Apr 2023 07:57:13 GMT</pubDate>
                         <guid isPermaLink="false">/2023/01/32</guid>
                 <link>/2023/01/32</link>
                     <author><![CDATA[bxb100]]></author>
@@ -211,15 +226,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
                         <category>就是玩</category>
-            </item>
-            <item>
-                <title><![CDATA[翻译: Lock-free Programming: Dekker's Algorithm]]></title>
-                    <description><![CDATA[<p>原文: <a href="https://series1.github.io/blog/dekkers-algorithm/" rel="nofollow">https://series1.github.io/blog/dekkers-algorithm/</a></p>
-]]></description>
-                    <pubDate>Sun, 16 Apr 2023 11:17:28 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/04/39</guid>
-                <link>/2023/04/39</link>
-                    <author><![CDATA[bxb100]]></author>
             </item>
             <item>
                 <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
