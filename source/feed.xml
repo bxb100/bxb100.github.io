@@ -18,7 +18,25 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sun, 30 Apr 2023 10:38:24 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 May 2023 16:02:47 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Benchmark 的一些记录]]></title>
+                    <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
+<ul>
+<li>
+<p><a href="https://github.com/brianfrankcooper/YCSB">YCSB</a> A common use of the tool is to benchmark multiple systems and compare them.</p>
+</li>
+<li>
+<p><a href="https://github.com/masonr/yet-another-bench-script">yet-another-bench-script</a> YABS - a simple bash script to estimate Linux server performance using fio, iperf3, &amp; Geekbench</p>
+</li>
+</ul>
+]]></description>
+                    <pubDate>Sat, 06 May 2023 16:02:28 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/01/32</guid>
+                <link>/2023/01/32</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>DEV</category>
+            </item>
             <item>
                 <title><![CDATA[一句]]></title>
                     <description><![CDATA[<p>才不足则多谋，识不足则多虑，
@@ -92,24 +110,6 @@
                         <guid isPermaLink="false">/2023/04/39</guid>
                 <link>/2023/04/39</link>
                     <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[Benchmark 的一些记录]]></title>
-                    <description><![CDATA[<p>记录一下看到的各种 benchmark 指标的网站, 仓库, 和博客</p>
-<ul>
-<li>
-<p><a href="https://github.com/brianfrankcooper/YCSB">YCSB</a> A common use of the tool is to benchmark multiple systems and compare them.</p>
-</li>
-<li>
-<p><a href="https://github.com/masonr/yet-another-bench-script">yet-another-bench-script</a> YABS - a simple bash script to estimate Linux server performance using fio, iperf3, &amp; Geekbench</p>
-</li>
-</ul>
-]]></description>
-                    <pubDate>Wed, 26 Apr 2023 07:57:13 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/32</guid>
-                <link>/2023/01/32</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>DEV</category>
             </item>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
