@@ -18,7 +18,58 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sun, 14 May 2023 03:25:14 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 18 May 2023 08:48:51 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
+                    <description><![CDATA[<p><del>## ZLD 的配置</del></p>
+<p><del>Rust 编译大部分耗时在 <a href="https://en.wikipedia.org/wiki/Linker_(computing)" rel="nofollow">linker 阶段</a>, 所以文中给与 ZLD 配置, 但是注意后面的配置路径有点问题, homebrew Apple silicon 默认的安装位置在<code>/opt/homebrew/bin/</code></del></p>
+<div class="highlight highlight-source-diff"><pre><span class="pl-c"><span class="pl-c">#</span> .cargo/config.toml</span>
+<span class="pl-c"><span class="pl-c">#</span> On Windows</span>
+<span class="pl-c"><span class="pl-c">#</span> ```</span>
+<span class="pl-c"><span class="pl-c">#</span> cargo install -f cargo-binutils</span>
+<span class="pl-c"><span class="pl-c">#</span> rustup component add llvm-tools-preview</span>
+<span class="pl-c"><span class="pl-c">#</span> ```</span>
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+<span class="pl-c"><span class="pl-c">#</span> On Linux:</span>
+<span class="pl-c"><span class="pl-c">#</span> - Ubuntu, `sudo apt-get install lld clang`</span>
+<span class="pl-c"><span class="pl-c">#</span> - Arch, `sudo pacman -S lld clang`</span>
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+<span class="pl-c"><span class="pl-c">#</span> On MacOS, `brew install michaeleisel/zld/zld`</span>
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
+[target.aarch64-apple-darwin]
+<span class="pl-md"><span class="pl-md">-</span> rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]</span>
+<span class="pl-mi1"><span class="pl-mi1">+</span> rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]</span></pre></div>
+<p>提到了新出来的 <a href="https://github.com/rui314/mold">mold</a> 会更加好一点, 有机会再试试</p>
+<hr>
+<p>update:</p>
+<ul>
+<li>zld 不再维护的了, 使用 lld 替代<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>, 但是和 reddit 上有用户评论一样, 速度并没有提示很高<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
+</li>
+<li>mold 的 MacOS 版本 sold 是商业版需要购买 licence , 放弃</li>
+</ul>
+<p>总结: 不要花时间在 linker 上</p>
+<section data-footnotes="">
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://eisel.me/lld" rel="nofollow">https://eisel.me/lld</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/" rel="nofollow">https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+</ol>
+</section>
+]]></description>
+                    <pubDate>Thu, 18 May 2023 08:48:37 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/04/40</guid>
+                <link>/2023/04/40</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Rust</category>
+            </item>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
                     <description><![CDATA[<ul>
@@ -65,57 +116,6 @@
                 <link>/2023/02/33</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
-            </item>
-            <item>
-                <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
-                    <description><![CDATA[<p><del>## ZLD 的配置</del></p>
-<p><del>Rust 编译大部分耗时在 <a href="https://en.wikipedia.org/wiki/Linker_(computing)" rel="nofollow">linker 阶段</a>, 所以文中给与 ZLD 配置, 但是注意后面的配置路径有点问题, homebrew Apple silicon 默认的安装位置在<code>/opt/homebrew/bin/</code></del></p>
-<div class="highlight highlight-source-diff"><pre><span class="pl-c"><span class="pl-c">#</span> .cargo/config.toml</span>
-<span class="pl-c"><span class="pl-c">#</span> On Windows</span>
-<span class="pl-c"><span class="pl-c">#</span> ```</span>
-<span class="pl-c"><span class="pl-c">#</span> cargo install -f cargo-binutils</span>
-<span class="pl-c"><span class="pl-c">#</span> rustup component add llvm-tools-preview</span>
-<span class="pl-c"><span class="pl-c">#</span> ```</span>
-[target.x86_64-pc-windows-msvc]
-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-[target.x86_64-pc-windows-gnu]
-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-<span class="pl-c"><span class="pl-c">#</span> On Linux:</span>
-<span class="pl-c"><span class="pl-c">#</span> - Ubuntu, `sudo apt-get install lld clang`</span>
-<span class="pl-c"><span class="pl-c">#</span> - Arch, `sudo pacman -S lld clang`</span>
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
-<span class="pl-c"><span class="pl-c">#</span> On MacOS, `brew install michaeleisel/zld/zld`</span>
-[target.x86_64-apple-darwin]
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
-[target.aarch64-apple-darwin]
-<span class="pl-md"><span class="pl-md">-</span> rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]</span>
-<span class="pl-mi1"><span class="pl-mi1">+</span> rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]</span></pre></div>
-<p>提到了新出来的 <a href="https://github.com/rui314/mold">mold</a> 会更加好一点, 有机会再试试</p>
-<hr>
-<p>update:</p>
-<ul>
-<li>zld 不再维护的了, 使用 lld 替代<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>, 但是和 reddit 上有用户评论一样, 速度并没有提示很高<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
-</li>
-<li>mold 的 MacOS 版本 sold 是商业版需要购买 licence , 放弃</li>
-</ul>
-<p>总结: 不要花时间在 linker 上</p>
-<section data-footnotes="">
-<ol>
-<li id="user-content-fn-1">
-<p><a href="https://eisel.me/lld" rel="nofollow">https://eisel.me/lld</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-<li id="user-content-fn-2">
-<p><a href="https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/" rel="nofollow">https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-</ol>
-</section>
-]]></description>
-                    <pubDate>Thu, 11 May 2023 09:47:08 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/04/40</guid>
-                <link>/2023/04/40</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Rust</category>
             </item>
             <item>
                 <title><![CDATA[Benchmark 的一些记录]]></title>
