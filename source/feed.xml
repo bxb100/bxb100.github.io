@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Thu, 18 May 2023 08:52:10 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 19 May 2023 02:53:42 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -64,7 +64,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Thu, 18 May 2023 08:51:53 GMT</pubDate>
+                    <pubDate>Fri, 19 May 2023 02:53:21 GMT</pubDate>
                         <guid isPermaLink="false">/2023/04/40</guid>
                 <link>/2023/04/40</link>
                     <author><![CDATA[bxb100]]></author>
