@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sat, 20 May 2023 12:41:04 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 25 May 2023 10:31:23 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -64,7 +64,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Sat, 20 May 2023 12:40:45 GMT</pubDate>
+                    <pubDate>Thu, 25 May 2023 10:31:00 GMT</pubDate>
                         <guid isPermaLink="false">/2023/04/40</guid>
                 <link>/2023/04/40</link>
                     <author><![CDATA[bxb100]]></author>
@@ -405,7 +405,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <div class="highlight highlight-source-java"><pre>   <span class="pl-k">static</span> <span class="pl-smi">int</span> <span class="pl-s1">roundUpToPowerOf2</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
         <span class="pl-k">return</span> <span class="pl-s1">cap</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>
                 ? <span class="pl-c1">MAXIMUM_CAPACITY</span>
-                : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-s1">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
+                : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-smi">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
     }</pre></div>
 <h2><a id="user-content-jdk-8" class="anchor" aria-hidden="true" href="#jdk-8"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 8</h2>
 <blockquote>
@@ -444,7 +444,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
     <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-en">main</span>(<span class="pl-smi">String</span>[] <span class="pl-s1">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">RunnerException</span> {
         <span class="pl-smi">Options</span> <span class="pl-s1">opt</span> = <span class="pl-k">new</span> <span class="pl-smi">OptionsBuilder</span>()
-                .<span class="pl-en">include</span>(<span class="pl-smi">TableSizeForTest</span>.<span class="pl-s1">class</span>.<span class="pl-en">getSimpleName</span>())
+                .<span class="pl-en">include</span>(<span class="pl-smi">TableSizeForTest</span>.<span class="pl-k">class</span>.<span class="pl-en">getSimpleName</span>())
                 .<span class="pl-en">build</span>();
         <span class="pl-k">new</span> <span class="pl-smi">Runner</span>(<span class="pl-s1">opt</span>).<span class="pl-en">run</span>();
     }
@@ -476,7 +476,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
     <span class="pl-k">private</span> <span class="pl-smi">int</span> <span class="pl-en">roundUpToPowerOf2</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
         <span class="pl-k">return</span> <span class="pl-s1">cap</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>
                 ? <span class="pl-c1">MAXIMUM_CAPACITY</span>
-                : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-s1">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
+                : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-smi">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
     }
 
     <span class="pl-c1">@</span><span class="pl-c1">Benchmark</span>
@@ -487,7 +487,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
     }
 
     <span class="pl-k">private</span> <span class="pl-smi">int</span> <span class="pl-en">tableSizeFor_JDK11</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
-        <span class="pl-smi">int</span> <span class="pl-s1">n</span> = -<span class="pl-c1">1</span> &gt;&gt;&gt; <span class="pl-s1">Integer</span>.<span class="pl-en">numberOfLeadingZeros</span>(<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>);
+        <span class="pl-smi">int</span> <span class="pl-s1">n</span> = -<span class="pl-c1">1</span> &gt;&gt;&gt; <span class="pl-smi">Integer</span>.<span class="pl-en">numberOfLeadingZeros</span>(<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>);
         <span class="pl-k">return</span> (<span class="pl-s1">n</span> &lt; <span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : (<span class="pl-s1">n</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>) ? <span class="pl-c1">MAXIMUM_CAPACITY</span> : <span class="pl-s1">n</span> + <span class="pl-c1">1</span>;
     }
 }</pre></div>
@@ -1078,7 +1078,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
             };
 
             <span class="pl-c">// Install the all-trusting trust manager</span>
-            <span class="pl-k">final</span> <span class="pl-smi">SSLContext</span> <span class="pl-s1">sslContext</span> = <span class="pl-c1">SSLContext</span>.<span class="pl-en">getInstance</span>(<span class="pl-s">"SSL"</span>);
+            <span class="pl-k">final</span> <span class="pl-smi">SSLContext</span> <span class="pl-s1">sslContext</span> = <span class="pl-smi">SSLContext</span>.<span class="pl-en">getInstance</span>(<span class="pl-s">"SSL"</span>);
             <span class="pl-s1">sslContext</span>.<span class="pl-en">init</span>(<span class="pl-c1">null</span>, <span class="pl-s1">trustAllCerts</span>, <span class="pl-k">new</span> <span class="pl-smi">java</span>.<span class="pl-smi">security</span>.<span class="pl-smi">SecureRandom</span>());
             <span class="pl-c">// Create an ssl socket factory with our all-trusting manager</span>
             <span class="pl-k">final</span> <span class="pl-smi">SSLSocketFactory</span> <span class="pl-s1">sslSocketFactory</span> = <span class="pl-s1">sslContext</span>.<span class="pl-en">getSocketFactory</span>();
@@ -1103,9 +1103,9 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <div class="highlight highlight-source-java"><pre><span class="pl-k">protected</span> <span class="pl-smi">String</span> <span class="pl-s1">getCanonicalizedResourcePath</span>(<span class="pl-smi">String</span> <span class="pl-s1">resourcePath</span>, <span class="pl-smi">boolean</span> <span class="pl-s1">urlEncode</span>) {
         <span class="pl-smi">String</span> <span class="pl-s1">value</span> = <span class="pl-s1">resourcePath</span>;
         <span class="pl-k">if</span> (<span class="pl-s1">urlEncode</span>) {
-            <span class="pl-s1">value</span> = <span class="pl-c1">SdkHttpUtils</span>.<span class="pl-en">urlEncode</span>(<span class="pl-s1">resourcePath</span>, <span class="pl-c1">true</span>);
+            <span class="pl-s1">value</span> = <span class="pl-smi">SdkHttpUtils</span>.<span class="pl-en">urlEncode</span>(<span class="pl-s1">resourcePath</span>, <span class="pl-c1">true</span>);
 
-            <span class="pl-smi">URI</span> <span class="pl-s1">normalize</span> = <span class="pl-c1">URI</span>.<span class="pl-en">create</span>(<span class="pl-s1">value</span>).<span class="pl-en">normalize</span>();
+            <span class="pl-smi">URI</span> <span class="pl-s1">normalize</span> = <span class="pl-smi">URI</span>.<span class="pl-en">create</span>(<span class="pl-s1">value</span>).<span class="pl-en">normalize</span>();
             <span class="pl-s1">value</span> = <span class="pl-s1">normalize</span>.<span class="pl-en">getRawPath</span>();
 
             <span class="pl-c">// Normalization can leave a trailing slash at the end of the resource path,</span>
@@ -1692,9 +1692,9 @@ java.lang.RuntimeException: cs
         <span class="pl-smi">Thread</span> <span class="pl-s1">t3</span> = <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">SyncThread</span>(<span class="pl-s1">obj3</span>, <span class="pl-s1">obj1</span>), <span class="pl-s">"t3"</span>);
 
         <span class="pl-s1">t1</span>.<span class="pl-en">start</span>();
-        <span class="pl-s1">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">5000</span>);
+        <span class="pl-smi">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">5000</span>);
         <span class="pl-s1">t2</span>.<span class="pl-en">start</span>();
-        <span class="pl-s1">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">5000</span>);
+        <span class="pl-smi">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">5000</span>);
         <span class="pl-s1">t3</span>.<span class="pl-en">start</span>();
 
     }
@@ -1712,7 +1712,7 @@ java.lang.RuntimeException: cs
 
     <span class="pl-c1">@</span><span class="pl-c1">Override</span>
     <span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">run</span>() {
-        <span class="pl-smi">String</span> <span class="pl-s1">name</span> = <span class="pl-s1">Thread</span>.<span class="pl-en">currentThread</span>().<span class="pl-en">getName</span>();
+        <span class="pl-smi">String</span> <span class="pl-s1">name</span> = <span class="pl-smi">Thread</span>.<span class="pl-en">currentThread</span>().<span class="pl-en">getName</span>();
         <span class="pl-smi">System</span>.<span class="pl-s1">out</span>.<span class="pl-en">println</span>(<span class="pl-s1">name</span> + <span class="pl-s">" acquiring lock on "</span> + <span class="pl-s1">obj1</span>);
         <span class="pl-k">synchronized</span> (<span class="pl-s1">obj1</span>) {
             <span class="pl-smi">System</span>.<span class="pl-s1">out</span>.<span class="pl-en">println</span>(<span class="pl-s1">name</span> + <span class="pl-s">" acquired lock on "</span> + <span class="pl-s1">obj1</span>);
@@ -1730,7 +1730,7 @@ java.lang.RuntimeException: cs
 
     <span class="pl-k">private</span> <span class="pl-smi">void</span> <span class="pl-en">work</span>() {
         <span class="pl-k">try</span> {
-            <span class="pl-s1">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">30000</span>);
+            <span class="pl-smi">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">30000</span>);
         } <span class="pl-k">catch</span> (<span class="pl-smi">InterruptedException</span> <span class="pl-s1">e</span>) {
             <span class="pl-s1">e</span>.<span class="pl-en">printStackTrace</span>();
         }
@@ -1781,7 +1781,7 @@ t2 acquiring lock on java.lang.Object@1aa9f99
             <span class="pl-k">try</span> {
                 <span class="pl-s1">north</span>.<span class="pl-en">lockInterruptibly</span>();<span class="pl-c">//占用 north</span>
                 <span class="pl-k">try</span> {
-                    <span class="pl-s1">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">500</span>);
+                    <span class="pl-smi">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">500</span>);
                 } <span class="pl-k">catch</span> (<span class="pl-smi">Exception</span> <span class="pl-s1">ex</span>) {
                     <span class="pl-s1">ex</span>.<span class="pl-en">printStackTrace</span>();
                 }
@@ -1803,7 +1803,7 @@ t2 acquiring lock on java.lang.Object@1aa9f99
             <span class="pl-k">try</span> {
                 <span class="pl-s1">south</span>.<span class="pl-en">lockInterruptibly</span>();<span class="pl-c">//占用 south</span>
                 <span class="pl-k">try</span> {
-                    <span class="pl-s1">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">500</span>);
+                    <span class="pl-smi">Thread</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">500</span>);
                 } <span class="pl-k">catch</span> (<span class="pl-smi">Exception</span> <span class="pl-s1">ex</span>) {
                     <span class="pl-s1">ex</span>.<span class="pl-en">printStackTrace</span>();
                 }
