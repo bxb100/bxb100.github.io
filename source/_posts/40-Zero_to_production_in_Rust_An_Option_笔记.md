@@ -1,0 +1,188 @@
+---
+title: Zero to production in Rust An Option 笔记
+date: 1681899005000
+tags:
+- Rust
+
+url: https://github.com/bxb100/bxb100.github.io/issues/40
+
+---
+~~## ZLD 的配置~~
+
+~~Rust 编译大部分耗时在 [linker 阶段](https://en.wikipedia.org/wiki/Linker_(computing)), 所以文中给与 ZLD 配置, 但是注意后面的配置路径有点问题, homebrew Apple silicon 默认的安装位置在`/opt/homebrew/bin/`~~
+
+```diff
+# .cargo/config.toml
+# On Windows
+# ```
+# cargo install -f cargo-binutils
+# rustup component add llvm-tools-preview
+# ```
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+# On Linux:
+# - Ubuntu, `sudo apt-get install lld clang`
+# - Arch, `sudo pacman -S lld clang`
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+# On MacOS, `brew install michaeleisel/zld/zld`
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
+[target.aarch64-apple-darwin]
+- rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
++ rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/zld"]
+```
+提到了新出来的 [mold](https://github.com/rui314/mold) 会更加好一点, 有机会再试试
+
+---
+
+update:
+* zld 不再维护的了, 使用 lld 替代[^1], 但是和 reddit 上有用户评论一样, 速度并没有提示很高[^2]
+* mold 的 MacOS 版本 sold 是商业版需要购买 licence , 放弃
+
+总结: 不要花时间在 linker 上
+
+
+
+
+
+
+---
+
+<a id='issuecomment-1515125528'></a>
+## 配置
+
+### CI
+
+* lockbud, 注意复制 tool-chain[^3]
+* [GitHub Action yaml](https://gist.github.com/LukeMathWalker/5ae1107432ce283310c3e601fac915f3)
+* [加速 GitHub Action 构建速度(cache) 的一些实践](https://github.com/bxb100/zero-to-production/issues/1#issue-1702972458)
+
+### Makefile
+
+* 最好实现 makefile 的自解释的功能, 参看 [Self-Documented Makefile](https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html) 
+* CLion makefile 编译报错无法解决, 但不影响使用, 所以忽略
+
+
+
+---
+
+<a id='issuecomment-1516102092'></a>
+## 技巧
+
+### 使用 night 且不改变项目本身的 toolchain
+
+使用 `+night` 不需要在项目中设置 `tool-chain`, 当然要注意下编译使用的版本需要和项目的一致, 比如 https://github.com/BurtonQin/lockbud
+```shell
+# Use the nightly toolchain just for this command invocation
+cargo +nightly expand
+```
+
+### `Actix-Web` 的一些技巧
+
+[actix-web](https://github.com/actix/actix-web) 支持共享 app 配置了[^4]
+```rust
+fn create_app() -> App<
+    impl ServiceFactory<
+        ServiceRequest,
+        Config = (),
+        Response = ServiceResponse<impl MessageBody>,
+        Error = Error,
+        InitError = (),
+    >,
+> {
+    App::new()
+        .route("/", web::get().to(greet))
+        .route("/health_check", web::get().to(health_check))
+        .route("/{name}", web::get().to(greet))
+}
+```
+
+
+
+
+---
+
+<a id='issuecomment-1543455738'></a>
+### 解引用的疑惑
+
+按照 https://course.rs/advance/smart-pointer/deref.html 一文所述, String 会自动解引用
+
+```rust
+#[stable(feature = "rust1", since = "1.0.0")]
+impl ops::Deref for String {
+    type Target = str;
+
+    #[inline]
+    fn deref(&self) -> &str {
+        unsafe { str::from_utf8_unchecked(&self.vec) }
+    }
+}
+```
+
+但是我遇到一个情况是, 需要使用 `&*String` 而不是 `&String` 来赋值[^5]
+
+```diff
+    let mut connection = PgConnection::connect(&config.connection_string_without_db())
+        .await
+        .expect("Failed to connect to Postgres.");
+
+    connection
++        .execute(&*format!(r#"CREATE DATABASE "{}";"#, config.database_name))
+-        .execute(format!(r#"CREATE DATABASE "{}";"#, config.database_name).as_str())
+        .await
+        .expect("Failed to create database.");
+```
+
+按理来说应该是可以自动转换的, 比如: `let tmp: &str = &String`.
+
+也许可能的原因: `trait bound` 高于解引用
+
+
+
+
+
+---
+
+<a id='issuecomment-1552740148'></a>
+### 实现 dyn trait 的疑惑
+
+我发现 rust 在同一个 create 下是可以 `impl trait for dyn trait` 不报错的, 但是只要把 define trait 放在其它 create 下就不行
+
+其它资料: 
+- [How to move `self` when using `dyn Trait`?](https://users.rust-lang.org/t/how-to-move-self-when-using-dyn-trait/50123)
+
+---
+
+<a id='issuecomment-1553929923'></a>
+### 指针的优美之处
+
+```rust
+  fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
+        for slot in &mut *buf {
+            *slot = self.byte;
+        }
+        Ok(buf.len())
+    }
+```
+
+---
+
+<a id='issuecomment-1555903473'></a>
+### RwLock 的坑记录
+
+`In particular, a writer which is waiting to acquire the lock in write might or might not block concurrent calls to read`[^6]
+
+代码 https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=18024235e93eeb6f580eea8770167d63 在 playground 上无法运行, 但是在 apple silicon 上运行正常, 所以有的时候也无法保证 write 一定会 block read....
+
+
+
+
+[^1]: https://eisel.me/lld
+[^2]: https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/
+[^3]: https://github.com/BurtonQin/lockbud/issues/44
+[^4]: https://github.com/actix/actix-web/issues/1147#issuecomment-1509937750
+[^5]: https://users.rust-lang.org/t/what-is-the-difference-between-as-ref/76059
+[^6]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
