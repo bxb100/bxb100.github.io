@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sat, 27 May 2023 03:28:58 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 May 2023 04:41:49 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[github action 相关信息]]></title>
                     <description><![CDATA[<ul>
@@ -33,8 +33,8 @@
 </ul>
 ]]></description>
                     <pubDate>Sat, 27 May 2023 02:52:54 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/7</guid>
-                <link>/2021/12/7</link>
+                        <guid isPermaLink="false">/2021/12/7-github_action_相关信息</guid>
+                <link>/2021/12/7-github_action_相关信息</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>API</category>
             </item>
@@ -84,8 +84,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </section>
 ]]></description>
                     <pubDate>Thu, 25 May 2023 10:31:00 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/04/40</guid>
-                <link>/2023/04/40</link>
+                        <guid isPermaLink="false">/2023/04/40-Zero_to_production_in_Rust_An_Option_笔记</guid>
+                <link>/2023/04/40-Zero_to_production_in_Rust_An_Option_笔记</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Rust</category>
             </item>
@@ -119,20 +119,12 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <li>
 <a href="https://github.com/hashicorp/vault">Vault</a> 现代化下的加密信息管理工具</li>
 <li>
-<a href="https://github.com/Z3Prover/z3">Z3</a> The Z3 Theorem Prover<sup><a href="#fn-z3" id="user-content-fnref-z3" data-footnote-ref="">1</a></sup>
-</li>
+<a href="https://github.com/Z3Prover/z3">Z3</a> The Z3 Theorem Prover[^z3]</li>
 </ul>
-<section data-footnotes="">
-<ol>
-<li id="user-content-fn-z3">
-<p><a href="https://www.youtube.com/watch?v=C9eXcmWWEyA" rel="nofollow">https://www.youtube.com/watch?v=C9eXcmWWEyA</a> <a href="#fnref-z3" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
-</li>
-</ol>
-</section>
 ]]></description>
                     <pubDate>Sun, 14 May 2023 03:24:56 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/02/33</guid>
-                <link>/2023/02/33</link>
+                        <guid isPermaLink="false">/2023/02/33-比较有趣的项目</guid>
+                <link>/2023/02/33-比较有趣的项目</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
             </item>
@@ -149,8 +141,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ul>
 ]]></description>
                     <pubDate>Sat, 06 May 2023 16:02:28 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/32</guid>
-                <link>/2023/01/32</link>
+                        <guid isPermaLink="false">/2023/01/32-Benchmark_的一些记录</guid>
+                <link>/2023/01/32-Benchmark_的一些记录</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -163,8 +155,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <p align="right">- 陈宏谋《养正遗规》 </p>
 ]]></description>
                     <pubDate>Sun, 30 Apr 2023 10:38:08 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/08/22</guid>
-                <link>/2022/08/22</link>
+                        <guid isPermaLink="false">/2022/08/22-一句</guid>
+                <link>/2022/08/22-一句</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>摘录</category>
             </item>
@@ -173,8 +165,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                     <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
 ]]></description>
                     <pubDate>Sun, 30 Apr 2023 10:34:26 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/3</guid>
-                <link>/2021/12/3</link>
+                        <guid isPermaLink="false">/2021/12/3-Remember,_Although_life_ignore_you,_I_still_love_you</guid>
+                <link>/2021/12/3-Remember,_Although_life_ignore_you,_I_still_love_you</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>摘录</category>
             </item>
@@ -187,8 +179,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ul>
 ]]></description>
                     <pubDate>Thu, 27 Apr 2023 03:02:24 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/04/39</guid>
-                <link>/2023/04/39</link>
+                        <guid isPermaLink="false">/2023/04/39-翻译:_Lock-free_Programming:_Dekker&#x27;s_Algorithm</guid>
+                <link>/2023/04/39-翻译:_Lock-free_Programming:_Dekker&#x27;s_Algorithm</link>
                     <author><![CDATA[bxb100]]></author>
             </item>
             <item>
@@ -197,8 +189,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg"><img src="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg" alt="88520f6bly1gxshpjo4j1j20c81br0vp" style="max-width: 100%;"></a></p>
 ]]></description>
                     <pubDate>Fri, 21 Apr 2023 03:17:54 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/5</guid>
-                <link>/2021/12/5</link>
+                        <guid isPermaLink="false">/2021/12/5-雄狮少年杂感</guid>
+                <link>/2021/12/5-雄狮少年杂感</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>杂感</category>
             </item>
@@ -214,8 +206,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <p><code>objc</code> 是一个好的学习 bindings 的渠道</p>
 ]]></description>
                     <pubDate>Wed, 19 Apr 2023 10:11:01 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/03/37</guid>
-                <link>/2023/03/37</link>
+                        <guid isPermaLink="false">/2023/03/37-Rust:_记录一下_debug</guid>
+                <link>/2023/03/37-Rust:_记录一下_debug</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
                         <category>Rust</category>
@@ -230,8 +222,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ol>
 ]]></description>
                     <pubDate>Wed, 19 Apr 2023 10:04:16 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/01/9</guid>
-                <link>/2022/01/9</link>
+                        <guid isPermaLink="false">/2022/01/9-QNAP_技巧分享</guid>
+                <link>/2022/01/9-QNAP_技巧分享</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
                         <category>就是玩</category>
@@ -284,8 +276,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <p>查看更多信息, 你可以阅读完整的文章: <a href="https://medium.com/mcdonalds-technical-blog/behind-the-scenes-mcdonalds-event-driven-architecture-51a6542c0d86" rel="nofollow">这里</a> 和 <a href="https://medium.com/mcdonalds-technical-blog/mcdonalds-event-driven-architecture-the-data-journey-and-how-it-works-4591d108821f" rel="nofollow">这里</a></p>
 ]]></description>
                     <pubDate>Fri, 14 Apr 2023 12:25:11 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/12/27</guid>
-                <link>/2022/12/27</link>
+                        <guid isPermaLink="false">/2022/12/27-麦当劳的事件驱动架构</guid>
+                <link>/2022/12/27-麦当劳的事件驱动架构</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
                         <category>quastor</category>
@@ -312,17 +304,17 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 		}
 	}</pre></div>
 <p>直接 <code>1000</code> 使用默认的 <code>ForkJoinPool</code> 构造方法, 可以看到由于错误的理解, 分治导致出现 2^1000 - 2 个实例</p>
-<p>还有一点注意的是: 默认 pool 的大小是 <code>核心-1</code>, 并且是并行的[^2]</p>
+<p>还有一点注意的是: 默认 pool 的大小是 <code>核心-1</code>, 并且是并行的[^1]</p>
 <p>直接爆炸 <g-emoji class="g-emoji" alias="boom" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png">💥</g-emoji></p>
 <p>某一刻的 profile
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png"><img width="1200" alt="image" src="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png" style="max-width: 100%;"></a>
 <em>jprofile active code: <a href="https://zhile.io/2022/02/22/jprofiler-license.html" rel="nofollow">https://zhile.io/2022/02/22/jprofiler-license.html</a></em></p>
 <p>解决方法:</p>
-<p><strong>不要用 forkJoinPool 来解决非分治问题</strong>[^1]</p>
+<p><strong>不要用 forkJoinPool 来解决非分治问题</strong>[^2]</p>
 ]]></description>
                     <pubDate>Mon, 13 Mar 2023 04:25:41 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/03/36</guid>
-                <link>/2023/03/36</link>
+                        <guid isPermaLink="false">/2023/03/36-ForkJoinPool_来运行斐波那契递归</guid>
+                <link>/2023/03/36-ForkJoinPool_来运行斐波那契递归</link>
                     <author><![CDATA[bxb100]]></author>
             </item>
             <item>
@@ -340,16 +332,16 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ul>
 ]]></description>
                     <pubDate>Fri, 03 Mar 2023 12:48:37 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/03/35</guid>
-                <link>/2023/03/35</link>
+                        <guid isPermaLink="false">/2023/03/35-Lombok:_JSR_269</guid>
+                <link>/2023/03/35-Lombok:_JSR_269</link>
                     <author><![CDATA[bxb100]]></author>
             </item>
             <item>
                 <title><![CDATA[系统设计 memo]]></title>
                     <description><![CDATA[系统设计 memo]]></description>
                     <pubDate>Thu, 02 Mar 2023 09:31:09 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/29</guid>
-                <link>/2023/01/29</link>
+                        <guid isPermaLink="false">/2023/01/29-系统设计_memo</guid>
+                <link>/2023/01/29-系统设计_memo</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
             </item>
@@ -366,8 +358,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </p>
 ]]></description>
                     <pubDate>Thu, 16 Feb 2023 10:07:43 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/04/14</guid>
-                <link>/2022/04/14</link>
+                        <guid isPermaLink="false">/2022/04/14-实现_TDD_的一些方法</guid>
+                <link>/2022/04/14-实现_TDD_的一些方法</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -471,8 +463,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>It's look like 7 &gt; 11 &gt; 8, Why not using JDK 7 verison?</p>
 ]]></description>
                     <pubDate>Thu, 16 Feb 2023 10:05:37 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/02/34</guid>
-                <link>/2023/02/34</link>
+                        <guid isPermaLink="false">/2023/02/34-Why_Changing_nearest_power_of_two_in_HashMap?</guid>
+                <link>/2023/02/34-Why_Changing_nearest_power_of_two_in_HashMap?</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>question</category>
             </item>
@@ -500,8 +492,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/212845734-0fe03e3f-76e6-4d95-a8b8-ba494a2ffecf.png"><img width="634" alt="image" src="https://user-images.githubusercontent.com/20685961/212845734-0fe03e3f-76e6-4d95-a8b8-ba494a2ffecf.png" style="max-width: 100%;"></a></p>
 ]]></description>
                     <pubDate>Tue, 17 Jan 2023 08:39:18 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/31</guid>
-                <link>/2023/01/31</link>
+                        <guid isPermaLink="false">/2023/01/31-ANTLR_速记</guid>
+                <link>/2023/01/31-ANTLR_速记</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -548,8 +540,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>So this is the check trick problem</p>
 ]]></description>
                     <pubDate>Tue, 17 Jan 2023 05:34:10 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/07/20</guid>
-                <link>/2022/07/20</link>
+                        <guid isPermaLink="false">/2022/07/20-Java_generics_with_overloading</guid>
+                <link>/2022/07/20-Java_generics_with_overloading</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Archive</category>
                         <category>DEV</category>
@@ -707,8 +699,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>在过去的 7 年里，Fluent API 一直是一种炒作。 Martin Fowler 已经成为一个被大量引用的人并获得了大部分的荣誉，即使以前有 fluent APIs。在 <code>java.lang.StringBuffer</code> 中可以看到 Java 最古老的 fluent API 之一，它允许将任意对象附加到字符串。但是 fluent API 的最大好处是它能够轻松地将 <strong>external DSL</strong> 映射到 Java 并将它们实现为任意复杂度的 <strong>internal DSL</strong> 。</p>
 ]]></description>
                     <pubDate>Tue, 17 Jan 2023 04:40:40 GMT</pubDate>
-                        <guid isPermaLink="false">/2023/01/30</guid>
-                <link>/2023/01/30</link>
+                        <guid isPermaLink="false">/2023/01/30-Java_Fluent_API_设计速成</guid>
+                <link>/2023/01/30-Java_Fluent_API_设计速成</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -730,8 +722,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 </ol>
 ]]></description>
                     <pubDate>Thu, 13 Oct 2022 11:10:23 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/04/13</guid>
-                <link>/2022/04/13</link>
+                        <guid isPermaLink="false">/2022/04/13-使用_N_m3u8DL-CLI_简化下载_m3u8_流程</guid>
+                <link>/2022/04/13-使用_N_m3u8DL-CLI_简化下载_m3u8_流程</link>
                     <author><![CDATA[bxb100]]></author>
             </item>
             <item>
@@ -756,8 +748,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 </ul>
 ]]></description>
                     <pubDate>Fri, 30 Sep 2022 17:43:27 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/09/26</guid>
-                <link>/2022/09/26</link>
+                        <guid isPermaLink="false">/2022/09/26-NIO_和_Reactor_理解(待补充)</guid>
+                <link>/2022/09/26-NIO_和_Reactor_理解(待补充)</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -788,8 +780,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>当然有点需要注意, 构造方法中的 callback 返回的是所有更新的 <code>MutationRecord</code> 数组, 所以没法简单的使用 <code>mutations.addedNodes.find(node =&gt; node.matches("..."))</code>, 原回答的解法目前看来最简单且优雅</p>
 ]]></description>
                     <pubDate>Fri, 23 Sep 2022 09:55:03 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/09/24</guid>
-                <link>/2022/09/24</link>
+                        <guid isPermaLink="false">/2022/09/24-使用_MutationObserver_写法来获取页面元素</guid>
+                <link>/2022/09/24-使用_MutationObserver_写法来获取页面元素</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -832,8 +824,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/187727532-611eb102-69e6-41d7-b6aa-6701bfc9a635.png"><img src="https://user-images.githubusercontent.com/20685961/187727532-611eb102-69e6-41d7-b6aa-6701bfc9a635.png" alt="image" style="max-width: 100%;"></a></p>
 ]]></description>
                     <pubDate>Wed, 31 Aug 2022 16:16:22 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/08/23</guid>
-                <link>/2022/08/23</link>
+                        <guid isPermaLink="false">/2022/08/23-OAuth_2.0_客户端认证的几种方式</guid>
+                <link>/2022/08/23-OAuth_2.0_客户端认证的几种方式</link>
                     <author><![CDATA[bxb100]]></author>
             </item>
             <item>
@@ -855,8 +847,8 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 </ul>
 ]]></description>
                     <pubDate>Sat, 06 Aug 2022 17:36:33 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/08/21</guid>
-                <link>/2022/08/21</link>
+                        <guid isPermaLink="false">/2022/08/21-How_to_add_auth_for_Cloudflare_Page</guid>
+                <link>/2022/08/21-How_to_add_auth_for_Cloudflare_Page</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
                         <category>DEV</category>
@@ -951,8 +943,8 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg"><img src="https://user-images.githubusercontent.com/20685961/153471869-0b564770-f138-42bb-9dca-0d476194a929.jpg" style="max-width: 100%;"></a></p>
 ]]></description>
                     <pubDate>Tue, 02 Aug 2022 17:33:35 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/02/10</guid>
-                <link>/2022/02/10</link>
+                        <guid isPermaLink="false">/2022/02/10-使用_charles_的_rootCA__代理后端_API</guid>
+                <link>/2022/02/10-使用_charles_的_rootCA__代理后端_API</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
             </item>
@@ -966,8 +958,8 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <p>source: <a href="https://medium.com/@nassuf/how-to-get-a-sellers-listings-using-amazon-sp-api-475771d3754c" rel="nofollow">https://medium.com/@nassuf/how-to-get-a-sellers-listings-using-amazon-sp-api-475771d3754c</a></p>
 ]]></description>
                     <pubDate>Wed, 20 Jul 2022 04:04:53 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/07/19</guid>
-                <link>/2022/07/19</link>
+                        <guid isPermaLink="false">/2022/07/19-Amazon_SP_API_获取_listing_item_的正确方式</guid>
+                <link>/2022/07/19-Amazon_SP_API_获取_listing_item_的正确方式</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -980,8 +972,8 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 <a href="https://blog.miniasp.com/post/2021/06/14/Docker-Desktop-for-Windows-Windows-Firewall-Issues" rel="nofollow">https://blog.miniasp.com/post/2021/06/14/Docker-Desktop-for-Windows-Windows-Firewall-Issues</a></p>
 ]]></description>
                     <pubDate>Sat, 09 Jul 2022 07:35:57 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/06/18</guid>
-                <link>/2022/06/18</link>
+                        <guid isPermaLink="false">/2022/06/18-记一次_Win_Docker_无法在局域网内连接的解决方案</guid>
+                <link>/2022/06/18-记一次_Win_Docker_无法在局域网内连接的解决方案</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
                         <category>就是玩</category>
@@ -995,8 +987,8 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
 </ol>
 ]]></description>
                     <pubDate>Fri, 01 Jul 2022 17:19:03 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/01/8</guid>
-                <link>/2022/01/8</link>
+                        <guid isPermaLink="false">/2022/01/8-Dropover_自定义操作的一些_Tips</guid>
+                <link>/2022/01/8-Dropover_自定义操作的一些_Tips</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Horizon</category>
             </item>
@@ -1109,8 +1101,8 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
 <p>bless me to be better <g-emoji class="g-emoji" alias="crossed_fingers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png">🤞</g-emoji></p>
 ]]></description>
                     <pubDate>Tue, 14 Jun 2022 17:19:04 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/06/17</guid>
-                <link>/2022/06/17</link>
+                        <guid isPermaLink="false">/2022/06/17-Amazon_SP_program_signature_problem</guid>
+                <link>/2022/06/17-Amazon_SP_program_signature_problem</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -1126,8 +1118,8 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
 都用网线连接，原理不详</p>
 ]]></description>
                     <pubDate>Fri, 10 Jun 2022 08:04:09 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/06/16</guid>
-                <link>/2022/06/16</link>
+                        <guid isPermaLink="false">/2022/06/16-Synergy_连接卡顿</guid>
+                <link>/2022/06/16-Synergy_连接卡顿</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>就是玩</category>
             </item>
@@ -1219,8 +1211,8 @@ java.lang.RuntimeException: cs
 <p align="center"><em>Obviously It's not my wanted type</em></p>
 ]]></description>
                     <pubDate>Sun, 17 Apr 2022 08:01:33 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/04/15</guid>
-                <link>/2022/04/15</link>
+                        <guid isPermaLink="false">/2022/04/15-How_to_use_FluentBit_multiline</guid>
+                <link>/2022/04/15-How_to_use_FluentBit_multiline</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
             </item>
@@ -1245,8 +1237,8 @@ java.lang.RuntimeException: cs
 <p>人类的赞歌是勇气铺就而成的</p>
 ]]></description>
                     <pubDate>Mon, 10 Jan 2022 05:45:59 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/4</guid>
-                <link>/2021/12/4</link>
+                        <guid isPermaLink="false">/2021/12/4-安迪·威尔-挽救计划</guid>
+                <link>/2021/12/4-安迪·威尔-挽救计划</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>读后感</category>
             </item>
@@ -1989,8 +1981,8 @@ Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 
 <p>我们通过拆分第一条语句解决了死锁问题：即先查出符合条件的 <code>ID：select ID from TSK_TASK where STATUS_ID=1061 and MON_TIME &lt; date_sub(now(), INTERVAL 30 minute)；</code>然后再更新状态：<code>update TSK_TASK set STATUS_ID=1064 where ID in (….)</code>。</p>
 ]]></description>
                     <pubDate>Thu, 30 Dec 2021 11:37:25 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/6</guid>
-                <link>/2021/12/6</link>
+                        <guid isPermaLink="false">/2021/12/6-Java_程序死锁问题原理及解决方案</guid>
+                <link>/2021/12/6-Java_程序死锁问题原理及解决方案</link>
                     <author><![CDATA[bxb100]]></author>
                         <category>Archive</category>
             </item>
