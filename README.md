@@ -104,8 +104,11 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [安迪·威尔-挽救计划](https://github.com/bxb100/bxb100.github.io/issues/4)---2021-12-27
 
 ## TODO
-TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38)--1 jobs to do--0 jobs done
-- [ ] 完成 PDF 文本的解析, 参考
+TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38) all done
+<details><summary>MORE</summary>
+
+- [x] 完成 PDF 文本的解析, 参考
+</details>
 
 TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)--17 jobs to do--4 jobs done
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/) 这道只需要不需要用哈希表来复杂化解决
