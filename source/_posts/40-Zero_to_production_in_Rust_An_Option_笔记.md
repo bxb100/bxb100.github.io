@@ -303,6 +303,22 @@ ENTRYPOINT ["./zero2prod"]
 
 
 
+---
+
+<a id='issuecomment-1571229593'></a>
+### 部署
+
+* [fly.io](https://fly.io/docs/reference/configuration/#the-checks-section)
+	* 主要是 [services.http_checks](https://fly.io/docs/reference/configuration/#services-http_checks) 老是使用 8080 来做检查, 我寻思着文档不是说访问 public api 吗, 难道还要配置 `services.internal_port`? 结果是不行, 既不访问我配置的 80 public port 和 8000 internal port
+	* 最后使用 [The check section](https://fly.io/docs/reference/configuration/#the-checks-section) 手动定义好了访问 8000 端口, 文档说是 doesn't have public-facing services, don't affect request routing 但是又需要在 0.0.0.0 可用, 有点懵
+
+> port: Internal port to connect to. Needs to be available on 0.0.0.0. Required.
+
+- [ ] 希望可以有时间玩玩 terraform vault 来部署项目[^11][^12]
+
+
+
+
 [^1]: https://eisel.me/lld
 [^2]: https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/
 [^3]: https://github.com/BurtonQin/lockbud/issues/44
@@ -312,3 +328,5 @@ ENTRYPOINT ["./zero2prod"]
 [^7]: https://github.com/johnthagen/min-sized-rust#strip-symbols-from-binary
 [^9]: https://github.com/rust-lang/cargo/issues/2644
 [^10]: https://www.lpalmieri.com/posts/fast-rust-docker-builds/
+[^11]: https://registry.terraform.io/
+[^12]: https://developer.hashicorp.com/vault/docs/what-is-vault
