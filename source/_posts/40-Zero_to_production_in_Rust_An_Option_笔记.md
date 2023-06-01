@@ -296,8 +296,11 @@ ENTRYPOINT ["./zero2prod"]
 
 ---
 
-总结: 还是和书上一致, 使用 chef (Better support of Docker layer caching in Cargo 一文说的很清楚了, 个有利弊)
+总结: 还是和书上一致, 使用 chef (Better support of Docker layer caching in Cargo 一文说的很清楚了, 各有利弊)
 
+---
+
+update: 未来需要看看 [sccache](https://github.com/mozilla/sccache) 来加速编译速度, 我目前的瓶颈卡在 `cargo build --release --bin zero2prod` 上
 
 
 
