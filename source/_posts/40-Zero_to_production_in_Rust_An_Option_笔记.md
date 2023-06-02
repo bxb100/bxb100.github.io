@@ -319,6 +319,8 @@ update: 未来需要看看 [sccache](https://github.com/mozilla/sccache) 来加�
 > port: Internal port to connect to. Needs to be available on 0.0.0.0. Required.
 
 - [x] 希望可以有时间玩玩 terraform vault 来部署项目[^11][^12]
+* 学习了一下 terraform[^13] 发现 infrastructure is code 这个理念还是那个理论, 要么做技术高的, 要么做累活, 不过它的抽象不错; 还有它的 cloud 速度太慢了, 还是本地执行, state 放到 cloud 上比较好
+
 
 
 
@@ -334,3 +336,4 @@ update: 未来需要看看 [sccache](https://github.com/mozilla/sccache) 来加�
 [^10]: https://www.lpalmieri.com/posts/fast-rust-docker-builds/
 [^11]: https://registry.terraform.io/
 [^12]: https://developer.hashicorp.com/vault/docs/what-is-vault
+[^13]: https://www.bilibili.com/video/BV1L34y1B7PT
