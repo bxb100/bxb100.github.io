@@ -2,6 +2,7 @@
 title: Zero to production in Rust An Option 笔记
 date: 1681899005000
 tags:
+- DEV
 - Rust
 
 url: https://github.com/bxb100/bxb100.github.io/issues/40
@@ -317,7 +318,7 @@ update: 未来需要看看 [sccache](https://github.com/mozilla/sccache) 来加�
 
 > port: Internal port to connect to. Needs to be available on 0.0.0.0. Required.
 
-- [ ] 希望可以有时间玩玩 terraform vault 来部署项目[^11][^12]
+- [x] 希望可以有时间玩玩 terraform vault 来部署项目[^11][^12]
 
 
 
