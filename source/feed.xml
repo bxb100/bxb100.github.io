@@ -18,7 +18,22 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 02 Jun 2023 14:10:32 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Jun 2023 15:16:24 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[DevOps 的一些实践]]></title>
+                    <description><![CDATA[<h2><a id="user-content-使用的工具" class="anchor" aria-hidden="true" href="#使用的工具"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用的工具</h2>
+<ul>
+<li>Terraform</li>
+<li>Docker</li>
+<li>Docker compose</li>
+<li>Makefile</li>
+</ul>
+]]></description>
+                    <pubDate>Fri, 16 Jun 2023 15:16:03 GMT</pubDate>
+                        <guid isPermaLink="false">/2023/06/41-DevOps_的一些实践</guid>
+                <link>/2023/06/41-DevOps_的一些实践</link>
+                    <author><![CDATA[bxb100]]></author>
+            </item>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>

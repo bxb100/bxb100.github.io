@@ -11,6 +11,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | [WerWolv](https://github.com/WerWolv) | https://werwolv.net/ | 逆向工程师 Inspire |
 
 ## Recent
+- [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [翻译: Lock-free Programming: Dekker's Algorithm](https://github.com/bxb100/bxb100.github.io/issues/39)---2023-04-16
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
@@ -20,7 +21,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
-- [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -72,11 +72,15 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Reverie
+- [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [翻译: Lock-free Programming: Dekker's Algorithm](https://github.com/bxb100/bxb100.github.io/issues/39)---2023-04-16
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
+<details><summary>MORE</summary>
+
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
+</details>
 
 
 ## Rust
