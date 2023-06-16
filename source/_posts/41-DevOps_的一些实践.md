@@ -10,5 +10,12 @@ url: https://github.com/bxb100/bxb100.github.io/issues/41
 
 - Terraform
 - Docker
-- Docker compose
+- Docker compose[^1][^2]
 - Makefile
+- GitHub Action
+
+
+
+
+[^1]: https://yeasy.gitbook.io/docker_practice/compose/compose_file
+[^2]: https://docs.docker.com/compose/compose-file/05-services/
