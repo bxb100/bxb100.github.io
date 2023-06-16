@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Fri, 16 Jun 2023 15:32:10 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Jun 2023 15:33:24 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[DevOps 的一些实践]]></title>
                     <description><![CDATA[<h2><a id="user-content-使用的工具" class="anchor" aria-hidden="true" href="#使用的工具"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用的工具</h2>
@@ -27,8 +27,10 @@
 <li>Docker</li>
 <li>Docker compose<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup><sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
 </li>
-<li>Makefile</li>
-<li>GitHub Action</li>
+<li>Makefile<sup><a href="#fn-3" id="user-content-fnref-3" data-footnote-ref="">3</a></sup>
+</li>
+<li>GitHub Action<sup><a href="#fn-4" id="user-content-fnref-4" data-footnote-ref="">4</a></sup>
+</li>
 </ul>
 <section data-footnotes="">
 <ol>
@@ -38,10 +40,16 @@
 <li id="user-content-fn-2">
 <p><a href="https://docs.docker.com/compose/compose-file/05-services/" rel="nofollow">https://docs.docker.com/compose/compose-file/05-services/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
+<li id="user-content-fn-3">
+<p><a href="https://makefiletutorial.com/#getting-started" rel="nofollow">https://makefiletutorial.com/#getting-started</a> <a href="#fnref-3" data-footnote-backref="" aria-label="Back to reference 3"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
+<li id="user-content-fn-4">
+<p><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions</a> <a href="#fnref-4" data-footnote-backref="" aria-label="Back to reference 4"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
+</li>
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Fri, 16 Jun 2023 15:31:49 GMT</pubDate>
+                    <pubDate>Fri, 16 Jun 2023 15:33:03 GMT</pubDate>
                         <guid isPermaLink="false">/2023/06/41-DevOps_的一些实践</guid>
                 <link>/2023/06/41-DevOps_的一些实践</link>
                     <author><![CDATA[bxb100]]></author>
