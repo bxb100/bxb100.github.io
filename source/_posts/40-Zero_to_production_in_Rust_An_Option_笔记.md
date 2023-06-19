@@ -150,7 +150,10 @@ impl ops::Deref for String {
 <a id='issuecomment-1552740148'></a>
 ### 实现 dyn trait 的疑惑
 
-我发现 rust 在同一个 create 下是可以 `impl trait for dyn trait` 不报错的, 但是只要把 define trait 放在其它 create 下就不行
+我发现 rust 在同一个 create 下是可以 `impl trait for dyn trait` 不报错的, 但是只要把 define trait 放在其它 create 下就不行 
+
+update: _我突然想到是不是我没有 use 的缘故_
+
 
 其它资料: 
 - [How to move `self` when using `dyn Trait`?](https://users.rust-lang.org/t/how-to-move-self-when-using-dyn-trait/50123)
