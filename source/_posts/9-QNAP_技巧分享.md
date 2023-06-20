@@ -126,4 +126,28 @@ SSH 连接到 NAS，然后 `tailscale up` 授权即可
 
 
 
+---
+
+<a id='issuecomment-1598051222'></a>
+### Docker 安全
+
+Qnap 的 QuFirewall 是 iptables 的可视化版本, 目前它应该默认开启容器的外部访问
+
+<img width="910" alt="image" src="https://github.com/bxb100/bxb100.github.io/assets/20685961/3565bfcb-e38b-4ab6-a45a-194c6939ce2d">
+
+但是我目前要么是通过 tailscale 来 p2p, 要么就是利用 cloudflare tunnel 来外部链接, 这二者都不需要直接 `公网 IP + 端口` 的形式来访问, 所以需要首先关闭应用程序访问(上图描述全部都是 container-station, 但如果你有其它的程序话, 需要注意后续相应的添加路由规则) _对了, 这个规则不是立即生效的_
+
+然后注意查看 docker 的网关, 如果这个后续不添加对应的规则, 容器内部无法通信[^2]
+
+<img width="892" alt="image" src="https://github.com/bxb100/bxb100.github.io/assets/20685961/30b1c9c7-4e84-4662-98f8-34151a0a7ae6">
+
+部分规则的配置:
+
+<img width="898" alt="image" src="https://github.com/bxb100/bxb100.github.io/assets/20685961/e71d3966-d4af-4387-8f49-669b938cce50">
+
+ 
+
+
+
 [^1]:https://tailscale.com/kb/1015/100.x-addresses/
+[^2]: https://forum.qnap.com/viewtopic.php?t=166412#p828884:~:text=I%20explicitely%20authorize%20192.168.1.0/24%20(my%20LAN)%2C%20172.29.8.0/22%20(the%20docker%20network%20so%20that%20containers%20can%20talk%20to%20each%20other)%20and%20172.16.1.0/24%20(my%20VPN%20network)%2C%20all%20the%20rest%20is%20dropped.

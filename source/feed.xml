@@ -18,7 +18,23 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Mon, 19 Jun 2023 12:42:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Jun 2023 03:17:32 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[QNAP 技巧分享]]></title>
+                    <description><![CDATA[<ol>
+<li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
+</li>
+<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
+<li>使用 <a href="https://tailscale.com/" rel="nofollow">tailscale</a> 来连接 WebDAV</li>
+</ol>
+]]></description>
+                    <pubDate>Tue, 20 Jun 2023 03:17:16 GMT</pubDate>
+                        <guid isPermaLink="false">/2022/01/9-QNAP_技巧分享</guid>
+                <link>/2022/01/9-QNAP_技巧分享</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>Horizon</category>
+                        <category>就是玩</category>
+            </item>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -253,22 +269,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                     <author><![CDATA[bxb100]]></author>
                         <category>DEV</category>
                         <category>Rust</category>
-            </item>
-            <item>
-                <title><![CDATA[QNAP 技巧分享]]></title>
-                    <description><![CDATA[<ol>
-<li>默认的 8080 端口无法在公网环境下访问，可以使用<a href="#issuecomment-1017306273">反向代理来设置</a>
-</li>
-<li><a href="#issuecomment-1017428570">使用 Cloudflare Worker &amp; KV 来做 DDNS</a></li>
-<li>使用 <a href="https://tailscale.com/" rel="nofollow">tailscale</a> 来连接 WebDAV</li>
-</ol>
-]]></description>
-                    <pubDate>Wed, 19 Apr 2023 10:04:16 GMT</pubDate>
-                        <guid isPermaLink="false">/2022/01/9-QNAP_技巧分享</guid>
-                <link>/2022/01/9-QNAP_技巧分享</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>Horizon</category>
-                        <category>就是玩</category>
             </item>
             <item>
                 <title><![CDATA[麦当劳的事件驱动架构]]></title>
