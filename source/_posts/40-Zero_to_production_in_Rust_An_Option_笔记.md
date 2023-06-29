@@ -181,6 +181,21 @@ update: _我突然想到是不是我没有 use 的缘故_
 
 代码 https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=18024235e93eeb6f580eea8770167d63 在 playground 上无法运行, 但是在 apple silicon 上运行正常, 所以有的时候也无法保证 write 一定会 block read....
 
+---
+
+update: 它使用 `semaphore` 来控制 read/write, 所以
+
+```
+
+// Thread 1             |  // Thread 2
+let _rg = lock.read();  |
+                        |  // will block
+                        |  let _wg = lock.write();
+// may deadlock         |
+let _rg = lock.read();  |
+``` 
+
+会出现死锁的情况, 但是先 `write` 的话就会先占用所有 semaphore 量就不会出现循环等待 (所以我觉得这种放在 init pool manager 是一个不错的选择)
 
 
 
