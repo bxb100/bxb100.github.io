@@ -195,7 +195,7 @@ let _rg = lock.read();  |
 let _rg = lock.read();  |
 ``` 
 
-会出现死锁的情况, 但是先 `write` 的话就会先占用所有 semaphore 量就不会出现循环等待 (所以我觉得这种放在 init pool manager 是一个不错的选择)
+会出现死锁的情况, 但是先 `write` 的话就会先占用所有 semaphore 量就不会出现循环等待 (所以我觉得这种放在 init pool manager 是一个不错的选择, 当然使用 `try_writer` 是另一个好的选择)
 
 
 
