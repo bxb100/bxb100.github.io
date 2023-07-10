@@ -18,7 +18,26 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Sat, 01 Jul 2023 05:50:29 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jul 2023 06:12:15 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[github action 相关信息]]></title>
+                    <description><![CDATA[<ul>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
+<li><a href="#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
+<li><a href="#issuecomment-1008555105">输入输出多行</a></li>
+<li><a href="#issuecomment-1275587834">如何上传可执行文件到 release 中 (draft)</a></li>
+<li>action 不再允许 if 中使用 secrets 参数进行判断[^1][^2]</li>
+<li><a href="#issuecomment-1510413884">Action Cache</a></li>
+<li><a href="#issuecomment-1512457398">Auto upload to Marketplace</a></li>
+<li><a href="#issuecomment-1521073861">Reusable Workflow</a></li>
+</ul>
+]]></description>
+                    <pubDate>Mon, 10 Jul 2023 06:11:57 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/7-github_action_相关信息</guid>
+                <link>/2021/12/7-github_action_相关信息</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>API</category>
+            </item>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -56,10 +75,10 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://eisel.me/lld" rel="nofollow">https://eisel.me/lld</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://eisel.me/lld" rel="nofollow">https://eisel.me/lld</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/" rel="nofollow">https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2">↩</a></p>
+<p><a href="https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/" rel="nofollow">https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -103,7 +122,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://yeasy.gitbook.io/docker_practice/compose/compose_file" rel="nofollow">https://yeasy.gitbook.io/docker_practice/compose/compose_file</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://yeasy.gitbook.io/docker_practice/compose/compose_file" rel="nofollow">https://yeasy.gitbook.io/docker_practice/compose/compose_file</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
 <p><a href="https://docs.docker.com/compose/compose-file/05-services/" rel="nofollow">https://docs.docker.com/compose/compose-file/05-services/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
@@ -121,36 +140,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                         <guid isPermaLink="false">/2023/06/41-DevOps_的一些实践</guid>
                 <link>/2023/06/41-DevOps_的一些实践</link>
                     <author><![CDATA[bxb100]]></author>
-            </item>
-            <item>
-                <title><![CDATA[github action 相关信息]]></title>
-                    <description><![CDATA[<ul>
-<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes">生成 release log automatically-generated-release-notes</a></li>
-<li><a href="#issuecomment-1008555315">Anyway to check the error message and retry?</a></li>
-<li><a href="#issuecomment-1008555105">输入输出多行</a></li>
-<li><a href="#issuecomment-1275587834">如何上传可执行文件到 release 中 (draft)</a></li>
-<li>action 不再允许 if 中使用 secrets 参数进行判断<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup><sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
-</li>
-<li><a href="#issuecomment-1510413884">Action Cache</a></li>
-<li><a href="#issuecomment-1512457398">Auto upload to Marketplace</a></li>
-<li><a href="#issuecomment-1521073861">Reusable Workflow</a></li>
-</ul>
-<section data-footnotes="">
-<ol>
-<li id="user-content-fn-1">
-<p><a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job">https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job</a>. <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
-</li>
-<li id="user-content-fn-2">
-<p><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2">↩</a></p>
-</li>
-</ol>
-</section>
-]]></description>
-                    <pubDate>Sat, 27 May 2023 02:52:54 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/7-github_action_相关信息</guid>
-                <link>/2021/12/7-github_action_相关信息</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>API</category>
             </item>
             <item>
                 <title><![CDATA[比较有趣的项目]]></title>
@@ -188,7 +177,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-z3">
-<p><a href="https://www.youtube.com/watch?v=C9eXcmWWEyA" rel="nofollow">https://www.youtube.com/watch?v=C9eXcmWWEyA</a> <a href="#fnref-z3" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://www.youtube.com/watch?v=C9eXcmWWEyA" rel="nofollow">https://www.youtube.com/watch?v=C9eXcmWWEyA</a> <a href="#fnref-z3" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -243,7 +232,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
             </item>
             <item>
                 <title><![CDATA[雄狮少年杂感]]></title>
-                    <description><![CDATA[<p><a href="http://jandan.net/t/5118460" rel="nofollow">煎蛋</a>这图片道尽了我所有的想法 🤣</p>
+                    <description><![CDATA[<p><a href="http://jandan.net/t/5118460" rel="nofollow">煎蛋</a>这图片道尽了我所有的想法 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg"><img src="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg" alt="88520f6bly1gxshpjo4j1j20c81br0vp" style="max-width: 100%;"></a></p>
 ]]></description>
                     <pubDate>Fri, 21 Apr 2023 03:17:54 GMT</pubDate>
@@ -347,7 +336,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 	}</pre></div>
 <p>直接 <code>1000</code> 使用默认的 <code>ForkJoinPool</code> 构造方法, 可以看到由于错误的理解, 分治导致出现 2^1000 - 2 个实例</p>
 <p>还有一点注意的是: 默认 pool 的大小是 <code>核心-1</code>, 并且是并行的<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">1</a></sup></p>
-<p>直接爆炸 💥</p>
+<p>直接爆炸 <g-emoji class="g-emoji" alias="boom" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png">💥</g-emoji></p>
 <p>某一刻的 profile
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png"><img width="1200" alt="image" src="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png" style="max-width: 100%;"></a>
 <em>jprofile active code: <a href="https://zhile.io/2022/02/22/jprofiler-license.html" rel="nofollow">https://zhile.io/2022/02/22/jprofiler-license.html</a></em></p>
@@ -356,7 +345,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-2">
-<p><a href="https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4" rel="nofollow">https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4" rel="nofollow">https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-1">
 <p><a href="https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7" rel="nofollow">https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
@@ -385,7 +374,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://stackoverflow.com/questions/6107197/how-does-lombok-work" rel="nofollow">https://stackoverflow.com/questions/6107197/how-does-lombok-work</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://stackoverflow.com/questions/6107197/how-does-lombok-work" rel="nofollow">https://stackoverflow.com/questions/6107197/how-does-lombok-work</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -778,7 +767,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
                     <description><![CDATA[<p><a href="https://github.com/nilaoda/N_m3u8DL-CLI">N_m3u8DL-CLI</a> 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载</p>
 <p>写了个脚本直接 re 页面中 m3u8 后缀连接, 然后调用 CLI 下载, 可以直接放在 release 中或者传到 webdav 中, 感觉更安全了 <g-emoji class="g-emoji" alias="rofl" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png">🤣</g-emoji></p>
 <p>当然, 如果是在 win 机上, 那么直接 execute ps1 更简单</p>
-<p><a href="https://github.com/bxb100/OSS-Config/blob/main/Win/execute.ps1">👉 脚本地址</a></p>
+<p><a href="https://github.com/bxb100/OSS-Config/blob/main/Win/execute.ps1"><g-emoji class="g-emoji" alias="point_right" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f449.png">👉</g-emoji> 脚本地址</a></p>
 <p>参数:</p>
 <ol>
 <li>
@@ -1173,12 +1162,12 @@ So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take
     <span class="pl-k">public</span> <span class="pl-smi">String</span> <span class="pl-s1">getPath</span>() {
         #...
     }</pre></div>
-<p>it's so simple, but costed me a bunch of time to solve, feel sad 😢</p>
+<p>it's so simple, but costed me a bunch of time to solve, feel sad <g-emoji class="g-emoji" alias="cry" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png">😢</g-emoji></p>
 <p>bless me to be better <g-emoji class="g-emoji" alias="crossed_fingers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png">🤞</g-emoji></p>
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
-<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+<p><a href="https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice" rel="nofollow">https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>
@@ -1298,16 +1287,16 @@ java.lang.RuntimeException: cs
 <p><a href="https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7">https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7</a> fluent-filebeat-comparison <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-2">
-<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2">↩</a></p>
+<p><a href="https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing" rel="nofollow">https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-3">
 <p><a href="https://docs.fluentbit.io/manual/pipeline/inputs/tail" rel="nofollow">https://docs.fluentbit.io/manual/pipeline/inputs/tail</a> Tail input <a href="#fnref-3" data-footnote-backref="" aria-label="Back to reference 3"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-4">
-<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4" data-footnote-backref="" aria-label="Back to reference 4">↩</a></p>
+<p><a href="https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/" rel="nofollow">https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/</a> <a href="#fnref-4" data-footnote-backref="" aria-label="Back to reference 4"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 <li id="user-content-fn-5">
-<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5" data-footnote-backref="" aria-label="Back to reference 5">↩</a></p>
+<p><a href="https://juejin.cn/post/6844903847383547911" rel="nofollow">https://juejin.cn/post/6844903847383547911</a> <a href="#fnref-5" data-footnote-backref="" aria-label="Back to reference 5"><g-emoji class="g-emoji" alias="leftwards_arrow_with_hook" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png">↩</g-emoji></a></p>
 </li>
 </ol>
 </section>

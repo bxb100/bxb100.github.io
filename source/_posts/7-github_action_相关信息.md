@@ -126,7 +126,7 @@ So don't miss the point of what your need
 
 一般来说, GitHub action 如果要上传到 marketplace 的话需要生成 dist 目录, 但是可以通过 https://github.com/JasonEtco/build-and-tag-action 项目自动生成 dist 然后自动上传 (_去除了非 dist, action.xml, 仓库大小减少了~~_)
 
-注意默认 `github.token` 权限问题: https://github.com/JasonEtco/build-and-tag-action/issues/40
+注意默认 `github.token` 权限问题: <https://github.com/JasonEtco/build-and-tag-action/issues/40> 注意一定要有 `write` 权限...
 
 ---
 
