@@ -66,6 +66,12 @@ update:
 * 最好实现 makefile 的自解释的功能, 参看 [Self-Documented Makefile](https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html) 
 * CLion makefile 编译报错无法解决, 但不影响使用, 所以忽略
 
+### SQLx
+
+1. 首先 `cargo install slqx-cli` 如果不指定版本, 它会使用最新的 `0.7.0` 版本, 但是这个版本不兼容 `0.6.3` 所以无法得到 offline 的 `sqlx-data.json` (这个在新版本中已经被取消了)
+2. 新版本(0.7.0)取消了 `runtime-actix-rustls` 使得整个项目都无法正常运行, 所以暂时无法简单通过升级版本解决上面的问题
+3. 所以使用固定 install 的写法 `cargo install sqlx-cli@0.6.3` 
+
 
 
 ---
