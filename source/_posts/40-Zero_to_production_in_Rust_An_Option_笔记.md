@@ -349,6 +349,29 @@ update: 未来需要看看 [sccache](https://github.com/mozilla/sccache) 来加�
 
 
 
+---
+
+<a id='issuecomment-1706405372'></a>
+### underscore pattern 的错误理解
+
+之前我讲 `_` 和 `_xx` 当做同样的事情来看, 但是写下面代码的时候死活都无法触发一次请求
+
+```rust
+let _ = Mock::given(path("/emails"))
+        .and(method("POST"))
+        .respond_with(ResponseTemplate::new(200))
+        .named("Create unconfirmed subscriber")
+		.except(1)
+        .mount_as_scoped(&app.email_server)
+        .await;
+```
+
+然后将 `except` 去掉的时候看日志报 `404` 错误, 就知道这个 guard 自动 drop 掉导致服务没有正确 mount 上
+
+总结: `_` 会立刻 drop, 并不是和 `_xx` 一样随作用域结束来 drop 的[^14]
+
+
+
 [^1]: https://eisel.me/lld
 [^2]: https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/
 [^3]: https://github.com/BurtonQin/lockbud/issues/44
@@ -361,3 +384,4 @@ update: 未来需要看看 [sccache](https://github.com/mozilla/sccache) 来加�
 [^11]: https://registry.terraform.io/
 [^12]: https://developer.hashicorp.com/vault/docs/what-is-vault
 [^13]: https://www.bilibili.com/video/BV1L34y1B7PT
+[^14]: https://stackoverflow.com/questions/76311007/what-happens-when-assigning-to-the-underscore-pattern
