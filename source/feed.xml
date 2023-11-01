@@ -18,7 +18,17 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 05 Sep 2023 11:07:31 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Nov 2023 11:57:23 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
+                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
+]]></description>
+                    <pubDate>Wed, 01 Nov 2023 11:57:05 GMT</pubDate>
+                        <guid isPermaLink="false">/2021/12/3-Remember,_Although_life_ignore_you,_I_still_love_you</guid>
+                <link>/2021/12/3-Remember,_Although_life_ignore_you,_I_still_love_you</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>摘录</category>
+            </item>
             <item>
                 <title><![CDATA[Zero to production in Rust An Option 笔记]]></title>
                     <description><![CDATA[<p><del>## ZLD 的配置</del></p>
@@ -48,10 +58,21 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <hr>
 <p>update:</p>
 <ul>
-<li>zld 不再维护的了, 使用 lld 替代[^1], 但是和 reddit 上有用户评论一样, 速度并没有提示很高[^2]</li>
+<li>zld 不再维护的了, 使用 lld 替代<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>, 但是和 reddit 上有用户评论一样, 速度并没有提示很高<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup>
+</li>
 <li>mold 的 MacOS 版本 sold 是商业版需要购买 licence , 放弃</li>
 </ul>
 <p>总结: 不要花时间在 linker 上</p>
+<section data-footnotes="">
+<ol>
+<li id="user-content-fn-1">
+<p><a href="https://eisel.me/lld" rel="nofollow">https://eisel.me/lld</a> <a href="#fnref-1" data-footnote-backref="" aria-label="Back to reference 1">↩</a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/" rel="nofollow">https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/</a> <a href="#fnref-2" data-footnote-backref="" aria-label="Back to reference 2">↩</a></p>
+</li>
+</ol>
+</section>
 ]]></description>
                     <pubDate>Tue, 05 Sep 2023 11:03:02 GMT</pubDate>
                         <guid isPermaLink="false">/2023/04/40-Zero_to_production_in_Rust_An_Option_笔记</guid>
@@ -108,7 +129,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
             </item>
             <item>
                 <title><![CDATA[DevOps 的一些实践]]></title>
-                    <description><![CDATA[<h2><a id="user-content-使用的工具" class="anchor" aria-hidden="true" tabindex="-1" href="#使用的工具"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用的工具</h2>
+                    <description><![CDATA[<h2 id="user-content-使用的工具"><a class="heading-link" href="#使用的工具">使用的工具<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <ul>
 <li>Terraform</li>
 <li>Docker</li>
@@ -221,16 +242,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
                         <category>摘录</category>
             </item>
             <item>
-                <title><![CDATA[Remember, Although life ignore you, I still love you]]></title>
-                    <description><![CDATA[<p>思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德</p>
-]]></description>
-                    <pubDate>Sun, 30 Apr 2023 10:34:26 GMT</pubDate>
-                        <guid isPermaLink="false">/2021/12/3-Remember,_Although_life_ignore_you,_I_still_love_you</guid>
-                <link>/2021/12/3-Remember,_Although_life_ignore_you,_I_still_love_you</link>
-                    <author><![CDATA[bxb100]]></author>
-                        <category>摘录</category>
-            </item>
-            <item>
                 <title><![CDATA[雄狮少年杂感]]></title>
                     <description><![CDATA[<p><a href="http://jandan.net/t/5118460" rel="nofollow">煎蛋</a>这图片道尽了我所有的想法 🤣</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg"><img src="https://user-images.githubusercontent.com/20685961/147487831-a8feebcf-f0ea-4816-b9ce-9ef6a1d8c895.jpg" alt="88520f6bly1gxshpjo4j1j20c81br0vp" style="max-width: 100%;"></a></p>
@@ -270,7 +281,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <p>麦当劳过去遇到的一个问题是缺乏创建 EDA 的标准方法(最佳实践). 他们看到了不同团队使用的各种技术和模式, 导致不一致和不必要的复杂性.</p>
 <p>为了解决这个问题, 工程师创建了统一事件平台 (unified eventing platform), 公司内的不同组织能够在此之上构建自己的事件系统. 这降低了启动和维护这些服务的实施和操作复杂性, 同时还确保了一致性.</p>
 <p>Vamshi Krishna Komuravalli 是麦当劳的首席架构师, 他写了一篇关于麦当劳统一事件平台架构的精彩博文</p>
-<h2><a id="user-content-总结" class="anchor" aria-hidden="true" tabindex="-1" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
+<h2 id="user-content-总结"><a class="heading-link" href="#总结">总结<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>麦当劳想要构建统一的事件平台来管理公司内不同生产者和消费者之间的通信.</p>
 <p>他们希望这个平台是可升缩的, 高可用, 性能好, 安全和可靠的. 他们还希望在如何完成错误处理、监控和恢复等事情上保持一致.</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67"><img src="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67" alt="f1" data-canonical-src="https://media.beehiiv.com/cdn-cgi/image/format=auto,onerror=redirect/uploads/asset/file/dc55925e-ba21-478b-961a-fa4e11d36b88/1_rnlk56DN7of_aY7uPfZjcQ.png" style="max-width: 100%;"></a></p>
@@ -296,12 +307,12 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <li>如果 SDK 遇到 Kafka 错误, 则事件将写入 DynamoDB 数据库中. Lambda 函数稍后将重试将这些事件发送到 Kafka.</li>
 <li>消费者消费来自 Kafka 的事件</li>
 </ol>
-<h2><a id="user-content-schema-registry" class="anchor" aria-hidden="true" tabindex="-1" href="#schema-registry"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schema Registry</h2>
+<h2 id="user-content-schema-registry"><a class="heading-link" href="#schema-registry">Schema Registry<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>为了确保数据完整性, 麦当劳依靠模式注册表对事件平台发布和消费的所有事件强制执行数据契约.</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270"><img src="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270" alt="f3" data-canonical-src="https://miro.medium.com/max/1400/1*LvV2J6pcNdSjRf0gSA4yAw.webp" style="max-width: 100%;"></a></p>
 <p>当生产者发布消息, 消息在开头包含版本的字符信息.</p>
 <p>之后, 当消息被消费时, 消费者可以通过字符来决定什么版本的模式应当被遵循.</p>
-<h2><a id="user-content-基于域的分片和自动缩放" class="anchor" aria-hidden="true" tabindex="-1" href="#基于域的分片和自动缩放"><span aria-hidden="true" class="octicon octicon-link"></span></a>基于域的分片和自动缩放</h2>
+<h2 id="user-content-基于域的分片和自动缩放"><a class="heading-link" href="#基于域的分片和自动缩放">基于域的分片和自动缩放<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>事件根据其域被分片到不同的 MSK 集群中. 这使得自动缩放更容易, 因为你可以为负载较重的域缩增加集群.</p>
 <p>为了应对读/写负载的增加, 事件平台团队添加了逻辑来监视 MSK 的 CPU 指标, 并触发自动缩放功能以在负载过高时向集群添加额外的 broker 机器. 为了增加磁盘空间，MSK 具有自动缩放存储的<a href="https://docs.aws.amazon.com/msk/latest/developerguide/msk-autoexpand.html" rel="nofollow">内置功能</a>.</p>
 <p>查看更多信息, 你可以阅读完整的文章: <a href="https://medium.com/mcdonalds-technical-blog/behind-the-scenes-mcdonalds-event-driven-architecture-51a6542c0d86" rel="nofollow">这里</a> 和 <a href="https://medium.com/mcdonalds-technical-blog/mcdonalds-event-driven-architecture-the-data-journey-and-how-it-works-4591d108821f" rel="nofollow">这里</a></p>
@@ -395,8 +406,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
             </item>
             <item>
                 <title><![CDATA[实现 TDD 的一些方法]]></title>
-                    <description><![CDATA[<h2><a id="user-content-tools" class="anchor" aria-hidden="true" tabindex="-1" href="#tools"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tools</h2>
-<h3><a id="user-content-idea" class="anchor" aria-hidden="true" tabindex="-1" href="#idea"><span aria-hidden="true" class="octicon octicon-link"></span></a>idea</h3>
+                    <description><![CDATA[<h2 id="user-content-tools"><a class="heading-link" href="#tools">Tools<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<h3 id="user-content-idea"><a class="heading-link" href="#idea">idea<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <ul>
 <li>打开 toggle auto-test <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/162027045-d3259d53-70d2-4e48-8e0c-f3a992e180e5.png"><img src="https://user-images.githubusercontent.com/20685961/162027045-d3259d53-70d2-4e48-8e0c-f3a992e180e5.png" width="20" height="20" style="max-width: 100%;"></a>, 然后由于是编译的时候触发操作, 所以可以取消 save all <code>ctrl + s</code>  快捷键(依赖自动保存), 然后将其设置到 build project 中.</li>
 <li>也可以打开 auto compile 但是实测有延迟, 而且会加重心智负担</li>
@@ -413,13 +424,13 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
             </item>
             <item>
                 <title><![CDATA[Why Changing nearest power of two in HashMap?]]></title>
-                    <description><![CDATA[<h2><a id="user-content-jdk-7" class="anchor" aria-hidden="true" tabindex="-1" href="#jdk-7"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 7</h2>
+                    <description><![CDATA[<h2 id="user-content-jdk-7"><a class="heading-link" href="#jdk-7">JDK 7<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <div class="highlight highlight-source-java"><pre>   <span class="pl-k">static</span> <span class="pl-smi">int</span> <span class="pl-s1">roundUpToPowerOf2</span>(<span class="pl-smi">int</span> <span class="pl-s1">cap</span>) {
         <span class="pl-k">return</span> <span class="pl-s1">cap</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>
                 ? <span class="pl-c1">MAXIMUM_CAPACITY</span>
                 : (<span class="pl-s1">cap</span> &gt; <span class="pl-c1">1</span>) ? <span class="pl-smi">Integer</span>.<span class="pl-en">highestOneBit</span>((<span class="pl-s1">cap</span> - <span class="pl-c1">1</span>) &lt;&lt; <span class="pl-c1">1</span>) : <span class="pl-c1">1</span>;
     }</pre></div>
-<h2><a id="user-content-jdk-8" class="anchor" aria-hidden="true" tabindex="-1" href="#jdk-8"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 8</h2>
+<h2 id="user-content-jdk-8"><a class="heading-link" href="#jdk-8">JDK 8<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <blockquote>
 <p><a href="http://hg.openjdk.java.net/jdk8/jdk8/jdk/rev/d62c911aebbb?revcount=80" rel="nofollow">http://hg.openjdk.java.net/jdk8/jdk8/jdk/rev/d62c911aebbb?revcount=80</a></p>
 </blockquote>
@@ -432,7 +443,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
         <span class="pl-s1">n</span> |= <span class="pl-s1">n</span> &gt;&gt;&gt; <span class="pl-c1">16</span>;
         <span class="pl-k">return</span> (<span class="pl-s1">n</span> &lt; <span class="pl-c1">0</span>) ? <span class="pl-c1">1</span> : (<span class="pl-s1">n</span> &gt;= <span class="pl-c1">MAXIMUM_CAPACITY</span>) ? <span class="pl-c1">MAXIMUM_CAPACITY</span> : <span class="pl-s1">n</span> + <span class="pl-c1">1</span>;
     }</pre></div>
-<h2><a id="user-content-jdk-11" class="anchor" aria-hidden="true" tabindex="-1" href="#jdk-11"><span aria-hidden="true" class="octicon octicon-link"></span></a>JDK 11</h2>
+<h2 id="user-content-jdk-11"><a class="heading-link" href="#jdk-11">JDK 11<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <blockquote>
 <p><a href="https://bugs.openjdk.java.net/browse/JDK-8203279" rel="nofollow">https://bugs.openjdk.java.net/browse/JDK-8203279</a></p>
 </blockquote>
@@ -441,7 +452,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
    return (n &lt; 0) ? 1 : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 }
 </code></pre>
-<h2><a id="user-content-jmh" class="anchor" aria-hidden="true" tabindex="-1" href="#jmh"><span aria-hidden="true" class="octicon octicon-link"></span></a>JMH</h2>
+<h2 id="user-content-jmh"><a class="heading-link" href="#jmh">JMH<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <div class="highlight highlight-source-java"><pre><span class="pl-c1">@</span><span class="pl-c1">BenchmarkMode</span>(<span class="pl-smi">Mode</span>.<span class="pl-s1">AverageTime</span>)
 <span class="pl-c1">@</span><span class="pl-c1">OutputTimeUnit</span>(<span class="pl-smi">TimeUnit</span>.<span class="pl-c1">NANOSECONDS</span>)
 <span class="pl-c1">@</span><span class="pl-c1">Warmup</span>(<span class="pl-s1">iterations</span> = <span class="pl-c1">2</span>, <span class="pl-s1">time</span> = <span class="pl-c1">1</span>, <span class="pl-s1">timeUnit</span> = <span class="pl-smi">TimeUnit</span>.<span class="pl-c1">SECONDS</span>)
@@ -518,7 +529,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
             </item>
             <item>
                 <title><![CDATA[ANTLR 速记]]></title>
-                    <description><![CDATA[<h2><a id="user-content-结合性和左右递归" class="anchor" aria-hidden="true" tabindex="-1" href="#结合性和左右递归"><span aria-hidden="true" class="octicon octicon-link"></span></a>结合性和左、右递归</h2>
+                    <description><![CDATA[<h2 id="user-content-结合性和左右递归"><a class="heading-link" href="#结合性和左右递归">结合性和左、右递归<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <div class="highlight highlight-source-antlr"><pre><span class="pl-en">grammar</span> Expr;
 
 <span class="pl-en">expr</span>: expr <span class="pl-s"><span class="pl-pds">'</span>^<span class="pl-pds">'</span></span> expr
@@ -610,7 +621,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>译 <a href="https://blog.jooq.org/the-java-fluent-api-designer-crash-course/" rel="nofollow">https://blog.jooq.org/the-java-fluent-api-designer-crash-course/</a></p>
 </blockquote>
 <p>自从 <a href="http://martinfowler.com/bliki/FluentInterface.html" rel="nofollow">Martin Fowler 谈论流畅的接口</a>以来，人们开始到处<a href="https://stackoverflow.com/questions/1103985/method-chaining-why-is-it-a-good-practice-or-not/8745227" rel="nofollow">链式方法</a>，为每个可能的用例创建流畅的 API（或 <a href="https://en.wikipedia.org/wiki/Domain-specific_language" rel="nofollow">DSLs</a>）。原则上，几乎所有类型的 DSL 都可以映射到 Java。让我们看看如何做到这一点</p>
-<h2><a id="user-content-dsl-规则" class="anchor" aria-hidden="true" tabindex="-1" href="#dsl-规则"><span aria-hidden="true" class="octicon octicon-link"></span></a>DSL 规则</h2>
+<h2 id="user-content-dsl-规则"><a class="heading-link" href="#dsl-规则">DSL 规则<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>DSL（领域特定语言）通常是根据大致如下的规则构建的</p>
 <pre><code>1. SINGLE-WORD
 2. PARAMETERISED-WORD parameter
@@ -632,7 +643,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
   <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/212459554-d1b333ef-6d35-4bdb-bcae-bfefa24b296e.png"><img src="https://user-images.githubusercontent.com/20685961/212459554-d1b333ef-6d35-4bdb-bcae-bfefa24b296e.png" alt="image" style="max-width: 100%;"></a></p>
   用 <a href="http://www.bottlecaps.de/rr/ui" rel="nofollow">http://www.bottlecaps.de/rr/ui</a> 创建
 
-<h2><a id="user-content-java-实现这些规则" class="anchor" aria-hidden="true" tabindex="-1" href="#java-实现这些规则"><span aria-hidden="true" class="octicon octicon-link"></span></a>Java 实现这些规则</h2>
+<h2 id="user-content-java-实现这些规则"><a class="heading-link" href="#java-实现这些规则">Java 实现这些规则<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>使用 Java 接口，对上述 DSL 进行建模非常简单。本质上，你必须遵循以下转换规则：</p>
 <ul>
 <li>每个 DSL <strong>keyword</strong> 都变成了一个 Java method</li>
@@ -707,7 +718,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 (start word3) end;
 ((start word3) word3) end;
 (((start word3) word3) word3) end;</pre></div>
-<h2><a id="user-content-实例" class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span aria-hidden="true" class="octicon octicon-link"></span></a>实例</h2>
+<h2 id="user-content-实例"><a class="heading-link" href="#实例">实例<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>在 jOOQ 文档和代码库中可以看到一些真实世界的例子。这是从<a href="https://blog.jooq.org/jooq-meta-a-hard-core-sql-proof-of-concept/" rel="nofollow">以前的一篇文章</a>中摘录的使用 jOOQ 创建的相当复杂的 SQL 查询：</p>
 <div class="highlight highlight-source-java"><pre><span class="pl-en">create</span>().<span class="pl-en">select</span>(
 	<span class="pl-s1">r1</span>.<span class="pl-c1">ROUTINE_NAME</span>,
@@ -753,7 +764,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 			<span class="pl-en">p</span>( <span class="pl-en">color</span>( <span class="pl-c1">1</span>, <span class="pl-s">"green"</span> ) )
 	)
 ).<span class="pl-s1">out</span>( <span class="pl-s1">out</span> );</pre></div>
-<h2><a id="user-content-总结" class="anchor" aria-hidden="true" tabindex="-1" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
+<h2 id="user-content-总结"><a class="heading-link" href="#总结">总结<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>在过去的 7 年里，Fluent API 一直是一种炒作。 Martin Fowler 已经成为一个被大量引用的人并获得了大部分的荣誉，即使以前有 fluent APIs。在 <code>java.lang.StringBuffer</code> 中可以看到 Java 最古老的 fluent API 之一，它允许将任意对象附加到字符串。但是 fluent API 的最大好处是它能够轻松地将 <strong>external DSL</strong> 映射到 Java 并将它们实现为任意复杂度的 <strong>internal DSL</strong> 。</p>
 ]]></description>
                     <pubDate>Tue, 17 Jan 2023 04:40:40 GMT</pubDate>
@@ -792,7 +803,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>NIO 这是个线程模型, 通常用于 socket 连接, 减少线程数量</p>
 <p>Reactor 库的设计目的就是在构建异步管道时避免<strong>回调地狱</strong>和<strong>深层嵌套代码</strong>, 属于 NIO 的拓展</p>
 <p>对于 Loom 出来后, 这些都是可以忽略的</p>
-<h3><a id="user-content-reference" class="anchor" aria-hidden="true" tabindex="-1" href="#reference"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reference</h3>
+<h3 id="user-content-reference"><a class="heading-link" href="#reference">Reference<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <ul>
 <li>
 <p><a href="https://www.baeldung.com/spring-webflux-concurrency" rel="nofollow">https://www.baeldung.com/spring-webflux-concurrency</a></p>
@@ -850,13 +861,13 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>OAuth 对资源所有者和用户来说是授权协议, 不是验证协议</p>
 </blockquote>
 <hr>
-<h1><a id="user-content-client_secret_post" class="anchor" aria-hidden="true" tabindex="-1" href="#client_secret_post"><span aria-hidden="true" class="octicon octicon-link"></span></a>client_secret_post</h1>
+<h1 id="user-content-client_secret_post"><a class="heading-link" href="#client_secret_post">client_secret_post<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>(<a href="https://openid.net/specs/openid-connect-core-1_0.html" rel="nofollow">OIDC Core</a>, <a href="https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication" rel="nofollow">9. Client Authentication</a>)</p>
 <p>传统的方式中, 授权服务器提前给与客户端一对 <code>ID</code> 和 <code>Secrect</code></p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/187720742-9dfc502f-6740-4da1-b8f9-d03b9de68902.png"><img src="https://user-images.githubusercontent.com/20685961/187720742-9dfc502f-6740-4da1-b8f9-d03b9de68902.png" alt="image" style="max-width: 100%;"></a></p>
 <p>然后再发送 <strong>POST</strong> 请求 token 的时候附加这对信息</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/187721042-1763b2ce-f8e9-4bc9-9660-982236605b04.png"><img src="https://user-images.githubusercontent.com/20685961/187721042-1763b2ce-f8e9-4bc9-9660-982236605b04.png" alt="image" style="max-width: 100%;"></a></p>
-<h1><a id="user-content-client_secret_basic" class="anchor" aria-hidden="true" tabindex="-1" href="#client_secret_basic"><span aria-hidden="true" class="octicon octicon-link"></span></a>client_secret_basic</h1>
+<h1 id="user-content-client_secret_basic"><a class="heading-link" href="#client_secret_basic">client_secret_basic<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>(<a href="https://openid.net/specs/openid-connect-core-1_0.html" rel="nofollow">OIDC Core</a>, <a href="https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication" rel="nofollow">9. Client Authentication</a>)</p>
 <p>在获取 token 请求中包含 <code>ID</code> 和 <code>Secret</code> 使用 Basic Authentication (<a href="https://tools.ietf.org/html/rfc7617" rel="nofollow">RFC 7617</a>)</p>
 <p>首先使用冒号将二者拼接</p>
@@ -867,7 +878,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <blockquote>
 <p><code>client_secret_post</code> 和 <code>client_secret_basic</code> 是 <a href="https://tools.ietf.org/html/rfc6749" rel="nofollow">RFC 6749</a>, <a href="https://tools.ietf.org/html/rfc6749#section-2.3.1" rel="nofollow">2.3.1. Client Password</a> 描述的两种客户端验证方案</p>
 </blockquote>
-<h1><a id="user-content-client_secret_jwt" class="anchor" aria-hidden="true" tabindex="-1" href="#client_secret_jwt"><span aria-hidden="true" class="octicon octicon-link"></span></a>client_secret_jwt</h1>
+<h1 id="user-content-client_secret_jwt"><a class="heading-link" href="#client_secret_jwt">client_secret_jwt<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>(<a href="https://openid.net/specs/openid-connect-core-1_0.html" rel="nofollow">OIDC Core</a>, <a href="https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication" rel="nofollow">9. Client Authentication</a>)</p>
 <p>在请求 token 的时候, 对数据使用 <code>Secret</code> 来生成签名 <a href="https://tools.ietf.org/html/rfc7515" rel="nofollow">RFC 7515</a> (JSON Web Signature) 生成 JWT (<a href="https://tools.ietf.org/html/rfc7519" rel="nofollow">RFC 7519</a>) 传给授权服务器</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/187724256-735fab63-644b-4749-9e7d-b4c30888518f.png"><img src="https://user-images.githubusercontent.com/20685961/187724256-735fab63-644b-4749-9e7d-b4c30888518f.png" alt="image" style="max-width: 100%;"></a></p>
@@ -876,7 +887,7 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
 <p>这个 JWT 称为客户端断言 (OAuth In Action 也翻译为断言, 姑且称之)</p>
 <p>请求 Token 时, <strong>客户端断言</strong> 置于 <code>client_assertion</code> 请求参数上, <code>client_assertion_type</code> 是固定值: <code>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code></p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/187724309-52b3ece2-2edc-435a-a4bb-801d91633b4f.png"><img src="https://user-images.githubusercontent.com/20685961/187724309-52b3ece2-2edc-435a-a4bb-801d91633b4f.png" alt="image" style="max-width: 100%;"></a></p>
-<h1><a id="user-content-private_key_jwt" class="anchor" aria-hidden="true" tabindex="-1" href="#private_key_jwt"><span aria-hidden="true" class="octicon octicon-link"></span></a>private_key_jwt</h1>
+<h1 id="user-content-private_key_jwt"><a class="heading-link" href="#private_key_jwt">private_key_jwt<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>(<a href="https://openid.net/specs/openid-connect-core-1_0.html" rel="nofollow">OIDC Core</a>, <a href="https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication" rel="nofollow">9. Client Authentication</a>)</p>
 <p>既然上面是用对称加密, 那么就一定会出现不对称加密 (公钥分享使用诸如 <code>jwks</code> 或 <code>jwks_uri</code> client metadata)</p>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/187727532-611eb102-69e6-41d7-b6aa-6701bfc9a635.png"><img src="https://user-images.githubusercontent.com/20685961/187727532-611eb102-69e6-41d7-b6aa-6701bfc9a635.png" alt="image" style="max-width: 100%;"></a></p>
@@ -914,14 +925,14 @@ TableSizeForTest.jdk8   avgt    5  223145028.320 ±  5272965.882  ns/op
             </item>
             <item>
                 <title><![CDATA[使用 charles 的 rootCA  代理后端 API]]></title>
-                    <description><![CDATA[<h2><a id="user-content-前情" class="anchor" aria-hidden="true" tabindex="-1" href="#前情"><span aria-hidden="true" class="octicon octicon-link"></span></a>前情</h2>
+                    <description><![CDATA[<h2 id="user-content-前情"><a class="heading-link" href="#前情">前情<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>某日我儿（前端 ios 使用 https 但是没有强制）问我如何利用 charles 来代理后端<strong>本地</strong> API 测试，我直接甩给他 <code>map remote</code> 大法 （from https to http），解决。</p>
-<h2><a id="user-content-思考" class="anchor" aria-hidden="true" tabindex="-1" href="#思考"><span aria-hidden="true" class="octicon octicon-link"></span></a>思考</h2>
+<h2 id="user-content-思考"><a class="heading-link" href="#思考">思考<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png"><img width="432" alt="image" align="right" src="https://user-images.githubusercontent.com/20685961/153456893-60900373-e67b-4134-813b-8eb1156a4b0d.png" style="max-width: 100%;"></a></p>
 <p>这时候我觉得 charles 类似 QuantumultX 直接重写响应 payload，但是看了 doc 之后发现仅仅只是转发。然后我问了下我儿，他说他客户端没做 ssl 校验，那么之后排期做了校验这种方式可能会有问题。
 这时我就想到能否利用 charles 的 rootCA 来自签，这样的话配合 DNS 和一些 web server 反向代理就能做到直接本地 https 线上域名访问了（当然 client 添加公钥这种问题就不在这里赘述了）。
 <br></p>
-<h2><a id="user-content-实验" class="anchor" aria-hidden="true" tabindex="-1" href="#实验"><span aria-hidden="true" class="octicon octicon-link"></span></a>实验</h2>
+<h2 id="user-content-实验"><a class="heading-link" href="#实验">实验<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>首先先导出 charles 的 CA 和 私钥</p>
 <p><strong>Help</strong> &gt;  <strong>SSL Proxying</strong> &gt;  <strong>Export Charles Root Certificate and Private Key...</strong></p>
 <p>然后转成 <code>PEM</code><sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup> (<em><code>charles-ssl-proxying.p12</code> <code>newfile.xx.pem</code> 按实际情况填写</em>）</p>
@@ -1059,7 +1070,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
             </item>
             <item>
                 <title><![CDATA[Amazon SP program signature problem]]></title>
-                    <description><![CDATA[<h2><a id="user-content-case" class="anchor" aria-hidden="true" tabindex="-1" href="#case"><span aria-hidden="true" class="octicon octicon-link"></span></a>Case</h2>
+                    <description><![CDATA[<h2 id="user-content-case"><a class="heading-link" href="#case">Case<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>When us project execute <a href="https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-reference#getlistingsitem" rel="nofollow">getListingsItem</a>, using SKU name 'FBA XXX XX 300g', but Amazon returns 403 error. At first, we don't get message body like below, we just know it's not successful.</p>
 <div class="highlight highlight-source-json"><pre>{
   <span class="pl-ent">"errors"</span>: [
@@ -1067,7 +1078,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
       <span class="pl-ent">"message"</span>: <span class="pl-ii">"The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.</span>
 
 <span class="pl-ii">...</span></pre></div>
-<h2><a id="user-content-using-charles-to-debug" class="anchor" aria-hidden="true" tabindex="-1" href="#using-charles-to-debug"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Charles to debug</h2>
+<h2 id="user-content-using-charles-to-debug"><a class="heading-link" href="#using-charles-to-debug">Using Charles to debug<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>I suppose the HTTP protocol sends the right query param and uses the right path, but I don't know yet, so I choose using Charles to get information. First disable the SSL certificate verifier, and then add Charles proxy.</p>
 <div class="highlight highlight-source-java"><pre><span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">OkHttpClient</span> <span class="pl-s1">getUnsafeOkHttpClient</span>() {
         <span class="pl-k">try</span> {
@@ -1133,7 +1144,7 @@ respond "&lt;h1&gt;Hello, world!&lt;/h1&gt;"
         <span class="pl-k">return</span> <span class="pl-s1">value</span>;
     }</pre></div>
 <p>Obviously, the code is right, it must be some places give the wrong parameter.</p>
-<h2><a id="user-content-debug" class="anchor" aria-hidden="true" tabindex="-1" href="#debug"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debug</h2>
+<h2 id="user-content-debug"><a class="heading-link" href="#debug">Debug<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>The best way to pinpoint the breakpoints is the line where the nearest the mistake.
 So, give the <code>AWSSigV4Signer#sign</code> one, and start debug session, take a deep look. few methods passed, suddenly I found the <code>path</code> in <code>createCanonicalRequest</code> not right, it's just a plain text of the test sets.</p>
 <p>Why?</p>
@@ -1262,7 +1273,7 @@ java.lang.RuntimeException: cs
 </ul>
 <p>In the end, the exception snippet will produce a single line, you can use filter to exclude this.</p>
 <p>gist: <a href="https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14">https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14</a></p>
-<h2><a id="user-content-other-thing" class="anchor" aria-hidden="true" tabindex="-1" href="#other-thing"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other thing</h2>
+<h2 id="user-content-other-thing"><a class="heading-link" href="#other-thing">Other thing<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>Using docker needs packing by yourself <sup><a href="#fn-4" id="user-content-fnref-4" data-footnote-ref="">4</a></sup>, don't forget it should with ES under same network <sup><a href="#fn-5" id="user-content-fnref-5" data-footnote-ref="">5</a></sup></p>
 <ol>
 <li>build an image</li>
@@ -1538,18 +1549,18 @@ java.lang.RuntimeException: cs
 </blockquote>
 <hr>
 <p>Java 语言通过 synchronized 关键字来保证原子性，这是因为每一个 Object 都有一个隐含的锁，这个也称作监视器对象。在进入 synchronized 之前自动获取此内部锁，而一旦离开此方式，无论是完成或者中断都会自动释放锁。显然这是一个独占锁，每个锁请求之间是互斥的。相对于众多高级锁 (Lock/ReadWriteLock 等)，synchronized 的代价都比后者要高。但是 synchronzied 的语法比较简单，而且也比较容易使用和理解。Lock 一旦调用了 lock() 方法获取到锁而未正确释放的话很有可能造成死锁，所以 Lock 的释放操作总是跟在 finally 代码块里面，这在代码结构上也是一次调整和冗余。Lock 的实现已经将硬件资源用到了极致，所以未来可优化的空间不大，除非硬件有了更高的性能，但是 synchronized 只是规范的一种实现，这在不同的平台不同的硬件还有很高的提升空间，未来 Java 锁上的优化也会主要在这上面。既然 synchronzied 都不可能避免死锁产生，那么死锁情况会是经常容易出现的错误，下面具体描述死锁发生的原因及解决方法。</p>
-<h1><a id="user-content-死锁描述" class="anchor" aria-hidden="true" tabindex="-1" href="#死锁描述"><span aria-hidden="true" class="octicon octicon-link"></span></a>死锁描述</h1>
+<h1 id="user-content-死锁描述"><a class="heading-link" href="#死锁描述">死锁描述<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>死锁是操作系统层面的一个错误，是进程死锁的简称，最早在 1965 年由 Dijkstra 在研究银行家算法时提出的，它是计算机操作系统乃至整个并发程序设计领域最难处理的问题之一。</p>
 <p>事实上，计算机世界有很多事情需要多线程方式去解决，因为这样才能最大程度上利用资源，才能体现出计算的高效。但是，实际上来说，计算机系统中有很多一次只能由一个进程使用的资源的情况，例如打印机，同时只能有一个进程控制它。在多通道程序设计环境中，若干进程往往要共享这类资源，而且一个进程所需要的资源还很有可能不止一个。因此，就会出现若干进程竞争有限资源，又推进顺序不当，从而构成无限期循环等待的局面。我们称这种状态为死锁。简单一点描述，死锁是指多个进程循环等待它方占有的资源而无限期地僵持下去的局面。很显然，如果没有外力的作用，那么死锁涉及到的各个进程都将永远处于封锁状态。</p>
 <p>系统发生死锁现象不仅浪费大量的系统资源，甚至导致整个系统崩溃，带来灾难性后果。所以，对于死锁问题在理论上和技术上都必须予以高度重视。</p>
-<h2><a id="user-content-银行家算法" class="anchor" aria-hidden="true" tabindex="-1" href="#银行家算法"><span aria-hidden="true" class="octicon octicon-link"></span></a>银行家算法</h2>
+<h2 id="user-content-银行家算法"><a class="heading-link" href="#银行家算法">银行家算法<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>一个银行家如何将一定数目的资金安全地借给若干个客户，使这些客户既能借到钱完成要干的事，同时银行家又能收回全部资金而不至于破产。银行家就像一个操作系统，客户就像运行的进程，银行家的资金就是系统的资源。</p>
 <p>银行家算法需要确保以下四点：</p>
 <p>当一个顾客对资金的最大需求量不超过银行家现有的资金时就可接纳该顾客；
 顾客可以分期贷款, 但贷款的总数不能超过最大需求量；
 当银行家现有的资金不能满足顾客尚需的贷款数额时，对顾客的贷款可推迟支付，但总能使顾客在有限的时间里得到贷款；
 当顾客得到所需的全部资金后，一定能在有限的时间里归还所有的资金。</p>
-<h3><a id="user-content-清单-1-银行家算法实现" class="anchor" aria-hidden="true" tabindex="-1" href="#清单-1-银行家算法实现"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 1. 银行家算法实现</h3>
+<h3 id="user-content-清单-1-银行家算法实现"><a class="heading-link" href="#清单-1-银行家算法实现">清单 1. 银行家算法实现<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <div class="highlight highlight-source-java"><pre><span class="pl-c">/*一共有５个进程需要请求资源，有３类资源*/</span>
 <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">BankDemo</span> {
     <span class="pl-c">// 每个进程所需要的最大资源数 </span>
@@ -1676,7 +1687,7 @@ java.lang.RuntimeException: cs
         <span class="pl-k">return</span> <span class="pl-c1">0</span>;
     }
 }</pre></div>
-<h2><a id="user-content-死锁示例" class="anchor" aria-hidden="true" tabindex="-1" href="#死锁示例"><span aria-hidden="true" class="octicon octicon-link"></span></a>死锁示例</h2>
+<h2 id="user-content-死锁示例"><a class="heading-link" href="#死锁示例">死锁示例<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>死锁问题是多线程特有的问题，它可以被认为是线程间切换消耗系统性能的一种极端情况。在死锁时，线程间相互等待资源，而又不释放自身的资源，导致无穷无尽的等待，其结果是系统任务永远无法执行完成。死锁问题是在多线程开发中应该坚决避免和杜绝的问题。</p>
 <p>一般来说，要出现死锁问题需要满足以下条件：</p>
 <ol>
@@ -1691,7 +1702,7 @@ java.lang.RuntimeException: cs
 </ol>
 <p>只要破坏死锁 4 个必要条件之一中的任何一个，死锁问题就能被解决。</p>
 <p>我们先来看一个示例，前面说过，死锁是两个甚至多个线程被永久阻塞时的一种运行局面，这种局面的生成伴随着至少两个线程和两个或者多个资源。代码清单 2 所示的示例中，我们编写了一个简单的程序，它将会引起死锁发生，然后我们就会明白如何分析它。</p>
-<h3><a id="user-content-清单-2-死锁示例" class="anchor" aria-hidden="true" tabindex="-1" href="#清单-2-死锁示例"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 2. 死锁示例</h3>
+<h3 id="user-content-清单-2-死锁示例"><a class="heading-link" href="#清单-2-死锁示例">清单 2. 死锁示例<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">ThreadDeadlock</span> {
 
     <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">void</span> <span class="pl-en">main</span>(<span class="pl-smi">String</span>[] <span class="pl-s1">args</span>) <span class="pl-k">throws</span> <span class="pl-smi">InterruptedException</span> {
@@ -1760,9 +1771,9 @@ t1 acquiring lock on java.lang.Object@c791b9
 t2 acquiring lock on java.lang.Object@1aa9f99
 </code></pre>
 <p>在此我们可以清楚地在输出结果中辨认出死锁局面，但是在我们实际所用的应用中，发现死锁并将它排除是非常难的。</p>
-<h1><a id="user-content-死锁情况诊断" class="anchor" aria-hidden="true" tabindex="-1" href="#死锁情况诊断"><span aria-hidden="true" class="octicon octicon-link"></span></a>死锁情况诊断</h1>
+<h1 id="user-content-死锁情况诊断"><a class="heading-link" href="#死锁情况诊断">死锁情况诊断<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>JVM 提供了一些工具可以来帮助诊断死锁的发生，如下面程序清单 4 所示，我们实现了一个死锁，然后尝试通过 jstack 命令追踪、分析死锁发生。</p>
-<h3><a id="user-content-清单-4-死锁代码" class="anchor" aria-hidden="true" tabindex="-1" href="#清单-4-死锁代码"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 4. 死锁代码</h3>
+<h3 id="user-content-清单-4-死锁代码"><a class="heading-link" href="#清单-4-死锁代码">清单 4. 死锁代码<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <div class="highlight highlight-source-java"><pre><span class="pl-smi">iimport</span> <span class="pl-s1">java</span>.<span class="pl-s1">util</span>.<span class="pl-s1">concurrent</span>.<span class="pl-s1">locks</span>.<span class="pl-s1">ReentrantLock</span>;
 
 <span class="pl-c">//下面演示一个简单的死锁，两个线程分别占用 south 锁和 north 锁，并同时请求对方占用的锁，导致死锁</span>
@@ -1836,7 +1847,7 @@ t2 acquiring lock on java.lang.Object@1aa9f99
     }
 }</pre></div>
 <p>jstack 可用于导出 Java 应用程序的线程堆栈，-l 选项用于打印锁的附加信息。我们运行 jstack 命令，输出入清单 5 和 6 所示，其中清单 5 里面可以看到线程处于运行状态，代码中调用了拥有锁投票、定时锁等候和可中断锁等候等特性的 ReentrantLock 锁机制。清单 6 直接打印出出现死锁情况，报告 north 和 sourth 两个线程互相等待资源，出现了死锁。</p>
-<h3><a id="user-content-清单-5-jstack-运行输出-1" class="anchor" aria-hidden="true" tabindex="-1" href="#清单-5-jstack-运行输出-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 5. jstack 运行输出 1</h3>
+<h3 id="user-content-清单-5-jstack-运行输出-1"><a class="heading-link" href="#清单-5-jstack-运行输出-1">清单 5. jstack 运行输出 1<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <pre><code>[root@facenode4 ~]# jstack -l 31274
 2015-01-29 12:40:27
 Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode):
@@ -1988,7 +1999,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode):
 
 JNI global references: 886
 </code></pre>
-<h3><a id="user-content-清单-6-jstack-运行输出片段-2" class="anchor" aria-hidden="true" tabindex="-1" href="#清单-6-jstack-运行输出片段-2"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 6. jstack 运行输出片段 2</h3>
+<h3 id="user-content-清单-6-jstack-运行输出片段-2"><a class="heading-link" href="#清单-6-jstack-运行输出片段-2">清单 6. jstack 运行输出片段 2<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <pre><code>Found one Java-level deadlock:
 =============================
 "north":
@@ -2031,7 +2042,7 @@ Java stack information for the threads listed above:
 
 Found 1 deadlock.
 </code></pre>
-<h1><a id="user-content-死锁解决方案" class="anchor" aria-hidden="true" tabindex="-1" href="#死锁解决方案"><span aria-hidden="true" class="octicon octicon-link"></span></a>死锁解决方案</h1>
+<h1 id="user-content-死锁解决方案"><a class="heading-link" href="#死锁解决方案">死锁解决方案<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
 <p>死锁是由四个必要条件导致的，所以一般来说，只要破坏这四个必要条件中的一个条件，死锁情况就应该不会发生。</p>
 <p>如果想要打破互斥条件，我们需要允许进程同时访问某些资源，这种方法受制于实际场景，不太容易实现条件；
 打破不可抢占条件，这样需要允许进程强行从占有者那里夺取某些资源，或者简单一点理解，占有资源的进程不能再申请占有其他资源，必须释放手上的资源之后才能发起申请，这个其实也很难找到适用场景；
@@ -2050,9 +2061,9 @@ Found 1 deadlock.
 </li>
 </ol>
 <p>其实即便是商业产品，依然会有很多死锁情况的发生，例如 MySQL 数据库，它也经常容易出现死锁案例。</p>
-<h2><a id="user-content-mysql-死锁情况解决方法" class="anchor" aria-hidden="true" tabindex="-1" href="#mysql-死锁情况解决方法"><span aria-hidden="true" class="octicon octicon-link"></span></a>MySQL 死锁情况解决方法</h2>
+<h2 id="user-content-mysql-死锁情况解决方法"><a class="heading-link" href="#mysql-死锁情况解决方法">MySQL 死锁情况解决方法<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
 <p>假设我们用 Show innodb status 检查引擎状态时发现了死锁情况，如清单 7 所示。</p>
-<h3><a id="user-content-清单-7-mysql-死锁" class="anchor" aria-hidden="true" tabindex="-1" href="#清单-7-mysql-死锁"><span aria-hidden="true" class="octicon octicon-link"></span></a>清单 7. MySQL 死锁</h3>
+<h3 id="user-content-清单-7-mysql-死锁"><a class="heading-link" href="#清单-7-mysql-死锁">清单 7. MySQL 死锁<span aria-hidden="true" class="octicon octicon-link"></span></a></h3>
 <pre><code>WAITING FOR THIS LOCK TO BE GRANTED:
 RECORD LOCKS space id 0 page no 843102 n bits 600 index `KEY_TSKTASK_MONTIME2` of table
         `dcnet_db/TSK_TASK` trx id 0 677833454 lock_mode X locks rec but not gap waiting
