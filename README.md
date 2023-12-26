@@ -11,6 +11,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | [WerWolv](https://github.com/WerWolv) | https://werwolv.net/ | 逆向工程师 Inspire |
 
 ## Recent
+- [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
@@ -20,7 +21,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
-- [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
 
 ## API
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
@@ -80,16 +80,21 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## Rust
+- [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 
 
 ## 就是玩
+- [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 - [Synergy 连接卡顿](https://github.com/bxb100/bxb100.github.io/issues/16)---2022-06-10
+<details><summary>MORE</summary>
+
 - [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
+</details>
 
 
 ## 摘录
