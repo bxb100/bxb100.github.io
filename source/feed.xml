@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 26 Dec 2023 13:11:03 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Dec 2023 13:15:01 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[记录一下 QNAP 的蓝牙使用体验]]></title>
                     <description><![CDATA[<p>tldr: QNAP 使用的 dbus 是 1.4，rs-dbus 使用的不兼容</p>
@@ -26,7 +26,16 @@
 <p>下载了 QNAP 的 toolchain<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup>，然后本地搞个虚拟机开始编译 1.14 版本的 dbus<sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup></p>
 <p>NAS 关了 dbus <code>sudo sh /etc/init.d/dbus.sh stop</code></p>
 <p>然后到 <code>/mnt/ext/opt/avahi0630/</code> 替换产出，重启 dbus，这时候项目是不报错了，但是 <code>bluetoothctl</code> block 住了，没法启动</p>
+<pre><code>/usr/lib/pkgconfig dbus-1.pc
+
+/mnt/ext/opt/avahi0630/usr/lib libdus*
+  /usr/lib 软链接
+
+/mnt/ext/opt/avahi0630/usr/sbin dbus*
+  /usr/sbin 软链接
+</code></pre>
 <p>结论：没成功</p>
+<p>PS: home assistant 好像也没人搞成功..</p>
 <section data-footnotes="">
 <ol>
 <li id="user-content-fn-1">
@@ -38,7 +47,7 @@
 </ol>
 </section>
 ]]></description>
-                    <pubDate>Tue, 26 Dec 2023 13:10:47 GMT</pubDate>
+                    <pubDate>Tue, 26 Dec 2023 13:14:43 GMT</pubDate>
                         <guid isPermaLink="false">/2023/12/42-记录一下_QNAP_的蓝牙使用体验</guid>
                 <link>/2023/12/42-记录一下_QNAP_的蓝牙使用体验</link>
                     <author><![CDATA[bxb100]]></author>

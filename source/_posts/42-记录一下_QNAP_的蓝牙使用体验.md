@@ -18,7 +18,19 @@ NAS 关了 dbus `sudo sh /etc/init.d/dbus.sh stop`
 
 然后到 `/mnt/ext/opt/avahi0630/` 替换产出，重启 dbus，这时候项目是不报错了，但是 `bluetoothctl` block 住了，没法启动
 
+```
+/usr/lib/pkgconfig dbus-1.pc
+
+/mnt/ext/opt/avahi0630/usr/lib libdus*
+  /usr/lib 软链接
+
+/mnt/ext/opt/avahi0630/usr/sbin dbus*
+  /usr/sbin 软链接
+```
+
 结论：没成功
+
+PS: home assistant 好像也没人搞成功..
 
 
 
