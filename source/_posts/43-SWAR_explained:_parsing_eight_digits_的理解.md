@@ -46,3 +46,8 @@ uint32_t parse_eight_digits(const unsigned char *chars) {
 ---
 
 ~~理解的过程中，把数值 `1000000ULL` 按照 10 进制的形式填到二进制里面，以为是 `0100 0000`~~ 😢 :(
+
+---
+
+<a id='issuecomment-1882698869'></a>
+从 https://github.com/gunnarmorling/1brc#running-the-challenge 那里看到的优化技巧
