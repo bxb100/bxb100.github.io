@@ -18,7 +18,69 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 26 Dec 2023 13:15:01 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 09 Jan 2024 09:22:36 GMT</lastBuildDate>
+            <item>
+                <title><![CDATA[SWAR explained: parsing eight digits 的理解]]></title>
+                    <description><![CDATA[<p>原文：<a href="https://lemire.me/blog/2022/01/21/swar-explained-parsing-eight-digits/" rel="nofollow">https://lemire.me/blog/2022/01/21/swar-explained-parsing-eight-digits/</a></p>
+<div class="highlight highlight-source-c"><pre><span class="pl-smi">uint32_t</span>  <span class="pl-en">parse_eight_digits_unrolled</span>(<span class="pl-smi">uint64_t</span> <span class="pl-s1">val</span>) {
+  <span class="pl-k">const</span> <span class="pl-smi">uint64_t</span> <span class="pl-s1">mask</span> <span class="pl-c1">=</span> <span class="pl-c1">0x000000FF000000FF</span>;
+  <span class="pl-k">const</span> <span class="pl-smi">uint64_t</span> <span class="pl-s1">mul1</span> <span class="pl-c1">=</span> <span class="pl-c1">0x000F424000000064</span>; <span class="pl-c">// 100 + (1000000ULL &lt;&lt; 32)</span>
+  <span class="pl-k">const</span> <span class="pl-smi">uint64_t</span> <span class="pl-s1">mul2</span> <span class="pl-c1">=</span> <span class="pl-c1">0x0000271000000001</span>; <span class="pl-c">// 1 + (10000ULL &lt;&lt; 32)</span>
+  <span class="pl-s1">val</span> <span class="pl-c1">-=</span> <span class="pl-c1">0x3030303030303030</span>;
+  <span class="pl-s1">val</span> <span class="pl-c1">=</span> (<span class="pl-s1">val</span> <span class="pl-c1">*</span> <span class="pl-c1">10</span>) <span class="pl-c1">+</span> (<span class="pl-s1">val</span> &gt;&gt; <span class="pl-c1">8</span>); <span class="pl-c">// val = (val * 2561) &gt;&gt; 8;</span>
+  <span class="pl-s1">val</span> <span class="pl-c1">=</span> (((<span class="pl-s1">val</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">mask</span>) <span class="pl-c1">*</span> <span class="pl-s1">mul1</span>) <span class="pl-c1">+</span> (((<span class="pl-s1">val</span> &gt;&gt; <span class="pl-c1">16</span>) <span class="pl-c1">&amp;</span> <span class="pl-s1">mask</span>) <span class="pl-c1">*</span> <span class="pl-s1">mul2</span>)) &gt;&gt; <span class="pl-c1">32</span>;
+  <span class="pl-k">return</span> <span class="pl-s1">val</span>;
+}</pre></div>
+<ul>
+<li>
+<p>假设字符串是 <code>12345678</code> 转为小端的 bytes 是 <code>\x38 \x37 \x36 \x35 \x34 \x33 \x32 \x31</code></p>
+</li>
+<li>
+<p><code>val -= 0x3030303030303030</code> 则 val 的值为 <code>0x0807060504030201</code></p>
+</li>
+<li>
+<p><code>(val * 10) + (val &gt;&gt; 8)</code> 构造成 bytes 为</p>
+<ul>
+<li>1th byte: <code>10 * b1 + b2</code> (为了讨论的更为通用，采用原文形式 b1,b2,b3,b4,b5,b6,b7,b8)</li>
+<li>3th byte: <code>10 * b3 + b4</code>
+</li>
+<li>5th byte: <code>10 * b5 + b6</code>
+</li>
+<li>7th byte: <code>10 * b3 + b4</code>
+</li>
+</ul>
+</li>
+<li>
+<p><code>((val &amp; mask) * mul1)</code></p>
+<ul>
+<li>
+<code>val &amp; mask</code> 只保留 1th, 5th byte</li>
+<li>
+<code>* mul1</code> 可以通过分配率的形式来理解，<code>1th byte * 1000000ULL * 2^32</code> 就是 <code>1th byte * 1000000ULL</code>, 通同理 <code>5th * 100</code>, 二者相加的和存放在 5th byte（这里还要注意这里可以存储 32 位，而这里最大也只有 255 * 10^6, 所以也防止溢出）</li>
+</ul>
+</li>
+<li>
+<p><code>(((val &gt;&gt; 16) &amp; mask) * mul2)</code> 同理，在 5th byte 上加上了 <code>(10 * b3 + b4) * 10000ULL + 10 * b7 + b8</code></p>
+</li>
+<li>
+<p>最后第 5th byte 也就是 32 位开始的和就是 <code>10^6*(10 * b1 + b2) + 10^2*(10 * b5 + b6) + 10^4*(10 * b3 + b4) + 10^0*(10 * b3 + b4)</code> 也就是如下所示的累加和</p>
+</li>
+</ul>
+<div class="highlight highlight-source-c"><pre><span class="pl-smi">uint32_t</span> <span class="pl-en">parse_eight_digits</span>(<span class="pl-k">const</span> <span class="pl-smi">unsigned <span class="pl-smi">char</span></span> <span class="pl-c1">*</span><span class="pl-s1">chars</span>) {
+  <span class="pl-smi">uint32_t</span> <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">chars</span>[<span class="pl-c1">0</span>] <span class="pl-c1">-</span> <span class="pl-c1">'0'</span>;
+  <span class="pl-k">for</span> (<span class="pl-smi">size_t</span> <span class="pl-s1">j</span> <span class="pl-c1">=</span> <span class="pl-c1">1</span>; <span class="pl-s1">j</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">8</span>; <span class="pl-s1">j</span><span class="pl-c1">++</span>)
+    <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> <span class="pl-c1">*</span> <span class="pl-c1">10</span> <span class="pl-c1">+</span> (<span class="pl-s1">chars</span>[<span class="pl-s1">j</span>] <span class="pl-c1">-</span> <span class="pl-c1">'0'</span>);
+  <span class="pl-k">return</span> <span class="pl-s1">x</span>;
+}</pre></div>
+<hr>
+<p><del>理解的过程中，把数值 <code>1000000ULL</code> 按照 10 进制的形式填到二进制里面，以为是 <code>0100 0000</code></del> 😢 :(</p>
+]]></description>
+                    <pubDate>Tue, 09 Jan 2024 09:22:17 GMT</pubDate>
+                        <guid isPermaLink="false">/2024/01/43-SWAR_explained:_parsing_eight_digits_的理解</guid>
+                <link>/2024/01/43-SWAR_explained:_parsing_eight_digits_的理解</link>
+                    <author><![CDATA[bxb100]]></author>
+                        <category>读后感</category>
+            </item>
             <item>
                 <title><![CDATA[记录一下 QNAP 的蓝牙使用体验]]></title>
                     <description><![CDATA[<p>tldr: QNAP 使用的 dbus 是 1.4，rs-dbus 使用的不兼容</p>
@@ -319,9 +381,9 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 <h2><a id="user-content-总结" class="anchor" aria-hidden="true" tabindex="-1" href="#总结"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h2>
 <p>麦当劳想要构建统一的事件平台来管理公司内不同生产者和消费者之间的通信.</p>
 <p>他们希望这个平台是可升缩的, 高可用, 性能好, 安全和可靠的. 他们还希望在如何完成错误处理、监控和恢复等事情上保持一致.</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67"><img src="https://camo.githubusercontent.com/f5f73fb6188f5738aa628ff9405eddcbef2d5ce222cf0cba74f7c3d9bfb84c67/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67" alt="f1" data-canonical-src="https://media.beehiiv.com/cdn-cgi/image/format=auto,onerror=redirect/uploads/asset/file/dc55925e-ba21-478b-961a-fa4e11d36b88/1_rnlk56DN7of_aY7uPfZjcQ.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2171df4a03d379b983ccf03f4aded1c547e73b3ae226f0ddf1bee47f0c52891e/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67"><img src="https://camo.githubusercontent.com/2171df4a03d379b983ccf03f4aded1c547e73b3ae226f0ddf1bee47f0c52891e/68747470733a2f2f6d656469612e626565686969762e636f6d2f63646e2d6367692f696d6167652f666f726d61743d6175746f2c6f6e6572726f723d72656469726563742f75706c6f6164732f61737365742f66696c652f64633535393235652d626132312d343738622d393631612d6661346531316433366238382f315f726e6c6b3536444e376f665f6159377550665a6a63512e706e67" alt="f1" data-canonical-src="https://media.beehiiv.com/cdn-cgi/image/format=auto,onerror=redirect/uploads/asset/file/dc55925e-ba21-478b-961a-fa4e11d36b88/1_rnlk56DN7of_aY7uPfZjcQ.png" style="max-width: 100%;"></a></p>
 <p>这是他们为了处理这些构建的统一事件平台的架构图:</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c6c04fc0fc40388ae060698ac32416d8fb935b4751669539ff287e5498c6905f/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270"><img src="https://camo.githubusercontent.com/c6c04fc0fc40388ae060698ac32416d8fb935b4751669539ff287e5498c6905f/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270" alt="f2" data-canonical-src="https://miro.medium.com/max/1400/1*gCOnmHq4jXNjSX8Jp0NgOA.webp" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/51ccc731e976cb6dcdecec828a8dcc15344199263f6341d6941317c97358b9e9/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270"><img src="https://camo.githubusercontent.com/51ccc731e976cb6dcdecec828a8dcc15344199263f6341d6941317c97358b9e9/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a67434f6e6d4871346a584e6a5358384a70304e674f412e77656270" alt="f2" data-canonical-src="https://miro.medium.com/max/1400/1*gCOnmHq4jXNjSX8Jp0NgOA.webp" style="max-width: 100%;"></a></p>
 <ul>
 <li>
 <strong>Event Broker</strong>: 它是平台的核心, 负责管理生产者和消费者之间的通信. 麦当劳使用 AWS, 因此他们使用 AWS Managed Streaming for Kafka (MSK) 作为事件代理.</li>
@@ -344,7 +406,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 </ol>
 <h2><a id="user-content-schema-registry" class="anchor" aria-hidden="true" tabindex="-1" href="#schema-registry"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schema Registry</h2>
 <p>为了确保数据完整性, 麦当劳依靠模式注册表对事件平台发布和消费的所有事件强制执行数据契约.</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270"><img src="https://camo.githubusercontent.com/8f1cddbc07599a742d819338c0feeb091c06dbf5b83ea0daf0622e0d23630e45/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270" alt="f3" data-canonical-src="https://miro.medium.com/max/1400/1*LvV2J6pcNdSjRf0gSA4yAw.webp" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6260af6c7759b1c3aa8db9e8f0379c6e49093180e933ca3026d62596cbecc7d2/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270"><img src="https://camo.githubusercontent.com/6260af6c7759b1c3aa8db9e8f0379c6e49093180e933ca3026d62596cbecc7d2/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313430302f312a4c7656324a3670634e64536a526630675341347941772e77656270" alt="f3" data-canonical-src="https://miro.medium.com/max/1400/1*LvV2J6pcNdSjRf0gSA4yAw.webp" style="max-width: 100%;"></a></p>
 <p>当生产者发布消息, 消息在开头包含版本的字符信息.</p>
 <p>之后, 当消息被消费时, 消费者可以通过字符来决定什么版本的模式应当被遵循.</p>
 <h2><a id="user-content-基于域的分片和自动缩放" class="anchor" aria-hidden="true" tabindex="-1" href="#基于域的分片和自动缩放"><span aria-hidden="true" class="octicon octicon-link"></span></a>基于域的分片和自动缩放</h2>
