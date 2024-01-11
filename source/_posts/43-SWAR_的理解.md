@@ -114,4 +114,11 @@ new String(longToBytes(7286898317290176512L))
 当然后面的代码并没有使用这个方式获取 string，而是直接通过 `UNSAFE.getByte` 直接获取内存中映射的值
 </details>
 
+后面还有一段代码, 也是一个技巧，由前文可知某一个 byte 是 `0x80`，其余为 0。`>> 3` 就是将 0 的个数转为 byte 数，由此即可知分割了多少个 byte
+
+```java
+
+final int index = Long.numberOfTrailingZeros(mask) >> 3;
+
+```
 
