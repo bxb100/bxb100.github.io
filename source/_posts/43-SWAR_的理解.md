@@ -122,3 +122,9 @@ final int index = Long.numberOfTrailingZeros(mask) >> 3;
 
 ```
 
+
+---
+
+<a id='issuecomment-1886252447'></a>
+推荐书 [算法心得](https://www.amazon.com/Hackers-Delight-2nd-Henry-Warren/dp/0321842685)
+
