@@ -18,7 +18,7 @@
                     <title><![CDATA[John Bi's Blog]]></title>
                 <link>https://bxb100.github.io</link>
             </image>
-        <lastBuildDate>Tue, 09 Jan 2024 09:28:13 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jan 2024 03:55:20 GMT</lastBuildDate>
             <item>
                 <title><![CDATA[SWAR explained: parsing eight digits 的理解]]></title>
                     <description><![CDATA[<p>原文：<a href="https://lemire.me/blog/2022/01/21/swar-explained-parsing-eight-digits/" rel="nofollow">https://lemire.me/blog/2022/01/21/swar-explained-parsing-eight-digits/</a></p>
@@ -75,7 +75,7 @@
 <hr>
 <p><del>理解的过程中，把数值 <code>1000000ULL</code> 按照 10 进制的形式填到二进制里面，以为是 <code>0100 0000</code></del> 😢 :(</p>
 ]]></description>
-                    <pubDate>Tue, 09 Jan 2024 09:28:00 GMT</pubDate>
+                    <pubDate>Thu, 11 Jan 2024 03:55:03 GMT</pubDate>
                         <guid isPermaLink="false">/2024/01/43-SWAR_explained:_parsing_eight_digits_的理解</guid>
                 <link>/2024/01/43-SWAR_explained:_parsing_eight_digits_的理解</link>
                     <author><![CDATA[bxb100]]></author>

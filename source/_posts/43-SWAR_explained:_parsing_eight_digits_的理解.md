@@ -51,3 +51,67 @@ uint32_t parse_eight_digits(const unsigned char *chars) {
 
 <a id='issuecomment-1882698869'></a>
 从 https://github.com/gunnarmorling/1brc#running-the-challenge 那里看到的优化技巧
+
+---
+
+<a id='issuecomment-1886184937'></a>
+https://github.com/gunnarmorling/1brc/blob/085168a0b3c73b64409afcf58a1f0a67f746a30a/src/main/java/dev/morling/onebrc/CalculateAverage_royvanrijn.java#L140C11-L141
+
+`Salt Lake City;10.3` 的 bytes:
+```
+byte[19] { 83, 97, 108, 116, 32, 76, 97, 107, 101, 32, 67, 105, 116, 121, 59, 49, 48, 46, 51 }
+```
+
+按 Long 64bits 来分割的话，为(这里都是**大端**，后面使用需要 `Long.reverseBytes`）：
+
+```
+// 83, 97, 108, 116, 32, 76, 97, 107
+// 6008202623902835051L hex: 0x53616C74204C616B
+// 101, 32, 67, 105, 116, 121, 59, 49
+// 7286898317290191665L hex: 0x6520436974793B31
+// 48, 46, 51
+// 0x302E33L
+```
+
+可以看到 
+
+```java
+final long match = word ^ 0x3B3B3B3B3B3B3B3BL;
+long mask = ((match - 0x0101010101010101L) & ~match) & 0x8080808080808080L;
+```
+主要是判断 bytes 里面有没有 `;` (0x3B)，如果有的话，高位为 1 剩余都为 0 
+
+```java
+final long partialWord = word & ((mask >> 7) - 1);
+```
+这里的技巧是右移 7 位再减 1，等价于高位后 bytes 均为 1，那么这里就是分割 `;` 后面 bytes 的值（这里是小端计算！！）
+
+从上面的举例来说，也就是 `101, 32, 67, 105, 116, 121, 59, 49` bytes 走这个逻辑：
+
+64bits Long 值为 `7286898317290176512L` 也就是 `0x6520436974790000`
+
+`mask` 值为 `0x80000000000000`
+
+`((mask >> 7) - 1)` 值就是 `0xFFFFFFFFFFFF`
+
+所以最后得到 `7286898317290176512L` 即 `e City\000\000`
+
+<details>
+<summary>转换为 string 的代码</summary>
+
+
+这里也挺搞笑的，小端进去，String 按大端转，最后结果是可读的 ;)
+
+```java
+public byte[] longToBytes(long x) {
+    ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
+    buffer.putLong(x);
+    return buffer.array();
+}
+
+new String(longToBytes(7286898317290176512L))
+```
+当然后面的代码并没有使用这个方式获取 string，而是直接通过 `UNSAFE.getByte` 直接获取内存中映射的值
+</details>
+
+
