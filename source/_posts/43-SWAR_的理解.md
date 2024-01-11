@@ -1,5 +1,5 @@
 ---
-title: SWAR explained  parsing eight digits 的理解
+title: SWAR 的理解
 date: 1704792125000
 tags:
 - 读后感

@@ -11,7 +11,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | [WerWolv](https://github.com/WerWolv) | https://werwolv.net/ | 逆向工程师 Inspire |
 
 ## Recent
-- [SWAR explained: parsing eight digits 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
+- [SWAR 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
@@ -107,7 +107,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 
 ## 读后感
-- [SWAR explained: parsing eight digits 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
+- [SWAR 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
 - [安迪·威尔-挽救计划](https://github.com/bxb100/bxb100.github.io/issues/4)---2021-12-27
 
 ## TODO
