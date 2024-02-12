@@ -1,3 +1,4 @@
+
 ---
 title: Java 程序死锁问题原理及解决方案
 pubDatetime: 2021-12-30T11:27:19.000Z
@@ -5,16 +6,15 @@ modDatetime: 2021-12-30T11:37:25.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/6
 tags:
   - Archive
+
 ---
 
-    > 原文: https://www.ibm.com/developerworks/cn/java/j-lo-deadlock/
-
+> 原文: https://www.ibm.com/developerworks/cn/java/j-lo-deadlock/
 ---
 
 Java 语言通过 synchronized 关键字来保证原子性，这是因为每一个 Object 都有一个隐含的锁，这个也称作监视器对象。在进入 synchronized 之前自动获取此内部锁，而一旦离开此方式，无论是完成或者中断都会自动释放锁。显然这是一个独占锁，每个锁请求之间是互斥的。相对于众多高级锁 (Lock/ReadWriteLock 等)，synchronized 的代价都比后者要高。但是 synchronzied 的语法比较简单，而且也比较容易使用和理解。Lock 一旦调用了 lock() 方法获取到锁而未正确释放的话很有可能造成死锁，所以 Lock 的释放操作总是跟在 finally 代码块里面，这在代码结构上也是一次调整和冗余。Lock 的实现已经将硬件资源用到了极致，所以未来可优化的空间不大，除非硬件有了更高的性能，但是 synchronized 只是规范的一种实现，这在不同的平台不同的硬件还有很高的提升空间，未来 Java 锁上的优化也会主要在这上面。既然 synchronzied 都不可能避免死锁产生，那么死锁情况会是经常容易出现的错误，下面具体描述死锁发生的原因及解决方法。
 
 # 死锁描述
-
 死锁是操作系统层面的一个错误，是进程死锁的简称，最早在 1965 年由 Dijkstra 在研究银行家算法时提出的，它是计算机操作系统乃至整个并发程序设计领域最难处理的问题之一。
 
 事实上，计算机世界有很多事情需要多线程方式去解决，因为这样才能最大程度上利用资源，才能体现出计算的高效。但是，实际上来说，计算机系统中有很多一次只能由一个进程使用的资源的情况，例如打印机，同时只能有一个进程控制它。在多通道程序设计环境中，若干进程往往要共享这类资源，而且一个进程所需要的资源还很有可能不止一个。因此，就会出现若干进程竞争有限资源，又推进顺序不当，从而构成无限期循环等待的局面。我们称这种状态为死锁。简单一点描述，死锁是指多个进程循环等待它方占有的资源而无限期地僵持下去的局面。很显然，如果没有外力的作用，那么死锁涉及到的各个进程都将永远处于封锁状态。
@@ -22,7 +22,6 @@ Java 语言通过 synchronized 关键字来保证原子性，这是因为每一�
 系统发生死锁现象不仅浪费大量的系统资源，甚至导致整个系统崩溃，带来灾难性后果。所以，对于死锁问题在理论上和技术上都必须予以高度重视。
 
 ## 银行家算法
-
 一个银行家如何将一定数目的资金安全地借给若干个客户，使这些客户既能借到钱完成要干的事，同时银行家又能收回全部资金而不至于破产。银行家就像一个操作系统，客户就像运行的进程，银行家的资金就是系统的资源。
 
 银行家算法需要确保以下四点：
@@ -31,26 +30,25 @@ Java 语言通过 synchronized 关键字来保证原子性，这是因为每一�
 顾客可以分期贷款, 但贷款的总数不能超过最大需求量；
 当银行家现有的资金不能满足顾客尚需的贷款数额时，对顾客的贷款可推迟支付，但总能使顾客在有限的时间里得到贷款；
 当顾客得到所需的全部资金后，一定能在有限的时间里归还所有的资金。
-
 ### 清单 1. 银行家算法实现
 
 ```java
 /*一共有５个进程需要请求资源，有３类资源*/
 public class BankDemo {
-    // 每个进程所需要的最大资源数
+    // 每个进程所需要的最大资源数 
     public static int[][] MAX = {{7, 5, 3}, {3, 2, 2}, {9, 0, 2},
             {2, 2, 2}, {4, 3, 3}};
-    // 系统拥有的初始资源数
+    // 系统拥有的初始资源数 
     public static int[] AVAILABLE = {10, 5, 7};
-    // 系统已给每个进程分配的资源数
+    // 系统已给每个进程分配的资源数 
     public static int[][] ALLOCATION = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0},
             {0, 0, 0}, {0, 0, 0}};
-    // 每个进程还需要的资源数
+    // 每个进程还需要的资源数 
     public static int[][] NEED = {{7, 5, 3}, {3, 2, 2}, {9, 0, 2},
             {2, 2, 2}, {4, 3, 3}};
-    // 每次申请的资源数
+    // 每次申请的资源数 
     public static int[] Request = {0, 0, 0};
-    // 进程数与资源数
+    // 进程数与资源数 
     public static int M = 5, N = 3;
     int FALSE = 0;
     int TRUE = 1;
@@ -81,7 +79,7 @@ public class BankDemo {
         }
     }
 
-    // 分配资源，并重新更新各种状态
+    // 分配资源，并重新更新各种状态 
     public void changdata(int k) {
         int j;
         for (j = 0; j < N; j++) {
@@ -91,7 +89,7 @@ public class BankDemo {
         }
     }
 
- // 回收资源，并重新更新各种状态
+ // 回收资源，并重新更新各种状态 
     public void rstordata(int k) {
         int j;
         for (j = 0; j < N; j++) {
@@ -101,7 +99,7 @@ public class BankDemo {
         }
     }
 
- // 释放资源
+ // 释放资源 
     public void free(int k) {
         for (int j = 0; j < N; j++) {
             AVAILABLE[j] = AVAILABLE[j] + ALLOCATION[k][j];
@@ -121,19 +119,19 @@ public class BankDemo {
             return 0;
     }
 
-    // 检查安全性函数
+    // 检查安全性函数 
     //所以银行家算法其核心是：保证银行家系统的资源数至少不小于一个客户的所需要的资源数。在安全性检查函数 chkerr() 上由这个方法来实现
     //这个循环来进行核心判断，从而完成了银行家算法的安全性检查工作。
     public int chkerr(int s) {
         int WORK;
-        int[] FINISH = new int[M], temp = new int[M];// 保存临时的安全进程序列
+        int[] FINISH = new int[M], temp = new int[M];// 保存临时的安全进程序列 
         int i, j, k = 0;
         for (i = 0; i < M; i++)
             FINISH[i] = FALSE;
         for (j = 0; j < N; j++) {
-            WORK = AVAILABLE[j]; // 第 j 个资源可用数
+            WORK = AVAILABLE[j]; // 第 j 个资源可用数 
             i = s;
-            // 判断第 i 个进程是否满足条件
+            // 判断第 i 个进程是否满足条件 
             while (i < M) {
                 if (FINISH[i] == FALSE && NEED[i][j] <= WORK) {
                     WORK = WORK + ALLOCATION[i][j];
@@ -164,7 +162,6 @@ public class BankDemo {
 ```
 
 ## 死锁示例
-
 死锁问题是多线程特有的问题，它可以被认为是线程间切换消耗系统性能的一种极端情况。在死锁时，线程间相互等待资源，而又不释放自身的资源，导致无穷无尽的等待，其结果是系统任务永远无法执行完成。死锁问题是在多线程开发中应该坚决避免和杜绝的问题。
 
 一般来说，要出现死锁问题需要满足以下条件：
@@ -179,7 +176,6 @@ public class BankDemo {
 我们先来看一个示例，前面说过，死锁是两个甚至多个线程被永久阻塞时的一种运行局面，这种局面的生成伴随着至少两个线程和两个或者多个资源。代码清单 2 所示的示例中，我们编写了一个简单的程序，它将会引起死锁发生，然后我们就会明白如何分析它。
 
 ### 清单 2. 死锁示例
-
 ```java
 public class ThreadDeadlock {
 
@@ -242,7 +238,6 @@ class SyncThread implements Runnable {
 在上面的程序中同步线程正完成 Runnable 的接口，它工作的是两个对象，这两个对象向对方寻求死锁而且都在使用同步阻塞。在主函数中，我使用了三个为同步线程运行的线程，而且在其中每个线程中都有一个可共享的资源。这些线程以向第一个对象获取封锁这种方式运行。但是当它试着向第二个对象获取封锁时，它就会进入等待状态，因为它已经被另一个线程封锁住了。这样，在线程引起死锁的过程中，就形成了一个依赖于资源的循环。当我执行上面的程序时，就产生了输出，但是程序却因为死锁无法停止。输出如清单 3 所示。
 
 清单 3. 清单 2 运行输出
-
 ```
 t1 acquiring lock on java.lang.Object@1dd3812
 t1 acquired lock on java.lang.Object@1dd3812
@@ -257,11 +252,9 @@ t2 acquiring lock on java.lang.Object@1aa9f99
 在此我们可以清楚地在输出结果中辨认出死锁局面，但是在我们实际所用的应用中，发现死锁并将它排除是非常难的。
 
 # 死锁情况诊断
-
 JVM 提供了一些工具可以来帮助诊断死锁的发生，如下面程序清单 4 所示，我们实现了一个死锁，然后尝试通过 jstack 命令追踪、分析死锁发生。
 
 ### 清单 4. 死锁代码
-
 ```java
 iimport java.util.concurrent.locks.ReentrantLock;
 
@@ -340,7 +333,6 @@ public class DeadLock extends Thread {
 jstack 可用于导出 Java 应用程序的线程堆栈，-l 选项用于打印锁的附加信息。我们运行 jstack 命令，输出入清单 5 和 6 所示，其中清单 5 里面可以看到线程处于运行状态，代码中调用了拥有锁投票、定时锁等候和可中断锁等候等特性的 ReentrantLock 锁机制。清单 6 直接打印出出现死锁情况，报告 north 和 sourth 两个线程互相等待资源，出现了死锁。
 
 ### 清单 5. jstack 运行输出 1
-
 ```
 [root@facenode4 ~]# jstack -l 31274
 2015-01-29 12:40:27
@@ -451,51 +443,50 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode):
  Locked ownable synchronizers:
  - None
 
-"VM Thread" prio=10 tid=0x00007f6da40a6000 nid=0x7a3e runnable
+"VM Thread" prio=10 tid=0x00007f6da40a6000 nid=0x7a3e runnable 
 
-"GC task thread#0 (ParallelGC)" prio=10 tid=0x00007f6da4019800 nid=0x7a2c runnable
+"GC task thread#0 (ParallelGC)" prio=10 tid=0x00007f6da4019800 nid=0x7a2c runnable 
 
-"GC task thread#1 (ParallelGC)" prio=10 tid=0x00007f6da401b000 nid=0x7a2d runnable
+"GC task thread#1 (ParallelGC)" prio=10 tid=0x00007f6da401b000 nid=0x7a2d runnable 
 
-"GC task thread#2 (ParallelGC)" prio=10 tid=0x00007f6da401d000 nid=0x7a2e runnable
+"GC task thread#2 (ParallelGC)" prio=10 tid=0x00007f6da401d000 nid=0x7a2e runnable 
 
-"GC task thread#3 (ParallelGC)" prio=10 tid=0x00007f6da401f000 nid=0x7a2f runnable
+"GC task thread#3 (ParallelGC)" prio=10 tid=0x00007f6da401f000 nid=0x7a2f runnable 
 
-"GC task thread#4 (ParallelGC)" prio=10 tid=0x00007f6da4020800 nid=0x7a30 runnable
+"GC task thread#4 (ParallelGC)" prio=10 tid=0x00007f6da4020800 nid=0x7a30 runnable 
 
-"GC task thread#5 (ParallelGC)" prio=10 tid=0x00007f6da4022800 nid=0x7a31 runnable
+"GC task thread#5 (ParallelGC)" prio=10 tid=0x00007f6da4022800 nid=0x7a31 runnable 
 
-"GC task thread#6 (ParallelGC)" prio=10 tid=0x00007f6da4024800 nid=0x7a32 runnable
+"GC task thread#6 (ParallelGC)" prio=10 tid=0x00007f6da4024800 nid=0x7a32 runnable 
 
-"GC task thread#7 (ParallelGC)" prio=10 tid=0x00007f6da4026000 nid=0x7a33 runnable
+"GC task thread#7 (ParallelGC)" prio=10 tid=0x00007f6da4026000 nid=0x7a33 runnable 
 
-"GC task thread#8 (ParallelGC)" prio=10 tid=0x00007f6da4028000 nid=0x7a34 runnable
+"GC task thread#8 (ParallelGC)" prio=10 tid=0x00007f6da4028000 nid=0x7a34 runnable 
 
-"GC task thread#9 (ParallelGC)" prio=10 tid=0x00007f6da402a000 nid=0x7a35 runnable
+"GC task thread#9 (ParallelGC)" prio=10 tid=0x00007f6da402a000 nid=0x7a35 runnable 
 
-"GC task thread#10 (ParallelGC)" prio=10 tid=0x00007f6da402b800 nid=0x7a36 runnable
+"GC task thread#10 (ParallelGC)" prio=10 tid=0x00007f6da402b800 nid=0x7a36 runnable 
 
-"GC task thread#11 (ParallelGC)" prio=10 tid=0x00007f6da402d800 nid=0x7a37 runnable
+"GC task thread#11 (ParallelGC)" prio=10 tid=0x00007f6da402d800 nid=0x7a37 runnable 
 
-"GC task thread#12 (ParallelGC)" prio=10 tid=0x00007f6da402f800 nid=0x7a38 runnable
+"GC task thread#12 (ParallelGC)" prio=10 tid=0x00007f6da402f800 nid=0x7a38 runnable 
 
-"GC task thread#13 (ParallelGC)" prio=10 tid=0x00007f6da4031000 nid=0x7a39 runnable
+"GC task thread#13 (ParallelGC)" prio=10 tid=0x00007f6da4031000 nid=0x7a39 runnable 
 
-"GC task thread#14 (ParallelGC)" prio=10 tid=0x00007f6da4033000 nid=0x7a3a runnable
+"GC task thread#14 (ParallelGC)" prio=10 tid=0x00007f6da4033000 nid=0x7a3a runnable 
 
-"GC task thread#15 (ParallelGC)" prio=10 tid=0x00007f6da4035000 nid=0x7a3b runnable
+"GC task thread#15 (ParallelGC)" prio=10 tid=0x00007f6da4035000 nid=0x7a3b runnable 
 
-"GC task thread#16 (ParallelGC)" prio=10 tid=0x00007f6da4036800 nid=0x7a3c runnable
+"GC task thread#16 (ParallelGC)" prio=10 tid=0x00007f6da4036800 nid=0x7a3c runnable 
 
-"GC task thread#17 (ParallelGC)" prio=10 tid=0x00007f6da4038800 nid=0x7a3d runnable
+"GC task thread#17 (ParallelGC)" prio=10 tid=0x00007f6da4038800 nid=0x7a3d runnable 
 
-"VM Periodic Task Thread" prio=10 tid=0x00007f6da40dd000 nid=0x7a45 waiting on condition
+"VM Periodic Task Thread" prio=10 tid=0x00007f6da40dd000 nid=0x7a45 waiting on condition 
 
 JNI global references: 886
 ```
 
 ### 清单 6. jstack 运行输出片段 2
-
 ```
 Found one Java-level deadlock:
 =============================
@@ -541,7 +532,6 @@ Found 1 deadlock.
 ```
 
 # 死锁解决方案
-
 死锁是由四个必要条件导致的，所以一般来说，只要破坏这四个必要条件中的一个条件，死锁情况就应该不会发生。
 
 如果想要打破互斥条件，我们需要允许进程同时访问某些资源，这种方法受制于实际场景，不太容易实现条件；
@@ -559,17 +549,15 @@ Found 1 deadlock.
 其实即便是商业产品，依然会有很多死锁情况的发生，例如 MySQL 数据库，它也经常容易出现死锁案例。
 
 ## MySQL 死锁情况解决方法
-
 假设我们用 Show innodb status 检查引擎状态时发现了死锁情况，如清单 7 所示。
 
 ### 清单 7. MySQL 死锁
-
 ```
 WAITING FOR THIS LOCK TO BE GRANTED:
 RECORD LOCKS space id 0 page no 843102 n bits 600 index `KEY_TSKTASK_MONTIME2` of table
         `dcnet_db/TSK_TASK` trx id 0 677833454 lock_mode X locks rec but not gap waiting
 Record lock, heap no 395 PHYSICAL RECORD: n_fields 3; compact format; info bits 0
-0: len 8; hex 8000000000000425; asc %;; 1: len 8; hex 800012412c66d29c;
+0: len 8; hex 8000000000000425; asc %;; 1: len 8; hex 800012412c66d29c; 
                     asc A,f ;; 2: len 8; hex 800000000097629c; asc b ;;
 
 *** WE ROLL BACK TRANSACTION (1)

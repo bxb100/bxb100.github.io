@@ -1,3 +1,4 @@
+
 ---
 title: Dropover 自定义操作的一些 Tips
 pubDatetime: 2022-01-18T13:46:06.000Z
@@ -5,10 +6,10 @@ modDatetime: 2022-07-01T17:19:03.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/8
 tags:
   - Horizon
+
 ---
 
-    1. 放在 `Application Scripts` 文件夹时候注意给**权限,** 否则会报格式异常错误
-
+1. 放在 `Application Scripts` 文件夹时候注意给**权限,** 否则会报格式异常错误
 2. 估计作者调用 unix script 的时候没有给其它 path 的执行环境, 导致只能用 `user/bin` 下面的命令, 类似 `execve` ? （不过这里可以用全路径先用着）
 3. 如果没有输出有的时候就是 `2` 导致的原因
 
@@ -30,7 +31,6 @@ https://gist.github.com/bxb100/4cdfa1b52999ac491b21fd9e1803f58a
 
 <a id='issuecomment-1172560293'></a>
 设置第一张图片为壁纸
-
 ```shell
-osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$1\" as POSIX file"
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$1\" as POSIX file" 
 ```

@@ -1,3 +1,4 @@
+
 ---
 title: How to use FluentBit multiline
 pubDatetime: 2022-04-17T04:44:09.000Z
@@ -5,15 +6,15 @@ modDatetime: 2022-04-17T08:01:33.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/15
 tags:
   - DEV
+
 ---
 
-    One day, my friend asked a question about how to use [fluentBit ](https://fluentbit.io/) (It's popular in k8s [^1]) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.
+One day, my friend asked a question about how to use [fluentBit ](https://fluentbit.io/) (It's popular in k8s [^1]) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.
 
 ![Flow](https://user-images.githubusercontent.com/20685961/163699255-57467f29-4d24-4948-aa27-62aa8d3e9b75.png)
-
 <p align="center"><em>The config visualizes</em></p>
 
-Usually, the log file pattern seems unified, it looks like
+Usually, the log file pattern seems unified, it looks like 
 
 `2022-04-17 03:10:42.381  INFO 28420 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...`
 
@@ -30,6 +31,7 @@ rule         "cont"          "/^\s+at.*/"                      "cont"
 <img src="https://user-images.githubusercontent.com/20685961/163700092-d1875099-1775-4c9a-8926-6fa7b6d0b9d0.png">
 <p align="center"><em>Each line pipeline</em></p>
 </p>
+
 
 ```log
 2022-04-17 03:10:43.578 ERROR 28420 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
@@ -57,25 +59,21 @@ java.lang.RuntimeException: cs
 But how to? The official Doc is good, but in this case, in the default spring logging pattern, log message with break-line, and, in Windows, it's `\r\n`, Me using windows, so be an attention
 
 So, collusion below (remember when the up satisfied that one can be execute):
-
 1. The start line is simple `(\d{4}-\d{2}-\d{2}\s\d+\:\d+\:\d+.\d+)(.*)` , [see](https://rubular.com/r/48Q24T9wXBsle9)
 2. next is tricky, [see](https://rubular.com/r/YNoxsscZcVtlbY)
-
-- `\r\n`
-- `\s` + `name: default`
-
+  * `\r\n`
+  * `\s` + `name: default`
 3. and the next, loop `3`, [see](https://rubular.com/r/NXxvOGLOyThUzm)
-
-- `\s` + `...]`
-- `xxx.xxx.xxException`
-- `\s` + `at XXXX`
+  * `\s` + `...]`
+  * `xxx.xxx.xxException`
+  * `\s` + `at XXXX`
 
 In the end, the exception snippet will produce a single line, you can use filter to exclude this.
 
 gist: https://gist.github.com/bxb100/de46e5f708d03d509430d4767806fb14
 
-## Other thing
 
+## Other thing
 Using docker needs packing by yourself [^4], don't forget it should with ES under same network [^5]
 
 1. build an image
@@ -99,8 +97,18 @@ ADD fluent-bit.conf /fluent-bit/etc/
 If you are missing `cont2` rule, the ES log will trigger exception like single document, it's not combined with log message
 
 ![image](https://user-images.githubusercontent.com/20685961/163700773-a1c6520b-4830-4700-ad19-0d100b72db60.png)
-
 <p align="center"><em>Obviously It's not my wanted type</em></p>
+
+
+
+
+
+
+
+
+
+
+
 
 [^1]: https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7 fluent-filebeat-comparison
 [^2]: https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing

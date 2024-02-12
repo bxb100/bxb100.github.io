@@ -1,3 +1,4 @@
+
 ---
 title: 使用 N_m3u8DL-CLI 简化下载 m3u8 流程
 pubDatetime: 2022-04-04T03:52:27.000Z
@@ -5,11 +6,12 @@ modDatetime: 2022-10-13T11:10:23.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/13
 tags:
   - uncategorized
+
 ---
 
-    [N_m3u8DL-CLI](https://github.com/nilaoda/N_m3u8DL-CLI) 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载
+[N_m3u8DL-CLI](https://github.com/nilaoda/N_m3u8DL-CLI) 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载
 
-写了个脚本直接 re 页面中 m3u8 后缀连接, 然后调用 CLI 下载, 可以直接放在 release 中或者传到 webdav 中, 感觉更安全了 🤣
+写了个脚本直接 re 页面中 m3u8 后缀连接, 然后调用 CLI 下载, 可以直接放在 release 中或者传到 webdav 中, 感觉更安全了 🤣 
 
 当然, 如果是在 win 机上, 那么直接 execute ps1 更简单
 
@@ -27,12 +29,12 @@ tags:
 好消息, 作者新的跨平台 [N_m3u8DL-RE](https://github.com/nilaoda/N_m3u8DL-RE) 已经可以实装了, 新的 Github action 使用脚本如下
 
 ```yaml
-name: "下载"
+name: '下载'
 on:
   workflow_dispatch:
     inputs:
       url:
-        description: "m3u8 网站"
+        description: 'm3u8 网站'
         required: false
       filename:
         description: 文件名

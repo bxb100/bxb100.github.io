@@ -1,3 +1,4 @@
+
 ---
 title: Amazon SP program signature problem
 pubDatetime: 2022-06-14T17:14:16.000Z
@@ -5,12 +6,12 @@ modDatetime: 2022-06-14T17:19:04.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/17
 tags:
   - DEV
+
 ---
 
-    ## Case
+## Case
 
 When us project execute [getListingsItem](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-reference#getlistingsitem), using SKU name 'FBA XXX XX 300g', but Amazon returns 403 error. At first, we don't get message body like below, we just know it's not successful.
-
 ```json
 {
   "errors": [
@@ -109,7 +110,7 @@ You know the `createCanonicalRequest` is the first step, they need encode twice,
 
 ![image](https://user-images.githubusercontent.com/20685961/173635120-5dffa3d0-5046-4bce-b6e4-9df1fd6092c3.png)
 
-Now, you can clearly find the problem is `request.getResourcePath()`
+Now, you can clearly find the problem is `request.getResourcePath()` 
 
 ```java
   @Override
@@ -122,7 +123,7 @@ Now, you can clearly find the problem is `request.getResourcePath()`
   }
 ```
 
-and
+and 
 
 ```java
     /**
@@ -140,8 +141,11 @@ and
     }
 ```
 
-it's so simple, but costed me a bunch of time to solve, feel sad 😢
+it's so simple, but costed me a bunch of time to solve, feel sad 😢 
 
-bless me to be better 🤞
+bless me to be better 🤞 
+
+
+
 
 [^1]: https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html#:~:text=Each%20path%20segment%20must%20be%20URI%2Dencoded%20twice

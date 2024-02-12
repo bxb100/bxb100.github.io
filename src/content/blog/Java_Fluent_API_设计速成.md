@@ -1,3 +1,4 @@
+
 ---
 title: Java Fluent API 设计速成
 pubDatetime: 2023-01-14T07:05:06.000Z
@@ -5,16 +6,15 @@ modDatetime: 2023-01-17T04:40:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/30
 tags:
   - DEV
+
 ---
 
-    > 译 https://blog.jooq.org/the-java-fluent-api-designer-crash-course/
+> 译 https://blog.jooq.org/the-java-fluent-api-designer-crash-course/
 
 自从 [Martin Fowler 谈论流畅的接口](http://martinfowler.com/bliki/FluentInterface.html)以来，人们开始到处[链式方法](https://stackoverflow.com/questions/1103985/method-chaining-why-is-it-a-good-practice-or-not/8745227)，为每个可能的用例创建流畅的 API（或 [DSLs](https://en.wikipedia.org/wiki/Domain-specific_language)）。原则上，几乎所有类型的 DSL 都可以映射到 Java。让我们看看如何做到这一点
 
 ## DSL 规则
-
 DSL（领域特定语言）通常是根据大致如下的规则构建的
-
 ```
 1. SINGLE-WORD
 2. PARAMETERISED-WORD parameter
@@ -22,16 +22,15 @@ DSL（领域特定语言）通常是根据大致如下的规则构建的
 4. WORD2 { WORD-CHOICE-A | WORD-CHOICE-B }
 5. WORD3 [ , WORD3 ... ]
 ```
-
 或者，你也可以像这样声明语法（由 [Railroad Diagrams 站点](http://www.bottlecaps.de/rr/ui) 支持）
 
 ```
-Grammar ::= (
-  'SINGLE-WORD' |
+Grammar ::= ( 
+  'SINGLE-WORD' | 
   'PARAMETERISED-WORD' '('[A-Z]+')' |
-  'WORD1' 'OPTIONAL-WORD'? |
-  'WORD2' ( 'WORD-CHOICE-A' | 'WORD-CHOICE-B' ) |
-  'WORD3'+
+  'WORD1' 'OPTIONAL-WORD'? | 
+  'WORD2' ( 'WORD-CHOICE-A' | 'WORD-CHOICE-B' ) | 
+  'WORD3'+ 
 )
 ```
 
@@ -47,13 +46,12 @@ src="https://user-images.githubusercontent.com/20685961/212459554-d1b333ef-6d35-
 ## Java 实现这些规则
 
 使用 Java 接口，对上述 DSL 进行建模非常简单。本质上，你必须遵循以下转换规则：
-
-- 每个 DSL **keyword** 都变成了一个 Java method
-- 每个 DSL **connection** 都变成了一个接口
-- 当你有一个 **mandatory** 选择时（你不能跳过下一个关键字），那个选择的每个关键字都是当前接口中的一个方法。如果只有一个关键字可能，那么就只有一种方法
-- 当你有一个 **optional** 关键字时，当前接口扩展下一个接口（及其所有 keyword/methods）
-- 当你有一个 **repetition** 的关键字时，表示可重复关键字的方法返回接口本身，而不是下一个接口
-- 每个 DSL **子定义** 都成为一个参数。这将允许递归
+* 每个 DSL **keyword** 都变成了一个 Java method
+* 每个 DSL **connection** 都变成了一个接口
+* 当你有一个 **mandatory** 选择时（你不能跳过下一个关键字），那个选择的每个关键字都是当前接口中的一个方法。如果只有一个关键字可能，那么就只有一种方法
+* 当你有一个 **optional** 关键字时，当前接口扩展下一个接口（及其所有 keyword/methods）
+* 当你有一个 **repetition** 的关键字时，表示可重复关键字的方法返回接口本身，而不是下一个接口
+* 每个 DSL **子定义** 都成为一个参数。这将允许递归
 
 请注意，也可以使用类而不是接口对上述 DSL 进行建模。但是一旦你想重用相似的关键字，方法的多重继承可能会派上用场，你可能最好使用接口。
 
@@ -199,7 +197,6 @@ rtf()
 ---
 
 <a id='issuecomment-1382680120'></a>
-
 # 实现一个简单的加减乘除的 Fluent DSL
 
 DSL:
@@ -277,15 +274,13 @@ public class Calc {
 
 ```
 
-不足的地方:
-
+不足的地方: 
 1. 这样实现的话, 远算顺序只能从左到右, `(a+b)*c` 没实现 `a+b*c` 只能有 `a+(b*c)`
 2. 重复的 DSL 的实现类传递值不明确
 
 ---
 
 <a id='issuecomment-1383046623'></a>
-
 ## 类实现
 
 ```java
@@ -400,3 +395,5 @@ public class EndImpl extends OperationImpl implements End {
 	}
 }
 ```
+
+

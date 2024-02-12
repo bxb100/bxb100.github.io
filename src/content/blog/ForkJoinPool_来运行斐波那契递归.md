@@ -1,3 +1,4 @@
+
 ---
 title: ForkJoinPool 来运行斐波那契递归
 pubDatetime: 2023-03-11T19:19:54.000Z
@@ -5,29 +6,29 @@ modDatetime: 2023-03-13T04:25:41.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/36
 tags:
   - uncategorized
+
 ---
 
-    ```java
-    static class ComputeFibonacciTask extends RecursiveTask<Long> {
+```java
+	static class ComputeFibonacciTask extends RecursiveTask<Long> {
 
-    	private final long n;
+		private final long n;
 
-    	public ComputeFibonacciTask(long n) {
-    		this.n = n;
-    	}
+		public ComputeFibonacciTask(long n) {
+			this.n = n;
+		}
 
-    	protected Long compute() {
-    		if (n <= 1) {
-    			return n;
-    		} else {
-    			RecursiveTask<Long> otherTask = new ComputeFibonacciTask(n - 1);
-    			otherTask.fork();
-    			Long right = new ComputeFibonacciTask(n - 2).compute();
-    			return right + otherTask.join();
-    		}
-    	}
-    }
-
+		protected Long compute() {
+			if (n <= 1) {
+				return n;
+			} else {
+				RecursiveTask<Long> otherTask = new ComputeFibonacciTask(n - 1);
+				otherTask.fork();
+				Long right = new ComputeFibonacciTask(n - 2).compute();
+				return right + otherTask.join();
+			}
+		}
+	}
 ```
 
 直接 `1000` 使用默认的 `ForkJoinPool` 构造方法, 可以看到由于错误的理解, 分治导致出现 2^1000 - 2 个实例
@@ -50,4 +51,3 @@ tags:
 
 [^1]: https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4
 [^2]: https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7
-```

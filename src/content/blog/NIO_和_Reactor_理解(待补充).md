@@ -1,3 +1,4 @@
+
 ---
 title: NIO 和 Reactor 理解(待补充)
 pubDatetime: 2022-09-28T09:38:37.000Z
@@ -5,9 +6,10 @@ modDatetime: 2022-09-30T17:43:27.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/26
 tags:
   - DEV
+
 ---
 
-    NIO: NIO stands for non-blocking I/O
+NIO: NIO stands for non-blocking I/O
 
 It work looks like this:
 ![image](https://user-images.githubusercontent.com/20685961/192730676-ea8e3234-4b51-4b16-8dcd-27a70c669a45.png)
@@ -20,8 +22,10 @@ Reactor 库的设计目的就是在构建异步管道时避免**回调地狱**�
 
 ### Reference
 
-- https://www.baeldung.com/spring-webflux-concurrency
+* https://www.baeldung.com/spring-webflux-concurrency
 
-- https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call
+* https://stackoverflow.com/questions/70174468/project-loom-what-happens-when-virtual-thread-makes-a-blocking-system-call
 
-- https://www.infoq.com/articles/java-virtual-threads/ 虚拟线程更适合 IO 密集型的任务
+* https://www.infoq.com/articles/java-virtual-threads/ 虚拟线程更适合 IO 密集型的任务
+
+

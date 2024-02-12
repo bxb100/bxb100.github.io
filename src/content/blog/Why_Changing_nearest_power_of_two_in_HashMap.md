@@ -1,3 +1,4 @@
+
 ---
 title: Why Changing nearest power of two in HashMap?
 pubDatetime: 2023-02-16T10:05:37.000Z
@@ -5,9 +6,10 @@ modDatetime: 2023-02-16T10:05:37.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/34
 tags:
   - question
+
 ---
 
-    ## JDK 7
+## JDK 7
 
 ```java
    static int roundUpToPowerOf2(int cap) {
