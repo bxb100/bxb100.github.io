@@ -17,6 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: sleep 10
       - uses: actions/checkout@v4
       - name: Generate README
         uses: bxb100/issueblog@astro-paper
