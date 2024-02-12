@@ -17,12 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate README
-        uses: bxb100/issueblog@hexo
+        uses: bxb100/issueblog@astro-paper
         with:
           blog_author: "John Bi"
           md_header: |
-              ## GitLog
-              My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/feed.xml)
+            ## GitLog
+            My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/rss.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
           blog_url: https://bxb100.github.io
       - name: Use Node.js 16.x
@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './public'
+          path: "./dist"
       - name: Summary
         run: echo "Ready to deploy :rocket:" >> $GITHUB_STEP_SUMMARY
   deploy:
