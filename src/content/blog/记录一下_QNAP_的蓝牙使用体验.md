@@ -1,4 +1,3 @@
-
 ---
 title: 记录一下 QNAP 的蓝牙使用体验
 pubDatetime: 2023-12-26T13:10:47.000Z
@@ -7,7 +6,6 @@ url: https://github.com/bxb100/bxb100.github.io/issues/42
 tags:
   - 就是玩
   - Rust
-
 ---
 
 tldr: QNAP 使用的 dbus 是 1.4，rs-dbus 使用的不兼容
@@ -34,8 +32,5 @@ NAS 关了 dbus `sudo sh /etc/init.d/dbus.sh stop`
 
 PS: home assistant 好像也没人搞成功..
 
-
-
-
-[^1]:https://sourceforge.net/p/qosgpl/activity/?page=0&limit=100#64d47706d61c866ab279b42e
+[^1]: https://sourceforge.net/p/qosgpl/activity/?page=0&limit=100#64d47706d61c866ab279b42e
 [^2]: https://www.linuxfromscratch.org/blfs/view/svn/general/dbus.html

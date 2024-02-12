@@ -1,4 +1,3 @@
-
 ---
 title: CF 的优化导致 Astro build static file 的 script 失效
 pubDatetime: 2024-02-12T09:03:42.000Z
@@ -6,7 +5,6 @@ modDatetime: 2024-02-12T09:09:22.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/45
 tags:
   - DEV
-
 ---
 
 Astro build 后上传到 GitHub page 总是出现 script 被注释，然后刷新又好了的问题
@@ -17,6 +15,7 @@ Astro build 后上传到 GitHub page 总是出现 script 被注释，然后刷�
 4. 刷新生效
 
 错误的尝试：
+
 - 更新 node 版本 18 -> 20 -> 21
 - 更新 astro 版本
 

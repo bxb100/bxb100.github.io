@@ -1,4 +1,3 @@
-
 ---
 title: OAuth 2.0 客户端认证的几种方式
 pubDatetime: 2022-08-31T16:16:22.000Z
@@ -6,7 +5,6 @@ modDatetime: 2022-08-31T16:16:22.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/23
 tags:
   - uncategorized
-
 ---
 
 全文摘抄 https://darutk.medium.com/oauth-2-0-client-authentication-4b5f929305d4
@@ -70,4 +68,3 @@ JWT payload 格式定义在 [RFC 7523](https://tools.ietf.org/html/rfc7523), [2.
 既然上面是用对称加密, 那么就一定会出现不对称加密 (公钥分享使用诸如 `jwks` 或 `jwks_uri` client metadata)
 
 ![image](https://user-images.githubusercontent.com/20685961/187727532-611eb102-69e6-41d7-b6aa-6701bfc9a635.png)
-

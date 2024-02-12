@@ -1,4 +1,3 @@
-
 ---
 title: ForkJoinPool 来运行斐波那契递归
 pubDatetime: 2023-03-11T19:19:54.000Z
@@ -6,7 +5,6 @@ modDatetime: 2023-03-13T04:25:41.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/36
 tags:
   - uncategorized
-
 ---
 
 ```java
@@ -39,15 +37,11 @@ tags:
 
 某一刻的 profile
 <img width="1200" alt="image" src="https://user-images.githubusercontent.com/20685961/224507439-14d808e3-491d-47f4-bfba-67fc1d2044ac.png">
-*jprofile active code: https://zhile.io/2022/02/22/jprofiler-license.html*
+_jprofile active code: https://zhile.io/2022/02/22/jprofiler-license.html_
 
 解决方法:
 
 **不要用 forkJoinPool 来解决非分治问题**[^2]
-
-
-
-
 
 [^1]: https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4
 [^2]: https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7

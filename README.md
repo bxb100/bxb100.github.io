@@ -1,16 +1,20 @@
 ## GitLog
+
 My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/rss.xml)
+
 ## Links
-| Name | Link | Desc |
-| ---- | ---- | ---- |
-| Dan Abramov | https://overreacted.io | React |
-| Aleksey Shipilëv | https://shipilev.net | ☕ Java |
-| plantegg | https://plantegg.github.io/ | 工程师，网络、性能、CPU等领域 [twitter](https://twitter.com/plantegg) |
-| 构建我的被动收入 | https://www.bmpi.dev/dev/ | 技术布道 |
-| Load Balancing Post | https://samwho.dev/load-balancing/ | A visualized guide to load balancers |
-| [WerWolv](https://github.com/WerWolv) | https://werwolv.net/ | 逆向工程师 Inspire |
+
+| Name                                  | Link                               | Desc                                                                  |
+| ------------------------------------- | ---------------------------------- | --------------------------------------------------------------------- |
+| Dan Abramov                           | https://overreacted.io             | React                                                                 |
+| Aleksey Shipilëv                      | https://shipilev.net               | ☕ Java                                                               |
+| plantegg                              | https://plantegg.github.io/        | 工程师，网络、性能、CPU等领域 [twitter](https://twitter.com/plantegg) |
+| 构建我的被动收入                      | https://www.bmpi.dev/dev/          | 技术布道                                                              |
+| Load Balancing Post                   | https://samwho.dev/load-balancing/ | A visualized guide to load balancers                                  |
+| [WerWolv](https://github.com/WerWolv) | https://werwolv.net/               | 逆向工程师 Inspire                                                    |
 
 ## Recent
+
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [SWAR 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
@@ -23,15 +27,16 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 
 ## API
+
 - [github action 相关信息](https://github.com/bxb100/bxb100.github.io/issues/7)---2021-12-31
 
-
 ## Archive
+
 - [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
 - [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/bxb100.github.io/issues/6)---2021-12-30
 
-
 ## DEV
+
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
@@ -51,42 +56,42 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [实现 TDD 的一些方法](https://github.com/bxb100/bxb100.github.io/issues/14)---2022-04-06
 </details>
 
-
 ## Horizon
+
 - [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
-- [使用 charles 的 rootCA  代理后端 API](https://github.com/bxb100/bxb100.github.io/issues/10)---2022-02-10
+- [使用 charles 的 rootCA 代理后端 API](https://github.com/bxb100/bxb100.github.io/issues/10)---2022-02-10
 - [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 <details><summary>MORE</summary>
 
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/bxb100.github.io/issues/8)---2022-01-18
 </details>
 
-
 ## quastor
+
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
 
-
 ## question
+
 - [Why Changing nearest power of two in HashMap?](https://github.com/bxb100/bxb100.github.io/issues/34)---2023-02-16
 
-
 ## Reverie
+
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
 
-
 ## Rust
+
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 
-
 ## 就是玩
+
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
@@ -97,28 +102,31 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 </details>
 
-
 ## 摘录
+
 - [一句](https://github.com/bxb100/bxb100.github.io/issues/22)---2022-08-06
 - [Remember, Although life ignore you, I still love you](https://github.com/bxb100/bxb100.github.io/issues/3)---2021-12-13
 
-
 ## 杂感
+
 - [雄狮少年杂感](https://github.com/bxb100/bxb100.github.io/issues/5)---2021-12-27
 
-
 ## 读后感
+
 - [SWAR 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
 - [安迪·威尔-挽救计划](https://github.com/bxb100/bxb100.github.io/issues/4)---2021-12-27
 
 ## TODO
+
 TODO list from [TODO](https://github.com/bxb100/bxb100.github.io/issues/38) all done
+
 <details><summary>MORE</summary>
 
 - [x] 完成 PDF 文本的解析, 参考
 </details>
 
 TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/28)--17 jobs to do--4 jobs done
+
 - [ ] [299. 猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/description/) 这道只需要不需要用哈希表来复杂化解决
 - [ ] [844. 比较含退格的字符串](https://leetcode.cn/problems/backspace-string-compare/) 这道题用栈做了, 实际上没考虑到 # 是从后向前启作用的
 - [ ] [394. 字符串解码](https://leetcode.cn/problems/decode-string/description/) 想到了使用栈, 但是没有写出来, 这道题应该直接从左到右考虑问题, 使用双栈存储
@@ -143,4 +151,3 @@ TODO list from [算法回顾](https://github.com/bxb100/bxb100.github.io/issues/
 - [x] [1945. 字符串转化后的各位数字之和](https://leetcode.cn/problems/sum-of-digits-of-string-after-convert/) 重复做
 - [x] [1785. 构成特定和需要添加的最少元素](https://leetcode.cn/problems/minimum-elements-to-add-to-form-a-given-sum/description/)
 </details>
-
