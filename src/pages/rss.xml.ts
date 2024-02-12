@@ -16,11 +16,8 @@ export async function GET() {
       description: data.description,
       pubDate: new Date(data.modDatetime ?? data.pubDatetime),
     })),
-    stylesheet: "/rss.xsl",
-    xmlns: {
-      "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"
-    },
+    stylesheet: "rss.xsl",
     customData:
-      `<itunes:image href="https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png" />`,
+      '<itunes:image href="https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png" />',
   });
 }
