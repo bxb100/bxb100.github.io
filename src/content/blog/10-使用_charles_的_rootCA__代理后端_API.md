@@ -1,13 +1,15 @@
----
-title: 使用 charles 的 rootCA  代理后端 API
-pubDatetime: 2022-02-10T17:07:35.000Z
-tags:
-  - Horizon
+    ---
+    title: 使用 charles 的 rootCA  代理后端 API
+    pubDatetime: 2022-02-10T17:07:35.000Z
+    modDatetime: 2022-08-02T17:33:35.000Z
+    url: https://github.com/bxb100/bxb100.github.io/issues/10
+    tags:
+      - Horizon
 
-url: https://github.com/bxb100/bxb100.github.io/issues/10
----
 
-## 前情
+    ---
+
+    ## 前情
 
 某日我儿（前端 ios 使用 https 但是没有强制）问我如何利用 charles 来代理后端**本地** API 测试，我直接甩给他 `map remote` 大法 （from https to http），解决。
 
