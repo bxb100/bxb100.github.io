@@ -2,7 +2,7 @@ name: Death Plan
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8-12 6 6 1"
+    - cron: "0 12 1 * *"
 
 env:
   COUNT: 0
@@ -44,12 +44,11 @@ jobs:
           cd public
           gpg --pinentry-mode=loopback --yes --passphrase  "${{ secrets.GPG_PASSPHRASE }}" -d -o death-plan.md death-plan.md.gpg
 
-      ## * Update count and cron
-      - name: Update count and cron
+      ## * Update count
+      - name: Update count
         if: ${{ steps.status.outputs.online == '0' }}
         run: |
           sed -i "s/COUNT:\ $COUNT/COUNT:\ $(($COUNT + 1))/" .github/workflows/death-plan.yml
-          sed -i "s/cron:\ '0 8-12 6 6 1'/cron:\ '0 12-14 * 6-9 *'/" .github/workflows/death-plan.yml
           let new_count=$(($COUNT + 1)) 
           echo "COMMIT_MSG=CI: update and push COUNT: $new_count" >> "$GITHUB_ENV"
 
@@ -60,7 +59,6 @@ jobs:
           rm -f death-plan.md
           # https://unix.stackexchange.com/questions/308636/how-to-use-sed-to-replace-numbers-with-parenthese
           sed -i "s/COUNT:\ [0-9]\{1,\}/COUNT:\ 0/" .github/workflows/death-plan.yml
-          sed -i "s/cron:\ '0 12-14 \* 6-9 \*'/cron:\ '0 8-12 6 6 1'/" .github/workflows/death-plan.yml 
           echo "COMMIT_MSG=CI: reset all" >> "$GITHUB_ENV"
 
       - name: Push to GitHub
