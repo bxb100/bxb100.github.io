@@ -5,7 +5,7 @@ on:
     - cron: "0 12 1 * *"
 
 env:
-  COUNT: 3
+  COUNT: 4
   COMMIT_MSG: "CI: chore"
 
 jobs:
