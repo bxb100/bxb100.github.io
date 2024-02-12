@@ -56,7 +56,7 @@ jobs:
       - name: Rest all
         if: ${{ steps.status.outputs.online != '0' }}
         run: |
-          rm -f death-plan.md
+          rm -f ./public/death-plan.md
           # https://unix.stackexchange.com/questions/308636/how-to-use-sed-to-replace-numbers-with-parenthese
           sed -i "s/COUNT:\ [0-9]\{1,\}/COUNT:\ 0/" .github/workflows/death-plan.yml
           echo "COMMIT_MSG=CI: reset all" >> "$GITHUB_ENV"
