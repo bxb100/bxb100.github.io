@@ -2,9 +2,9 @@ name: build
 on:
   workflow_dispatch:
   issues:
-    types: [opened, edited, labeled, unlabeled]
+    types: [ opened, edited, labeled, unlabeled ]
   issue_comment:
-    types: [created, edited, deleted]
+    types: [ created, edited, deleted ]
   push:
     branches:
       - main
@@ -12,7 +12,7 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,6 +25,10 @@ jobs:
             My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/rss.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
           blog_url: https://bxb100.github.io
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: Use Node.js 21.x
         uses: actions/setup-node@v4
         with:
@@ -50,6 +54,7 @@ jobs:
           path: "./dist"
       - name: Summary
         run: echo "Ready to deploy :rocket:" >> $GITHUB_STEP_SUMMARY
+
   deploy:
     needs: build
     uses: ./.github/workflows/deploy.yml
