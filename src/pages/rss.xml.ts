@@ -18,9 +18,8 @@ export async function GET() {
     })),
     stylesheet: "/rss.xsl",
     xmlns: {
-      "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"
+      itunes: "http://www.itunes.com/dtds/podcast-1.0.dtd",
     },
-    customData:
-      `<itunes:image href="https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png" />`,
+    customData: `<itunes:image href="https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png" />`,
   });
 }
