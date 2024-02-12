@@ -69,18 +69,3 @@ jobs:
           git commit -m "$COMMIT_MSG" || true
           git push
 
-      - name: Setup Pages
-        if: ${{ env.COUNT > 3 }}
-        uses: actions/configure-pages@v4.0.0
-      - name: Upload artifact
-        if: ${{ env.COUNT > 3 }}
-        uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: "./dist"
-      - name: Summary
-        if: ${{ env.COUNT > 3 }}
-        run: echo "Ready to deploy :rocket:" >> $GITHUB_STEP_SUMMARY
-
-  deploy:
-      needs: rolling
-      uses: ./.github/workflows/deploy.yml
