@@ -15,7 +15,7 @@ const sortedPosts = getSortedPosts(posts);
 // List of items to search in
 const searchList = sortedPosts.map(({ data, slug }) => ({
   title: data.title,
-  description: data.description,
+  // description: data.description,
   data,
   slug,
 }));
