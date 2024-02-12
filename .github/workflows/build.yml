@@ -43,9 +43,9 @@ jobs:
           npm run format
           npm run build
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v4.0.0
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: "./dist"
       - name: Summary
