@@ -4,8 +4,7 @@ pubDatetime: 2023-01-17T08:20:45.000Z
 modDatetime: 2023-01-17T08:39:18.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/31
 tags:
-	- DEV
-
+  - DEV
 ---
 
     ## 结合性和左、右递归

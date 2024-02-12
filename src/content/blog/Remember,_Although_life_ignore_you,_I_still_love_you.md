@@ -4,8 +4,7 @@ pubDatetime: 2021-12-13T03:47:26.000Z
 modDatetime: 2023-11-01T11:58:44.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/3
 tags:
-	- 摘录
-
+  - 摘录
 ---
 
     思想是别人的意见, 生活是别人的模仿, 情感是别人的引述.  --- 奧斯卡·王尔德

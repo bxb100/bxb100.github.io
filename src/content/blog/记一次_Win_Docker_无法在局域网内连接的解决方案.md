@@ -4,9 +4,8 @@ pubDatetime: 2022-06-24T10:38:13.000Z
 modDatetime: 2022-07-09T07:35:57.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/18
 tags:
-	- Horizon
-	- 就是玩
-
+  - Horizon
+  - 就是玩
 ---
 
     我出现的问题是 docker firewall UAC 弹窗的时候只允许了 public 连接，然后网络变成 private 导致无法连接

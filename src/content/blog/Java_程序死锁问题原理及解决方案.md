@@ -4,8 +4,7 @@ pubDatetime: 2021-12-30T11:27:19.000Z
 modDatetime: 2021-12-30T11:37:25.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/6
 tags:
-	- Archive
-
+  - Archive
 ---
 
     > 原文: https://www.ibm.com/developerworks/cn/java/j-lo-deadlock/

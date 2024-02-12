@@ -4,8 +4,7 @@ pubDatetime: 2022-06-14T17:14:16.000Z
 modDatetime: 2022-06-14T17:19:04.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/17
 tags:
-	- DEV
-
+  - DEV
 ---
 
     ## Case

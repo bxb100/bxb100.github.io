@@ -4,8 +4,7 @@ pubDatetime: 2023-03-03T12:47:25.000Z
 modDatetime: 2023-03-03T12:48:37.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/35
 tags:
-	- uncategorized
-
+  - uncategorized
 ---
 
     Lombok 背后使用的技术是 [JSR 269: Pluggable Annotation Processing API](https://jcp.org/en/jsr/detail?id=269) [^1]

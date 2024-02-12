@@ -4,8 +4,7 @@ pubDatetime: 2022-01-18T13:46:06.000Z
 modDatetime: 2022-07-01T17:19:03.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/8
 tags:
-	- Horizon
-
+  - Horizon
 ---
 
     1. 放在 `Application Scripts` 文件夹时候注意给**权限,** 否则会报格式异常错误

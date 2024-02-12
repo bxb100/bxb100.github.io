@@ -4,9 +4,8 @@ pubDatetime: 2022-01-20T09:59:51.000Z
 modDatetime: 2023-06-20T03:48:05.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/9
 tags:
-	- Horizon
-	- 就是玩
-
+  - Horizon
+  - 就是玩
 ---
 
     1. 默认的 8080 端口无法在公网环境下访问，可以使用[反向代理来设置](#issuecomment-1017306273)

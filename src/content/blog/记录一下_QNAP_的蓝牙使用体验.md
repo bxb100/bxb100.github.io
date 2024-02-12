@@ -4,9 +4,8 @@ pubDatetime: 2023-12-26T13:10:47.000Z
 modDatetime: 2023-12-26T13:14:43.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/42
 tags:
-	- 就是玩
-	- Rust
-
+  - 就是玩
+  - Rust
 ---
 
     tldr: QNAP 使用的 dbus 是 1.4，rs-dbus 使用的不兼容

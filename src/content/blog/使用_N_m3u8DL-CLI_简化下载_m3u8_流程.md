@@ -4,8 +4,7 @@ pubDatetime: 2022-04-04T03:52:27.000Z
 modDatetime: 2022-10-13T11:10:23.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/13
 tags:
-	- uncategorized
-
+  - uncategorized
 ---
 
     [N_m3u8DL-CLI](https://github.com/nilaoda/N_m3u8DL-CLI) 是一个比较好用的 m3u8 下载工具, 但是它是 NET 写成的, 我懒得改成 JAVA, 想着白嫖 GitHub Action 来中转下载

@@ -4,9 +4,8 @@ pubDatetime: 2022-07-29T16:34:58.000Z
 modDatetime: 2023-01-17T05:34:10.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/20
 tags:
-	- Archive
-	- DEV
-
+  - Archive
+  - DEV
 ---
 
     The scenario:

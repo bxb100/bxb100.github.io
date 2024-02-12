@@ -4,8 +4,7 @@ pubDatetime: 2023-01-14T07:05:06.000Z
 modDatetime: 2023-01-17T04:40:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/30
 tags:
-	- DEV
-
+  - DEV
 ---
 
     > 译 https://blog.jooq.org/the-java-fluent-api-designer-crash-course/

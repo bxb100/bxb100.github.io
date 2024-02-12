@@ -4,8 +4,7 @@ pubDatetime: 2024-01-09T09:22:05.000Z
 modDatetime: 2024-01-11T05:08:44.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/43
 tags:
-	- 读后感
-
+  - 读后感
 ---
 
     原文：https://lemire.me/blog/2022/01/21/swar-explained-parsing-eight-digits/

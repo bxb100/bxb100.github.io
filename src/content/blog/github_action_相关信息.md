@@ -4,8 +4,7 @@ pubDatetime: 2021-12-31T10:41:11.000Z
 modDatetime: 2023-07-10T06:11:57.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/7
 tags:
-	- API
-
+  - API
 ---
 
     * [生成 release log automatically-generated-release-notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)

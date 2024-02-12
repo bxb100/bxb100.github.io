@@ -4,8 +4,7 @@ pubDatetime: 2022-09-23T09:54:55.000Z
 modDatetime: 2022-09-23T09:55:03.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/24
 tags:
-	- DEV
-
+  - DEV
 ---
 
     之前一直使用 `DOMContentLoaded` 来捕捉 DOM 树的变化, 写的渣代码需要判断, 然后还要 `Promise setTimeout` 这种形式来 `sleep` (不能直接用 `setTimeout` 是 js 运行的 eventLoop 会在最后才执行)

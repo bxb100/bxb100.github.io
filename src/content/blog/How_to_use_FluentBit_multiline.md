@@ -4,8 +4,7 @@ pubDatetime: 2022-04-17T04:44:09.000Z
 modDatetime: 2022-04-17T08:01:33.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/15
 tags:
-	- DEV
-
+  - DEV
 ---
 
     One day, my friend asked a question about how to use [fluentBit ](https://fluentbit.io/) (It's popular in k8s [^1]) to collect Java application logs. I had no idea how to do this at first, but finally the result seems good, so I want to give this tale to introduce the way I walk pasted.

@@ -4,8 +4,7 @@ pubDatetime: 2022-07-20T04:04:53.000Z
 modDatetime: 2022-07-20T04:04:53.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/19
 tags:
-	- DEV
-
+  - DEV
 ---
 
     * download `GET_MERCHANT_LISTINGS_ALL_DATA` report (fr region does not contain `ASIN`)

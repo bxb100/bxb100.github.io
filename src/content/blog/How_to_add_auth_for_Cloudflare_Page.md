@@ -4,10 +4,9 @@ pubDatetime: 2022-08-06T17:31:36.000Z
 modDatetime: 2022-08-06T17:36:33.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/21
 tags:
-	- Horizon
-	- DEV
-	- 就是玩
-
+  - Horizon
+  - DEV
+  - 就是玩
 ---
 
     1. Add routes for domain, see the [link](https://403.ie/how-to-use-cloudflare-to-enable-basic-auth-on-a-subdirectory)

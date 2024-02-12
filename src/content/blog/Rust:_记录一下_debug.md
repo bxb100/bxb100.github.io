@@ -4,9 +4,8 @@ pubDatetime: 2023-03-23T19:28:50.000Z
 modDatetime: 2023-04-19T10:11:01.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
-	- DEV
-	- Rust
-
+  - DEV
+  - Rust
 ---
 
     wry bug 见: https://github.com/tauri-apps/wry/issues/911
