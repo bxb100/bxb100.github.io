@@ -25,10 +25,10 @@ jobs:
             My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/rss.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
           blog_url: https://bxb100.github.io
-      - name: Use Node.js 20.x
+      - name: Use Node.js 21.x
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "21"
       - name: Cache NPM dependencies
         uses: actions/cache@v4
         with:
