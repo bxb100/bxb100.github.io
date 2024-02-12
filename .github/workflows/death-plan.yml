@@ -1,0 +1,72 @@
+name: Death Plan
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8-12 6 6 1"
+
+env:
+  COUNT: 0
+  COMMIT_MSG: "CI: chore"
+
+jobs:
+  rolling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+
+      - name: Setup Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          authkey: ${{ secrets.TS_AUTH_KEY }}
+
+      - id: status
+        name: Check tailscale status
+        shell: sh
+        run: echo $(tailscale status --json | jq -r '.Peer[].Online | select(.!=false)' |  sort | uniq -c | sort -nr | awk '{ print "online="$1 } END { if (!NR) print "online=0" }') >> "$GITHUB_OUTPUT"
+
+      ## * Decrypt
+      # https://stackoverflow.com/questions/61096521/how-to-use-gpg-key-in-github-actions
+      - name: Configure GPG Key
+        if: ${{ steps.status.outputs.online == '0' && env.COUNT > 3 }}
+        # https://superuser.com/questions/1325862/gnupg2-suddenly-throwing-error-building-skey-array-no-such-file-or-directory
+        run: |
+          echo -n "$GPG_SIGNING_KEY" | base64 --decode | gpg --batch --import
+        env:
+          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+
+      - name: Decrypt
+        if: ${{ steps.status.outputs.online == '0' && env.COUNT > 3 }}
+        # --yes overwrite the file to avoid tty required error
+        run: |
+          cd public
+          gpg --pinentry-mode=loopback --yes --passphrase  "${{ secrets.GPG_PASSPHRASE }}" -d -o death-plan.md death-plan.md.gpg
+
+      ## * Update count and cron
+      - name: Update count and cron
+        if: ${{ steps.status.outputs.online == '0' }}
+        run: |
+          sed -i "s/COUNT:\ $COUNT/COUNT:\ $(($COUNT + 1))/" .github/workflows/death-plan.yml
+          sed -i "s/cron:\ '0 8-12 6 6 1'/cron:\ '0 12-14 * 6-9 *'/" .github/workflows/death-plan.yml
+          let new_count=$(($COUNT + 1)) 
+          echo "COMMIT_MSG=CI: update and push COUNT: $new_count" >> "$GITHUB_ENV"
+
+      ## * Rest all
+      - name: Rest all
+        if: ${{ steps.status.outputs.online != '0' }}
+        run: |
+          rm -f death-plan.md
+          # https://unix.stackexchange.com/questions/308636/how-to-use-sed-to-replace-numbers-with-parenthese
+          sed -i "s/COUNT:\ [0-9]\{1,\}/COUNT:\ 0/" .github/workflows/death-plan.yml
+          sed -i "s/cron:\ '0 12-14 \* 6-9 \*'/cron:\ '0 8-12 6 6 1'/" .github/workflows/death-plan.yml 
+          echo "COMMIT_MSG=CI: reset all" >> "$GITHUB_ENV"
+
+      - name: Push to GitHub
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m "$COMMIT_MSG" || true
+          git push

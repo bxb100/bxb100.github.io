@@ -21,6 +21,7 @@
     "astro": "^4.3.5",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
+    "markdown-it": "^14.0.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "satori": "^0.10.11",
@@ -29,6 +30,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/markdown-it": "^13.0.7",
     "@astrojs/react": "^3.0.9",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
