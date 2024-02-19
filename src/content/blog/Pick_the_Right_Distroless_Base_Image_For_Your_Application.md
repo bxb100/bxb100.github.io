@@ -1,11 +1,11 @@
 ---
 title: Pick the Right Distroless Base Image For Your Application
 pubDatetime: 2024-02-19T12:43:47.000Z
-modDatetime: 2024-02-19T12:43:47.000Z
+modDatetime: 2024-02-19T13:26:11.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/46
 tags:
   - DEV
-  - question
+  - Docker
 ---
 
 > https://labs.iximiuz.com/challenges/pick-the-right-distroless-base-image
