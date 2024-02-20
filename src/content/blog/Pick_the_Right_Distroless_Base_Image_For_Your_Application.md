@@ -1,14 +1,14 @@
 ---
 title: Pick the Right Distroless Base Image For Your Application
 pubDatetime: 2024-02-19T12:43:47.000Z
-modDatetime: 2024-02-19T13:26:11.000Z
+modDatetime: 2024-02-20T14:03:03.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/46
 tags:
   - DEV
   - Docker
 ---
 
-> https://labs.iximiuz.com/challenges/pick-the-right-distroless-base-image
+> docker challenge https://labs.iximiuz.com/challenges/pick-the-right-distroless-base-image
 
 - 使用 logs 来查看容器的日志
   - `exec /server: no such file or directory`
@@ -52,7 +52,7 @@ CMD ["/server"]
 - `docker build -t tmp .`
   - build 的时候 `COPY` 出现无文件的错误
     文件必须和 dockerfile 文件的同级目录下 [^2]
-    > • The `<src>` path must be inside the build context; you can't use `COPY ../something /something`, because the builder can only access files from the context, and `../something` specifies a parent file or directory of the build context root.
+    > The `<src>` path must be inside the build context; you can't use `COPY ../something /something`, because the builder can only access files from the context, and `../something` specifies a parent file or directory of the build context root.
 - 使用 `docker run -p 8080:8080 --name status-checker tmp`
 - `curl localhost:8080` 报错
   - `tls: failed to verify certificate: x509: certificate signed by unknown authority`
