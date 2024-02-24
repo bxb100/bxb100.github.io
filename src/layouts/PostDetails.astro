@@ -8,8 +8,9 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
-import LinkButton from "../components/LinkButton.astro";
-import socialIcons from "../assets/socialIcons";
+import LinkButton from "@components/LinkButton.astro";
+import socialIcons from "@assets/socialIcons";
+import Comments from "@components/Comments.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -114,6 +115,7 @@ const layoutProps = {
 
       <ShareLinks />
     </div>
+    <Comments />
   </main>
   <Footer />
 </Layout>
