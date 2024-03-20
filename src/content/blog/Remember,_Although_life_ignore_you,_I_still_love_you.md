@@ -1,7 +1,7 @@
 ---
 title: Remember, Although life ignore you, I still love you
 pubDatetime: 2021-12-13T03:47:26.000Z
-modDatetime: 2023-11-01T11:58:44.000Z
+modDatetime: 2024-03-20T10:44:29.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/3
 tags:
   - 摘录
@@ -118,3 +118,15 @@ tags:
 
 <a id='issuecomment-1788832555'></a>
 ![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/65ef5912-30f8-4b5b-bf1a-c387f7bd1955)
+
+---
+
+<a id='issuecomment-2009252784'></a>
+[煎蛋](https://jandan.net/t/5646602)
+活着真的很受罪，就像在烂泥里深一脚浅一脚地前进。往前望望一片黑，往后望望，每一个脚印里都灌满了眼泪。
+![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/b4e37560-1bfb-4be3-a2e2-fab6b402980a)
+![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/d8267d93-e750-4391-afba-e78dfb77f9d1)
+![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/035be0aa-b294-4a86-8347-aaf1ab64b990)
+![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/09546003-ac15-467a-a467-d365cf57986e)
+![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/4eabf3f7-8f29-45d3-a8df-7b47d3a15e3c)
+![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/58126514-2403-48d1-8b9f-b1e7e88105f6)
