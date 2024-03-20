@@ -1,7 +1,7 @@
 ---
 title: Remember, Although life ignore you, I still love you
 pubDatetime: 2021-12-13T03:47:26.000Z
-modDatetime: 2024-03-20T10:44:29.000Z
+modDatetime: 2024-03-20T11:00:02.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/3
 tags:
   - 摘录
@@ -123,7 +123,11 @@ tags:
 
 <a id='issuecomment-2009252784'></a>
 [煎蛋](https://jandan.net/t/5646602)
-活着真的很受罪，就像在烂泥里深一脚浅一脚地前进。往前望望一片黑，往后望望，每一个脚印里都灌满了眼泪。
+
+> 活着真的很受罪，就像在烂泥里深一脚浅一脚地前进。往前望望一片黑，往后望望，每一个脚印里都灌满了眼泪。
+
+> Can ashes truly be incinerated to such a fine extent? It seems the facilities at our local funeral home are inadequate. I previously believed that ashes would resemble coarse flour when burnt. After my father was placed in the furnace, everyone waited in a room, expecting the process to take 40 minutes. I went to the restroom in the middle and happened to see my father’s remains being removed from the furnace – his skull and some larger bones still intact. The worker, unaware of my presence, hastily shoveled the remains into an ash box, causing the protruding skull and other fragments to crack and crumble audibly. Realizing I was watching from the window, they embarrassedly closed the box and walked away. The contents of the box contained my father and yet were not him. All I knew was that my father had departed, vanishing like water into water. At the time, I felt no emotion – neither anger nor sorrow – but that scene still lingers in my memory.
+
 ![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/b4e37560-1bfb-4be3-a2e2-fab6b402980a)
 ![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/d8267d93-e750-4391-afba-e78dfb77f9d1)
 ![image](https://github.com/bxb100/bxb100.github.io/assets/20685961/035be0aa-b294-4a86-8347-aaf1ab64b990)
