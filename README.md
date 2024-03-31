@@ -12,7 +12,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | 构建我的被动收入                      | https://www.bmpi.dev/dev/          | 技术布道                                                              |
 | Load Balancing Post                   | https://samwho.dev/load-balancing/ | A visualized guide to load balancers                                  |
 | [WerWolv](https://github.com/WerWolv) | https://werwolv.net/               | 逆向工程师 Inspire                                                    |
-| Micah Lerner | https://www.micahlerner.com/ | CS researcher ｜
 
 ## Recent
 
