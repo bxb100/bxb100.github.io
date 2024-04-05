@@ -26,5 +26,5 @@ export default function Player() {
     };
   }, []);
 
-  return <div ref={ container }></div>;
+  return <div ref={container}></div>;
 }
