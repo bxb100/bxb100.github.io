@@ -15,6 +15,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
@@ -24,7 +25,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
-- [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 
 ## API
 
@@ -37,13 +37,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## DEV
 
+- [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
-- [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 <details><summary>MORE</summary>
 
+- [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
 - [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
