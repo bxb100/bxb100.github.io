@@ -1,7 +1,7 @@
 ---
 title: Benchmark 的一些记录
 pubDatetime: 2023-01-25T03:47:37.000Z
-modDatetime: 2023-05-06T16:02:28.000Z
+modDatetime: 2024-04-12T09:17:34.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/32
 tags:
   - DEV
@@ -12,6 +12,12 @@ tags:
 - [YCSB](https://github.com/brianfrankcooper/YCSB) A common use of the tool is to benchmark multiple systems and compare them.
 
 - [yet-another-bench-script](https://github.com/masonr/yet-another-bench-script) YABS - a simple bash script to estimate Linux server performance using fio, iperf3, & Geekbench
+
+### 使用的工具
+
+- https://github.com/hatoo/oha 压测
+- https://github.com/flamegraph-rs/flamegraph 火焰图
+- https://github.com/sharkdp/hyperfine A command-line benchmarking tool
 
 ---
 
