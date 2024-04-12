@@ -1,7 +1,7 @@
 ---
 title: 学习 ast-grep
 pubDatetime: 2024-04-12T09:11:54.000Z
-modDatetime: 2024-04-12T09:11:55.000Z
+modDatetime: 2024-04-12T09:13:47.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/52
 tags:
   - Horizon
@@ -11,7 +11,7 @@ tags:
 - https://ast-grep.github.io
 - https://github.com/ast-grep/ast-grep
 
-## demo: 替换 `Promise.all` inside `await expression`
+## [demo](https://ast-grep.github.io/playground.html#eyJtb2RlIjoiQ29uZmlnIiwibGFuZyI6ImphdmFzY3JpcHQiLCJxdWVyeSI6IlByb21pc2UuYWxsKCRBKSIsInJld3JpdGUiOiIiLCJjb25maWciOiJpZDogbm8tYXdhaXQtaW4tcHJvbWlzZS1hbGxcbmxhbmd1YWdlOiBUeXBlU2NyaXB0XG5ydWxlOlxuICBraW5kOiBhd2FpdF9leHByZXNzaW9uXG4gIHBhdHRlcm46IGF3YWl0ICRCXG4gIGluc2lkZTpcbiAgICBwYXR0ZXJuOiBQcm9taXNlLmFsbCgkJCQpICMgYSBzdWIgcnVsZSBvYmplY3RcbiAgICBzdG9wQnk6IGVuZCAgICAgICAgICAgICAgICAgICMgc3RvcEJ5IGFjY2VwdHMgJ2VuZCcsICduZWlnaGJvcicgb3IgYW5vdGhlciBydWxlIG9iamVjdC5cbiAgICBmaWVsZDogYXJndW1lbnRzXG5maXg6ICRCIiwic291cmNlIjoiUHJvbWlzZS5hbGwoW1xuICBhd2FpdCBQcm9taXNlLnJlc29sdmUoMTIzKSxcbiAgUHJvbWlzZS5yZXNvbHZlKDEyNCksXG4gIGF3YWl0IFByb21pc2UucmVzb2x2ZSgxMjUpXG5dKVxuUHJvbWlzZS5hbGwoKVxuXG52YXIgYSA9IHtcbiAgbm9ybWFsS2V5OiBwcm90b3R5cGVcbn0ifQ==): 替换 `Promise.all` inside `await expression`
 
 ```ts
 Promise.all([
