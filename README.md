@@ -15,6 +15,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
@@ -24,7 +25,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
-- [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 
 ## API
 
@@ -37,13 +37,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## DEV
 
+- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
-- [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 <details><summary>MORE</summary>
 
+- [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
@@ -65,13 +66,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Horizon
 
+- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [系统设计 memo](https://github.com/bxb100/bxb100.github.io/issues/29)---2023-01-02
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 - [使用 charles 的 rootCA 代理后端 API](https://github.com/bxb100/bxb100.github.io/issues/10)---2022-02-10
-- [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 <details><summary>MORE</summary>
 
+- [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 - [Dropover 自定义操作的一些 Tips](https://github.com/bxb100/bxb100.github.io/issues/8)---2022-01-18
 </details>
 
