@@ -15,6 +15,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [Node DNS 解析异常的有一篇水文](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
@@ -24,7 +25,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [SWAR 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
-- [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 
 ## API
 
@@ -87,13 +87,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 
+- [Node DNS 解析异常的有一篇水文](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
-- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 <details><summary>MORE</summary>
 
+- [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
 </details>
 
