@@ -1,7 +1,7 @@
 ---
-title: Node DNS 解析异常的有一篇水文
+title: Node DNS 解析异常的又一篇水文
 pubDatetime: 2024-05-10T15:43:05.000Z
-modDatetime: 2024-05-10T15:43:05.000Z
+modDatetime: 2024-05-12T01:19:05.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/53
 tags:
   - uncategorized

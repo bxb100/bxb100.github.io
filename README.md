@@ -15,7 +15,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
-- [Node DNS 解析异常的有一篇水文](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
+- [Node DNS 解析异常的又一篇水文](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
@@ -87,7 +87,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 
-- [Node DNS 解析异常的有一篇水文](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
+- [Node DNS 解析异常的又一篇水文](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
