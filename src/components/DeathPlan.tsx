@@ -35,8 +35,7 @@ export default function DeathPlan() {
     <div>
       {status == "Alive" ? (
         <>
-          <h2>Status</h2>
-          <p>Still Alive</p>
+          <p>还活着</p>
         </>
       ) : (
         <>
