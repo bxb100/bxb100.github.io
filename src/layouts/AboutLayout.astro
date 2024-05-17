@@ -22,11 +22,31 @@ const { frontmatter } = Astro.props;
   <Breadcrumbs />
   <main id="main-content">
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
-      <!--<h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>-->
-      <!--<slot />-->
+      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
+      <slot />
+      <h2>Biography</h2>
+      <p>Placeholder text for biography.</p>
+      <details>
+        <summary>Skills</summary>
+        <p>Placeholder text for skills.</p>
+      </details>
+      <details>
+        <summary>Hobbies</summary>
+        <p>Placeholder text for hobbies.</p>
+      </details>
       <DeathPlan client:only="react" />
     </section>
   </main>
   <Player client:only="react" />
   <Footer />
 </Layout>
+
+<style>
+  details {
+    margin-bottom: 1rem;
+  }
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
