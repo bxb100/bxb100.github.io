@@ -1,7 +1,7 @@
 ---
 title: Benchmark 的一些记录
 pubDatetime: 2023-01-25T03:47:37.000Z
-modDatetime: 2024-04-12T09:17:34.000Z
+modDatetime: 2024-05-19T05:38:44.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/32
 tags:
   - DEV
@@ -87,3 +87,12 @@ https://docs.google.com/spreadsheets/d/1ayC9SV1kgGjB_VHa8pAuyxjMIIZf5bEh1kiYDTo8
 ---
 
 > RTT + Cwnd 控制网速
+
+---
+
+<a id='issuecomment-2119109650'></a>
+LLM Benchmark https://thefastest.ai/
+
+This site provides reliable measurements for the performance of popular models.
+
+<img width="1121" alt="image" src="https://github.com/bxb100/bxb100.github.io/assets/20685961/2855f6b2-f72b-4720-8f6f-f295a652afb6">
