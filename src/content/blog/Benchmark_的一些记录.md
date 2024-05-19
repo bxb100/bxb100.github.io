@@ -1,7 +1,7 @@
 ---
 title: Benchmark 的一些记录
 pubDatetime: 2023-01-25T03:47:37.000Z
-modDatetime: 2024-05-19T05:38:44.000Z
+modDatetime: 2024-05-19T05:40:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/32
 tags:
   - DEV
@@ -91,7 +91,7 @@ https://docs.google.com/spreadsheets/d/1ayC9SV1kgGjB_VHa8pAuyxjMIIZf5bEh1kiYDTo8
 ---
 
 <a id='issuecomment-2119109650'></a>
-LLM Benchmark https://thefastest.ai/
+LLM Speed Benchmark https://thefastest.ai/
 
 This site provides reliable measurements for the performance of popular models.
 
