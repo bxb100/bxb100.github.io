@@ -1,7 +1,7 @@
 ---
 title: ForkJoinPool 来运行斐波那契递归
 pubDatetime: 2023-03-11T19:19:54.000Z
-modDatetime: 2023-03-13T04:25:41.000Z
+modDatetime: 2024-05-21T15:00:54.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/36
 tags:
   - uncategorized
@@ -42,6 +42,13 @@ _jprofile active code: https://zhile.io/2022/02/22/jprofiler-license.html_
 解决方法:
 
 **不要用 forkJoinPool 来解决非分治问题**[^2]
+
+---
+
+<a id='issuecomment-2122838098'></a>
+https://www.bilibili.com/video/BV1fr42157T1/
+
+今天看到处理器调度, 想到和这个关联关系. 可能需要从 CPU L1 cache 这个角度来思考, 为什么有的时候并发和并行并不会带来好的结果
 
 [^1]: https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4
 [^2]: https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7
