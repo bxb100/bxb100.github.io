@@ -51,4 +51,5 @@ https://www.bilibili.com/video/BV1fr42157T1/
 今天看到处理器调度, 想到和这个关联关系. 可能需要从 CPU L1 cache 这个角度来思考, 为什么有的时候并发和并行并不会带来好的结果
 
 [^1]: https://medium.com/@peterlee2068/concurrency-and-parallelism-in-java-f625bc9b0ca4
+
 [^2]: https://stackoverflow.com/questions/51414388/fibonacci-using-fork-join-in-java-7

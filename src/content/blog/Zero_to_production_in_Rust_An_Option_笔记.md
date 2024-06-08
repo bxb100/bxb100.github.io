@@ -363,15 +363,27 @@ let _ = Mock::given(path("/emails"))
 总结: `_` 会立刻 drop, 并不是和 `_xx` 一样随作用域结束来 drop 的[^14]
 
 [^1]: https://eisel.me/lld
+
 [^2]: https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/
+
 [^3]: https://github.com/BurtonQin/lockbud/issues/44
+
 [^4]: https://github.com/actix/actix-web/issues/1147#issuecomment-1509937750
+
 [^5]: https://users.rust-lang.org/t/what-is-the-difference-between-as-ref/76059
+
 [^6]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
+
 [^7]: https://github.com/johnthagen/min-sized-rust#strip-symbols-from-binary
+
 [^9]: https://github.com/rust-lang/cargo/issues/2644
+
 [^10]: https://www.lpalmieri.com/posts/fast-rust-docker-builds/
+
 [^11]: https://registry.terraform.io/
+
 [^12]: https://developer.hashicorp.com/vault/docs/what-is-vault
+
 [^13]: https://www.bilibili.com/video/BV1L34y1B7PT
+
 [^14]: https://stackoverflow.com/questions/76311007/what-happens-when-assigning-to-the-underscore-pattern

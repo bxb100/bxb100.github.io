@@ -89,5 +89,7 @@ match self.buf.read_line(&mut buf) {
 和另一则社区回答[^3] 知道了标准处理 close 的办法就是看读取到的 buf 是否为 0 (原谅我一直在做应用层, 不太清楚这里的弯弯绕绕 😭)
 
 [^1]: https://stackoverflow.com/questions/37330993/sock-recv-returns-empty-string-when-connection-is-dead-on-non-blocking-socke
+
 [^2]: https://users.rust-lang.org/t/how-to-know-a-tcpstream-is-closed-in-the-other-side/52894/12
+
 [^3]: https://users.rust-lang.org/t/how-to-detect-tcp-close/50925/3

@@ -20,5 +20,7 @@ tags:
   - 看到这个我才知道 GitHub 为啥每个文件都给路径的复制按钮，原来还有如此妙用
 
 [^1]: https://git-scm.com/docs/git-sparse-checkout
+
 [^2]: https://stackoverflow.com/a/73254328/6699096
+
 [^3]: https://git-scm.com/docs/git-clone

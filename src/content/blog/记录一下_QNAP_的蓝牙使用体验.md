@@ -33,4 +33,5 @@ NAS 关了 dbus `sudo sh /etc/init.d/dbus.sh stop`
 PS: home assistant 好像也没人搞成功..
 
 [^1]: https://sourceforge.net/p/qosgpl/activity/?page=0&limit=100#64d47706d61c866ab279b42e
+
 [^2]: https://www.linuxfromscratch.org/blfs/view/svn/general/dbus.html

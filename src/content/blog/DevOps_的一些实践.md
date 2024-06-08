@@ -16,6 +16,9 @@ tags:
 - GitHub Action[^4]
 
 [^1]: https://yeasy.gitbook.io/docker_practice/compose/compose_file
+
 [^2]: https://docs.docker.com/compose/compose-file/05-services/
+
 [^3]: https://makefiletutorial.com/#getting-started
+
 [^4]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions

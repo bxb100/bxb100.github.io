@@ -159,5 +159,7 @@ Qnap 的 QuFirewall 是 iptables 的可视化版本, 目前它应该默认开启
 `sduo ln -s /${docker mapping location}/alist/ /opt/alist`
 
 [^1]: https://tailscale.com/kb/1015/100.x-addresses/
+
 [^2]: https://forum.qnap.com/viewtopic.php?t=166412#p828884:~:text=I%20explicitely%20authorize%20192.168.1.0/24%20(my%20LAN)%2C%20172.29.8.0/22%20(the%20docker%20network%20so%20that%20containers%20can%20talk%20to%20each%20other)%20and%20172.16.1.0/24%20(my%20VPN%20network)%2C%20all%20the%20rest%20is%20dropped.
+
 [^3]: https://alist.nn.ci/zh/guide/advanced/offline-download.html

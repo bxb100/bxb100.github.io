@@ -103,7 +103,11 @@ If you are missing `cont2` rule, the ES log will trigger exception like single d
 <p align="center"><em>Obviously It's not my wanted type</em></p>
 
 [^1]: https://gist.github.com/StevenACoffman/4e267f0f60c8e7fcb3f77b9e504f3bd7 fluent-filebeat-comparison
+
 [^2]: https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/multiline-parsing
+
 [^3]: https://docs.fluentbit.io/manual/pipeline/inputs/tail Tail input
+
 [^4]: https://kevcodez.de/posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/
+
 [^5]: https://juejin.cn/post/6844903847383547911

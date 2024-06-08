@@ -88,9 +88,15 @@ func executeMultipleCommandWithEnvs(fullCommand string, secretsCount int, env []
 - ~~前端使用 Event[^7] 传递 iframe 可用的 token 但是要对 iframe 中网页可控)~~
 
 [^1]: https://debezium.io/
+
 [^2]: https://nightlies.apache.org/flink/flink-docs-master/zh/docs/try-flink/table_api/
+
 [^3]: https://www.youtube.com/watch?v=ChISx0-cMpU
+
 [^4]: https://groups.google.com/g/openresty/c/claxKss8zc0
+
 [^5]: https://juejin.cn/post/6962576607928123428
+
 [^6]: https://www.digitalocean.com/community/tutorials/how-to-use-confd-and-etcd-to-dynamically-reconfigure-services-in-coreos#creating-the-nginx-container
+
 [^7]: https://stackoverflow.com/questions/28672152/pass-an-event-to-an-iframe-from-the-parent-window-javascript

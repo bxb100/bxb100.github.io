@@ -158,12 +158,21 @@ In the Action, we have three ways to use the docker
 3. using docker action[^10]
 
 [^1]: https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job.
+
 [^2]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets
+
 [^3]: https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880
+
 [^4]: https://stackoverflow.com/questions/11287861/how-to-check-if-a-file-contains-a-specific-string-using-bash
+
 [^5]: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event Create a workflow dispatch event
+
 [^6]: https://docs.github.com/en/actions/learn-github-actions/contexts#steps-context
+
 [^7]: https://github.com/orgs/community/discussions/26671
+
 [^8]: https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
+
 [^9]: https://docs.github.com/en/actions/using-containerized-services/about-service-containers
+
 [^10]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action

@@ -82,4 +82,5 @@ Address: 127.0.0.1
 大部分情况下应该是 DNS 没有刷新或者没启用导致的
 
 [^1]: https://nodejs.org/api/dns.html#supported-getaddrinfo-flags
+
 [^2]: https://www.reddit.com/r/MacOS/comments/1afwm7t/terminal_ping_not_using_configured_dns_nslookup/
