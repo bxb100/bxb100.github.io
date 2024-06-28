@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2024-06-28T08:24:31.000Z
+modDatetime: 2024-06-28T09:09:20.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -23,5 +23,14 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 ```
 
 - 如果包含自定义的 Proxy, 无法使用 `#! Root.conf`, 需要手动添加, 其它托管的代理的话, 直接 `#! Root.conf, xx.conf` 即可
+
+---
+
+<a id='issuecomment-2196467119'></a>
+
+## 出现的问题
+
+- tailscale 需要在 Surge 启动后再启动
+- 如果非常慢, 需要先关 Surge 让 DNS 重新缓存
 
 [^1]: https://tailscale.com/kb/1015/100.x-addresses
