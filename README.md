@@ -15,6 +15,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 - [Tailscale 和 Surge 冲突的解决方案](https://github.com/bxb100/bxb100.github.io/issues/55)---2024-06-28
 - [流水账: Node DNS 解析异常探究](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
@@ -24,7 +25,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [SWAR 的理解](https://github.com/bxb100/bxb100.github.io/issues/43)---2024-01-09
-- [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 
 ## API
 
@@ -106,13 +106,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## 就是玩
 
+- [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 - [Tailscale 和 Surge 冲突的解决方案](https://github.com/bxb100/bxb100.github.io/issues/55)---2024-06-28
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
-- [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 <details><summary>MORE</summary>
 
+- [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 - [Synergy 连接卡顿](https://github.com/bxb100/bxb100.github.io/issues/16)---2022-06-10
 - [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
 </details>
