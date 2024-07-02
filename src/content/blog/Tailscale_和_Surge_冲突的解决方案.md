@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2024-07-02T02:50:16.000Z
+modDatetime: 2024-07-02T08:04:42.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -30,7 +30,6 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 
 ## 出现的问题
 
-- tailscale 需要在 Surge 启动后再启动
-  - 或者关闭**增强模式**然后等待 tailscale 连接上后再启动, 目前稳定这个方式稳定运行, 目前不知道如何解决这个虚拟网卡冲突的问题
+- tailscale 与 surge 增强模式冲突, 关闭 tailscale 的 DNS setting 或者增强模式解决
 
 [^1]: https://tailscale.com/kb/1015/100.x-addresses
