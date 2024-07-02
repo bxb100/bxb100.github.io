@@ -1,7 +1,7 @@
 ---
 title: Zero to production in Rust An Option 笔记
 pubDatetime: 2023-04-19T10:10:05.000Z
-modDatetime: 2023-09-05T11:03:02.000Z
+modDatetime: 2024-07-02T04:18:53.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/40
 tags:
   - DEV
@@ -105,6 +105,10 @@ fn create_app() -> App<
         .route("/{name}", web::get().to(greet))
 }
 ```
+
+### Debug
+
+- [Debugging Rust programs with lldb on MacOS](https://bryce.fisher-fleig.org/debugging-rust-programs-with-lldb/)
 
 ---
 
