@@ -1,7 +1,7 @@
 ---
 title: 流水账  Node DNS 解析异常探究
 pubDatetime: 2024-05-10T15:43:05.000Z
-modDatetime: 2024-07-03T12:37:16.000Z
+modDatetime: 2024-07-03T12:37:46.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/53
 tags:
   - uncategorized
@@ -84,7 +84,8 @@ Address: 127.0.0.1
 ---
 
 <a id='issuecomment-2205977974'></a>
-How DNS Works
+[How DNS Works
+](https://wizardzines.com/zines/dns/)
 <img width="1059" alt="image" src="https://github.com/bxb100/bxb100.github.io/assets/20685961/908f6d83-7102-464c-a516-f8f7e189d76a">
 
 [^1]: https://nodejs.org/api/dns.html#supported-getaddrinfo-flags
