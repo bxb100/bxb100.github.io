@@ -15,6 +15,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [sgcc_electricity 和 tailscale 使用的踩坑](https://github.com/bxb100/bxb100.github.io/issues/58)---2024-08-03
 - [Using PostgreSQL](https://github.com/bxb100/bxb100.github.io/issues/57)---2024-07-27
 - [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 - [Tailscale 和 Surge 冲突的解决方案](https://github.com/bxb100/bxb100.github.io/issues/55)---2024-06-28
@@ -24,7 +25,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
-- [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 
 ## API
 
@@ -107,13 +107,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## 就是玩
 
+- [sgcc_electricity 和 tailscale 使用的踩坑](https://github.com/bxb100/bxb100.github.io/issues/58)---2024-08-03
 - [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 - [Tailscale 和 Surge 冲突的解决方案](https://github.com/bxb100/bxb100.github.io/issues/55)---2024-06-28
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
-- [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 <details><summary>MORE</summary>
 
+- [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
 - [Synergy 连接卡顿](https://github.com/bxb100/bxb100.github.io/issues/16)---2022-06-10
 - [QNAP 技巧分享](https://github.com/bxb100/bxb100.github.io/issues/9)---2022-01-20
