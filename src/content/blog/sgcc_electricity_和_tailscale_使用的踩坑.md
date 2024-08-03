@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-03T23:39:22.000Z
+modDatetime: 2024-08-03T23:53:15.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -23,7 +23,13 @@ tags:
 ---
 
 <a id='issuecomment-2267200536'></a>
-本地 r2s 的 tailscale 配置按照 https://chenprime.xyz/blog/tailscale/ 设置 exitNode 是能正常代理上网的
+![cs drawio](https://github.com/user-attachments/assets/06abce43-3f2c-43f7-b558-de4f1a68849e)
+
+<p align="center">上图三个 ISP; 红色 r2s, 蓝色阿里云 ECS, 绿色 laptop</p>
+
+---
+
+r2s 的 tailscale 配置按照 https://chenprime.xyz/blog/tailscale/ 设置 exitNode 是能正常代理上网的
 
 > 论坛里面的讨论 https://s.v2ex.com/t/1040374 感觉也没真正说明白这个问题根源是什么
 
