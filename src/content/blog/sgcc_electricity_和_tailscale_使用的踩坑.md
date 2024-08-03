@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-03T17:15:25.000Z
+modDatetime: 2024-08-03T22:06:19.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -16,7 +16,10 @@ tags:
 1. 我是多账户, 然后根据文档配置的时候, 发现有部分 `entity_id` 没有在 `event_data` 下
 2. `最近一天用电量` 的 homeAssistant 的 entity id 不是 `last_electricity_usage_entity_配置的户号` 而是 `sensor.zui_jin_yi_tian_yong_dian_liang` `sensor.zui_jin_yi_tian_yong_dian_liang_2` 这样的形式
 3. `states('sensor.electricity_charge_balance_配置的户号')` 是 string 转为 `int()`
+4. 有的时候年度价格需要按照 **thousands separator format** 格式化, 参看 `{{ '{0:,.0f}'.format(123456789) }} ` [^2]
 
 ![image](https://github.com/user-attachments/assets/b8cb133d-430b-4840-9b38-cd4bac0fd92d)
 
 [^1]: https://github.com/tailscale/tailscale/issues/5287
+
+[^2]: https://community.home-assistant.io/t/add-a-separator-comma-to-thousands/22031/8
