@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-03T22:06:19.000Z
+modDatetime: 2024-08-03T23:39:22.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -20,6 +20,21 @@ tags:
 
 ![image](https://github.com/user-attachments/assets/b8cb133d-430b-4840-9b38-cd4bac0fd92d)
 
+---
+
+<a id='issuecomment-2267200536'></a>
+本地 r2s 的 tailscale 配置按照 https://chenprime.xyz/blog/tailscale/ 设置 exitNode 是能正常代理上网的
+
+> 论坛里面的讨论 https://s.v2ex.com/t/1040374 感觉也没真正说明白这个问题根源是什么
+
+使用 `tailscale ping` 无法打洞, 参看文章 https://www.xiaotangren.cc/article/176/p2p-udp.html 知道是 NAT 设置有问题, 注意在路由中开启 DMZ 和 UPnP[^3] (当然有安全风险[^4])
+
+_不过我没理解 NAT 连接和 DMZ 有啥关系, 照这么操作确实直接打洞成功, `tailscale ping` 没有 derp 中转_
+
 [^1]: https://github.com/tailscale/tailscale/issues/5287
 
 [^2]: https://community.home-assistant.io/t/add-a-separator-comma-to-thousands/22031/8
+
+[^3]: https://www.sohu.com/a/525005569_121124375
+
+[^4]: https://superuser.com/questions/17572/whats-dmz-used-for-in-a-home-wireless-router
