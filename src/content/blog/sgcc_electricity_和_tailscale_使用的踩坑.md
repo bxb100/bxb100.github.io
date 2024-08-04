@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-03T23:53:15.000Z
+modDatetime: 2024-08-04T05:47:10.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -36,6 +36,29 @@ r2s 的 tailscale 配置按照 https://chenprime.xyz/blog/tailscale/ 设置 exit
 使用 `tailscale ping` 无法打洞, 参看文章 https://www.xiaotangren.cc/article/176/p2p-udp.html 知道是 NAT 设置有问题, 注意在路由中开启 DMZ 和 UPnP[^3] (当然有安全风险[^4])
 
 _不过我没理解 NAT 连接和 DMZ 有啥关系, 照这么操作确实直接打洞成功, `tailscale ping` 没有 derp 中转_
+
+---
+
+<a id='issuecomment-2267353377'></a>
+然后又出现了 tailscale 周期性使用 exit 无法联网的问题, 看了下 r2s 日志出现
+
+_日志丢了, 只记得这一句_
+
+```log
+[Daemon.err odhcpd[868]: Failed to send to ff02::1%lan@br-lan
+```
+
+然后在 openWrt 论坛上发现使用后 tailscale 就又可以使用 exit 翻墙了
+
+```sh
+uci -q delete network.@device[0].ipv6
+uci commit network
+/etc/init.d/network restart
+```
+
+但是很奇怪的地方是, `/etc/config/network` 没有被修改, 感觉是 `network restart` 起到了作用
+
+[^1]: https://forum.openwrt.org/t/daemon-err-odhcpd-868-failed-to-send-to-ff02-1-lan-br-lan-network-unreachable/173060/6
 
 [^1]: https://github.com/tailscale/tailscale/issues/5287
 
