@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-04T05:47:10.000Z
+modDatetime: 2024-08-04T05:54:58.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -48,7 +48,7 @@ _日志丢了, 只记得这一句_
 [Daemon.err odhcpd[868]: Failed to send to ff02::1%lan@br-lan
 ```
 
-然后在 openWrt 论坛上发现使用后 tailscale 就又可以使用 exit 翻墙了
+然后在 openWrt 论坛上[^5]发现下面的命令, 使用后 tailscale 就又可以使用 exit 翻墙了
 
 ```sh
 uci -q delete network.@device[0].ipv6
@@ -58,8 +58,6 @@ uci commit network
 
 但是很奇怪的地方是, `/etc/config/network` 没有被修改, 感觉是 `network restart` 起到了作用
 
-[^1]: https://forum.openwrt.org/t/daemon-err-odhcpd-868-failed-to-send-to-ff02-1-lan-br-lan-network-unreachable/173060/6
-
 [^1]: https://github.com/tailscale/tailscale/issues/5287
 
 [^2]: https://community.home-assistant.io/t/add-a-separator-comma-to-thousands/22031/8
@@ -67,3 +65,5 @@ uci commit network
 [^3]: https://www.sohu.com/a/525005569_121124375
 
 [^4]: https://superuser.com/questions/17572/whats-dmz-used-for-in-a-home-wireless-router
+
+[^5]: https://forum.openwrt.org/t/daemon-err-odhcpd-868-failed-to-send-to-ff02-1-lan-br-lan-network-unreachable/173060/6
