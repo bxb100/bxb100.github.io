@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-05T04:42:45.000Z
+modDatetime: 2024-08-05T06:02:15.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -9,7 +9,9 @@ tags:
 
 使用 https://github.com/liantianji/sgcc_electricity docker compose 和 tailscale docker 的时候, 想使用 sidecar, 但是尝试过很多遍, 发现只能组 tailscale 的网, 无法 ping 通外网, 看 `/etc/resolv.conf` 只有 `127.0.0.1`
 
-然后想到可以直接在宿主机上直接 `tailscale up` 但是又出现了一个问题, 那就是只要 `up` 后就无法解析 DNS[^1][^2][^3], 只好 override 成 `223.6.6.6`
+然后想到可以直接在宿主机上直接 `tailscale up` 但是又出现了一个问题, 那就是只要 `up` 后就无法解析 DNS[^1][^2][^3]
+
+_update: 修改 iptables 的话也可以使用, 但是每次启动 tailscale 都需要重新修改, 所以重复几次后我就决定换 apt 源并开启 tailscale 的 override local DNS_
 
 然后 sgcc 的配置问题
 
