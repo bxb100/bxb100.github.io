@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-06T07:53:14.000Z
+modDatetime: 2024-08-06T07:53:58.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -65,7 +65,7 @@ uci commit network
 update: 错误理解了 uci 的命令[^9], 并且论坛有大佬回复指出了这条命令的作用
 
 > This starts odhcp6d and odhcp6d periodically multicasts on ff02::1 to announce itself, but fails because ipv6 is disabled on br-lan.
-
+>
 > So yes, `uci -q delete network.@device[0].ipv6` does remove this error.
 
 [^1]: https://github.com/tailscale/tailscale/issues/5287
