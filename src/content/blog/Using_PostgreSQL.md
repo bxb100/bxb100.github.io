@@ -1,7 +1,7 @@
 ---
 title: Using PostgreSQL
 pubDatetime: 2024-07-27T08:06:19.000Z
-modDatetime: 2024-07-27T08:06:29.000Z
+modDatetime: 2024-08-07T08:21:41.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/57
 tags:
   - DEV
@@ -15,3 +15,9 @@ tags:
 
 - https://felixge.de/2017/07/27/implementing-state-machines-in-postgresql/#fnref:1
 - https://raphael.medaer.me/2019/06/12/pgfsm.html
+
+> How to import CSV data into PostgreSQL
+
+- https://www.postgresql.org/docs/16/sql-copy.html
+- https://vladmihalcea.com/how-to-import-csv-data-into-postgresql/
+- https://www.postgresqltutorial.com/postgresql-tutorial/import-csv-file-into-posgresql-table/
