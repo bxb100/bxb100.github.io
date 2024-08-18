@@ -1,7 +1,7 @@
 ---
 title: sgcc_electricity 和 tailscale 使用的踩坑
 pubDatetime: 2024-08-03T17:15:14.000Z
-modDatetime: 2024-08-06T07:53:58.000Z
+modDatetime: 2024-08-18T07:30:33.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/58
 tags:
   - 就是玩
@@ -10,6 +10,33 @@ tags:
 使用 https://github.com/liantianji/sgcc_electricity docker compose 和 tailscale docker 的时候, 想使用 sidecar, 但是尝试过很多遍, 发现只能组 tailscale 的网, 无法 ping 通外网, 看 `/etc/resolv.conf` 只有 `127.0.0.1`
 
 然后想到可以直接在宿主机上直接 `tailscale up` 但是又出现了一个问题, 那就是只要 `up` 后就无法解析 DNS[^1] [^2] [^3]
+
+<details>
+  <summary>这里有个概念是 CGNAT, 这里贴一下 Claude 的回复</summary>
+
+---
+
+> CGNAT（Carrier-Grade NAT）是一种大规模网络地址转换技术，通常由互联网服务提供商（ISP）使用。CGNAT 使用的网段通常是私有 IP 地址范围。根据 RFC 1918，私有 IP 地址范围包括：
+
+1. `10.0.0.0` 到 `10.255.255.255` (`10/8` prefix)
+2. `172.16.0.0` 到 `172.31.255.255` (`172.16/12` prefix)
+3. `192.168.0.0` 到 `192.168.255.255` (`192.168/16` prefix)
+
+> 然而，对于 CGNAT，通常使用的是 `100.64.0.0/10` 网段。这个网段是由 RFC 6598 专门为 CGNAT 定义的，被称为"共享地址空间"或"运营商 NAT 空间"。
+>
+> 具体来说：
+
+⦁ CGNAT 的网段：`100.64.0.0` 到 `100.127.255.255`
+⦁ 子网掩码：`255.192.0.0`
+⦁ CIDR 表示法：`100.64.0.0/10`
+
+> 这个地址范围提供了约 400 万个 IP 地址，可以用于 CGNAT 环境。使用这个专用范围可以避免与其他常见的私有 IP 地址范围冲突，从而减少网络配置问题。
+>
+> 需要注意的是，虽然 `100.64.0.0/10` 是推荐用于 CGNAT 的网段，但一些 ISP 可能会选择使用其他私有 IP 地址范围，具体取决于他们的网络架构和需求
+
+---
+
+</details>
 
 _update: 修改 iptables 的话也可以使用, 但是每次启动 tailscale 都需要重新修改, 所以重复几次后我就决定换 apt 源并开启 tailscale 的 override local DNS_
 
