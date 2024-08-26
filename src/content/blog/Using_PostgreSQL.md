@@ -1,7 +1,7 @@
 ---
 title: Using PostgreSQL
 pubDatetime: 2024-07-27T08:06:19.000Z
-modDatetime: 2024-08-07T08:21:41.000Z
+modDatetime: 2024-08-26T06:06:19.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/57
 tags:
   - DEV
@@ -21,3 +21,7 @@ tags:
 - https://www.postgresql.org/docs/16/sql-copy.html
 - https://vladmihalcea.com/how-to-import-csv-data-into-postgresql/
 - https://www.postgresqltutorial.com/postgresql-tutorial/import-csv-file-into-posgresql-table/
+
+> Postgres as a search engine
+
+- https://anyblockers.com/posts/postgres-as-a-search-engine
