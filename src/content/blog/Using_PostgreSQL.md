@@ -1,7 +1,7 @@
 ---
 title: Using PostgreSQL
 pubDatetime: 2024-07-27T08:06:19.000Z
-modDatetime: 2024-09-22T12:20:11.000Z
+modDatetime: 2024-09-22T12:22:16.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/57
 tags:
   - DEV
@@ -25,8 +25,3 @@ tags:
 > Postgres as a search engine
 
 - https://anyblockers.com/posts/postgres-as-a-search-engine
-
----
-
-<a id='issuecomment-2366760972'></a>
-This message is used to verify that this feed (feedId:42842779663348736) belongs to me (userId:41432635634718720). Join me in enjoying the next generation information browser https://follow.is.
