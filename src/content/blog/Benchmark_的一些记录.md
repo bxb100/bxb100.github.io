@@ -1,7 +1,7 @@
 ---
 title: Benchmark 的一些记录
 pubDatetime: 2023-01-25T03:47:37.000Z
-modDatetime: 2024-05-19T05:40:40.000Z
+modDatetime: 2024-10-03T18:52:08.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/32
 tags:
   - DEV
@@ -96,3 +96,10 @@ LLM Speed Benchmark https://thefastest.ai/
 This site provides reliable measurements for the performance of popular models.
 
 <img width="1121" alt="image" src="https://github.com/bxb100/bxb100.github.io/assets/20685961/2855f6b2-f72b-4720-8f6f-f295a652afb6">
+
+---
+
+<a id='issuecomment-2392103620'></a>
+Axum (Rust) vs Stdlib (Go): Performance Benchmark in Kubernetes [#205](https://www.youtube.com/hashtag/205)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ZfvpUDGGr24/0.jpg)](https://www.youtube.com/watch?v=ZfvpUDGGr24)
