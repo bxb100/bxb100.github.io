@@ -1,11 +1,16 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2024-07-02T08:52:01.000Z
+modDatetime: 2024-11-18T03:11:29.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
 ---
+
+update: 20241118: 现版本的 surge 5.9.1 使用系统 VPN, 和 tailscale 已经不冲突了
+
+<details>
+<summary>过时的经验</summary>
 
 参考: https://community.nssurge.com/d/1094-tailscale/39
 
@@ -23,6 +28,8 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 ```
 
 - 如果包含自定义的 Proxy, 无法使用 `#! Root.conf`, 需要手动添加, 其它托管的代理的话, 直接 `#! Root.conf, xx.conf` 即可
+
+</details>
 
 ---
 
