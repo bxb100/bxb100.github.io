@@ -1,7 +1,7 @@
 ---
 title: Remember, Although life ignore you, I still love you
 pubDatetime: 2021-12-13T03:47:26.000Z
-modDatetime: 2024-06-24T06:29:13.000Z
+modDatetime: 2025-03-04T04:40:32.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/3
 tags:
   - 摘录
@@ -153,3 +153,15 @@ from https://jandan.net/t/5660812
 https://jandan.net/t/5702591
 
 ![In this image, the title says, “How to write regret in the most piercing way?” Below the image, there is a caption that reads, “The hospital wall can answer your question.” On the wall in the image, the characters “平安” (which means “peace” or “safety”) are repeatedly written.](https://github.com/bxb100/bxb100.github.io/assets/20685961/875825b0-a038-41bf-b407-f678f0d70dd8)
+
+---
+
+<a id='issuecomment-2696176340'></a>
+
+![Image](https://github.com/user-attachments/assets/400933c9-48b4-4743-9b08-482cd5332cf7)
+
+![Image](https://github.com/user-attachments/assets/7ad788a5-9763-48bd-abec-a40ad5bf64e3)
+
+![Image](https://github.com/user-attachments/assets/0fb123f1-38e5-47bc-a32d-87c8725288ad)
+
+![Image](https://github.com/user-attachments/assets/9ec29533-139d-40c4-b2dd-221d5e1681eb)
