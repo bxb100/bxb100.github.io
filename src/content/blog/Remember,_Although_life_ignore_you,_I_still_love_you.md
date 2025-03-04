@@ -1,7 +1,7 @@
 ---
 title: Remember, Although life ignore you, I still love you
 pubDatetime: 2021-12-13T03:47:26.000Z
-modDatetime: 2025-03-04T04:40:32.000Z
+modDatetime: 2025-03-04T12:06:01.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/3
 tags:
   - 摘录
@@ -165,3 +165,12 @@ https://jandan.net/t/5702591
 ![Image](https://github.com/user-attachments/assets/0fb123f1-38e5-47bc-a32d-87c8725288ad)
 
 ![Image](https://github.com/user-attachments/assets/9ec29533-139d-40c4-b2dd-221d5e1681eb)
+
+---
+
+<a id='issuecomment-2697321795'></a>
+https://jandan.net/t/5863918
+
+![Image](https://github.com/user-attachments/assets/8e5b60d7-f572-4448-81be-2fd6caf1a647)
+
+![Image](https://github.com/user-attachments/assets/ebb8bc09-12a6-4694-a77c-7ff0766b830a)
