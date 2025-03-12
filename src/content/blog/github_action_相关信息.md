@@ -1,7 +1,7 @@
 ---
 title: github action 相关信息
 pubDatetime: 2021-12-31T10:41:11.000Z
-modDatetime: 2023-07-10T06:11:57.000Z
+modDatetime: 2025-03-12T05:56:06.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/7
 tags:
   - API
@@ -157,6 +157,15 @@ In the Action, we have three ways to use the docker
 2. using service[^9], it like expose a port to workflow runtime, so we don't change the runner env
 3. using docker action[^10]
 
+---
+
+<a id='issuecomment-2716605081'></a>
+
+# 在 PR 中使用 secret 的一些手段
+
+1. 使用 `pull_request_target`[^11], 我在 https://github.com/bxb100/action-test/pull/16/checks 中测试过, 需要配合 enviroment secret 的授权来做更严格的限制
+2. 通过 `repository_dispatch` 触发[^12], 可以参看 https://github.com/1Password/load-secrets-action/blob/85e0e789db06bad7e43b5f7b0c36700967d04155/.github/workflows/ok-to-test.yml 用例, 可以通过 api 也可以通过一个新的 action 来 trigger (没想到的地方是, 这个能关联到正确的 commit-hash 中, 需要进步理解)
+
 [^1]: https://docs.github.com/en/actions/security-guides/encrypted-secrets#:~:text=Secrets%20cannot%20be%20directly%20referenced%20in%20if%3A%20conditionals.%20Instead%2C%20consider%20setting%20secrets%20as%20job%2Dlevel%20environment%20variables%2C%20then%20referencing%20the%20environment%20variables%20to%20conditionally%20run%20steps%20in%20the%20job.
 
 [^2]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets
@@ -176,3 +185,7 @@ In the Action, we have three ways to use the docker
 [^9]: https://docs.github.com/en/actions/using-containerized-services/about-service-containers
 
 [^10]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
+
+[^11]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#pull_request_target
+
+[^12]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#repository_dispatch
