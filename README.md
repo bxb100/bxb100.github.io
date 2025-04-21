@@ -19,7 +19,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
-- [miui 使用通知滤盒, gotify 和 raycast 接收验证码](https://github.com/bxb100/bxb100.github.io/issues/65)---2025-04-18
+- [android 使用通知滤盒, gotify 和 raycast 接收验证码](https://github.com/bxb100/bxb100.github.io/issues/65)---2025-04-18
 - [Java 使用中的一些奇巧淫技](https://github.com/bxb100/bxb100.github.io/issues/64)---2025-03-08
 - [前端的奇巧淫技 - 透明视频](https://github.com/bxb100/bxb100.github.io/issues/63)---2025-03-06
 - [telegram api 的一些坑](https://github.com/bxb100/bxb100.github.io/issues/61)---2024-12-04
@@ -114,7 +114,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## 就是玩
 
-- [miui 使用通知滤盒, gotify 和 raycast 接收验证码](https://github.com/bxb100/bxb100.github.io/issues/65)---2025-04-18
+- [android 使用通知滤盒, gotify 和 raycast 接收验证码](https://github.com/bxb100/bxb100.github.io/issues/65)---2025-04-18
 - [telegram api 的一些坑](https://github.com/bxb100/bxb100.github.io/issues/61)---2024-12-04
 - [sgcc_electricity 和 tailscale 使用的踩坑](https://github.com/bxb100/bxb100.github.io/issues/58)---2024-08-03
 - [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
