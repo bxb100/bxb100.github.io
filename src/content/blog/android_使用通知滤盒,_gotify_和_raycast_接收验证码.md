@@ -1,11 +1,15 @@
 ---
 title: android 使用通知滤盒, gotify 和 raycast 接收验证码
 pubDatetime: 2025-04-18T19:14:52.000Z
-modDatetime: 2025-04-21T10:10:25.000Z
+modDatetime: 2025-04-21T10:12:54.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/65
 tags:
   - 就是玩
 ---
+
+<details>
+
+<summary>还是使用下面的 regex 比较好</summary>
 
 ## 通知滤盒 webhook 配置
 
@@ -50,6 +54,8 @@ tags:
 安装 https://github.com/bxb100/raycast-gotify
 
 <img width="774" alt="Image" src="https://github.com/user-attachments/assets/01f91112-929d-40f7-a2a3-9d12ee5b39b7" />
+
+</details>
 
 ---
 
