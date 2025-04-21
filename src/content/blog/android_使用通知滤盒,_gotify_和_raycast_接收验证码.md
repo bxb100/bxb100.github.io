@@ -1,7 +1,7 @@
 ---
 title: android 使用通知滤盒, gotify 和 raycast 接收验证码
 pubDatetime: 2025-04-18T19:14:52.000Z
-modDatetime: 2025-04-21T10:12:54.000Z
+modDatetime: 2025-04-21T10:14:30.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/65
 tags:
   - 就是玩
@@ -60,7 +60,7 @@ tags:
 ---
 
 <a id='issuecomment-2818097228'></a>
-发现 MIUI 解析国外的验证码短信, 更新迭代了一下
+发现 MIUI 无法解析国外的验证码短信, 更新迭代了一下
 
 ### 通知滤盒配置
 
