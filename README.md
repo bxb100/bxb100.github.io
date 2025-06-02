@@ -16,6 +16,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | [rauno](https://github.com/raunofreiberg)       | [rauno.me](https://rauno.me/)           | 前端, UX                                                              |
 | [Jinzhou Zhang](https://twitter.com/jinzhouz)   | [三点水](https://lotabout.me/)          | 后端博主                                                              |
 | [Micah Lerner](https://twitter.com/micahlerner) | https://www.micahlerner.com/            | CS Researcher                                                         |
+| [绅士喵](https://github.com/Hentioe)            | [绅士喵](https://blog.hentioe.dev/)     | Independent developer, open source project maintainer                 |
 
 ## Recent
 
