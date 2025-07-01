@@ -29,7 +29,6 @@ uint32_t  parse_eight_digits_unrolled(uint64_t val) {
   - 5th byte: `10 * b5 + b6`
   - 7th byte: `10 * b3 + b4`
 - `((val & mask) * mul1)`
-
   - `val & mask` 只保留 1th, 5th byte
   - `* mul1` 可以通过分配率的形式来理解，`1th byte * 1000000ULL * 2^32` 就是 `1th byte * 1000000ULL`, 通同理 `5th * 100`, 二者相加的和存放在 5th byte（这里还要注意这里可以存储 32 位，而这里最大也只有 255 \* 10^6, 所以也防止溢出）
 

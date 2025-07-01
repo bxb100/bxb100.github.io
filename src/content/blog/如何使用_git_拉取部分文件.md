@@ -12,7 +12,6 @@ tags:
 下面都来自 stackoverflow[^2]
 
 - `git clone --filter=blob:none --sparse  %your-git-repo-url%`[^3]
-
   - `--filter=blob:none` will filter out all blobs (file contents) until needed by Git
   - `--sparse` 告诉 git 只会疏松克隆, 如果没有 `--filter` 虽然克隆的文件都一样，但是这个 `.git/objects/packs` 文件夹明显要大
 
