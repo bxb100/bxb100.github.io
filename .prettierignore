@@ -7,7 +7,8 @@
 !/.github
 !tsconfig.json
 !astro.config.ts
+!.prettierrc.mjs
 !package.json
 !.prettierrc
-!.eslintrc.js
+!eslint.config.js
 !README.md

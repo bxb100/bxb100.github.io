@@ -70,4 +70,3 @@ jobs:
           git add -A
           git commit -m "$COMMIT_MSG" || true
           git push
-

@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.github/**'
+      - ".github/**"
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -31,21 +31,15 @@ jobs:
       - name: Use Node.js 18.x
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
+          node-version: 24
+          cache: "pnpm"
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
       - name: Build
         # we need formatter the generate markdown file
         run: |
-          npm run format
-          npm run build
+          pnpm run format
+          pnpm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4.0.0
       - name: Upload artifact

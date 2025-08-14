@@ -1,4 +1,6 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About me"
+title: "About"
 ---
+
+Have Fun
