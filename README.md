@@ -42,13 +42,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## DEV
 
+- [Learn JJ](https://github.com/bxb100/bxb100.github.io/issues/68)---2025-08-14
 - [Java 使用中的一些奇巧淫技](https://github.com/bxb100/bxb100.github.io/issues/64)---2025-03-08
 - [前端的奇巧淫技 - 透明视频](https://github.com/bxb100/bxb100.github.io/issues/63)---2025-03-06
 - [telegram api 的一些坑](https://github.com/bxb100/bxb100.github.io/issues/61)---2024-12-04
 - [Using PostgreSQL](https://github.com/bxb100/bxb100.github.io/issues/57)---2024-07-27
-- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 <details><summary>MORE</summary>
 
+- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
@@ -96,14 +97,13 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 
-- [Learn JJ](https://github.com/bxb100/bxb100.github.io/issues/68)---2025-08-14
 - [R2 使用 presign url 前端老是报错](https://github.com/bxb100/bxb100.github.io/issues/66)---2025-05-15
 - [流水账: Node DNS 解析异常探究](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
 - [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
+- [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 <details><summary>MORE</summary>
 
-- [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
 - [使用 N_m3u8DL-CLI 简化下载 m3u8 流程](https://github.com/bxb100/bxb100.github.io/issues/13)---2022-04-04
