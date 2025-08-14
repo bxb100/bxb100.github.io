@@ -28,7 +28,13 @@ jobs:
             My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.github.io/rss.xml)
           blog_image_url: https://cdn.jsdelivr.net/gh/bxb100/bxb100@master/png2.png
           blog_url: https://bxb100.github.io
-      - name: Use Node.js 18.x
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+      - name: Use Node.js 24.x
         uses: actions/setup-node@v4
         with:
           node-version: 24
