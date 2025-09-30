@@ -1,7 +1,7 @@
 ---
 title: Rust  记录一下 debug
 pubDatetime: 2023-03-23T19:28:50.000Z
-modDatetime: 2023-04-19T10:11:01.000Z
+modDatetime: 2025-09-30T07:55:15.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
   - DEV
@@ -87,6 +87,13 @@ match self.buf.read_line(&mut buf) {
 ```
 
 和另一则社区回答[^3] 知道了标准处理 close 的办法就是看读取到的 buf 是否为 0 (原谅我一直在做应用层, 不太清楚这里的弯弯绕绕 😭)
+
+---
+
+<a id='issuecomment-3350489419'></a>
+使用 [cargo-update](https://github.com/nabijaczleweli/cargo-update) 和 [RsProxy](https://rsproxy.cn/#FAQ) 的时候出现 registry index was not found in any configuration
+
+需要按照 https://github.com/nabijaczleweli/cargo-update/issues/248#issuecomment-1937164615 配置`[registries.rsproxy-sparse]`
 
 [^1]: https://stackoverflow.com/questions/37330993/sock-recv-returns-empty-string-when-connection-is-dead-on-non-blocking-socke
 
