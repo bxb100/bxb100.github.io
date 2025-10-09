@@ -20,7 +20,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
-- [Learn JJ](https://github.com/bxb100/bxb100.github.io/issues/68)---2025-08-14
+- [Common Sense - 家居](https://github.com/bxb100/bxb100.github.io/issues/70)---2025-10-09
 - [R2 使用 presign url 前端老是报错](https://github.com/bxb100/bxb100.github.io/issues/66)---2025-05-15
 - [Java 使用中的一些奇巧淫技](https://github.com/bxb100/bxb100.github.io/issues/64)---2025-03-08
 - [前端的奇巧淫技 - 透明视频](https://github.com/bxb100/bxb100.github.io/issues/63)---2025-03-06
@@ -37,19 +37,19 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Archive
 
+- [Common Sense - 家居](https://github.com/bxb100/bxb100.github.io/issues/70)---2025-10-09
 - [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
 - [Java 程序死锁问题原理及解决方案](https://github.com/bxb100/bxb100.github.io/issues/6)---2021-12-30
 
 ## DEV
 
-- [Learn JJ](https://github.com/bxb100/bxb100.github.io/issues/68)---2025-08-14
 - [Java 使用中的一些奇巧淫技](https://github.com/bxb100/bxb100.github.io/issues/64)---2025-03-08
 - [前端的奇巧淫技 - 透明视频](https://github.com/bxb100/bxb100.github.io/issues/63)---2025-03-06
 - [telegram api 的一些坑](https://github.com/bxb100/bxb100.github.io/issues/61)---2024-12-04
 - [Using PostgreSQL](https://github.com/bxb100/bxb100.github.io/issues/57)---2024-07-27
+- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 <details><summary>MORE</summary>
 
-- [学习 ast-grep](https://github.com/bxb100/bxb100.github.io/issues/52)---2024-04-12
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
 - [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
