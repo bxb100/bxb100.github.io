@@ -20,6 +20,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [Moviepilot + OpenList + Emby 实现 strm](https://github.com/bxb100/bxb100.github.io/issues/71)---2025-11-02
 - [Common Sense - 家居](https://github.com/bxb100/bxb100.github.io/issues/70)---2025-10-09
 - [R2 使用 presign url 前端老是报错](https://github.com/bxb100/bxb100.github.io/issues/66)---2025-05-15
 - [Java 使用中的一些奇巧淫技](https://github.com/bxb100/bxb100.github.io/issues/64)---2025-03-08
@@ -29,7 +30,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Using PostgreSQL](https://github.com/bxb100/bxb100.github.io/issues/57)---2024-07-27
 - [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 - [Tailscale 和 Surge 冲突的解决方案](https://github.com/bxb100/bxb100.github.io/issues/55)---2024-06-28
-- [流水账: Node DNS 解析异常探究](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 
 ## API
 
@@ -117,13 +117,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## 就是玩
 
+- [Moviepilot + OpenList + Emby 实现 strm](https://github.com/bxb100/bxb100.github.io/issues/71)---2025-11-02
 - [telegram api 的一些坑](https://github.com/bxb100/bxb100.github.io/issues/61)---2024-12-04
 - [sgcc_electricity 和 tailscale 使用的踩坑](https://github.com/bxb100/bxb100.github.io/issues/58)---2024-08-03
 - [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 - [Tailscale 和 Surge 冲突的解决方案](https://github.com/bxb100/bxb100.github.io/issues/55)---2024-06-28
-- [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 <details><summary>MORE</summary>
 
+- [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [比较有趣的项目](https://github.com/bxb100/bxb100.github.io/issues/33)---2023-02-07
 - [How to add auth for Cloudflare Page](https://github.com/bxb100/bxb100.github.io/issues/21)---2022-08-06
 - [记一次 Win Docker 无法在局域网内连接的解决方案](https://github.com/bxb100/bxb100.github.io/issues/18)---2022-06-24
