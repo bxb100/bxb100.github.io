@@ -1,7 +1,7 @@
 ---
 title: Moviepilot + OpenList + Emby 实现 strm
 pubDatetime: 2025-11-02T04:40:07.000Z
-modDatetime: 2025-11-02T04:40:15.000Z
+modDatetime: 2025-11-02T04:41:38.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/71
 tags:
   - 就是玩
@@ -32,5 +32,6 @@ tags:
   - 定时任务 (可以先手动触发看看能不能行)
   - 要选 `文件列表` (_不要问我为什么叫 `源目录`, 为什么不选 `下载列表`, 我也不知道, 都是试出来的_)
   - 然后这一步就能正确显示文件数量并根据上一部的配置, 自动复制 strm 并刮削了
+  - `重置任务` 可以清除过往的识别历史, 单纯清除 `媒体整理` 记录是没用的, 依然会 skip
 
 <img width="1167" height="564" alt="Image" src="https://github.com/user-attachments/assets/a1930ae2-6693-4af1-8af8-db8d18209d2f" />
