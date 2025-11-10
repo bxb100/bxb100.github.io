@@ -1,7 +1,7 @@
 ---
 title: QNAP 技巧分享
 pubDatetime: 2022-01-20T09:59:51.000Z
-modDatetime: 2023-06-20T03:48:05.000Z
+modDatetime: 2025-11-10T10:59:03.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/9
 tags:
   - Horizon
@@ -157,6 +157,15 @@ Qnap 的 QuFirewall 是 iptables 的可视化版本, 目前它应该默认开启
 可以手动映射个软连接
 
 `sduo ln -s /${docker mapping location}/alist/ /opt/alist`
+
+---
+
+<a id='issuecomment-3510866459'></a>
+注意最新的 tailscale QNAP 发行版有个坑:
+
+> By default, Linux devices only discover [Tailscale IP addresses](https://tailscale.com/kb/1015/100.x-addresses). To enable automatic discovery of new subnet routes on Linux devices, use the --accept-routes flag
+
+使用 `/sbin/getcfg Tailscale Install_Path -f /etc/config/qpkg.conf` 到安装目录, 然后执行 `./tailscale set --accept-routes`
 
 [^1]: https://tailscale.com/kb/1015/100.x-addresses/
 

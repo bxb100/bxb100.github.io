@@ -1,7 +1,7 @@
 ---
 title: Moviepilot + OpenList + Emby 实现 strm
 pubDatetime: 2025-11-02T04:40:07.000Z
-modDatetime: 2025-11-02T04:41:38.000Z
+modDatetime: 2025-11-10T10:58:33.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/71
 tags:
   - 就是玩
