@@ -1,7 +1,7 @@
 ---
 title: QNAP 技巧分享
 pubDatetime: 2022-01-20T09:59:51.000Z
-modDatetime: 2025-11-10T10:59:03.000Z
+modDatetime: 2025-11-10T11:01:31.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/9
 tags:
   - Horizon
