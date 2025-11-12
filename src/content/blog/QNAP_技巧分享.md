@@ -1,7 +1,7 @@
 ---
 title: QNAP 技巧分享
 pubDatetime: 2022-01-20T09:59:51.000Z
-modDatetime: 2025-11-12T10:35:01.000Z
+modDatetime: 2025-11-12T11:32:08.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/9
 tags:
   - Horizon
@@ -161,14 +161,15 @@ Qnap 的 QuFirewall 是 iptables 的可视化版本, 目前它应该默认开启
 ---
 
 <a id='issuecomment-3510866459'></a>
-~~注意最新的 tailscale QNAP 发行版有个坑~~
+~~注意最新的 tailscale QNAP 发行版有个坑~~[^4]
 
 使用 `/sbin/getcfg Tailscale Install_Path -f /etc/config/qpkg.conf` 到安装目录, 然后执行 `./tailscale set --accept-routes`
 
-[^1]:
+[^2]:
 
 > By default, Linux devices only discover [Tailscale IP addresses](https://tailscale.com/kb/1015/100.x-addresses). To enable automatic discovery of new subnet routes on Linux devices, use the --accept-routes flag
-> [^1]: https://github.com/tailscale/tailscale/issues/1995 是故意的
+> [^2]: https://github.com/tailscale/tailscale/blob/d37884c734762cdd96d184c877b3b6eac139e5a2/envknob/featureknob/featureknob.go#L46C1-L52C12 web 页面无法使用 exit-node
 > [^1]:https://tailscale.com/kb/1015/100.x-addresses/
 > [^2]: https://forum.qnap.com/viewtopic.php?t=166412#p828884:~:text=I%20explicitely%20authorize%20192.168.1.0/24%20(my%20LAN)%2C%20172.29.8.0/22%20(the%20docker%20network%20so%20that%20containers%20can%20talk%20to%20each%20other)%20and%20172.16.1.0/24%20(my%20VPN%20network)%2C%20all%20the%20rest%20is%20dropped.
 > [^3]: https://alist.nn.ci/zh/guide/advanced/offline-download.html
+> [^4]: https://github.com/tailscale/tailscale/issues/1995 是故意的
