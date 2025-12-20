@@ -1,7 +1,7 @@
 ---
 title: Zero to production in Rust An Option 笔记
 pubDatetime: 2023-04-19T10:10:05.000Z
-modDatetime: 2024-07-02T04:18:53.000Z
+modDatetime: 2025-12-20T13:49:41.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/40
 tags:
   - DEV
@@ -366,6 +366,11 @@ let _ = Mock::given(path("/emails"))
 
 总结: `_` 会立刻 drop, 并不是和 `_xx` 一样随作用域结束来 drop 的[^14]
 
+---
+
+<a id='issuecomment-3677836205'></a>
+`_` 和 `let _` 的区别就是 `_ = expr; 是 { let _ = expr; }`[^15]
+
 [^1]: https://eisel.me/lld
 
 [^2]: https://www.reddit.com/r/rust/comments/11h28k3/faster_apple_builds_with_the_lld_linker/
@@ -391,3 +396,5 @@ let _ = Mock::given(path("/emails"))
 [^13]: https://www.bilibili.com/video/BV1L34y1B7PT
 
 [^14]: https://stackoverflow.com/questions/76311007/what-happens-when-assigning-to-the-underscore-pattern
+
+[^15]: https://t.me/c/2261788729/77332
