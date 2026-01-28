@@ -1,7 +1,7 @@
 ---
 title: Rust  记录一下 debug
 pubDatetime: 2023-03-23T19:28:50.000Z
-modDatetime: 2025-09-30T07:55:15.000Z
+modDatetime: 2026-01-28T20:16:57.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
   - DEV
@@ -94,6 +94,19 @@ match self.buf.read_line(&mut buf) {
 使用 [cargo-update](https://github.com/nabijaczleweli/cargo-update) 和 [RsProxy](https://rsproxy.cn/#FAQ) 的时候出现 registry index was not found in any configuration
 
 需要按照 https://github.com/nabijaczleweli/cargo-update/issues/248#issuecomment-1937164615 配置`[registries.rsproxy-sparse]`
+
+---
+
+<a id='issuecomment-3813711280'></a>
+版本: `rustc 1.93.0 (254b59607 2026-01-19)`
+
+Rust 的 dev-dependencies (以下简称 dev-dep) 和 dependencies (简称 dep) 在 feature 启用的传递上有不一样的行为:
+
+> crate A 有一个测试的 feature , B 在 dev-dep 里面启用它, C 依赖 dev-dep B 的话, 在 C 的视角下 A 的测试 feature 会被启用吗
+
+答案: 不会
+
+但是放在 dep 的会, 所以为了传递测试 feature, 需要做 `test-verbose = ["utils/test-verbose"]` 类似的配置
 
 [^1]: https://stackoverflow.com/questions/37330993/sock-recv-returns-empty-string-when-connection-is-dead-on-non-blocking-socke
 
