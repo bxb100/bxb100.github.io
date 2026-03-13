@@ -1,7 +1,7 @@
 ---
 title: Rust  记录一下 debug
 pubDatetime: 2023-03-23T19:28:50.000Z
-modDatetime: 2026-01-28T20:16:57.000Z
+modDatetime: 2026-03-13T09:36:25.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
   - DEV
@@ -94,6 +94,10 @@ match self.buf.read_line(&mut buf) {
 使用 [cargo-update](https://github.com/nabijaczleweli/cargo-update) 和 [RsProxy](https://rsproxy.cn/#FAQ) 的时候出现 registry index was not found in any configuration
 
 需要按照 https://github.com/nabijaczleweli/cargo-update/issues/248#issuecomment-1937164615 配置`[registries.rsproxy-sparse]`
+
+---
+
+模糊印象里是 `.crates2.json` 使用包对应 sparse 协议导致就算上面配置后依然无效, 所以有个 path `https://github.com/bxb100/cargo-update`, 最新版本使用下来这个 bug 好像修复了
 
 ---
 
