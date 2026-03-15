@@ -20,6 +20,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [关于 action-upload 重写的一些记录](https://github.com/bxb100/bxb100.github.io/issues/73)---2026-03-15
 - [Jetbrain IDE: 加载 env](https://github.com/bxb100/bxb100.github.io/issues/72)---2026-03-02
 - [Moviepilot + OpenList + Emby 实现 strm](https://github.com/bxb100/bxb100.github.io/issues/71)---2025-11-02
 - [Common Sense - 家居](https://github.com/bxb100/bxb100.github.io/issues/70)---2025-10-09
@@ -29,7 +30,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [telegram api 的一些坑](https://github.com/bxb100/bxb100.github.io/issues/61)---2024-12-04
 - [sgcc_electricity 和 tailscale 使用的踩坑](https://github.com/bxb100/bxb100.github.io/issues/58)---2024-08-03
 - [Using PostgreSQL](https://github.com/bxb100/bxb100.github.io/issues/57)---2024-07-27
-- [Belkin F4U092 ethenet with cable not working on Sonoma 14.4](https://github.com/bxb100/bxb100.github.io/issues/56)---2024-07-02
 
 ## API
 
@@ -97,13 +97,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 
+- [关于 action-upload 重写的一些记录](https://github.com/bxb100/bxb100.github.io/issues/73)---2026-03-15
 - [Jetbrain IDE: 加载 env](https://github.com/bxb100/bxb100.github.io/issues/72)---2026-03-02
 - [R2 使用 presign url 前端老是报错](https://github.com/bxb100/bxb100.github.io/issues/66)---2025-05-15
 - [流水账: Node DNS 解析异常探究](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
-- [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 <details><summary>MORE</summary>
 
+- [DevOps 的一些实践](https://github.com/bxb100/bxb100.github.io/issues/41)---2023-06-16
 - [ForkJoinPool 来运行斐波那契递归](https://github.com/bxb100/bxb100.github.io/issues/36)---2023-03-11
 - [Lombok: JSR 269](https://github.com/bxb100/bxb100.github.io/issues/35)---2023-03-03
 - [OAuth 2.0 客户端认证的几种方式](https://github.com/bxb100/bxb100.github.io/issues/23)---2022-08-31
