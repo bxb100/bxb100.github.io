@@ -55,7 +55,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
-- [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
+- [记录一下 Rust 学习过程](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 - [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
 - [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
@@ -115,7 +115,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 - [记录一下 QNAP 的蓝牙使用体验](https://github.com/bxb100/bxb100.github.io/issues/42)---2023-12-26
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
-- [Rust: 记录一下 debug](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
+- [记录一下 Rust 学习过程](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 
 ## 就是玩
 

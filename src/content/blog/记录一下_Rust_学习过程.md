@@ -1,7 +1,7 @@
 ---
-title: Rust  记录一下 debug
+title: 记录一下 Rust 学习过程
 pubDatetime: 2023-03-23T19:28:50.000Z
-modDatetime: 2026-03-13T09:36:25.000Z
+modDatetime: 2026-03-18T09:19:17.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
   - DEV
