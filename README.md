@@ -51,7 +51,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 <details><summary>MORE</summary>
 
 - [流水账：给 blog 加上 aplayer](https://github.com/bxb100/bxb100.github.io/issues/50)---2024-04-05
-- [如何使用 git 拉取部分文件](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
+- [Git 的学习记录](https://github.com/bxb100/bxb100.github.io/issues/49)---2024-03-27
 - [Pick the Right Distroless Base Image For Your Application](https://github.com/bxb100/bxb100.github.io/issues/46)---2024-02-19
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
