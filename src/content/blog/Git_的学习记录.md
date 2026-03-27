@@ -1,7 +1,7 @@
 ---
 title: Git 的学习记录
 pubDatetime: 2024-03-27T14:54:09.000Z
-modDatetime: 2026-03-27T00:02:58.000Z
+modDatetime: 2026-03-27T00:08:33.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/49
 tags:
   - DEV
@@ -20,8 +20,22 @@ tags:
 - `git sparse-checkout add %subdirectory-to-be-cloned%`
   - 看到这个我才知道 GitHub 为啥每个文件都给路径的复制按钮，原来还有如此妙用
 
+---
+
+<a id='issuecomment-4139132747'></a>
+
+# 如何修改 author 信息
+
+> 目前我开启了 `Block command line pushes that expose my email` 功能, 所以常常会有需要修改 commit 的要求
+
+- 按照要求设置好 private email[^4]
+- 使用 `git commit --amend --reset-author --no-edit` 更改
+- 如果是修改多个 commit, 最简单的方案就是 `git rebase -i HEAD~N`, 如果一直到根 `git rebase -i --root`, 修改要改的 commit 为 edit, 然后慢慢 reset author
+
 [^1]: https://git-scm.com/docs/git-sparse-checkout
 
 [^2]: https://stackoverflow.com/a/73254328/6699096
 
 [^3]: https://git-scm.com/docs/git-clone
+
+[^4]: https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address
