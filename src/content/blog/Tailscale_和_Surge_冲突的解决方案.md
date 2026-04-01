@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2026-04-01T13:16:38.000Z
+modDatetime: 2026-04-01T13:18:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -71,7 +71,7 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 ```
 
 3. `sudo brew services start tailscale`
-4. `sudo tailscale up --auth-key=xxxx`[^5] (注意 `auth-key` 有效期最长 90 天)
+4. `sudo tailscale up --auth-key=xxxx`[^5] (update: 发现 up 之后再用 `sudo tailscale login` 也行, 这样是不是重启之后无需再配置? 🤔 我再观察一下)
 5. 配置一个 `tailscale-socket = socks5, 127.0.0.1, 1055` 代理, 然后手动配置规则将 `100.64.0.0/10` 转向这个 socks5 代理 (注意这时候因为没有 nameserver 所以 ns.net 都需要自己手动配置 host/规则)
 
 ### Android 配置
