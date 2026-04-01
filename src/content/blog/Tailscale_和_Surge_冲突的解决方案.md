@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2026-04-01T13:18:40.000Z
+modDatetime: 2026-04-01T13:19:39.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -56,7 +56,7 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 <a id='issuecomment-4169929454'></a>
 😢 1.9x 之后频繁出现了 DNS 解析不走 surge 的问题, 所以我怀疑之前的操作和认识是错误的, 现在改用 `userspace-networking`[^2] 方案来兼容 surge 以及 Android 的 clash
 
-### MacOS 设置的方案
+## MacOS 设置的方案
 
 1. homebrew 安装 tailscale[^3], 注意一定要先卸载 tailscale app, 删除 trash 然后重启
 2. 改写 `homebrew.mxcl.tailscale.plist`[^4]
@@ -74,7 +74,7 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 4. `sudo tailscale up --auth-key=xxxx`[^5] (update: 发现 up 之后再用 `sudo tailscale login` 也行, 这样是不是重启之后无需再配置? 🤔 我再观察一下)
 5. 配置一个 `tailscale-socket = socks5, 127.0.0.1, 1055` 代理, 然后手动配置规则将 `100.64.0.0/10` 转向这个 socks5 代理 (注意这时候因为没有 nameserver 所以 ns.net 都需要自己手动配置 host/规则)
 
-### Android 配置
+## Android 配置
 
 1. 安装 https://github.com/Asutorufa/tailscaled-socks5-android
 2. 同样配置 sock 代理和对应的规则到 clash 即可
