@@ -1,16 +1,16 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2026-04-01T13:00:07.000Z
+modDatetime: 2026-04-01T13:16:38.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
 ---
 
-~~update: 20241118: 现版本的 surge 5.9.1 使用系统 VPN, 和 tailscale 已经不冲突了~~
-
 <details>
-<summary>过时的经验</summary>
+<summary>outdated</summary>
+
+~~update: 20241118: 现版本的 surge 5.9.1 使用系统 VPN, 和 tailscale 已经不冲突了~~
 
 参考: https://community.nssurge.com/d/1094-tailscale/39
 
@@ -35,6 +35,9 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 
 <a id='issuecomment-2196467119'></a>
 
+<details><summary>outdated</summary>
+<p>
+
 ## 出现的问题
 
 > ! 直接设置 host 更简单
@@ -44,6 +47,9 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
   - 关闭 tailscale 的 DNS, 复制主机的 ip `100.xx.xx.xx`
   - Surge 设置域名 `xx` 策略是 tailscale (上面设置的 proxy)
   - Surge 本地 DNS 设置 `xx` A IN `100.xx.xx.xx`
+
+</p>
+</details>
 
 ---
 
