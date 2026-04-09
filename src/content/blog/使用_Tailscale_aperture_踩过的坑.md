@@ -1,7 +1,7 @@
 ---
 title: 使用 Tailscale aperture 踩过的坑
 pubDatetime: 2026-04-09T19:50:24.000Z
-modDatetime: 2026-04-09T19:50:24.000Z
+modDatetime: 2026-04-09T20:49:54.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/77
 tags:
   - uncategorized
@@ -20,6 +20,14 @@ tags:
 - 如果添加的时候使用 openai completion 那么请求就得是 `http://ai/v1/chat/completions`, 否则就会报 404[^1]
 
 - 综上所述, opencode 配置[^2]注意使用不同的 `@ai-sdk/`
+
+---
+
+<a id='issuecomment-4217392129'></a>
+
+- opencode 配置 provider 的时候注意一下几点, 否则不会显示出来
+  1.  需要配置 apiKey
+  2.  需要配置 models
 
 [^1]: https://tailscale.com/docs/aperture#:~:text=The%20following%20table%20lists%20the%20supported%20API%20formats%3A
 
