@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2026-04-15T10:12:49.000Z
+modDatetime: 2026-04-15T11:33:37.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -85,6 +85,12 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 
 > [!WARNING]
 > 使用过程中发现没法使用 IpV6 所以导致无法打洞
+
+电信
+
+启动 ipv6, vif ipv6 always, 使用系统 DNS, 不使用 DoH, 目前能够直连
+
+待观察代理会不会出现问题
 
 [^1]: https://tailscale.com/kb/1015/100.x-addresses
 
