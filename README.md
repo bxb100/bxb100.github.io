@@ -20,6 +20,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [AI 生成的图片](https://github.com/bxb100/bxb100.github.io/issues/78)---2026-04-22
 - [使用 Tailscale aperture 踩过的坑](https://github.com/bxb100/bxb100.github.io/issues/77)---2026-04-09
 - [使用 codex gpt-5.4 系列翻译书](https://github.com/bxb100/bxb100.github.io/issues/75)---2026-03-23
 - [关于更换 Macbook m1 电池的流水账](https://github.com/bxb100/bxb100.github.io/issues/74)---2026-03-23
@@ -29,7 +30,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Common Sense - 家居](https://github.com/bxb100/bxb100.github.io/issues/70)---2025-10-09
 - [R2 使用 presign url 前端老是报错](https://github.com/bxb100/bxb100.github.io/issues/66)---2025-05-15
 - [Java 使用中的一些奇巧淫技](https://github.com/bxb100/bxb100.github.io/issues/64)---2025-03-08
-- [前端的奇巧淫技 - 透明视频](https://github.com/bxb100/bxb100.github.io/issues/63)---2025-03-06
 
 ## API
 
@@ -97,13 +97,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 
+- [AI 生成的图片](https://github.com/bxb100/bxb100.github.io/issues/78)---2026-04-22
 - [使用 Tailscale aperture 踩过的坑](https://github.com/bxb100/bxb100.github.io/issues/77)---2026-04-09
 - [使用 codex gpt-5.4 系列翻译书](https://github.com/bxb100/bxb100.github.io/issues/75)---2026-03-23
 - [关于更换 Macbook m1 电池的流水账](https://github.com/bxb100/bxb100.github.io/issues/74)---2026-03-23
 - [关于 action-upload 重写的一些记录](https://github.com/bxb100/bxb100.github.io/issues/73)---2026-03-15
-- [Jetbrain IDE: 加载 env](https://github.com/bxb100/bxb100.github.io/issues/72)---2026-03-02
 <details><summary>MORE</summary>
 
+- [Jetbrain IDE: 加载 env](https://github.com/bxb100/bxb100.github.io/issues/72)---2026-03-02
 - [R2 使用 presign url 前端老是报错](https://github.com/bxb100/bxb100.github.io/issues/66)---2025-05-15
 - [流水账: Node DNS 解析异常探究](https://github.com/bxb100/bxb100.github.io/issues/53)---2024-05-10
 - [流水账：如何在 recent file 中排除 google drive](https://github.com/bxb100/bxb100.github.io/issues/51)---2024-04-10
