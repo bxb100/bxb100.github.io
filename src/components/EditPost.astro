@@ -3,15 +3,16 @@ import type { CollectionEntry } from "astro:content";
 import IconEdit from "@/assets/icons/IconEdit.svg";
 import { SITE } from "@/config";
 
-export interface Props {
+type Props = {
   hideEditPost?: CollectionEntry<"blog">["data"]["hideEditPost"];
   class?: string;
   post: CollectionEntry<"blog">;
   url?: string;
-}
+};
 
 const { hideEditPost, post, class: className = "", url } = Astro.props;
 
+// using generated url, not GitHub raw file path
 const href = `${url}`;
 const showEditPost =
   SITE.editPost.enabled && !hideEditPost && href.trim() !== "";
