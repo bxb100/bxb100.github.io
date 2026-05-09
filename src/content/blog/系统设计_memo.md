@@ -1,7 +1,7 @@
 ---
 title: 系统设计 memo
 pubDatetime: 2023-01-02T03:49:12.000Z
-modDatetime: 2023-03-02T09:31:09.000Z
+modDatetime: 2026-05-09T18:17:31.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/29
 tags:
   - Horizon
@@ -87,6 +87,14 @@ func executeMultipleCommandWithEnvs(fullCommand string, secretsCount int, env []
 - 对于 a.d.c 和 b.d.c 使用 d.c 的 cookie
 - ~~前端使用 Event[^7] 传递 iframe 可用的 token 但是要对 iframe 中网页可控)~~
 
+---
+
+<a id='issuecomment-4413302629'></a>
+
+### 使用 port knocking 开放端口
+
+今天看到 v2 上讨论如何加强服务器安全[^8], 看到有个技术叫做 [port knocking](https://en.wikipedia.org/wiki/Port_knocking), 可以在特定情况下: IP 加入零时白名单, 开放端口等操作
+
 [^1]: https://debezium.io/
 
 [^2]: https://nightlies.apache.org/flink/flink-docs-master/zh/docs/try-flink/table_api/
@@ -100,3 +108,5 @@ func executeMultipleCommandWithEnvs(fullCommand string, secretsCount int, env []
 [^6]: https://www.digitalocean.com/community/tutorials/how-to-use-confd-and-etcd-to-dynamically-reconfigure-services-in-coreos#creating-the-nginx-container
 
 [^7]: https://stackoverflow.com/questions/28672152/pass-an-event-to-an-iframe-from-the-parent-window-javascript
+
+[^8]: https://v2ex.com/t/1211442
