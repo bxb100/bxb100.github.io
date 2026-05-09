@@ -80,6 +80,7 @@
 
     details {
       @apply inline-block cursor-pointer text-foreground select-none [&_p]:hidden [&_ul]:my-0!;
+      @apply w-full;
     }
 
     summary {
