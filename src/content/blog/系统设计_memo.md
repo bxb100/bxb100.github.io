@@ -1,7 +1,7 @@
 ---
 title: 系统设计 memo
 pubDatetime: 2023-01-02T03:49:12.000Z
-modDatetime: 2026-05-09T18:17:31.000Z
+modDatetime: 2026-05-10T12:20:36.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/29
 tags:
   - Horizon

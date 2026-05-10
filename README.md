@@ -121,6 +121,10 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [记录一下 Rust 学习过程](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
 
+## 前端
+
+- [前端的奇巧淫技 - 透明视频](https://github.com/bxb100/bxb100.github.io/issues/63)---2025-03-06
+
 ## 就是玩
 
 - [Moviepilot + OpenList + Emby 实现 strm](https://github.com/bxb100/bxb100.github.io/issues/71)---2025-11-02

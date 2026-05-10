@@ -1,7 +1,7 @@
 ---
 title: AI 生成的图片
 pubDatetime: 2026-04-22T12:12:29.000Z
-modDatetime: 2026-05-09T18:35:55.000Z
+modDatetime: 2026-05-10T12:19:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/78
 tags:
   - uncategorized
