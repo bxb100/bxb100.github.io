@@ -1,0 +1,29 @@
+# Prefer to use the discussions comments
+name: 'Lock Issue'
+
+on:
+  issues:
+    types:
+      - opened
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'The issue number to lock'
+        required: true
+
+permissions:
+  issues: write
+
+concurrency:
+  group: lock-issue
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lock the issue
+        continue-on-error: true
+        run: gh issue lock ${{ github.event.issue.number || inputs.issue_number }} --repo ${{ github.repository }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_PROMPT_DISABLED: true
