@@ -15,6 +15,6 @@ tags:
   ![image](https://github.com/user-attachments/assets/ab48cc42-3b42-4305-b8ac-115bea0c3bfb)
 - 使用 `webhook` 的时候注意 cf 是否设置 [WAF](https://developers.cloudflare.com/waf/) 保护, 可以通过 website → Security → Events 看 IP 段 `149.154.160.0/20` and `91.108.4.0/22`[^1] 是否被屏蔽了
   - 可以通过 Custom Rules **skip** telegram 请求的 IP 段来解决
-      <img width="1077" alt="image 1" src="https://github.com/user-attachments/assets/f0d383be-35f0-4e14-9481-eb59e24276c5">
+    <img width="1077" alt="image 1" src="https://github.com/user-attachments/assets/f0d383be-35f0-4e14-9481-eb59e24276c5">
 
 [^1]: https://core.telegram.org/bots/webhooks#the-short-version
