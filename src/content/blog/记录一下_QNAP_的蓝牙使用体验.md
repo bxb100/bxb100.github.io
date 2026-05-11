@@ -1,7 +1,7 @@
 ---
 title: 记录一下 QNAP 的蓝牙使用体验
 pubDatetime: 2023-12-26T13:10:47.000Z
-modDatetime: 2023-12-26T13:14:43.000Z
+modDatetime: 2026-05-10T13:06:01.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/42
 tags:
   - 就是玩

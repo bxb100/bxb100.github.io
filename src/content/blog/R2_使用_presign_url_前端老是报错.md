@@ -1,7 +1,7 @@
 ---
 title: R2 使用 presign url 前端老是报错
 pubDatetime: 2025-05-15T11:52:58.000Z
-modDatetime: 2025-05-15T11:52:58.000Z
+modDatetime: 2026-05-10T13:04:53.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/66
 tags:
   - uncategorized

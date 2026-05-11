@@ -1,7 +1,7 @@
 ---
 title: DevOps 的一些实践
 pubDatetime: 2023-06-16T15:16:03.000Z
-modDatetime: 2023-06-16T15:33:03.000Z
+modDatetime: 2026-05-10T13:06:05.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/41
 tags:
   - uncategorized

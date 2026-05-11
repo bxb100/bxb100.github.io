@@ -1,7 +1,7 @@
 ---
 title: OAuth 2.0 客户端认证的几种方式
 pubDatetime: 2022-08-31T16:16:22.000Z
-modDatetime: 2022-08-31T16:16:22.000Z
+modDatetime: 2026-05-10T13:07:08.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/23
 tags:
   - uncategorized

@@ -1,7 +1,7 @@
 ---
 title: 学习 ast-grep
 pubDatetime: 2024-04-12T09:11:54.000Z
-modDatetime: 2024-04-12T09:13:47.000Z
+modDatetime: 2026-05-10T13:05:38.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/52
 tags:
   - Horizon

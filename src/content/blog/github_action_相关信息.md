@@ -1,7 +1,7 @@
 ---
 title: github action 相关信息
 pubDatetime: 2021-12-31T10:41:11.000Z
-modDatetime: 2025-03-12T05:56:06.000Z
+modDatetime: 2026-05-10T13:09:06.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/7
 tags:
   - API

@@ -1,7 +1,7 @@
 ---
 title: 流水账：给 blog 加上 aplayer
 pubDatetime: 2024-04-05T13:36:19.000Z
-modDatetime: 2024-04-05T13:36:26.000Z
+modDatetime: 2026-05-10T13:05:48.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/50
 tags:
   - DEV

@@ -1,7 +1,7 @@
 ---
 title: 流水账：如何在 recent file 中排除 google drive
 pubDatetime: 2024-04-10T12:02:20.000Z
-modDatetime: 2024-04-10T12:02:20.000Z
+modDatetime: 2026-05-10T13:05:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/51
 tags:
   - uncategorized

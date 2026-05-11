@@ -1,7 +1,7 @@
 ---
 title: Zero to production in Rust An Option 笔记
 pubDatetime: 2023-04-19T10:10:05.000Z
-modDatetime: 2025-12-20T13:49:41.000Z
+modDatetime: 2026-05-10T13:06:08.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/40
 tags:
   - DEV

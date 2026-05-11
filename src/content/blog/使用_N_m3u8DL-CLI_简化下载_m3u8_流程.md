@@ -1,7 +1,7 @@
 ---
 title: 使用 N_m3u8DL-CLI 简化下载 m3u8 流程
 pubDatetime: 2022-04-04T03:52:27.000Z
-modDatetime: 2022-10-13T11:10:23.000Z
+modDatetime: 2026-05-10T13:08:54.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/13
 tags:
   - uncategorized

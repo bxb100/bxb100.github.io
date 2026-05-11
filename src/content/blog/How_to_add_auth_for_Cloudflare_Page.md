@@ -1,7 +1,7 @@
 ---
 title: How to add auth for Cloudflare Page
 pubDatetime: 2022-08-06T17:31:36.000Z
-modDatetime: 2022-08-06T17:36:33.000Z
+modDatetime: 2026-05-10T13:07:37.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/21
 tags:
   - Horizon

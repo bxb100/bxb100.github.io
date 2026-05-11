@@ -1,7 +1,7 @@
 ---
 title: ANTLR 速记
 pubDatetime: 2023-01-17T08:20:45.000Z
-modDatetime: 2023-01-17T08:39:18.000Z
+modDatetime: 2026-05-10T13:06:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/31
 tags:
   - DEV

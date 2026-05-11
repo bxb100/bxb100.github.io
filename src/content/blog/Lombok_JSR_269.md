@@ -1,7 +1,7 @@
 ---
 title: Lombok  JSR 269
 pubDatetime: 2023-03-03T12:47:25.000Z
-modDatetime: 2023-03-03T12:48:37.000Z
+modDatetime: 2026-05-10T13:06:26.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/35
 tags:
   - uncategorized

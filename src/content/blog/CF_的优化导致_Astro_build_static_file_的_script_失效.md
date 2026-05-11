@@ -1,7 +1,7 @@
 ---
 title: CF 的优化导致 Astro build static file 的 script 失效
 pubDatetime: 2024-02-12T09:03:42.000Z
-modDatetime: 2024-02-12T09:09:22.000Z
+modDatetime: 2026-05-10T13:05:56.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/45
 tags:
   - DEV

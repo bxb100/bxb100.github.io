@@ -1,7 +1,7 @@
 ---
 title: Belkin F4U092 ethenet with cable not working on Sonoma 14.4
 pubDatetime: 2024-07-02T03:07:08.000Z
-modDatetime: 2024-08-06T08:25:04.000Z
+modDatetime: 2026-05-10T13:05:21.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/56
 tags:
   - 就是玩

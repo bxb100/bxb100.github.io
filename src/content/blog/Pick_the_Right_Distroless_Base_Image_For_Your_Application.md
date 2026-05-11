@@ -1,7 +1,7 @@
 ---
 title: Pick the Right Distroless Base Image For Your Application
 pubDatetime: 2024-02-19T12:43:47.000Z
-modDatetime: 2024-02-20T14:03:03.000Z
+modDatetime: 2026-05-10T13:05:52.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/46
 tags:
   - DEV

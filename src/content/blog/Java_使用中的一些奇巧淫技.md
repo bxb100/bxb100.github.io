@@ -1,7 +1,7 @@
 ---
 title: Java 使用中的一些奇巧淫技
 pubDatetime: 2025-03-08T04:44:45.000Z
-modDatetime: 2025-03-08T04:51:54.000Z
+modDatetime: 2026-05-10T13:04:57.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/64
 tags:
   - DEV

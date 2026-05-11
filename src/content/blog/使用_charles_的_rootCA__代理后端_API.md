@@ -1,7 +1,7 @@
 ---
 title: 使用 charles 的 rootCA  代理后端 API
 pubDatetime: 2022-02-10T17:07:35.000Z
-modDatetime: 2022-08-02T17:33:35.000Z
+modDatetime: 2026-05-10T13:09:01.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/10
 tags:
   - Horizon
