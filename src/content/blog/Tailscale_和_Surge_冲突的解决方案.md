@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2026-05-10T13:05:29.000Z
+modDatetime: 2026-05-15T09:28:16.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -78,6 +78,8 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 
 1. 安装 https://github.com/Asutorufa/tailscaled-socks5-android
 2. 同样配置 sock 代理和对应的规则到 clash 即可
+
+update: 上游已合并 https://github.com/MetaCubeX/mihomo/pull/2786
 
 ---
 
