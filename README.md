@@ -17,6 +17,8 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 | [Jinzhou Zhang](https://twitter.com/jinzhouz)   | [三点水](https://lotabout.me/)          | 后端博主                                                              |
 | [Micah Lerner](https://twitter.com/micahlerner) | https://www.micahlerner.com/            | CS Researcher                                                         |
 | [绅士喵](https://github.com/Hentioe)            | [绅士喵](https://blog.hentioe.dev/)     | Independent developer, open source project maintainer                 |
+| [阿男聊技术](https://weinan.io/)                | https://weinan.io/                      | 目前正在看他的 tokio 文章                                             |
+| [云风的 BLOG](https://x.com/cloudwu)            | https://blog.codingnow.com/             | 云风大佬                                                              |
 
 ## Recent
 
