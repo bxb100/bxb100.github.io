@@ -1,7 +1,7 @@
 ---
 title: AI 生成的图片
 pubDatetime: 2026-04-22T12:12:29.000Z
-modDatetime: 2026-05-10T12:19:40.000Z
+modDatetime: 2026-06-16T02:41:19.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/78
 tags:
   - uncategorized
@@ -345,3 +345,14 @@ https://v2ex.com/t/1211329
 <hr>
 
 <img height="200" alt="Image" src="https://github.com/user-attachments/assets/a9e81fe4-e959-4acd-a08f-a7e297b4e23e" />
+
+---
+
+<a id='issuecomment-4714345403'></a>
+
+> gpt image 2
+> “Traditional Chinese ink wash interpretation of [SUBJECT], expressive black ink brushstrokes, soft gradients, poetic simplicity, minimalist composition, large areas of untouched white space, contemporary gallery presentation, clean white background, no text, no logo.”[^1]
+
+<img height="256" alt="Image" src="https://github.com/user-attachments/assets/a4edcc3b-8c48-4ee8-98b0-be7951ed495a" />
+
+[^1]: https://x.com/aleenaamiir/status/2066327113997897946
