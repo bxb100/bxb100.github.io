@@ -1,7 +1,7 @@
 ---
 title: Tailscale 和 Surge 冲突的解决方案
 pubDatetime: 2024-06-28T08:24:31.000Z
-modDatetime: 2026-07-01T18:13:16.000Z
+modDatetime: 2026-07-01T18:15:25.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/55
 tags:
   - 就是玩
@@ -31,6 +31,8 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 
 </details>
 
+Surge 6.7.0 已经支持 tailscale 作为 proxy 了[^2], 5.x 的朋友可以参考一下 tailscale userspace-networking + socket proxy 的方式
+
 ---
 
 <a id='issuecomment-2196467119'></a>
@@ -54,12 +56,12 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 ---
 
 <a id='issuecomment-4169929454'></a>
-😢 1.9x 之后频繁出现了 DNS 解析不走 surge 的问题, 所以我怀疑之前的操作和认识是错误的, 现在改用 `userspace-networking`[^2] 方案来兼容 surge 以及 Android 的 clash
+😢 1.9x 之后频繁出现了 DNS 解析不走 surge 的问题, 所以我怀疑之前的操作和认识是错误的, 现在改用 `userspace-networking`[^3] 方案来兼容 surge 以及 Android 的 clash
 
 ## MacOS 设置的方案
 
-1. homebrew 安装 tailscale[^3], 注意一定要先卸载 tailscale app, 删除 trash 然后重启
-2. 改写 `homebrew.mxcl.tailscale.plist`[^4]
+1. homebrew 安装 tailscale[^4], 注意一定要先卸载 tailscale app, 删除 trash 然后重启
+2. 改写 `homebrew.mxcl.tailscale.plist`[^5]
 
 ```diff
 	<key>ProgramArguments</key>
@@ -71,7 +73,7 @@ IP-CIDR,100.64.0.0/10, tailscale, no-resolve
 ```
 
 3. `sudo brew services start tailscale`
-4. `sudo tailscale up --auth-key=xxxx`[^5] (update: 发现 up 之后再用 `sudo tailscale login` 也行, 这样是不是重启之后无需再配置? 🤔 我再观察一下)
+4. `sudo tailscale up --auth-key=xxxx`[^6] (update: 发现 up 之后再用 `sudo tailscale login` 也行, 这样是不是重启之后无需再配置? 🤔 我再观察一下)
 5. 配置一个 `tailscale-socket = socks5, 127.0.0.1, 1055` 代理, 然后手动配置规则将 `100.64.0.0/10` 转向这个 socks5 代理 (注意这时候因为没有 nameserver 所以 ns.net 都需要自己手动配置 host/规则)
 
 ## Android 配置
@@ -96,10 +98,12 @@ update: 上游已合并 https://github.com/MetaCubeX/mihomo/pull/2786
 
 [^1]: https://tailscale.com/kb/1015/100.x-addresses
 
-[^2]: https://tailscale.com/docs/concepts/userspace-networking
+[^2]: https://kb.nssurge.com/surge-knowledge-base/guidelines/tailscale
 
-[^3]: https://github.com/tailscale/tailscale/wiki/Tailscaled-on-macOS
+[^3]: https://tailscale.com/docs/concepts/userspace-networking
 
-[^4]: https://github.com/tailscale/tailscale/issues/10558#issuecomment-2065390858
+[^4]: https://github.com/tailscale/tailscale/wiki/Tailscaled-on-macOS
 
-[^5]: https://login.tailscale.com/admin/settings/keys
+[^5]: https://github.com/tailscale/tailscale/issues/10558#issuecomment-2065390858
+
+[^6]: https://login.tailscale.com/admin/settings/keys
