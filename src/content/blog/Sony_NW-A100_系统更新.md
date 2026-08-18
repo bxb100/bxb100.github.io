@@ -1,7 +1,7 @@
 ---
 title: Sony NW-A100 系统更新
 pubDatetime: 2026-05-11T14:07:21.000Z
-modDatetime: 2026-05-11T14:15:26.000Z
+modDatetime: 2026-08-18T08:28:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/80
 tags:
   - uncategorized
@@ -31,3 +31,12 @@ adb push NW-A100_0000_V4_06_00_NW_WM_FW.UPG /sdcard
 ```
 
 **关闭 wifi** 后直接去更新系统即可
+
+---
+
+<a id='issuecomment-5325622694'></a>
+使用 gpt5.6 Sol 成功降级
+
+[NW-A100-保留槽降级说明.md](https://github.com/user-attachments/files/31171727/NW-A100-.md)
+
+[nw-a100-preserved-slot-downgrade.sh](https://github.com/user-attachments/files/31171719/nw-a100-preserved-slot-downgrade.sh)
