@@ -1,7 +1,7 @@
 ---
 title: 记录一下 Rust 学习过程
 pubDatetime: 2023-03-23T19:28:50.000Z
-modDatetime: 2026-08-21T05:56:24.000Z
+modDatetime: 2026-08-21T06:12:49.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
   - DEV
@@ -143,6 +143,12 @@ fn main() {
 The parser built into the Rust compiler always parses a negative sign as a separate token from the numeric literal that is being negating
 
 所以, 如果想让结果等于 81, 应该改成 `(-3i32).pow(4)`
+
+---
+
+> https://dtolnay.github.io/rust-quiz/29
+
+The trailing comma is required in the case of a 1-tuple, `(0,)`, because it disambiguates it from `(0)` which is identical to 0. However, for larger tuples, it is entirely optional: `(i32)` is a distinct type from `(i32,)`, but `(i32, i32)` and `(i32, i32,)` are the same.
 
 [^1]: https://stackoverflow.com/questions/37330993/sock-recv-returns-empty-string-when-connection-is-dead-on-non-blocking-socke
 
