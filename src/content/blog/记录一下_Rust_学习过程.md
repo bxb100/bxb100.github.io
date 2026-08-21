@@ -1,7 +1,7 @@
 ---
 title: 记录一下 Rust 学习过程
 pubDatetime: 2023-03-23T19:28:50.000Z
-modDatetime: 2026-05-10T13:06:14.000Z
+modDatetime: 2026-08-21T05:56:24.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/37
 tags:
   - DEV
@@ -126,6 +126,23 @@ Rust 的 dev-dependencies (以下简称 dev-dep) 和 dependencies (简称 dep) �
 | 关注点   | 修饰下一个条目               | 修饰当前容器（模块/文件）        |
 | 常用场景 | 函数、结构体、字段、枚举成员 | main.rs, lib.rs 或 mod.rs 的开头 |
 | Markdown | 支持标准 Markdown            | 支持标准 Markdown                |
+
+---
+
+<a id='issuecomment-5365782897'></a>
+
+> https://dtolnay.github.io/rust-quiz/22
+
+```rust
+fn main() {
+    let n = -3i32.pow(4);
+    println!("{}", n);
+}
+```
+
+The parser built into the Rust compiler always parses a negative sign as a separate token from the numeric literal that is being negating
+
+所以, 如果想让结果等于 81, 应该改成 `(-3i32).pow(4)`
 
 [^1]: https://stackoverflow.com/questions/37330993/sock-recv-returns-empty-string-when-connection-is-dead-on-non-blocking-socke
 
