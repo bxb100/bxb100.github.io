@@ -1,7 +1,7 @@
 ---
-title: Java Fluent API 设计速成
+title: Java Fluent API 设计速成 (lambda)
 pubDatetime: 2023-01-14T07:05:06.000Z
-modDatetime: 2026-05-10T13:06:43.000Z
+modDatetime: 2026-08-24T00:48:15.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/30
 tags:
   - DEV

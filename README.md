@@ -58,9 +58,8 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [CF 的优化导致 Astro build static file 的 script 失效](https://github.com/bxb100/bxb100.github.io/issues/45)---2024-02-12
 - [Zero to production in Rust An Option 笔记](https://github.com/bxb100/bxb100.github.io/issues/40)---2023-04-19
 - [记录一下 Rust 学习过程](https://github.com/bxb100/bxb100.github.io/issues/37)---2023-03-23
-- [Benchmark 的一些记录](https://github.com/bxb100/bxb100.github.io/issues/32)---2023-01-25
 - [ANTLR 速记](https://github.com/bxb100/bxb100.github.io/issues/31)---2023-01-17
-- [Java Fluent API 设计速成](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
+- [Java Fluent API 设计速成 (lambda)](https://github.com/bxb100/bxb100.github.io/issues/30)---2023-01-14
 - [麦当劳的事件驱动架构](https://github.com/bxb100/bxb100.github.io/issues/27)---2022-12-08
 - [NIO 和 Reactor 理解(待补充)](https://github.com/bxb100/bxb100.github.io/issues/26)---2022-09-28
 - [使用 MutationObserver 写法来获取页面元素](https://github.com/bxb100/bxb100.github.io/issues/24)---2022-09-23
@@ -68,7 +67,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [Java generics with overloading](https://github.com/bxb100/bxb100.github.io/issues/20)---2022-07-29
 - [Amazon SP API 获取 listing item 的正确方式](https://github.com/bxb100/bxb100.github.io/issues/19)---2022-07-20
 - [Amazon SP program signature problem](https://github.com/bxb100/bxb100.github.io/issues/17)---2022-06-14
-- [How to use FluentBit multiline](https://github.com/bxb100/bxb100.github.io/issues/15)---2022-04-17
 - [实现 TDD 的一些方法](https://github.com/bxb100/bxb100.github.io/issues/14)---2022-04-06
 </details>
 
