@@ -1,7 +1,7 @@
 ---
 title: Jetbrain IDE  加载 env
 pubDatetime: 2026-03-02T20:26:06.000Z
-modDatetime: 2026-05-09T10:12:09.000Z
+modDatetime: 2026-09-28T00:31:40.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/72
 tags:
   - uncategorized
@@ -25,5 +25,18 @@ more: https://youtrack-production.pub.aws.intellij.net/issue/IJPL-1055/Load-inte
 
 <a id='issuecomment-4412256690'></a>
 然后我发现它是 APP 启动的时候加载, 而不是 project 级别的加载, 所以目前 Rust 还是用不了, 包括 mise[^1]
+
+---
+
+<a id='issuecomment-5861278093'></a>
+
+> [!WARNING]
+> `-Dij.load.shell.env.timeout` 设置过小会导致加载失败, 在 idea.log 中可以找到
+
+```
+om.intellij.util.ShellEnvironmentReader$EnvironmentReaderException: [/bin/zsh, -l, -i, -c, /usr/bin/env -0 > '/var/folders/vx/xs9f3rcj74d2wlp32sz0t0h80000gn/T/ij-shell-env-data.54370.132872668608125.tmp'], ec=1
+```
+
+可以参考 https://intellij-support.jetbrains.com/hc/en-us/articles/15268184143890-Shell-Environment-Loading 优化一下 zsh 配置
 
 [^1]: https://github.com/134130/intellij-mise/issues/173
