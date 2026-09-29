@@ -22,6 +22,7 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Recent
 
+- [使用 Kache 遇到的一点问题](https://github.com/bxb100/bxb100.github.io/issues/82)---2026-09-29
 - [使用 Mise](https://github.com/bxb100/bxb100.github.io/issues/81)---2026-08-18
 - [Sony NW-A100 系统更新](https://github.com/bxb100/bxb100.github.io/issues/80)---2026-05-11
 - [AI 生成的图片](https://github.com/bxb100/bxb100.github.io/issues/78)---2026-04-22
@@ -31,7 +32,6 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 - [关于 action-upload 重写的一些记录](https://github.com/bxb100/bxb100.github.io/issues/73)---2026-03-15
 - [Jetbrain IDE: 加载 env](https://github.com/bxb100/bxb100.github.io/issues/72)---2026-03-02
 - [Moviepilot + OpenList + Emby 实现 strm](https://github.com/bxb100/bxb100.github.io/issues/71)---2025-11-02
-- [Common Sense - 家居](https://github.com/bxb100/bxb100.github.io/issues/70)---2025-10-09
 
 ## API
 
@@ -97,13 +97,14 @@ My personal blog using issues and GitHub Actions [RSS Feed](https://bxb100.githu
 
 ## Reverie
 
+- [使用 Kache 遇到的一点问题](https://github.com/bxb100/bxb100.github.io/issues/82)---2026-09-29
 - [使用 Mise](https://github.com/bxb100/bxb100.github.io/issues/81)---2026-08-18
 - [Sony NW-A100 系统更新](https://github.com/bxb100/bxb100.github.io/issues/80)---2026-05-11
 - [AI 生成的图片](https://github.com/bxb100/bxb100.github.io/issues/78)---2026-04-22
 - [使用 Tailscale aperture 踩过的坑](https://github.com/bxb100/bxb100.github.io/issues/77)---2026-04-09
-- [使用 codex gpt-5.4 系列翻译书](https://github.com/bxb100/bxb100.github.io/issues/75)---2026-03-23
 <details><summary>MORE</summary>
 
+- [使用 codex gpt-5.4 系列翻译书](https://github.com/bxb100/bxb100.github.io/issues/75)---2026-03-23
 - [关于更换 Macbook m1 电池的流水账](https://github.com/bxb100/bxb100.github.io/issues/74)---2026-03-23
 - [关于 action-upload 重写的一些记录](https://github.com/bxb100/bxb100.github.io/issues/73)---2026-03-15
 - [Jetbrain IDE: 加载 env](https://github.com/bxb100/bxb100.github.io/issues/72)---2026-03-02
