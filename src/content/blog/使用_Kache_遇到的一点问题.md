@@ -1,7 +1,7 @@
 ---
 title: 使用 Kache 遇到的一点问题
 pubDatetime: 2026-09-29T23:13:01.000Z
-modDatetime: 2026-09-29T23:13:09.000Z
+modDatetime: 2026-09-30T11:35:37.000Z
 url: https://github.com/bxb100/bxb100.github.io/issues/82
 tags:
   - uncategorized
@@ -41,5 +41,10 @@ dwarfdump --debug-info target/debug/*.dSYM | grep -m5 comp_dir
 但是 JetBrains 的 Rustrover 来说就没办法了, 它既不支持 `.lldbinit` 也不支持 `initCommands`, 所以想在其中 debug 的唯一方式就是关闭 `RUST_WARRPER`, 或者设置 `KACHE_RUSTC_PATH_NORMALIZE=0`
 
 前者不适合, 毕竟目的就是用 kache, 后者会导致缓存不一致
+
+---
+
+<a id='issuecomment-5910356547'></a>
+烦死了, 我决定就用 KACHE_RUSTC_PATH_NORMALIZE=0 毕竟我没 CI 和多机器编译焦虑
 
 [^1]: https://github.com/kunobi-ninja/kache/blob/main/src/compile.rs
